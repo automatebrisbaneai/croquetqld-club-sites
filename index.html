@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free, professional websites for Queensland croquet clubs. Pick a style, send your info, and we build it.">
+  <title>Club Websites — Croquet Queensland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    :root {
+      --maroon: #73182C;
+      --maroon-dark: #5a1323;
+      --maroon-light: #9e3a50;
+      --maroon-subtle: #f5e8eb;
+      --green: #82b25e;
+      --green-dark: #6a944c;
+      --green-light: #a8cf8a;
+      --cream: #FCF6DA;
+      --cream-dark: #f0e8c4;
+      --white: #FFFDF5;
+      --text: #2c1810;
+      --text-muted: #6b5c54;
+
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 4rem;
+      --space-3xl: 6rem;
+
+      --font-display: 'Abril Fatface', serif;
+      --font-body: 'Lato', sans-serif;
+      --shadow-sm: 0 1px 3px rgba(44,24,16,0.08);
+      --shadow-md: 0 4px 12px rgba(44,24,16,0.1);
+      --shadow-lift: 0 8px 24px rgba(44,24,16,0.14);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--green);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--space-3xl) var(--space-md);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: var(--maroon);
+      line-height: 1.1;
+      margin-bottom: var(--space-md);
+    }
+
+    .hero-sub {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--text);
+      max-width: 550px;
+      margin-bottom: var(--space-xl);
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.875rem 2rem;
+      border-radius: 6px;
+      border: 3px solid;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .btn:active { transform: translateY(1px) !important; box-shadow: var(--shadow-sm) !important; }
+    .btn-primary { background: var(--maroon); color: var(--cream); border-color: var(--maroon-dark); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+    .btn-secondary { background: transparent; color: var(--maroon); border-color: var(--maroon); }
+    .btn-secondary:hover { background: var(--maroon); color: var(--cream); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+
+    /* ---- SECTIONS ---- */
+    section { padding: var(--space-3xl) 0; }
+
+    .card {
+      background: var(--cream);
+      border: 3px solid var(--maroon);
+      border-radius: 8px;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid var(--maroon);
+      border-radius: 4px;
+      pointer-events: none;
+      opacity: 0.3;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--maroon-light);
+      margin-bottom: var(--space-xs);
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--maroon);
+      line-height: 1.15;
+      margin-bottom: var(--space-md);
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 2vw, 1.35rem);
+      color: var(--maroon);
+      margin-bottom: var(--space-xs);
+    }
+
+    p + p { margin-top: var(--space-sm); }
+
+    .divider {
+      text-align: center;
+      padding: var(--space-lg) 0;
+      color: var(--maroon);
+      font-size: 0.9rem;
+      letter-spacing: 0.3em;
+      opacity: 0.5;
+    }
+
+    /* ---- HOW IT WORKS ---- */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-lg) 0;
+    }
+
+    .step {
+      text-align: center;
+      padding: var(--space-md);
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--maroon);
+      color: var(--cream);
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      border-radius: 50%;
+      margin-bottom: var(--space-sm);
+    }
+
+    .step h3 {
+      text-align: center;
+    }
+
+    .step p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* ---- DEMO PREVIEW ---- */
+    .demo-frame {
+      border: 3px solid var(--maroon);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lift);
+      margin: var(--space-lg) 0;
+      background: var(--white);
+    }
+
+    .demo-browser-bar {
+      background: var(--maroon);
+      padding: 8px var(--space-sm);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .demo-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(252, 246, 218, 0.3);
+    }
+
+    .demo-url {
+      font-size: 0.75rem;
+      color: var(--cream);
+      opacity: 0.7;
+      margin-left: var(--space-sm);
+      font-family: monospace;
+    }
+
+    .demo-frame iframe {
+      display: block;
+      width: 100%;
+      height: 500px;
+      border: 0;
+    }
+
+    /* ---- STYLE GALLERY ---- */
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    .style-card {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid rgba(115, 24, 44, 0.15);
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      background: var(--white);
+    }
+
+    .style-card:hover {
+      border-color: var(--maroon);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lift);
+    }
+
+    .style-preview {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+    }
+
+    .style-info {
+      padding: var(--space-sm);
+      border-top: 1px solid rgba(115, 24, 44, 0.1);
+    }
+
+    .style-info h3 { font-size: 1rem; margin-bottom: 4px; }
+    .style-info p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+
+    /* Individual style previews */
+    .preview-classic {
+      background: #82b25e;
+      color: #73182C;
+    }
+    .preview-modern {
+      background: #f8f9fa;
+      color: #1a1a2e;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem !important;
+      text-transform: uppercase;
+    }
+    .preview-vintage {
+      background: linear-gradient(135deg, #f2e9de, #d4c5a9);
+      color: #36454F;
+      font-family: Georgia, serif;
+      font-style: italic;
+    }
+    .preview-bold {
+      background: #1a1a2e;
+      color: #FF3366;
+      font-size: 1.6rem !important;
+      letter-spacing: -0.02em;
+    }
+    .preview-coastal {
+      background: linear-gradient(135deg, #1B3A5C, #2a5580);
+      color: #7EC8B5;
+    }
+    .preview-custom {
+      background: repeating-conic-gradient(
+        rgba(115, 24, 44, 0.06) 0% 25%,
+        transparent 0% 50%
+      ) 0 0 / 20px 20px;
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-size: 0.85rem !important;
+      font-weight: 700;
+    }
+
+    /* ---- GALLERY LINKS ---- */
+    .gallery-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-sm);
+      margin: var(--space-md) 0;
+    }
+
+    .gallery-link {
+      display: block;
+      padding: var(--space-sm);
+      background: var(--white);
+      border: 2px solid rgba(115, 24, 44, 0.12);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .gallery-link:hover {
+      border-color: var(--maroon);
+      transform: translateY(-2px);
+    }
+
+    .gallery-link small {
+      display: block;
+      font-weight: 400;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ---- WHAT YOU GET ---- */
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    .benefit {
+      padding: var(--space-md);
+      background: var(--white);
+      border-radius: 6px;
+      border-left: 4px solid var(--green);
+    }
+
+    .benefit h3 { font-size: 1rem; }
+    .benefit p { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--maroon);
+      color: var(--cream);
+      text-align: center;
+      padding: var(--space-xl) var(--space-md);
+      margin-top: var(--space-3xl);
+    }
+    footer p { font-size: 0.85rem; opacity: 0.8; line-height: 1.8; }
+    footer a { color: var(--green-light); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ---- SCROLL REVEALS ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .btn, .style-card, .gallery-link { transition: none; }
+    }
+
+    /* Texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <h1>Your Club Deserves<br>a Great Website</h1>
+  <p class="hero-sub">
+    Pick a style you like. Send us your club info. We'll build a professional site and host it free.
+  </p>
+  <a href="#how" class="btn btn-primary">See how it works</a>
+</header>
+
+<main>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="reveal">
+    <div class="card">
+      <div class="section-label">How It Works</div>
+      <h2>Three Steps. That's It.</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Pick a Style</h3>
+          <p>Find a website you like the look of — any URL. Or browse our style ideas below. Send us the link.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Send Your Info</h3>
+          <p>Word docs, emails, photos of your noticeboard — whatever you have. We sort it out.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Done</h3>
+          <p>We build your site, put it live, and host it free. Need a change? Email us in plain English.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">~ &#9823; ~</div>
+
+  <!-- DEMO -->
+  <section class="reveal">
+    <div class="card">
+      <div class="section-label">See It in Action</div>
+      <h2>Headland-Buderim Croquet Club</h2>
+      <p>
+        We built this from data already on CroquetQLD.org. No interview. No design meeting. No photos needed. Just the club's existing information, turned into a proper website.
+      </p>
+      <div class="demo-frame">
+        <div class="demo-browser-bar">
+          <div class="demo-dot"></div>
+          <div class="demo-dot"></div>
+          <div class="demo-dot"></div>
+          <span class="demo-url">clubs.croquetwade.com/headland-buderim</span>
+        </div>
+        <iframe src="headland-buderim/" loading="lazy" title="Preview of Headland-Buderim Croquet Club website"></iframe>
+      </div>
+      <div style="text-align: center; margin-top: var(--space-md);">
+        <a href="headland-buderim/" class="btn btn-secondary" target="_blank">View full site</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">~ &#9823; ~</div>
+
+  <!-- STYLE INSPIRATION -->
+  <section class="reveal">
+    <div class="card">
+      <div class="section-label">Find Your Style</div>
+      <h2>Style Ideas</h2>
+      <p>
+        These are starting points, not the only options. You can pick any website you like the look of — send us the link and we'll build yours in that style.
+      </p>
+
+      <div class="style-grid">
+        <div class="style-card">
+          <div class="style-preview preview-classic">Croquet Club</div>
+          <div class="style-info">
+            <h3>CAQ Classic</h3>
+            <p>Bold QLD maroon, ink drawings, community noticeboard feel. The standard.</p>
+          </div>
+        </div>
+        <div class="style-card">
+          <div class="style-preview preview-modern">CROQUET CLUB</div>
+          <div class="style-info">
+            <h3>Modern Clean</h3>
+            <p>White space, sharp type, card layouts. Fresh and minimal.</p>
+          </div>
+        </div>
+        <div class="style-card">
+          <div class="style-preview preview-vintage">Croquet Club</div>
+          <div class="style-info">
+            <h3>Vintage Club</h3>
+            <p>Warm linen, editorial serif, old-school elegance. Timeless.</p>
+          </div>
+        </div>
+        <div class="style-card">
+          <div class="style-preview preview-bold">CROQUET</div>
+          <div class="style-info">
+            <h3>Bold &amp; Bright</h3>
+            <p>Dark backgrounds, neon pops, high contrast. Stands out.</p>
+          </div>
+        </div>
+        <div class="style-card">
+          <div class="style-preview preview-coastal">Croquet Club</div>
+          <div class="style-info">
+            <h3>Coastal</h3>
+            <p>Ocean navy, seafoam green, sandy warmth. For clubs near the water.</p>
+          </div>
+        </div>
+        <div class="style-card">
+          <div class="style-preview preview-custom">Your Style Here</div>
+          <div class="style-info">
+            <h3>Something Else?</h3>
+            <p>Send us any website you like. We'll make yours look like that.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top: var(--space-xl);">Browse for Inspiration</h3>
+      <p>These galleries have thousands of professional website designs. Find one that catches your eye and send us the link.</p>
+      <div class="gallery-links">
+        <a href="https://webflow.com/templates" class="gallery-link" target="_blank" rel="noopener">
+          Webflow Templates
+          <small>Polished, modern, huge variety</small>
+        </a>
+        <a href="https://squarespace.com/templates" class="gallery-link" target="_blank" rel="noopener">
+          Squarespace
+          <small>Clean, accessible, easy to browse</small>
+        </a>
+        <a href="https://onepagelove.com" class="gallery-link" target="_blank" rel="noopener">
+          One Page Love
+          <small>Curated single-page designs</small>
+        </a>
+        <a href="https://www.siteinspire.com" class="gallery-link" target="_blank" rel="noopener">
+          SiteInspire
+          <small>Excellent web design showcase</small>
+        </a>
+        <a href="https://www.awwwards.com" class="gallery-link" target="_blank" rel="noopener">
+          Awwwards
+          <small>Award-winning sites</small>
+        </a>
+      </div>
+
+      <p style="text-align: center; margin-top: var(--space-md); font-style: italic; color: var(--text-muted);">
+        See something you like? Send us the link. We'll build yours in that style.
+      </p>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">~ &#9823; ~</div>
+
+  <!-- WHAT YOU GET -->
+  <section class="reveal">
+    <div class="card">
+      <div class="section-label">What You Get</div>
+      <h2>No Catch</h2>
+
+      <div class="benefits">
+        <div class="benefit">
+          <h3>Mobile-Friendly</h3>
+          <p>Looks great on phones, tablets, and desktops. Members check play times on the go.</p>
+        </div>
+        <div class="benefit">
+          <h3>Fast</h3>
+          <p>No bloated frameworks. Pages load instantly, even on slow connections.</p>
+        </div>
+        <div class="benefit">
+          <h3>Free Hosting</h3>
+          <p>We host your site at no cost. No domain to buy, no server to manage.</p>
+        </div>
+        <div class="benefit">
+          <h3>Easy Updates</h3>
+          <p>Email us in plain English: "Change Tuesday Golf to 9:30am." We make it happen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true">~ &#9823; ~</div>
+
+  <!-- CTA -->
+  <section class="reveal">
+    <div class="card" style="text-align: center;">
+      <h2>Want One?</h2>
+      <p style="max-width: 450px; margin: 0 auto var(--space-lg);">
+        Send us your club's info — playing times, contacts, anything you want on the site. Word docs, emails, photos of a noticeboard. We'll take it from there.
+      </p>
+      <a href="mailto:hello@croquetclaude.com?subject=Club%20Website" class="btn btn-primary">Get in touch</a>
+      <p style="margin-top: var(--space-sm); font-size: 0.85rem; color: var(--text-muted);">
+        hello@croquetclaude.com
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>A <a href="https://www.croquetqld.org">Croquet Queensland</a> initiative</p>
+  <p>Built by <a href="https://croquetclaude.com">CroquetClaude</a></p>
+</footer>
+
+<script>
+  (function() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!window.IntersectionObserver) {
+      reveals.forEach(function(el) { el.classList.add('visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(function(el) { observer.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
