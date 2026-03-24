@@ -1,896 +1,1200 @@
 <!DOCTYPE html>
 <html lang="en-AU">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Headland Buderim Croquet Club — four lawns, fifty members, open six days a week on Queensland's Sunshine Coast. Come and play.">
-  <title>Headland Buderim Croquet Club</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* ============================================
-       HEADLAND BUDERIM CROQUET CLUB
-       Style: CAQ Classic + Buderim personality
-       Palette: QLD Maroon, Lawn Green, Cream
-       ============================================ */
-
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      /* Brand colours — QLD Maroon is locked */
-      --maroon: #73182C;
-      --maroon-dark: #5a1323;
-      --maroon-light: #9e3a50;
-      --maroon-subtle: #f5e8eb;
-      --green: #82b25e;
-      --green-dark: #6a944c;
-      --green-light: #a8cf8a;
-      --cream: #FCF6DA;
-      --cream-dark: #f0e8c4;
-      --white: #FFFDF5;
-      --text: #2c1810;
-      --text-muted: #6b5c54;
-
-      /* Spacing — 8pt grid */
-      --space-xs: 0.5rem;
-      --space-sm: 1rem;
-      --space-md: 1.5rem;
-      --space-lg: 2rem;
-      --space-xl: 3rem;
-      --space-2xl: 4rem;
-      --space-3xl: 6rem;
-
-      /* Typography */
-      --font-display: 'Abril Fatface', serif;
-      --font-body: 'Lato', sans-serif;
-
-      /* Shadows */
-      --shadow-sm: 0 1px 3px rgba(44, 24, 16, 0.08);
-      --shadow-md: 0 4px 12px rgba(44, 24, 16, 0.1);
-      --shadow-lift: 0 8px 24px rgba(44, 24, 16, 0.14);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-body);
-      font-size: clamp(1rem, 1.5vw, 1.125rem);
-      line-height: 1.65;
-      color: var(--text);
-      background-color: var(--green);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ---- NAV ---- */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(115, 24, 44, 0.95);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: var(--space-xs) var(--space-md);
-      display: flex;
-      justify-content: center;
-      gap: var(--space-md);
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--cream);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: var(--space-xs) var(--space-sm);
-      border-radius: 4px;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    nav a:hover {
-      background: rgba(252, 246, 218, 0.15);
-      transform: translateY(-1px);
-    }
-
-    nav a:focus-visible {
-      outline: 2px solid var(--cream);
-      outline-offset: 2px;
-    }
-
-    /* ---- MAIN CONTENT COLUMN ---- */
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 var(--space-md);
-    }
-
-    /* ---- HERO ---- */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: var(--space-3xl) var(--space-md);
-      position: relative;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: var(--maroon);
-      color: var(--cream);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: var(--space-xs) var(--space-sm);
-      border-radius: 4px;
-      margin-bottom: var(--space-md);
-    }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 7vw, 4.5rem);
-      color: var(--maroon);
-      line-height: 1.1;
-      letter-spacing: 0.01em;
-      margin-bottom: var(--space-md);
-      text-shadow: 0 2px 4px rgba(44, 24, 16, 0.06);
-    }
-
-    .hero-identity {
-      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-      color: var(--text);
-      max-width: 500px;
-      margin-bottom: var(--space-xl);
-      line-height: 1.5;
-    }
-
-    /* ---- BUTTONS ---- */
-    .btn {
-      display: inline-block;
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 0.875rem 2rem;
-      border-radius: 6px;
-      border: 3px solid;
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .btn:active {
-      transform: translateY(1px) !important;
-      box-shadow: var(--shadow-sm) !important;
-    }
-
-    .btn-primary {
-      background: var(--maroon);
-      color: var(--cream);
-      border-color: var(--maroon-dark);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lift);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--maroon);
-      border-color: var(--maroon);
-    }
-
-    .btn-secondary:hover {
-      background: var(--maroon);
-      color: var(--cream);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .btn:focus-visible {
-      outline: 3px solid var(--green);
-      outline-offset: 3px;
-    }
-
-    /* ---- SECTIONS ---- */
-    section {
-      padding: var(--space-3xl) 0;
-    }
-
-    .card {
-      background: var(--cream);
-      border: 3px solid var(--maroon);
-      border-radius: 8px;
-      padding: clamp(1.5rem, 4vw, 2.5rem);
-      box-shadow: var(--shadow-md);
-      position: relative;
-    }
-
-    /* Double-border effect */
-    .card::before {
-      content: '';
-      position: absolute;
-      inset: 4px;
-      border: 1px solid var(--maroon);
-      border-radius: 4px;
-      pointer-events: none;
-      opacity: 0.3;
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--maroon-light);
-      margin-bottom: var(--space-xs);
-    }
-
-    h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      color: var(--maroon);
-      line-height: 1.15;
-      margin-bottom: var(--space-md);
-    }
-
-    h3 {
-      font-family: var(--font-display);
-      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-      color: var(--maroon);
-      margin-bottom: var(--space-sm);
-    }
-
-    p + p {
-      margin-top: var(--space-sm);
-    }
-
-    /* ---- DIVIDERS ---- */
-    .divider {
-      text-align: center;
-      padding: var(--space-lg) 0;
-      color: var(--maroon);
-      font-size: 0.9rem;
-      letter-spacing: 0.3em;
-      opacity: 0.5;
-    }
-
-    /* ---- SCHEDULE ---- */
-    .schedule-toggle {
-      display: flex;
-      gap: var(--space-xs);
-      margin-bottom: var(--space-md);
-    }
-
-    .schedule-toggle button {
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      font-weight: 700;
-      padding: var(--space-xs) var(--space-sm);
-      border: 2px solid var(--maroon);
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      background: transparent;
-      color: var(--maroon);
-    }
-
-    .schedule-toggle button.active {
-      background: var(--maroon);
-      color: var(--cream);
-    }
-
-    .schedule-toggle button:hover:not(.active) {
-      background: var(--maroon-subtle);
-    }
-
-    .schedule-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-
-    .schedule-table th {
-      text-align: left;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--maroon);
-      padding: var(--space-xs) var(--space-xs);
-      border-bottom: 2px solid var(--maroon);
-    }
-
-    .schedule-table td {
-      padding: var(--space-xs);
-      border-bottom: 1px solid rgba(115, 24, 44, 0.1);
-      vertical-align: top;
-    }
-
-    .schedule-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .schedule-table .day {
-      font-weight: 700;
-      color: var(--maroon);
-      white-space: nowrap;
-    }
-
-    .schedule-table .time {
-      color: var(--text);
-    }
-
-    .schedule-table .empty {
-      color: var(--text-muted);
-      opacity: 0.4;
-    }
-
-    .schedule-note {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: var(--space-sm);
-      font-style: italic;
-    }
-
-    /* Mobile schedule: cards instead of table */
-    @media (max-width: 540px) {
-      .schedule-table thead { display: none; }
-      .schedule-table, .schedule-table tbody, .schedule-table tr, .schedule-table td {
-        display: block;
-      }
-      .schedule-table tr {
-        padding: var(--space-sm) 0;
-        border-bottom: 1px solid rgba(115, 24, 44, 0.12);
-      }
-      .schedule-table tr:last-child { border-bottom: none; }
-      .schedule-table td {
-        border-bottom: none;
-        padding: 2px var(--space-xs);
-      }
-      .schedule-table td::before {
-        content: attr(data-label);
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--maroon-light);
-        display: block;
-      }
-      .schedule-table .day {
-        font-size: 1.1rem;
-        margin-bottom: 4px;
-      }
-    }
-
-    /* ---- COME & TRY ---- */
-    .highlight-box {
-      background: var(--white);
-      border-left: 4px solid var(--green);
-      padding: var(--space-md);
-      border-radius: 0 6px 6px 0;
-      margin: var(--space-md) 0;
-    }
-
-    .highlight-box strong {
-      color: var(--maroon);
-    }
-
-    /* ---- FEES ---- */
-    .fee-grid {
-      display: grid;
-      gap: var(--space-sm);
-    }
-
-    .fee-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: var(--space-xs) 0;
-      border-bottom: 1px dotted rgba(115, 24, 44, 0.2);
-    }
-
-    .fee-row:last-child {
-      border-bottom: none;
-    }
-
-    .fee-label {
-      color: var(--text);
-    }
-
-    .fee-amount {
-      font-weight: 700;
-      color: var(--maroon);
-      white-space: nowrap;
-    }
-
-    .fee-free {
-      background: var(--green);
-      color: white;
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-
-    /* ---- MAP ---- */
-    .map-container {
-      border: 3px solid var(--maroon);
-      border-radius: 8px;
-      overflow: hidden;
-      margin: var(--space-md) 0;
-      box-shadow: var(--shadow-md);
-    }
-
-    .map-container iframe {
-      display: block;
-      width: 100%;
-      height: 300px;
-      border: 0;
-    }
-
-    /* ---- CONTACT CARDS ---- */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: var(--space-md);
-      margin-top: var(--space-md);
-    }
-
-    .contact-person {
-      background: var(--white);
-      border: 2px solid rgba(115, 24, 44, 0.15);
-      border-radius: 6px;
-      padding: var(--space-md);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .contact-person:hover {
-      border-color: var(--maroon);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .contact-role {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--maroon-light);
-    }
-
-    .contact-name {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      color: var(--maroon);
-      margin: 4px 0;
-    }
-
-    .contact-email a {
-      color: var(--green-dark);
-      text-decoration: none;
-      font-size: 0.9rem;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    .contact-email a:hover {
-      border-bottom-color: var(--green-dark);
-    }
-
-    .contact-phone {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    /* ---- FOOTER ---- */
-    footer {
-      background: var(--maroon);
-      color: var(--cream);
-      text-align: center;
-      padding: var(--space-xl) var(--space-md);
-      margin-top: var(--space-3xl);
-    }
-
-    footer p {
-      font-size: 0.85rem;
-      opacity: 0.8;
-      line-height: 1.8;
-    }
-
-    footer a {
-      color: var(--green-light);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Ginger flower SVG — Buderim's signature */
-    .ginger-motif {
-      display: inline-block;
-      opacity: 0.2;
-      margin: 0 var(--space-xs);
-      vertical-align: middle;
-    }
-
-    /* ---- SCROLL REVEALS ---- */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ---- ACCESSIBILITY ---- */
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-      .btn, nav a, .contact-person, .contact-email a {
-        transition: none;
-      }
-    }
-
-    /* Skip link */
-    .skip-link {
-      position: absolute;
-      top: -100%;
-      left: var(--space-md);
-      background: var(--maroon);
-      color: var(--cream);
-      padding: var(--space-xs) var(--space-sm);
-      border-radius: 4px;
-      z-index: 200;
-      font-size: 0.85rem;
-    }
-
-    .skip-link:focus {
-      top: var(--space-xs);
-    }
-
-    /* ---- SUBTLE TEXTURE ---- */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      opacity: 0.025;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: -1;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Headland Buderim Croquet Club — four lawns on the ridge, fifty members, open six days a week. Buderim, Sunshine Coast.">
+<title>Headland Buderim Croquet Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ==============================================
+   HEADLAND BUDERIM CROQUET CLUB
+   Concept: "Buderim's Eternal Afternoon"
+   ============================================== */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ginger: #E57325;
+  --ginger-light: #F0A06A;
+  --ginger-dark: #C45E1A;
+  --ginger-glow: rgba(229, 115, 37, 0.12);
+  --ginger-warm: rgba(229, 115, 37, 0.06);
+  --canopy: #4E6D50;
+  --canopy-deep: #2C3E2F;
+  --canopy-light: #7A9B7C;
+  --canopy-glass: rgba(44, 62, 47, 0.88);
+  --ridge: #B08968;
+  --ridge-light: #D4C4B0;
+  --ridge-subtle: rgba(176, 137, 104, 0.12);
+  --haze: #D4E2D4;
+  --afternoon: #F5F0E8;
+  --afternoon-pure: #FDFAF4;
+  --text: #1C2A1E;
+  --text-muted: #6B7D6E;
+  --shadow-soft: 0 8px 32px rgba(44, 62, 47, 0.08);
+  --shadow-lift: 0 16px 48px rgba(44, 62, 47, 0.14);
+  --shadow-glow: 0 4px 24px rgba(229, 115, 37, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--haze); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--canopy), var(--canopy-deep));
+  border-radius: 5px;
+  border: 2px solid var(--haze);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--canopy-light); }
+html { scrollbar-color: var(--canopy) var(--haze); scrollbar-width: thin; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--afternoon);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Grain overlay — subtle life */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: multiply;
+}
+
+/* ---- SCROLL PROGRESS ---- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ginger), var(--ginger-light));
+  width: 0%;
+  z-index: 1001;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(229, 115, 37, 0.4);
+}
+
+/* ---- NAV ---- */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 2rem);
+  background: var(--canopy-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(229, 115, 37, 0.2);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav.scrolled {
+  background: rgba(44, 62, 47, 0.95);
+  box-shadow: 0 4px 20px rgba(28, 42, 30, 0.3);
+}
+
+nav a {
+  color: var(--afternoon);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--ginger);
+  transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+nav a:hover { color: var(--ginger-light); }
+nav a:hover::after { width: 100%; }
+
+nav a:focus-visible {
+  outline: 2px solid var(--ginger);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ---- CONTENT WRAPPER ---- */
+.content { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+
+/* ---- HERO ---- */
+.hero {
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 2rem 6rem;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(229, 115, 37, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(78, 109, 80, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, var(--afternoon) 0%, var(--haze) 100%);
+}
+
+/* Floating ginger leaf decorations */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  right: 8%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(ellipse, rgba(229, 115, 37, 0.07) 0%, transparent 70%);
+  border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(ellipse, rgba(78, 109, 80, 0.06) 0%, transparent 70%);
+  border-radius: 40% 60% 50% 50% / 60% 40% 50% 50%;
+  animation: float 10s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(8px, -12px) rotate(2deg); }
+  66% { transform: translate(-5px, 8px) rotate(-1deg); }
+}
+
+.hero-overline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--canopy);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.2s forwards;
+}
+
+.hero-overline .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--ginger);
+  border-radius: 50%;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: var(--canopy-deep);
+  max-width: 14ch;
+  text-wrap: balance;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.4s forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--ginger);
+  font-weight: 400;
+}
+
+.hero-sub {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 1s ease 0.6s forwards;
+}
+
+.hero-cta {
+  opacity: 0;
+  animation: fadeUp 1s ease 0.8s forwards;
+}
+
+/* Scroll hint */
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeUp 1s ease 1.2s forwards;
+}
+
+.scroll-hint .arrow {
+  width: 1px;
+  height: 24px;
+  background: linear-gradient(to bottom, var(--canopy-light), transparent);
+  animation: pulse-down 2s ease-in-out infinite;
+}
+
+@keyframes pulse-down {
+  0%, 100% { transform: scaleY(1); opacity: 0.6; }
+  50% { transform: scaleY(1.4); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- BUTTONS ---- */
+.btn {
+  display: inline-block;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2.25rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--ginger), var(--ginger-dark));
+  color: white;
+  box-shadow: 0 4px 16px rgba(229, 115, 37, 0.3),
+              inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow),
+              0 12px 32px rgba(229, 115, 37, 0.25),
+              inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(229, 115, 37, 0.2),
+              inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--canopy-deep);
+  border: 2px solid var(--ridge);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-outline:hover {
+  background: var(--canopy-deep);
+  color: var(--afternoon);
+  border-color: var(--canopy-deep);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
+}
+
+.btn-outline:active { transform: translateY(1px); box-shadow: var(--shadow-soft); }
+
+.btn:focus-visible {
+  outline: 3px solid var(--ginger);
+  outline-offset: 4px;
+}
+
+/* ---- SECTIONS ---- */
+section {
+  padding: clamp(5rem, 12vw, 8rem) 0;
+  position: relative;
+}
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ginger);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ginger), transparent);
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--canopy-deep);
+  text-wrap: balance;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: var(--canopy-deep);
+  margin-bottom: 0.5rem;
+}
+
+p + p { margin-top: 1rem; }
+
+/* Section backgrounds alternate */
+.bg-haze { background: var(--haze); }
+.bg-afternoon { background: var(--afternoon); }
+
+/* Organic section transition — curved */
+.section-wave {
+  height: 60px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- ABOUT ---- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-text { max-width: 55ch; }
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-self: center;
+}
+
+.stat-card {
+  background: var(--afternoon-pure);
+  border: 1px solid var(--ridge-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--ginger);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (max-width: 720px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ---- SCHEDULE ---- */
+.schedule-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.season-btn {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.6rem 1.25rem;
+  border: 2px solid var(--canopy);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--canopy);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.season-btn.active {
+  background: var(--canopy-deep);
+  border-color: var(--canopy-deep);
+  color: var(--afternoon);
+  box-shadow: 0 4px 12px rgba(44, 62, 47, 0.2);
+}
+
+.season-btn:not(.active):hover {
+  background: var(--haze);
+}
+
+.schedule-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.schedule-table-wrap {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.schedule-table-wrap.hidden {
+  opacity: 0;
+  transform: translateY(8px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.schedule {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: var(--afternoon-pure);
+}
+
+.schedule th {
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--afternoon);
+  background: var(--canopy-deep);
+  padding: 1rem;
+}
+
+.schedule td {
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(176, 137, 104, 0.1);
+  transition: background 0.2s ease;
+}
+
+.schedule tr:last-child td { border-bottom: none; }
+
+.schedule tbody tr:nth-child(even) td {
+  background: rgba(212, 226, 212, 0.2);
+}
+
+.schedule tbody tr:hover td {
+  background: var(--ginger-glow);
+}
+
+.schedule .day-name {
+  font-weight: 700;
+  color: var(--canopy-deep);
+}
+
+.schedule .time-slot {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.schedule .empty {
+  color: var(--ridge-light);
+  font-size: 0.85rem;
+}
+
+.schedule-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Mobile schedule */
+@media (max-width: 640px) {
+  .schedule thead { display: none; }
+  .schedule, .schedule tbody, .schedule tr, .schedule td { display: block; }
+  .schedule tr {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--ridge-subtle);
+  }
+  .schedule tr:last-child { border-bottom: none; }
+  .schedule td {
+    border-bottom: none;
+    padding: 3px 0;
+  }
+  .schedule td::before {
+    content: attr(data-col);
+    display: inline-block;
+    width: 100px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--canopy-light);
+  }
+  .schedule .day-name { font-size: 1.05rem; margin-bottom: 4px; }
+  .schedule .day-name::before { display: none; }
+  .schedule { box-shadow: none; background: none; }
+  .schedule tbody tr:nth-child(even) td { background: none; }
+}
+
+/* ---- COME & TRY ---- */
+.try-highlight {
+  background: linear-gradient(135deg, var(--ginger-warm), rgba(229, 115, 37, 0.03));
+  border-left: 4px solid var(--ginger);
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-soft);
+}
+
+.try-highlight strong { color: var(--ginger-dark); }
+
+.try-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.try-item {
+  background: var(--afternoon-pure);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid var(--ridge-subtle);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.try-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
+}
+
+.try-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.try-item h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+.try-item p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+@media (max-width: 640px) {
+  .try-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- FEES ---- */
+.fee-list {
+  max-width: 520px;
+}
+
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--ridge-subtle);
+}
+
+.fee-row:last-child { border-bottom: none; }
+
+.fee-label { color: var(--text); }
+
+.fee-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--canopy-deep);
+}
+
+.fee-free {
+  background: linear-gradient(135deg, var(--ginger), var(--ginger-dark));
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(229, 115, 37, 0.25);
+}
+
+/* ---- MAP ---- */
+.map-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+  border: 1px solid var(--ridge-subtle);
+  margin: 2rem 0;
+}
+
+.map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+
+/* ---- CONTACT ---- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.contact-card {
+  background: var(--afternoon-pure);
+  border: 1px solid var(--ridge-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              border-color 0.3s ease;
+  perspective: 800px;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px) rotateY(2deg);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--ginger);
+}
+
+.contact-role {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ginger);
+}
+
+.contact-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--canopy-deep);
+  margin: 0.25rem 0;
+}
+
+.contact-detail {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.contact-detail a {
+  color: var(--canopy);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-detail a:hover {
+  color: var(--ginger);
+  border-bottom-color: var(--ginger);
+}
+
+/* ---- GINGER DIVIDER ---- */
+.ginger-divider {
+  text-align: center;
+  padding: 1rem 0;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background: linear-gradient(180deg, var(--canopy-deep) 0%, #1E2D20 100%);
+  color: var(--haze);
+  padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+  position: relative;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--afternoon);
+  margin-bottom: 0.75rem;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: var(--canopy-light);
+  line-height: 1.6;
+  max-width: 36ch;
+}
+
+footer h4 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ginger-light);
+  margin-bottom: 1rem;
+}
+
+.footer-links { list-style: none; }
+
+.footer-links li { margin-bottom: 0.5rem; }
+
+.footer-links a {
+  color: var(--canopy-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover { color: var(--ginger-light); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(122, 155, 124, 0.15);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--canopy-light);
+  opacity: 0.7;
+}
+
+.footer-bottom a { color: var(--ginger-light); text-decoration: none; }
+.footer-bottom a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+/* ---- REVEALS ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.25s; opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.35s; opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.45s; opacity: 1; transform: none; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.55s; opacity: 1; transform: none; }
+
+/* ---- ACCESSIBILITY ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal, .reveal-stagger > * { opacity: 1; transform: none; }
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--ginger);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 8px 8px;
+  z-index: 2000;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.skip-link:focus { top: 0; }
+</style>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- NAV -->
-<nav aria-label="Main navigation">
+<nav id="mainNav">
   <a href="#about">About</a>
   <a href="#schedule">Play Times</a>
-  <a href="#try">Come &amp; Try</a>
+  <a href="#try">Come & Try</a>
   <a href="#find">Find Us</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-badge">Sunshine Coast, Queensland</div>
-  <h1>Headland Buderim<br>Croquet Club</h1>
-  <p class="hero-identity">
-    Four lawns. Fifty members. Open six days a week in Buderim, on Queensland's Sunshine Coast.
+  <div class="hero-overline">
+    <span class="dot"></span>
+    Buderim, Sunshine Coast
+    <span class="dot"></span>
+  </div>
+  <h1>Headland<br>Buderim <em>Croquet</em></h1>
+  <p class="hero-sub">
+    Four lawns on the ridge. Fifty members. Six days a week.
+    Come for a game, stay for the afternoon.
   </p>
-  <div>
+  <div class="hero-cta">
     <a href="#try" class="btn btn-primary">Come and play</a>
   </div>
+  <div class="scroll-hint">
+    <span>Explore</span>
+    <span class="arrow"></span>
+  </div>
 
-  <!-- Decorative mallet & hoop SVG -->
-  <svg style="position:absolute;bottom:2rem;opacity:0.08;width:120px;" viewBox="0 0 100 120" fill="none" stroke="var(--maroon)" stroke-width="2" stroke-linecap="round">
-    <rect x="20" y="10" width="40" height="16" rx="3"/>
-    <line x1="40" y1="26" x2="40" y2="90"/>
-    <path d="M60 95 Q60 110 75 110 Q90 110 90 95" fill="none" stroke-width="2.5"/>
-    <circle cx="72" cy="108" r="4"/>
+  <!-- Easter egg: faint ginger root SVG -->
+  <svg style="position:absolute;bottom:12%;right:10%;width:200px;opacity:0.04;pointer-events:none;" viewBox="0 0 200 120" fill="none" stroke="var(--ridge)" stroke-width="1.2">
+    <path d="M100 110 C100 80 90 60 70 40 C55 25 60 10 80 15 C95 18 100 35 100 35 C100 35 105 18 120 15 C140 10 145 25 130 40 C110 60 100 80 100 110Z" />
+    <path d="M80 35 C65 30 50 35 45 50" />
+    <path d="M120 35 C135 30 150 35 155 50" />
+    <path d="M90 55 C75 50 60 55 55 70" />
+    <path d="M110 55 C125 50 140 55 145 70" />
   </svg>
 </header>
+
+<!-- WAVE: hero → about -->
+<div class="section-wave">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,40 C360,0 1080,80 1440,30 L1440,60 L0,60 Z" fill="var(--afternoon)"/>
+  </svg>
+</div>
 
 <main id="main">
 
   <!-- ABOUT -->
-  <section id="about" class="reveal">
-    <div class="card">
+  <section id="about" class="bg-afternoon">
+    <div class="content reveal">
       <div class="section-label">About the Club</div>
-      <h2>More Than a Game</h2>
-      <p>
-        Headland Buderim is one of Queensland's larger croquet clubs. We have four full-size courts, more than fifty members, and sessions running six days a week across three codes: Association Croquet, Golf Croquet, and Ricochet.
-      </p>
-      <p>
-        Some of us play for the competition — our teams go up against clubs across the Sunshine Coast region, and our best players get picked for State and national squads. Others just want fresh air, a bit of exercise, and good company on a Tuesday morning. Both are welcome here.
-      </p>
-      <p>
-        Every session includes a social break. We run events through the year. Our coaches are fully qualified and work with beginners through to advanced players. The clubhouse is available for hire, and we run group introduction sessions for workplaces and community groups.
-      </p>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>More Than a Game on the Ridge</h2>
+          <p>
+            Headland Buderim sits 100 metres above the coast in one of the Sunshine Coast's leafiest corners. Four full-size courts, more than fifty members, and sessions running six days a week across three codes.
+          </p>
+          <p>
+            Some play for competition — our teams match up across the region, and our best get picked for State and national squads. Others come for the morning air, a bit of exercise, and the company. Both belong here.
+          </p>
+          <p>
+            Every session has a social break. The coaches are qualified. The clubhouse is warm. The lawns are good. That's about it, really.
+          </p>
+        </div>
+        <div class="about-stats reveal-stagger">
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Members</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Full Courts</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Codes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Days a Week</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <div class="divider" aria-hidden="true">~ &#9823; ~</div>
+  <!-- WAVE: about → schedule -->
+  <div class="section-wave bg-afternoon">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="var(--haze)"/>
+    </svg>
+  </div>
 
-  <!-- PLAY SCHEDULE -->
-  <section id="schedule" class="reveal">
-    <div class="card">
+  <!-- SCHEDULE -->
+  <section id="schedule" class="bg-haze">
+    <div class="content reveal">
       <div class="section-label">When to Play</div>
-      <h2>Play Schedule</h2>
+      <h2>The Week at a Glance</h2>
 
-      <div class="schedule-toggle" role="tablist" aria-label="Season selection">
-        <button role="tab" class="active" aria-selected="true" onclick="showSeason('summer')" id="tab-summer">Summer<span style="font-weight:400;opacity:0.7"> (Oct–Apr)</span></button>
-        <button role="tab" aria-selected="false" onclick="showSeason('winter')" id="tab-winter">Winter<span style="font-weight:400;opacity:0.7"> (May–Sep)</span></button>
+      <div class="schedule-controls">
+        <button class="season-btn active" id="btn-summer" onclick="showSeason('summer')">
+          Summer <span style="opacity:0.6;font-weight:400">Oct – Apr</span>
+        </button>
+        <button class="season-btn" id="btn-winter" onclick="showSeason('winter')">
+          Winter <span style="opacity:0.6;font-weight:400">May – Sep</span>
+        </button>
       </div>
 
-      <!-- SUMMER TABLE -->
-      <table class="schedule-table" id="schedule-summer" role="tabpanel" aria-labelledby="tab-summer">
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Association</th>
-            <th>Ricochet</th>
-            <th>Golf</th>
-            <th>Social</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="day" data-label="">Monday</td>
-            <td class="time" data-label="Association">1 pm</td>
-            <td class="empty" data-label="Ricochet">—</td>
-            <td class="empty" data-label="Golf">—</td>
-            <td class="empty" data-label="Social">—</td>
-          </tr>
-          <tr>
-            <td class="day" data-label="">Tuesday</td>
-            <td class="empty" data-label="Association">—</td>
-            <td class="empty" data-label="Ricochet">—</td>
-            <td class="time" data-label="Golf">9 am</td>
-            <td class="time" data-label="Social">3 pm</td>
-          </tr>
-          <tr>
-            <td class="day" data-label="">Wednesday</td>
-            <td class="empty" data-label="Association">—</td>
-            <td class="time" data-label="Ricochet">1 pm</td>
-            <td class="empty" data-label="Golf">—</td>
-            <td class="empty" data-label="Social">—</td>
-          </tr>
-          <tr>
-            <td class="day" data-label="">Friday</td>
-            <td class="empty" data-label="Association">—</td>
-            <td class="empty" data-label="Ricochet">—</td>
-            <td class="time" data-label="Golf">9 am</td>
-            <td class="time" data-label="Social">3 pm</td>
-          </tr>
-          <tr>
-            <td class="day" data-label="">Saturday</td>
-            <td class="time" data-label="Association">1 pm</td>
-            <td class="empty" data-label="Ricochet">—</td>
-            <td class="empty" data-label="Golf">—</td>
-            <td class="empty" data-label="Social">—</td>
-          </tr>
-          <tr>
-            <td class="day" data-label="">Sunday</td>
-            <td class="empty" data-label="Association">—</td>
-            <td class="empty" data-label="Ricochet">—</td>
-            <td class="time" data-label="Golf">9 am</td>
-            <td class="empty" data-label="Social">—</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="schedule-wrap">
+        <div class="schedule-table-wrap" id="summer-schedule">
+          <table class="schedule">
+            <thead><tr><th>Day</th><th>Association</th><th>Ricochet</th><th>Golf</th><th>Social</th></tr></thead>
+            <tbody>
+              <tr><td class="day-name" data-col="">Monday</td><td class="time-slot" data-col="Association">1 pm</td><td class="empty" data-col="Ricochet">—</td><td class="empty" data-col="Golf">—</td><td class="empty" data-col="Social">—</td></tr>
+              <tr><td class="day-name" data-col="">Tuesday</td><td class="empty" data-col="Association">—</td><td class="empty" data-col="Ricochet">—</td><td class="time-slot" data-col="Golf">9 am</td><td class="time-slot" data-col="Social">3 pm</td></tr>
+              <tr><td class="day-name" data-col="">Wednesday</td><td class="empty" data-col="Association">—</td><td class="time-slot" data-col="Ricochet">1 pm</td><td class="empty" data-col="Golf">—</td><td class="empty" data-col="Social">—</td></tr>
+              <tr><td class="day-name" data-col="">Friday</td><td class="empty" data-col="Association">—</td><td class="empty" data-col="Ricochet">—</td><td class="time-slot" data-col="Golf">9 am</td><td class="time-slot" data-col="Social">3 pm</td></tr>
+              <tr><td class="day-name" data-col="">Saturday</td><td class="time-slot" data-col="Association">1 pm</td><td class="empty" data-col="Ricochet">—</td><td class="empty" data-col="Golf">—</td><td class="empty" data-col="Social">—</td></tr>
+              <tr><td class="day-name" data-col="">Sunday</td><td class="empty" data-col="Association">—</td><td class="empty" data-col="Ricochet">—</td><td class="time-slot" data-col="Golf">9 am</td><td class="empty" data-col="Social">—</td></tr>
+            </tbody>
+          </table>
+        </div>
 
-      <!-- WINTER TABLE -->
-      <table class="schedule-table" id="schedule-winter" role="tabpanel" aria-labelledby="tab-winter" style="display:none;">
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Association</th>
-            <th>Ricochet</th>
-            <th>Golf</th>
-            <th>Social</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="day" data-label="">Monday</td>
-            <td class="time" data-label="Association">1 pm</td>
-            <td class="empty" data-label="Ricochet">—</td>
-            <td class="empty" data-label="Golf">—</td>
-            <td class="empty" data-label="Social">—</td>
-          </tr>
-          <tr>
-            <td class="day" data-label="">Tuesday</td>
-            <td class="empty" data-label="Association">—</td>
-            <td class="empty" data-label="Ricochet">—</td>
-            <td class="time" data-label="Golf">9 am</td>
-            <td class="time" data-label="Social">2 pm</td>
-          </tr>
-          <tr>
-            <td class="day" data-label="">Wednesday</td>
-            <td class="empty" data-label="Association">—</td>
-            <td class="time" data-label="Ricochet">1 pm</td>
-            <td class="empty" data-label="Golf">—</td>
-            <td class="empty" data-label="Social">—</td>
-          </tr>
-          <tr>
-            <td class="day" data-label="">Friday</td>
-            <td class="empty" data-label="Association">—</td>
-            <td class="empty" data-label="Ricochet">—</td>
-            <td class="time" data-label="Golf">9 am</td>
-            <td class="time" data-label="Social">2 pm</td>
-          </tr>
-          <tr>
-            <td class="day" data-label="">Saturday</td>
-            <td class="time" data-label="Association">1 pm</td>
-            <td class="empty" data-label="Ricochet">—</td>
-            <td class="empty" data-label="Golf">—</td>
-            <td class="empty" data-label="Social">—</td>
-          </tr>
-          <tr>
-            <td class="day" data-label="">Sunday</td>
-            <td class="empty" data-label="Association">—</td>
-            <td class="empty" data-label="Ricochet">—</td>
-            <td class="time" data-label="Golf">9 am</td>
-            <td class="empty" data-label="Social">—</td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="schedule-table-wrap hidden" id="winter-schedule">
+          <table class="schedule">
+            <thead><tr><th>Day</th><th>Association</th><th>Ricochet</th><th>Golf</th><th>Social</th></tr></thead>
+            <tbody>
+              <tr><td class="day-name" data-col="">Monday</td><td class="time-slot" data-col="Association">1 pm</td><td class="empty" data-col="Ricochet">—</td><td class="empty" data-col="Golf">—</td><td class="empty" data-col="Social">—</td></tr>
+              <tr><td class="day-name" data-col="">Tuesday</td><td class="empty" data-col="Association">—</td><td class="empty" data-col="Ricochet">—</td><td class="time-slot" data-col="Golf">9 am</td><td class="time-slot" data-col="Social">2 pm</td></tr>
+              <tr><td class="day-name" data-col="">Wednesday</td><td class="empty" data-col="Association">—</td><td class="time-slot" data-col="Ricochet">1 pm</td><td class="empty" data-col="Golf">—</td><td class="empty" data-col="Social">—</td></tr>
+              <tr><td class="day-name" data-col="">Friday</td><td class="empty" data-col="Association">—</td><td class="empty" data-col="Ricochet">—</td><td class="time-slot" data-col="Golf">9 am</td><td class="time-slot" data-col="Social">2 pm</td></tr>
+              <tr><td class="day-name" data-col="">Saturday</td><td class="time-slot" data-col="Association">1 pm</td><td class="empty" data-col="Ricochet">—</td><td class="empty" data-col="Golf">—</td><td class="empty" data-col="Social">—</td></tr>
+              <tr><td class="day-name" data-col="">Sunday</td><td class="empty" data-col="Association">—</td><td class="empty" data-col="Ricochet">—</td><td class="time-slot" data-col="Golf">9 am</td><td class="empty" data-col="Social">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       <p class="schedule-note">Please arrive 30 minutes before play.</p>
     </div>
   </section>
 
-  <div class="divider" aria-hidden="true">~ &#9823; ~</div>
+  <!-- WAVE: schedule → try -->
+  <div class="section-wave bg-haze">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 720,0 1440,45 L1440,60 L0,60 Z" fill="var(--afternoon)"/>
+    </svg>
+  </div>
 
   <!-- COME & TRY -->
-  <section id="try" class="reveal">
-    <div class="card">
+  <section id="try" class="bg-afternoon">
+    <div class="content reveal">
       <div class="section-label">Getting Started</div>
-      <h2>Come &amp; Try</h2>
+      <h2>Never Held a Mallet?</h2>
       <p>
-        Never held a mallet? No worries. Turn up to any session — your first go is free, and we supply all the gear. Flat shoes and a hat are all you need to bring.
+        No worries. Turn up to any session listed above. Your first go is free, and we supply everything — mallet, balls, the lot. Just bring flat shoes and a hat.
       </p>
 
-      <div class="highlight-box">
-        <strong>Your first session is free.</strong> No booking required. Just come along to any session listed above and introduce yourself. We'll sort you out with a mallet and show you the ropes.
+      <div class="try-highlight">
+        <strong>Your first session is completely free.</strong> No booking. No commitment. Just show up, introduce yourself, and we'll sort you out.
+      </div>
+
+      <div class="try-grid reveal-stagger">
+        <div class="try-item">
+          <span class="try-icon">🎯</span>
+          <h3>Free First Session</h3>
+          <p>No strings attached. Come along and see if you like it.</p>
+        </div>
+        <div class="try-item">
+          <span class="try-icon">🏑</span>
+          <h3>Gear Supplied</h3>
+          <p>We have beginner mallets and all the equipment you need.</p>
+        </div>
+        <div class="try-item">
+          <span class="try-icon">🎓</span>
+          <h3>$15 Coaching</h3>
+          <p>Qualified coaches run beginner sessions covering Golf and Association Croquet.</p>
+        </div>
       </div>
 
       <p>
-        If you want a proper introduction, our qualified coaches run beginner sessions for $15. They'll cover the basics of both Golf Croquet and Association Croquet, so you can find which one suits you.
+        Interested in a group session for your workplace or community group? Get in touch with the President to arrange one.
       </p>
 
-      <p>
-        Interested in a group session for your workplace, school, or community group? We run those too — get in touch with <strong>Sherry Tusler</strong> to arrange one.
-      </p>
-
-      <div style="margin-top: var(--space-lg); text-align: center;">
+      <div style="margin-top: 2rem;">
         <a href="tel:0412470755" class="btn btn-primary">Call Colin — 0412 470 755</a>
       </div>
     </div>
   </section>
 
-  <div class="divider" aria-hidden="true">~ &#9823; ~</div>
+  <!-- Ginger leaf divider -->
+  <div class="ginger-divider bg-afternoon">
+    <svg width="120" height="40" viewBox="0 0 120 40" fill="none" stroke="var(--canopy-deep)" stroke-width="1">
+      <path d="M20 35 C20 20 35 10 50 15 C55 17 58 22 60 20 C62 22 65 17 70 15 C85 10 100 20 100 35"/>
+      <path d="M50 15 C40 10 30 15 28 25"/>
+      <path d="M70 15 C80 10 90 15 92 25"/>
+      <line x1="60" y1="20" x2="60" y2="38"/>
+    </svg>
+  </div>
 
   <!-- FEES -->
-  <section id="fees" class="reveal">
-    <div class="card">
+  <section id="fees" class="bg-afternoon">
+    <div class="content reveal">
       <div class="section-label">Costs</div>
-      <h2>Fees</h2>
-      <div class="fee-grid">
-        <div class="fee-row">
-          <span class="fee-label">Come &amp; Try (first session)</span>
-          <span class="fee-free">FREE</span>
-        </div>
-        <div class="fee-row">
-          <span class="fee-label">Visitor — affiliated club member</span>
-          <span class="fee-amount">$10</span>
-        </div>
-        <div class="fee-row">
-          <span class="fee-label">Visitor — other</span>
-          <span class="fee-amount">$15</span>
-        </div>
-        <div class="fee-row">
-          <span class="fee-label">Beginner coaching session</span>
-          <span class="fee-amount">$15</span>
-        </div>
-        <div class="fee-row">
-          <span class="fee-label">Green fees — member (daily)</span>
-          <span class="fee-amount">$8</span>
-        </div>
-        <div class="fee-row">
-          <span class="fee-label">Annual membership</span>
-          <span class="fee-amount">$250</span>
-        </div>
+      <h2>What It Costs</h2>
+      <div class="fee-list">
+        <div class="fee-row"><span class="fee-label">Come & Try — first session</span><span class="fee-free">FREE</span></div>
+        <div class="fee-row"><span class="fee-label">Visitor — affiliated club</span><span class="fee-amount">$10</span></div>
+        <div class="fee-row"><span class="fee-label">Visitor — other</span><span class="fee-amount">$15</span></div>
+        <div class="fee-row"><span class="fee-label">Beginner coaching</span><span class="fee-amount">$15</span></div>
+        <div class="fee-row"><span class="fee-label">Green fees — member daily</span><span class="fee-amount">$8</span></div>
+        <div class="fee-row"><span class="fee-label">Annual membership</span><span class="fee-amount">$250</span></div>
       </div>
-      <p class="schedule-note">Fees current as at October 2024. Contact the club for the latest details.</p>
+      <p class="schedule-note">Fees current as at October 2024.</p>
     </div>
   </section>
 
-  <div class="divider" aria-hidden="true">~ &#9823; ~</div>
+  <!-- WAVE: fees → find -->
+  <div class="section-wave bg-afternoon">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,45 C480,10 960,50 1440,20 L1440,60 L0,60 Z" fill="var(--haze)"/>
+    </svg>
+  </div>
 
   <!-- FIND US -->
-  <section id="find" class="reveal">
-    <div class="card">
+  <section id="find" class="bg-haze">
+    <div class="content reveal">
       <div class="section-label">Where We Are</div>
-      <h2>Find Us</h2>
+      <h2>Up on the Ridge</h2>
       <p>
-        <strong>Syd Lingard Drive, Buderim QLD 4556</strong>
+        <strong>Syd Lingard Drive, Buderim QLD 4556</strong><br>
+        In the hinterland, above the coast. Look for the four green lawns.
       </p>
-      <p>
-        We're in Buderim, up in the Sunshine Coast hinterland. Look for the four green lawns — you can't miss them.
-      </p>
-      <div class="map-container">
+      <div class="map-frame">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.5!2d153.0966!3d-26.67873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQwJzQzLjQiUyAxNTPCsDA1JzQ3LjgiRQ!5e0!3m2!1sen!2sau!4v1"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Map showing Headland Buderim Croquet Club location">
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing Headland Buderim Croquet Club">
         </iframe>
       </div>
     </div>
   </section>
 
-  <div class="divider" aria-hidden="true">~ &#9823; ~</div>
+  <!-- WAVE: find → contact -->
+  <div class="section-wave bg-haze">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,20 C360,55 1080,10 1440,40 L1440,60 L0,60 Z" fill="var(--afternoon)"/>
+    </svg>
+  </div>
 
   <!-- CONTACT -->
-  <section id="contact" class="reveal">
-    <div class="card">
+  <section id="contact" class="bg-afternoon">
+    <div class="content reveal">
       <div class="section-label">Get in Touch</div>
-      <h2>Contact</h2>
-      <p>Questions? Want to know more before you visit? Drop us a line.</p>
+      <h2>Say Hello</h2>
+      <p>Drop us a line. We're friendly — it's kind of our thing.</p>
 
-      <div class="contact-grid">
-        <div class="contact-person">
+      <div class="contact-grid reveal-stagger">
+        <div class="contact-card">
           <div class="contact-role">President</div>
           <div class="contact-name">Sherry Tusler</div>
-          <div class="contact-email"><a href="mailto:hbcroquetclub.president@gmail.com">hbcroquetclub.president@gmail.com</a></div>
-          <div class="contact-phone">0421 193 828</div>
+          <div class="contact-detail"><a href="mailto:hbcroquetclub.president@gmail.com">hbcroquetclub.president@gmail.com</a></div>
+          <div class="contact-detail">0421 193 828</div>
         </div>
-        <div class="contact-person">
+        <div class="contact-card">
           <div class="contact-role">Secretary</div>
           <div class="contact-name">Sally Weedon</div>
-          <div class="contact-email"><a href="mailto:hbcroquetclub.secretary@gmail.com">hbcroquetclub.secretary@gmail.com</a></div>
+          <div class="contact-detail"><a href="mailto:hbcroquetclub.secretary@gmail.com">hbcroquetclub.secretary@gmail.com</a></div>
         </div>
-        <div class="contact-person">
-          <div class="contact-role">Come &amp; Try</div>
+        <div class="contact-card">
+          <div class="contact-role">Come & Try</div>
           <div class="contact-name">Colin Beckett</div>
-          <div class="contact-phone">0412 470 755</div>
+          <div class="contact-detail">0412 470 755</div>
         </div>
-        <div class="contact-person">
+        <div class="contact-card">
           <div class="contact-role">Clubhouse Hire</div>
           <div class="contact-name">Christine Walker</div>
-          <div class="contact-email"><a href="mailto:cwalker10071@yahoo.com">cwalker10071@yahoo.com</a></div>
+          <div class="contact-detail"><a href="mailto:cwalker10071@yahoo.com">cwalker10071@yahoo.com</a></div>
         </div>
       </div>
 
-      <div style="margin-top: var(--space-xl); text-align: center;">
-        <a href="https://www.facebook.com/profile.php?id=61561666178514" class="btn btn-secondary" target="_blank" rel="noopener">Follow us on Facebook</a>
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="https://www.facebook.com/profile.php?id=61561666178514" class="btn btn-outline" target="_blank" rel="noopener">Follow on Facebook</a>
       </div>
     </div>
   </section>
@@ -899,66 +1203,99 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>
-    <!-- Ginger flower SVG — Buderim's signature crop -->
-    <svg class="ginger-motif" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-      <path d="M12 22 C12 22 12 14 12 10"/>
-      <path d="M12 10 C8 6 4 8 6 12"/>
-      <path d="M12 10 C16 6 20 8 18 12"/>
-      <path d="M12 14 C9 11 5 13 8 16"/>
-      <path d="M12 14 C15 11 19 13 16 16"/>
-    </svg>
-    Headland Buderim Croquet Club
-    <svg class="ginger-motif" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-      <path d="M12 22 C12 22 12 14 12 10"/>
-      <path d="M12 10 C8 6 4 8 6 12"/>
-      <path d="M12 10 C16 6 20 8 18 12"/>
-      <path d="M12 14 C9 11 5 13 8 16"/>
-      <path d="M12 14 C15 11 19 13 16 16"/>
-    </svg>
-  </p>
-  <p>Syd Lingard Drive, Buderim QLD 4556</p>
-  <p style="margin-top: var(--space-sm);">
-    Part of the <a href="https://www.croquetqld.org">Croquet Queensland</a> family
-  </p>
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Headland Buderim Croquet</h3>
+        <p>Four lawns on the ridge, in the leafiest corner of the Sunshine Coast. We've been here a while. Come find us.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#schedule">Play Times</a></li>
+          <li><a href="#try">Come & Try</a></li>
+          <li><a href="#fees">Fees</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.facebook.com/profile.php?id=61561666178514" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.croquetqld.org" target="_blank" rel="noopener">Croquet Queensland</a></li>
+          <li><a href="https://www.revolutionise.com.au/headlandbuderim" target="_blank" rel="noopener">Club Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Syd Lingard Drive, Buderim QLD 4556</span>
+      <span>Part of <a href="https://www.croquetqld.org">Croquet Queensland</a></span>
+    </div>
+  </div>
 </footer>
 
 <script>
-  // Season toggle
-  function showSeason(season) {
-    document.getElementById('schedule-summer').style.display = season === 'summer' ? '' : 'none';
-    document.getElementById('schedule-winter').style.display = season === 'winter' ? '' : 'none';
-    document.getElementById('tab-summer').classList.toggle('active', season === 'summer');
-    document.getElementById('tab-winter').classList.toggle('active', season === 'winter');
-    document.getElementById('tab-summer').setAttribute('aria-selected', season === 'summer');
-    document.getElementById('tab-winter').setAttribute('aria-selected', season === 'winter');
+// Scroll progress bar
+(function() {
+  var bar = document.getElementById('scrollProgress');
+  window.addEventListener('scroll', function() {
+    var h = document.documentElement;
+    var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    bar.style.width = pct + '%';
+  }, { passive: true });
+})();
+
+// Nav opacity on scroll
+(function() {
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+  }, { passive: true });
+})();
+
+// Season toggle with crossfade
+function showSeason(season) {
+  var summer = document.getElementById('summer-schedule');
+  var winter = document.getElementById('winter-schedule');
+  var btnS = document.getElementById('btn-summer');
+  var btnW = document.getElementById('btn-winter');
+
+  if (season === 'summer') {
+    summer.classList.remove('hidden');
+    winter.classList.add('hidden');
+    btnS.classList.add('active');
+    btnW.classList.remove('active');
+  } else {
+    winter.classList.remove('hidden');
+    summer.classList.add('hidden');
+    btnW.classList.add('active');
+    btnS.classList.remove('active');
   }
+}
 
-  // Auto-select current season
-  (function() {
-    var month = new Date().getMonth(); // 0-indexed
-    if (month >= 4 && month <= 8) { // May (4) to September (8)
-      showSeason('winter');
-    }
-  })();
+// Auto-detect season
+(function() {
+  var m = new Date().getMonth();
+  if (m >= 4 && m <= 8) showSeason('winter');
+})();
 
-  // Scroll reveal
-  (function() {
-    var reveals = document.querySelectorAll('.reveal');
-    if (!window.IntersectionObserver) {
-      reveals.forEach(function(el) { el.classList.add('visible'); });
-      return;
-    }
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(function(el) { observer.observe(el); });
-  })();
+// Scroll reveals — staggered
+(function() {
+  var els = document.querySelectorAll('.reveal, .reveal-stagger');
+  if (!window.IntersectionObserver) {
+    els.forEach(function(el) { el.classList.add('visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { obs.observe(el); });
+})();
 </script>
 
 </body>
