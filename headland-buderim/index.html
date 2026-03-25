@@ -208,7 +208,12 @@ nav a:focus-visible {
   object-fit: cover;
 }
 
-/* ---- HERO ---- */
+/* ---- STICKY HERO (scroll-behind effect) ---- */
+.hero-wrapper {
+  position: relative;
+  z-index: 0;
+}
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -217,12 +222,101 @@ nav a:focus-visible {
   align-items: center;
   text-align: center;
   padding: 7rem 2rem 4rem;
-  position: relative;
+  position: sticky;
+  top: 0;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 30% 20%, rgba(229, 115, 37, 0.06) 0%, transparent 50%),
     radial-gradient(ellipse at 70% 80%, rgba(78, 109, 80, 0.08) 0%, transparent 50%),
     linear-gradient(180deg, var(--afternoon) 0%, var(--haze) 100%);
+}
+
+/* Content slides over the hero */
+main {
+  position: relative;
+  z-index: 2;
+  background: var(--afternoon);
+}
+
+/* Cursor spotlight on hero */
+.hero-spotlight {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229, 115, 37, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: left 0.3s ease, top 0.3s ease;
+  z-index: 0;
+}
+
+/* ---- GRADIENT TEXT ---- */
+.gradient-text {
+  background: linear-gradient(135deg, var(--canopy-deep) 0%, var(--ginger) 50%, var(--canopy) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- MARQUEE TICKER ---- */
+.marquee {
+  overflow: hidden;
+  background: var(--canopy-deep);
+  padding: 0.6rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 4rem;
+  animation: marquee-scroll 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-track span {
+  white-space: nowrap;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--haze);
+  opacity: 0.8;
+}
+
+.marquee-track .dot {
+  color: var(--ginger);
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---- GRADIENT BORDER CARDS ---- */
+.gradient-border {
+  background: linear-gradient(135deg, var(--ginger), var(--ridge), var(--canopy-light));
+  padding: 2px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.gradient-border:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-3px);
+}
+
+.gradient-border-inner {
+  background: var(--afternoon-pure);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+/* ---- IMAGE WARM TREATMENT ---- */
+.photo-warm img {
+  filter: sepia(0.08) saturate(1.15) brightness(1.02) contrast(1.02);
 }
 
 /* Floating ginger leaf decorations */
@@ -491,18 +585,12 @@ p + p { margin-top: 1rem; }
 }
 
 .stat-card {
-  background: var(--afternoon-pure);
-  border: 1px solid var(--ridge-subtle);
-  border-radius: 12px;
-  padding: 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   text-align: center;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lift);
+  box-shadow: none;
 }
 
 .stat-number {
@@ -980,14 +1068,16 @@ footer h4 {
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
+<!-- HERO (sticky — content scrolls over it) -->
+<div class="hero-wrapper">
+<header class="hero" id="hero">
+  <div class="hero-spotlight" id="heroSpotlight"></div>
   <div class="hero-overline">
     <span class="dot"></span>
     Buderim, Sunshine Coast
     <span class="dot"></span>
   </div>
-  <h1>Headland<br>Buderim <em>Croquet</em></h1>
+  <h1 class="gradient-text">Headland<br>Buderim <em>Croquet</em></h1>
   <p class="hero-sub">
     Four lawns on the ridge. Fifty members. Six days a week.
     Come for a game, stay for the afternoon.
@@ -995,7 +1085,7 @@ footer h4 {
   <div class="hero-cta">
     <a href="#try" class="btn btn-primary">Come and play</a>
   </div>
-  <div class="hero-photo" style="opacity:0;animation:fadeUp 1s ease 1s forwards;">
+  <div class="hero-photo photo-warm" style="opacity:0;animation:fadeUp 1s ease 1s forwards;">
     <img src="images/clubhouse-mural.jpg" alt="Headland Buderim Croquet Club members gathered in front of the clubhouse's colourful croquet mural" loading="eager">
   </div>
 
@@ -1004,12 +1094,20 @@ footer h4 {
     <span class="arrow"></span>
   </div>
 </header>
+</div>
 
-<!-- WAVE: hero → about -->
-<div class="section-wave">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-    <path d="M0,40 C360,0 1080,80 1440,30 L1440,60 L0,60 Z" fill="var(--afternoon)"/>
-  </svg>
+<!-- MARQUEE TICKER -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span><span class="dot">●</span> Next event: Headland Cup — Sunday 5 July 2026</span>
+    <span><span class="dot">●</span> Come & Try: Your first session is free</span>
+    <span><span class="dot">●</span> Open 6 days a week — all welcome</span>
+    <span><span class="dot">●</span> Association Croquet · Golf Croquet · Ricochet</span>
+    <span><span class="dot">●</span> Next event: Headland Cup — Sunday 5 July 2026</span>
+    <span><span class="dot">●</span> Come & Try: Your first session is free</span>
+    <span><span class="dot">●</span> Open 6 days a week — all welcome</span>
+    <span><span class="dot">●</span> Association Croquet · Golf Croquet · Ricochet</span>
+  </div>
 </div>
 
 <main id="main">
@@ -1024,7 +1122,7 @@ footer h4 {
           <p>
             Headland Buderim sits 100 metres above the coast in one of the Sunshine Coast's leafiest corners. Four full-size courts, more than fifty members, and sessions running six days a week across three codes.
           </p>
-          <div class="photo-frame" style="margin:1.5rem 0;height:240px;">
+          <div class="photo-frame photo-warm" style="margin:1.5rem 0;height:240px;">
             <img src="images/players-golden-hour.jpg" alt="Four club members with mallets on the lawn at golden hour" loading="lazy">
           </div>
           <p>
@@ -1035,21 +1133,29 @@ footer h4 {
           </p>
         </div>
         <div class="about-stats reveal-stagger">
-          <div class="stat-card">
-            <div class="stat-number">50+</div>
-            <div class="stat-label">Members</div>
+          <div class="gradient-border">
+            <div class="gradient-border-inner stat-card">
+              <div class="stat-number" data-count="50" data-suffix="+">0</div>
+              <div class="stat-label">Members</div>
+            </div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">4</div>
-            <div class="stat-label">Full Courts</div>
+          <div class="gradient-border">
+            <div class="gradient-border-inner stat-card">
+              <div class="stat-number" data-count="4">0</div>
+              <div class="stat-label">Full Courts</div>
+            </div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Codes</div>
+          <div class="gradient-border">
+            <div class="gradient-border-inner stat-card">
+              <div class="stat-number" data-count="3">0</div>
+              <div class="stat-label">Codes</div>
+            </div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">6</div>
-            <div class="stat-label">Days a Week</div>
+          <div class="gradient-border">
+            <div class="gradient-border-inner stat-card">
+              <div class="stat-number" data-count="6">0</div>
+              <div class="stat-label">Days a Week</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1125,7 +1231,7 @@ footer h4 {
       <div class="section-label">Getting Started</div>
       <h2>Never Held a Mallet?</h2>
 
-      <div class="photo-frame" style="margin:0 0 2rem;height:320px;">
+      <div class="photo-frame photo-warm" style="margin:0 0 2rem;height:320px;">
         <img src="images/family-playing.jpg" alt="Families and children playing croquet on the lawns at Headland Buderim" loading="lazy">
       </div>
 
@@ -1358,6 +1464,65 @@ function showSeason(season) {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   els.forEach(function(el) { obs.observe(el); });
+})();
+
+// Animated counters
+(function() {
+  var counters = document.querySelectorAll('[data-count]');
+  if (!window.IntersectionObserver || !counters.length) return;
+  var animated = new Set();
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting && !animated.has(e.target)) {
+        animated.add(e.target);
+        var el = e.target;
+        var target = parseInt(el.dataset.count);
+        var suffix = el.dataset.suffix || '';
+        var duration = 1500;
+        var start = performance.now();
+        function tick(now) {
+          var progress = Math.min((now - start) / duration, 1);
+          var ease = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+          el.textContent = Math.round(target * ease) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(function(el) { obs.observe(el); });
+})();
+
+// Cursor spotlight on hero
+(function() {
+  var hero = document.getElementById('hero');
+  var spot = document.getElementById('heroSpotlight');
+  if (!hero || !spot) return;
+  hero.addEventListener('mousemove', function(e) {
+    var rect = hero.getBoundingClientRect();
+    spot.style.left = (e.clientX - rect.left) + 'px';
+    spot.style.top = (e.clientY - rect.top) + 'px';
+    spot.style.opacity = '1';
+  });
+  hero.addEventListener('mouseleave', function() {
+    spot.style.opacity = '0';
+  });
+})();
+
+// Hero parallax fade on scroll
+(function() {
+  var hero = document.querySelector('.hero');
+  if (!hero) return;
+  window.addEventListener('scroll', function() {
+    var scrolled = window.scrollY;
+    var h = hero.offsetHeight;
+    if (scrolled < h) {
+      var opacity = 1 - (scrolled / h) * 0.6;
+      var scale = 1 + (scrolled / h) * 0.05;
+      hero.style.opacity = opacity;
+      hero.style.transform = 'scale(' + scale + ')';
+    }
+  }, { passive: true });
 })();
 </script>
 
