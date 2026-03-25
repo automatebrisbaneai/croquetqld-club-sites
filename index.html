@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+// Route subdomains to their folder
+(function() {
+  var host = location.hostname;
+  var match = host.match(/^(example\d+)\./);
+  if (match && location.pathname === '/') {
+    location.replace('/' + match[1] + '/');
+  }
+})();
+</script>
 <meta name="description" content="CAQ Club Website Builder — tech demo. Pick a style, we build it.">
 <title>Club Websites — CroquetClaude</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
