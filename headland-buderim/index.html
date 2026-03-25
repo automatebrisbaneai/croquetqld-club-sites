@@ -225,44 +225,33 @@ nav a:focus-visible {
     linear-gradient(180deg, var(--afternoon) 0%, var(--haze) 100%);
 }
 
-/* Full-bleed hero photo — let the mural do the talking */
-.hero-fullbleed {
-  width: 100%;
+/* Full-bleed photo band with fixed background scroll */
+.photo-band {
+  height: 60vh;
+  min-height: 360px;
   max-height: 520px;
-  overflow: hidden;
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   position: relative;
 }
 
-.hero-fullbleed img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
+/* On mobile, fixed attachment causes issues — fall back to scroll */
+@media (max-width: 768px) {
+  .photo-band {
+    background-attachment: scroll;
+    height: 45vh;
+  }
 }
 
-/* Soft fade edges into background */
-.hero-fullbleed::before {
+/* Soft vignette edges */
+.photo-band::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(to bottom, var(--haze), transparent);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-fullbleed::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(to top, var(--afternoon), transparent);
-  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, var(--haze) 0%, transparent 15%, transparent 85%, var(--afternoon) 100%);
   pointer-events: none;
 }
 
@@ -1048,10 +1037,8 @@ footer h4 {
   </div>
 </header>
 
-<!-- Full-bleed club photo — the mural tells the story -->
-<div class="hero-fullbleed photo-warm">
-  <img src="images/clubhouse-mural.jpg" alt="Headland Buderim Croquet Club members gathered in front of the clubhouse's colourful croquet mural" loading="eager">
-</div>
+<!-- Full-bleed club photo — fixed background scroll -->
+<div class="photo-band" style="background-image:url('images/clubhouse-mural.jpg')" role="img" aria-label="Headland Buderim Croquet Club members gathered in front of the clubhouse's colourful croquet mural"></div>
 
 <main id="main">
 
@@ -1428,22 +1415,6 @@ function showSeason(season) {
   counters.forEach(function(el) { obs.observe(el); });
 })();
 
-// Background-attachment fixed on hero photo for scroll depth
-(function() {
-  var photo = document.querySelector('.hero-fullbleed img');
-  if (photo && window.innerWidth > 768) {
-    var wrap = document.querySelector('.hero-fullbleed');
-    wrap.style.height = '520px';
-    photo.style.position = 'fixed';
-    photo.style.top = '0';
-    photo.style.left = '0';
-    photo.style.width = '100%';
-    photo.style.height = '100vh';
-    photo.style.objectFit = 'cover';
-    photo.style.objectPosition = 'center 40%';
-    photo.style.zIndex = '-1';
-  }
-})();
 </script>
 
 </body>
