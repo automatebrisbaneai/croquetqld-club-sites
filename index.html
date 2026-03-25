@@ -179,7 +179,18 @@ h2 {
 .showcase-desc {
   color: var(--text-muted);
   max-width: 52ch;
+  margin-bottom: 1.5rem;
+}
+
+.showcase-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
   margin-bottom: 3rem;
+}
+
+.showcase-links .showcase-link {
+  margin-top: 0;
 }
 
 /* Browser frame */
@@ -530,7 +541,7 @@ footer a:hover { opacity: 1; }
         There was no design process, no meetings, just a website drafted. This is a first round draft, not the final product. From here further refinements can be made.
       </p>
 
-      <div style="display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin-bottom:3rem;">
+      <div class="showcase-links">
         <a href="https://example1.croquetwade.com" class="showcase-link" target="_blank" rel="noopener">
           View the full site →
         </a>
