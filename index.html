@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html lang="en-AU">
-<head>
-<meta charset="UTF-8">
+
+<html lang="en-AU"><head><meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free, professionally designed websites for Queensland croquet clubs. Describe what you want — we build it.">
+<title>Club Websites — CroquetClaude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <script>
 // Route subdomains to their folder
 (function() {
@@ -13,52 +18,96 @@
   }
 })();
 </script>
-<meta name="description" content="CAQ Club Website Builder — tech demo. Pick a style, we build it.">
-<title>Club Websites — CroquetClaude</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+/* ===================================================
+   CLUB WEBSITES — LANDING PAGE
+   CAQ palette + editorial confidence
+   =================================================== */
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
   --maroon: #73182C;
   --maroon-deep: #5a1323;
+  --maroon-light: #9e3a50;
   --green: #82b25e;
   --green-dark: #6a944c;
+  --green-deep: #4a6e35;
   --cream: #FCF6DA;
   --cream-dark: #f0e8c4;
   --white: #FFFDF5;
   --text: #2c1810;
   --text-muted: #6b5c54;
+  --text-on-dark: #f0e8c4;
+  --text-dim-on-dark: #a8c490;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
   line-height: 1.7;
   color: var(--text);
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
 }
 
-.wrap { max-width: 900px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--green-dark); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--maroon); }
 
-/* ---- HERO ---- */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.wrap { max-width: 1000px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
+
+/* ---- HERO — stark, confident, green ---- */
 .hero {
-  min-height: 80vh;
+  min-height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: var(--green);
-  padding: 8rem 0 5rem;
+  padding: 10rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle depth */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(115, 24, 44, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(252, 246, 218, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.7;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: rise 0.8s ease 0.2s forwards;
 }
 
 .hero h1 {
   font-family: 'Abril Fatface', serif;
-  font-size: clamp(3rem, 9vw, 6rem);
+  font-size: clamp(3.5rem, 10vw, 7rem);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: 0.02em;
@@ -66,83 +115,213 @@ body {
   color: var(--maroon);
   max-width: 12ch;
   margin-bottom: 2rem;
+  opacity: 0;
+  animation: rise 0.8s ease 0.4s forwards;
 }
 
-.hero p {
+.hero h1 em {
+  font-style: normal;
+  color: var(--cream);
+}
+
+.hero-body {
   font-size: clamp(1.05rem, 1.8vw, 1.2rem);
   color: var(--text);
-  max-width: 50ch;
-  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 46ch;
+  line-height: 1.65;
+  opacity: 0;
+  animation: rise 0.8s ease 0.6s forwards;
 }
 
-/* ---- MAIN CONTENT ---- */
-section {
-  padding: 4rem 0;
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- SHOWCASE ---- */
+.showcase {
+  padding: 6rem 0;
+  background: var(--cream);
+}
+
+.section-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: var(--maroon);
 }
 
 h2 {
   font-family: 'Abril Fatface', serif;
-  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 400;
   color: var(--maroon);
-  text-transform: uppercase;
+  line-height: 1.1;
   letter-spacing: 0.01em;
+  text-transform: uppercase;
   margin-bottom: 1rem;
+  max-width: 22ch;
 }
 
-/* ---- DATA SOURCE ---- */
-.data-source {
-  border-bottom: 1px solid var(--cream-dark);
+.showcase-desc {
+  color: var(--text-muted);
+  max-width: 52ch;
+  margin-bottom: 3rem;
 }
 
-.data-source a {
-  color: var(--maroon);
-  font-weight: 700;
-}
-
-.data-source a:hover { text-decoration: none; }
-
-/* ---- EXAMPLE ---- */
-.example {
-  border-bottom: 1px solid var(--cream-dark);
-}
-
+/* Browser frame */
 .browser {
-  margin: 2rem 0;
-  border: 3px solid var(--maroon);
-  border-radius: 10px;
+  background: var(--white);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 16px 48px rgba(44, 24, 16, 0.08);
+  border: 3px solid var(--maroon);
+  box-shadow: 0 24px 80px rgba(44, 24, 16, 0.12);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.5s ease;
+}
+
+.browser:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 100px rgba(44, 24, 16, 0.18);
 }
 
 .browser-bar {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
+  padding: 12px 16px;
   background: var(--maroon);
 }
 
-.browser-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(252,246,218,0.2); }
-.browser-url { margin-left: 10px; font-size: 0.7rem; color: var(--cream); opacity: 0.6; font-family: monospace; }
+.browser-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(252, 246, 218, 0.2);
+}
 
-.browser iframe { display: block; width: 100%; height: 480px; border: 0; }
+.browser-url {
+  margin-left: 12px;
+  font-size: 0.72rem;
+  color: var(--cream);
+  opacity: 0.6;
+  font-family: monospace;
+}
 
-.example-link {
-  display: inline-block;
+.browser iframe {
+  display: block;
+  width: 100%;
+  height: 520px;
+  border: 0;
+}
+
+.showcase-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
   color: var(--maroon);
+  text-decoration: none;
+  font-size: 0.85rem;
   font-weight: 700;
-  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  transition: gap 0.3s ease;
 }
 
-/* ---- FIND A STYLE ---- */
-.find-style {
+.showcase-link:hover { gap: 1rem; }
+
+/* ---- HOW IT WORKS — on green ---- */
+.how {
+  padding: 6rem 0;
   background: var(--green);
-  padding: 4rem 0;
 }
 
-.find-style h2 { color: var(--cream); }
-.find-style p { color: var(--text); max-width: 50ch; margin-bottom: 1.5rem; }
+.how .section-label { color: var(--cream); opacity: 0.7; }
+.how .section-label::before { background: var(--cream); }
+.how h2 { color: var(--cream); }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  counter-reset: step;
+  margin-bottom: 3rem;
+}
+
+.step {
+  counter-increment: step;
+  padding: 2rem;
+  background: var(--cream);
+  border-radius: 12px;
+  border: 2px solid var(--maroon);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(44, 24, 16, 0.1);
+}
+
+.step::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: 'Abril Fatface', serif;
+  font-size: 2.5rem;
+  color: var(--maroon);
+  opacity: 0.3;
+  line-height: 1;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.step h3 {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--maroon);
+  margin-bottom: 0.75rem;
+}
+
+.step p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .steps { grid-template-columns: 1fr; }
+}
+
+/* Galleries on green bg */
+.galleries {
+  padding-top: 1rem;
+}
+
+.galleries h3 {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+}
+
+.galleries > p {
+  color: var(--cream);
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
 
 .gallery-grid {
   display: flex;
@@ -155,17 +334,19 @@ h2 {
   padding: 0.6rem 1.2rem;
   background: var(--cream);
   border: 2px solid var(--maroon);
-  border-radius: 6px;
+  border-radius: 8px;
   color: var(--maroon);
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 700;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .gallery-link:hover {
   background: var(--maroon);
   color: var(--cream);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(44, 24, 16, 0.15);
 }
 
 .gallery-link small {
@@ -178,108 +359,251 @@ h2 {
 
 .gallery-link:hover small { color: var(--cream); opacity: 0.7; }
 
-/* ---- SEND IT ---- */
-.send-it {
+/* ---- BEYOND — on cream ---- */
+.beyond {
+  padding: 6rem 0;
+  background: var(--cream);
+}
+
+.beyond-inner {
+  background: var(--maroon);
+  border-radius: 16px;
+  padding: clamp(2.5rem, 5vw, 4rem);
+  color: var(--cream);
+}
+
+.beyond-inner h2 { color: var(--cream); }
+
+.beyond-inner p {
+  color: var(--text-on-dark);
+  opacity: 0.8;
+  max-width: 55ch;
+  margin-bottom: 1rem;
+}
+
+.beyond-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  list-style: none;
+}
+
+.beyond-list li {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cream);
+  padding: 0.4rem 1rem;
+  background: rgba(252, 246, 218, 0.08);
+  border: 1px solid rgba(252, 246, 218, 0.15);
+  border-radius: 20px;
+}
+
+/* ---- CONTACT — on green ---- */
+.contact-section {
+  padding: 6rem 0;
+  background: var(--green);
   text-align: center;
-  padding: 5rem 0;
-  border-bottom: 1px solid var(--cream-dark);
 }
 
-.send-it p {
-  color: var(--text-muted);
-  max-width: 40ch;
-  margin: 0 auto 2rem;
+.contact-section h2 { color: var(--cream); margin-left: auto; margin-right: auto; }
+
+.contact-section p {
+  color: var(--text);
+  opacity: 0.8;
+  max-width: 45ch;
+  margin: 0 auto 2.5rem;
 }
 
-.email-btn {
+.contact-email {
   display: inline-block;
   font-family: 'Abril Fatface', serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  color: var(--cream);
-  background: var(--maroon);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: var(--maroon);
   text-decoration: none;
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
-  border: 3px solid var(--maroon-deep);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 0.75rem 2rem;
+  background: var(--cream);
+  border: 3px solid var(--maroon);
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
-.email-btn:hover {
+.contact-email:hover {
+  background: var(--maroon);
+  color: var(--cream);
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(115, 24, 44, 0.2);
+  box-shadow: 0 12px 32px rgba(44, 24, 16, 0.2);
 }
 
 /* ---- FOOTER ---- */
 footer {
-  padding: 2rem 0;
+  padding: 2.5rem 0;
+  background: var(--maroon-deep);
   text-align: center;
-  font-size: 0.78rem;
-  color: var(--text-muted);
 }
 
-footer a { color: var(--maroon); text-decoration: none; }
-footer a:hover { text-decoration: underline; }
+footer p {
+  font-size: 0.78rem;
+  color: var(--cream);
+  opacity: 0.5;
+  line-height: 2;
+}
+
+footer a {
+  color: var(--cream);
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+footer a:hover { opacity: 1; }
+
+/* ---- REVEALS ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--maroon);
+  color: var(--cream);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 8px 8px;
+  z-index: 2000;
+  font-size: 0.8rem;
+}
+.skip-link:focus { top: 0; }
 </style>
 </head>
 <body>
 
-<main>
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- HERO -->
+<main id="main">
+
+  <!-- HERO — stark green -->
   <section class="hero">
     <div class="wrap">
-      <h1>Club Website Builder</h1>
-      <p>We're testing how quickly we can build professional club websites. Pick a design you like — we'll build it using real club data.</p>
+      <div class="hero-tag">CroquetClaude — Club Websites</div>
+      <h1>Your Club <em>Deserves</em> a Great Website</h1>
+      <p class="hero-body">
+        We built a professional club website from nothing but publicly available data. Want to see yours in a different style? Tell us what you like — we'll build it, and you tell us what to change.
+      </p>
     </div>
   </section>
 
-  <!-- DATA SOURCE -->
-  <section class="data-source">
+  <!-- SHOWCASE — cream -->
+  <section class="showcase reveal visible">
     <div class="wrap">
-      <h2>The Data</h2>
-      <p>Every demo uses the same source: <a href="https://www.croquetqld.org/club-information/headland-buderim/" target="_blank" rel="noopener">Headland-Buderim on CroquetQLD.org</a>. Playing times, contacts, fees, location — all pulled from the club's existing public page.</p>
-    </div>
-  </section>
+      <div class="section-label">Live Example</div>
+      <h2>Headland-Buderim Croquet Club</h2>
+      <p class="showcase-desc">
+        Built entirely from the club's public data on CroquetQLD.org. No interview. No design brief from the club. Just the information that was already there, turned into something worth visiting.
+      </p>
 
-  <!-- EXAMPLE -->
-  <section class="example">
-    <div class="wrap">
-      <h2>Example 1</h2>
-      <p>Here's what we built from that data. Same information, designed to look like a real club website.</p>
-      <div class="browser">
-        <div class="browser-bar">
-          <div class="browser-dot"></div>
-          <div class="browser-dot"></div>
-          <div class="browser-dot"></div>
-          <span class="browser-url">example1.croquetwade.com</span>
+      <a href="https://example1.croquetwade.com" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
+        <div class="browser">
+          <div class="browser-bar">
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <div class="browser-dot"></div>
+            <span class="browser-url">example1.croquetwade.com</span>
+          </div>
+          <iframe src="example1/" loading="lazy" title="Headland-Buderim Croquet Club website preview" tabindex="-1"></iframe>
         </div>
-        <iframe src="example1/" loading="lazy" title="Example 1 — Headland-Buderim demo site"></iframe>
-      </div>
-      <a href="https://example1.croquetwade.com" class="example-link" target="_blank" rel="noopener">View full site →</a>
+      </a>
+
+      <a href="https://example1.croquetwade.com" class="showcase-link" target="_blank" rel="noopener">
+        View the full site →
+      </a>
     </div>
   </section>
 
-  <!-- FIND A STYLE -->
-  <section class="find-style">
+  <!-- HOW IT WORKS — green -->
+  <section class="how reveal visible">
     <div class="wrap">
-      <h2>Your Turn</h2>
-      <p>Browse these galleries. Find a website whose style you like — colours, layout, feeling, whatever catches your eye. Send us the link.</p>
-      <div class="gallery-grid">
-        <a href="https://webflow.com/templates" class="gallery-link" target="_blank" rel="noopener">Webflow<small>Modern, polished</small></a>
-        <a href="https://squarespace.com/templates" class="gallery-link" target="_blank" rel="noopener">Squarespace<small>Clean, accessible</small></a>
-        <a href="https://onepagelove.com" class="gallery-link" target="_blank" rel="noopener">One Page Love<small>Single-page designs</small></a>
-        <a href="https://www.siteinspire.com" class="gallery-link" target="_blank" rel="noopener">SiteInspire<small>Curated showcase</small></a>
-        <a href="https://www.awwwards.com" class="gallery-link" target="_blank" rel="noopener">Awwwards<small>Award winners</small></a>
+      <div class="section-label">How It Works</div>
+      <h2>Three steps. That's it.</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>Find something you like</h3>
+          <p>Browse the galleries below. Find a website whose style, colours, or feeling appeals to you. Send us the link — or just describe what you're after.</p>
+        </div>
+        <div class="step">
+          <h3>Send us your details</h3>
+          <p>Photos, documents, playing times, contact info — whatever you have. Word docs, emails, photos of a noticeboard. We'll sort it out.</p>
+        </div>
+        <div class="step">
+          <h3>We build, you refine</h3>
+          <p>Your site goes live on its own address. Don't like something? Tell us. We'll change it. It's a conversation, not a one-off delivery.</p>
+        </div>
+      </div>
+
+      <div class="galleries">
+        <h3>Browse for inspiration</h3>
+        <p>Thousands of professionally designed websites. Find one that catches your eye.</p>
+        <div class="gallery-grid">
+          <a href="https://webflow.com/templates" class="gallery-link" target="_blank" rel="noopener">Webflow<small>Modern, polished</small></a>
+          <a href="https://squarespace.com/templates" class="gallery-link" target="_blank" rel="noopener">Squarespace<small>Clean, accessible</small></a>
+          <a href="https://onepagelove.com/" class="gallery-link" target="_blank" rel="noopener">One Page Love<small>Single-page designs</small></a>
+          <a href="https://www.siteinspire.com/" class="gallery-link" target="_blank" rel="noopener">SiteInspire<small>Curated showcase</small></a>
+          <a href="https://www.awwwards.com/" class="gallery-link" target="_blank" rel="noopener">Awwwards<small>Award winners</small></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SEND IT -->
-  <section class="send-it">
+  <!-- BEYOND — maroon card on cream -->
+  <section class="beyond reveal visible">
     <div class="wrap">
-      <h2>Send Us the Link</h2>
-      <p>Found something you like? Email us the link and we'll build the Headland-Buderim site in that style.</p>
-      <a href="mailto:hello@croquetclaude.com?subject=Club%20Website%20Demo" class="email-btn">hello@croquetclaude.com</a>
+      <div class="section-label">Beyond Websites</div>
+      <div class="beyond-inner">
+        <h2>Need more than a website?</h2>
+        <p>
+          Websites are just the start. If your club needs a digital tool — something to make life easier for your committee, your members, or your visitors — tell us what the problem is. We'll build it.
+        </p>
+        <ul class="beyond-list">
+          <li>Booking systems</li>
+          <li>Volunteer schedules</li>
+          <li>Member portals</li>
+          <li>Event pages</li>
+          <li>Email newsletters</li>
+          <li>Online forms</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT — green -->
+  <section class="contact-section reveal visible">
+    <div class="wrap">
+      <h2>Ready to try it?</h2>
+      <p>
+        Send us a link to a website you like, your club's details, and any photos. Or just say hello.
+      </p>
+      <a href="mailto:hello@croquetclaude.com?subject=Club%20Website" class="contact-email">hello@croquetclaude.com</a>
     </div>
   </section>
 
@@ -287,9 +611,32 @@ footer a:hover { text-decoration: underline; }
 
 <footer>
   <div class="wrap">
-    <p>Built by <a href="https://croquetclaude.com">CroquetClaude</a> — A <a href="https://www.croquetqld.org">Croquet Queensland</a> initiative</p>
+    <p>
+      Built by <a href="https://croquetclaude.com/">CroquetClaude</a>
+      — A <a href="https://www.croquetqld.org/">Croquet Queensland</a> initiative
+    </p>
   </div>
 </footer>
 
-</body>
-</html>
+<script>
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  if (!window.IntersectionObserver) {
+    els.forEach(function(el) { el.classList.add('visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function(el) { obs.observe(el); });
+})();
+</script>
+
+
+
+</body></html>
