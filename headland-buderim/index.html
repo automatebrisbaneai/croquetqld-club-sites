@@ -208,22 +208,16 @@ nav a:focus-visible {
   object-fit: cover;
 }
 
-/* ---- STICKY HERO (scroll-behind effect) ---- */
-.hero-wrapper {
-  position: relative;
-  z-index: 0;
-}
-
+/* ---- HERO ---- */
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 7rem 2rem 4rem;
-  position: sticky;
-  top: 0;
+  padding: 8rem 2rem 4rem;
+  position: relative;
   overflow: hidden;
   background:
     radial-gradient(ellipse at 30% 20%, rgba(229, 115, 37, 0.06) 0%, transparent 50%),
@@ -231,92 +225,50 @@ nav a:focus-visible {
     linear-gradient(180deg, var(--afternoon) 0%, var(--haze) 100%);
 }
 
-/* Content slides over the hero */
-main {
-  position: relative;
-  z-index: 2;
-  background: var(--afternoon);
-}
-
-/* Cursor spotlight on hero */
-.hero-spotlight {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(229, 115, 37, 0.07) 0%, transparent 70%);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: left 0.3s ease, top 0.3s ease;
-  z-index: 0;
-}
-
-/* ---- GRADIENT TEXT ---- */
-.gradient-text {
-  background: linear-gradient(135deg, var(--canopy-deep) 0%, var(--ginger) 50%, var(--canopy) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ---- MARQUEE TICKER ---- */
-.marquee {
+/* Full-bleed hero photo — let the mural do the talking */
+.hero-fullbleed {
+  width: 100%;
+  max-height: 520px;
   overflow: hidden;
-  background: var(--canopy-deep);
-  padding: 0.6rem 0;
   position: relative;
-  z-index: 2;
 }
 
-.marquee-track {
-  display: flex;
-  gap: 4rem;
-  animation: marquee-scroll 30s linear infinite;
-  width: max-content;
-}
-
-.marquee-track span {
-  white-space: nowrap;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--haze);
-  opacity: 0.8;
-}
-
-.marquee-track .dot {
-  color: var(--ginger);
-}
-
-@keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* ---- GRADIENT BORDER CARDS ---- */
-.gradient-border {
-  background: linear-gradient(135deg, var(--ginger), var(--ridge), var(--canopy-light));
-  padding: 2px;
-  border-radius: 14px;
-  box-shadow: var(--shadow-soft);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.gradient-border:hover {
-  box-shadow: var(--shadow-lift);
-  transform: translateY(-3px);
-}
-
-.gradient-border-inner {
-  background: var(--afternoon-pure);
-  border-radius: 12px;
-  padding: 1.5rem;
+.hero-fullbleed img {
+  display: block;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* Soft fade edges into background */
+.hero-fullbleed::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--haze), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-fullbleed::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, var(--afternoon), transparent);
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* ---- IMAGE WARM TREATMENT ---- */
 .photo-warm img {
-  filter: sepia(0.08) saturate(1.15) brightness(1.02) contrast(1.02);
+  filter: sepia(0.06) saturate(1.08) brightness(1.01);
 }
 
 /* Floating ginger leaf decorations */
@@ -585,12 +537,18 @@ p + p { margin-top: 1rem; }
 }
 
 .stat-card {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
+  background: var(--afternoon-pure);
+  border: 1px solid var(--ridge-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
   text-align: center;
-  box-shadow: none;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
 }
 
 .stat-number {
@@ -1068,16 +1026,14 @@ footer h4 {
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO (sticky — content scrolls over it) -->
-<div class="hero-wrapper">
+<!-- HERO -->
 <header class="hero" id="hero">
-  <div class="hero-spotlight" id="heroSpotlight"></div>
   <div class="hero-overline">
     <span class="dot"></span>
     Buderim, Sunshine Coast
     <span class="dot"></span>
   </div>
-  <h1 class="gradient-text">Headland<br>Buderim <em>Croquet</em></h1>
+  <h1>Headland<br>Buderim <em>Croquet</em></h1>
   <p class="hero-sub">
     Four lawns on the ridge. Fifty members. Six days a week.
     Come for a game, stay for the afternoon.
@@ -1085,29 +1041,16 @@ footer h4 {
   <div class="hero-cta">
     <a href="#try" class="btn btn-primary">Come and play</a>
   </div>
-  <div class="hero-photo photo-warm" style="opacity:0;animation:fadeUp 1s ease 1s forwards;">
-    <img src="images/clubhouse-mural.jpg" alt="Headland Buderim Croquet Club members gathered in front of the clubhouse's colourful croquet mural" loading="eager">
-  </div>
 
   <div class="scroll-hint">
     <span>Explore</span>
     <span class="arrow"></span>
   </div>
 </header>
-</div>
 
-<!-- MARQUEE TICKER -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span><span class="dot">●</span> Next event: Headland Cup — Sunday 5 July 2026</span>
-    <span><span class="dot">●</span> Come & Try: Your first session is free</span>
-    <span><span class="dot">●</span> Open 6 days a week — all welcome</span>
-    <span><span class="dot">●</span> Association Croquet · Golf Croquet · Ricochet</span>
-    <span><span class="dot">●</span> Next event: Headland Cup — Sunday 5 July 2026</span>
-    <span><span class="dot">●</span> Come & Try: Your first session is free</span>
-    <span><span class="dot">●</span> Open 6 days a week — all welcome</span>
-    <span><span class="dot">●</span> Association Croquet · Golf Croquet · Ricochet</span>
-  </div>
+<!-- Full-bleed club photo — the mural tells the story -->
+<div class="hero-fullbleed photo-warm">
+  <img src="images/clubhouse-mural.jpg" alt="Headland Buderim Croquet Club members gathered in front of the clubhouse's colourful croquet mural" loading="eager">
 </div>
 
 <main id="main">
@@ -1133,29 +1076,21 @@ footer h4 {
           </p>
         </div>
         <div class="about-stats reveal-stagger">
-          <div class="gradient-border">
-            <div class="gradient-border-inner stat-card">
-              <div class="stat-number" data-count="50" data-suffix="+">0</div>
-              <div class="stat-label">Members</div>
-            </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="50" data-suffix="+">0</div>
+            <div class="stat-label">Members</div>
           </div>
-          <div class="gradient-border">
-            <div class="gradient-border-inner stat-card">
-              <div class="stat-number" data-count="4">0</div>
-              <div class="stat-label">Full Courts</div>
-            </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="4">0</div>
+            <div class="stat-label">Full Courts</div>
           </div>
-          <div class="gradient-border">
-            <div class="gradient-border-inner stat-card">
-              <div class="stat-number" data-count="3">0</div>
-              <div class="stat-label">Codes</div>
-            </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="3">0</div>
+            <div class="stat-label">Codes</div>
           </div>
-          <div class="gradient-border">
-            <div class="gradient-border-inner stat-card">
-              <div class="stat-number" data-count="6">0</div>
-              <div class="stat-label">Days a Week</div>
-            </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="6">0</div>
+            <div class="stat-label">Days a Week</div>
           </div>
         </div>
       </div>
@@ -1493,36 +1428,21 @@ function showSeason(season) {
   counters.forEach(function(el) { obs.observe(el); });
 })();
 
-// Cursor spotlight on hero
+// Background-attachment fixed on hero photo for scroll depth
 (function() {
-  var hero = document.getElementById('hero');
-  var spot = document.getElementById('heroSpotlight');
-  if (!hero || !spot) return;
-  hero.addEventListener('mousemove', function(e) {
-    var rect = hero.getBoundingClientRect();
-    spot.style.left = (e.clientX - rect.left) + 'px';
-    spot.style.top = (e.clientY - rect.top) + 'px';
-    spot.style.opacity = '1';
-  });
-  hero.addEventListener('mouseleave', function() {
-    spot.style.opacity = '0';
-  });
-})();
-
-// Hero parallax fade on scroll
-(function() {
-  var hero = document.querySelector('.hero');
-  if (!hero) return;
-  window.addEventListener('scroll', function() {
-    var scrolled = window.scrollY;
-    var h = hero.offsetHeight;
-    if (scrolled < h) {
-      var opacity = 1 - (scrolled / h) * 0.6;
-      var scale = 1 + (scrolled / h) * 0.05;
-      hero.style.opacity = opacity;
-      hero.style.transform = 'scale(' + scale + ')';
-    }
-  }, { passive: true });
+  var photo = document.querySelector('.hero-fullbleed img');
+  if (photo && window.innerWidth > 768) {
+    var wrap = document.querySelector('.hero-fullbleed');
+    wrap.style.height = '520px';
+    photo.style.position = 'fixed';
+    photo.style.top = '0';
+    photo.style.left = '0';
+    photo.style.width = '100%';
+    photo.style.height = '100vh';
+    photo.style.objectFit = 'cover';
+    photo.style.objectPosition = 'center 40%';
+    photo.style.zIndex = '-1';
+  }
 })();
 </script>
 
