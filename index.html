@@ -381,11 +381,14 @@ h2 {
 
 .gallery-link:hover small { color: var(--cream); opacity: 0.7; }
 
-/* ---- BEYOND — on cream ---- */
+/* ---- BEYOND — on green ---- */
 .beyond {
   padding: 6rem 0;
-  background: var(--cream);
+  background: var(--green);
 }
+
+.beyond .section-label { color: var(--cream); opacity: 0.7; }
+.beyond .section-label::before { background: var(--cream); }
 
 .beyond-inner {
   background: var(--maroon);
@@ -421,18 +424,18 @@ h2 {
   border-radius: 20px;
 }
 
-/* ---- CONTACT — on green ---- */
+/* ---- CONTACT — on cream ---- */
 .contact-section {
   padding: 6rem 0;
-  background: var(--green);
+  background: var(--cream);
   text-align: center;
 }
 
-.contact-section h2 { color: var(--cream); margin-left: auto; margin-right: auto; }
+.contact-section h2 { color: var(--maroon); margin-left: auto; margin-right: auto; }
 
 .contact-section p {
   color: var(--text);
-  opacity: 0.8;
+  opacity: 0.9;
   max-width: 45ch;
   margin: 0 auto 2.5rem;
 }
@@ -617,7 +620,18 @@ footer a:hover { opacity: 1; }
     </div>
   </section>
 
-  <!-- BEYOND — maroon card on cream -->
+  <!-- CONTACT — cream -->
+  <section class="contact-section reveal visible">
+    <div class="wrap">
+      <h2>Ready to try it?</h2>
+      <p>
+        Send us a link to a website you like, your club's details, and any photos. Or just say hello.
+      </p>
+      <a href="mailto:hello@croquetclaude.com?subject=Club%20Website" class="contact-email">hello@croquetclaude.com</a>
+    </div>
+  </section>
+
+  <!-- BEYOND — green -->
   <section class="beyond reveal visible">
     <div class="wrap">
       <div class="section-label">Beyond Websites</div>
@@ -635,17 +649,6 @@ footer a:hover { opacity: 1; }
           <li>Online forms</li>
         </ul>
       </div>
-    </div>
-  </section>
-
-  <!-- CONTACT — green -->
-  <section class="contact-section reveal visible">
-    <div class="wrap">
-      <h2>Ready to try it?</h2>
-      <p>
-        Send us a link to a website you like, your club's details, and any photos. Or just say hello.
-      </p>
-      <a href="mailto:hello@croquetclaude.com?subject=Club%20Website" class="contact-email">hello@croquetclaude.com</a>
     </div>
   </section>
 
