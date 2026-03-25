@@ -3,21 +3,11 @@
 <html lang="en-AU"><head><meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Free, professionally designed websites for Queensland croquet clubs. Describe what you want — we build it.">
-<title>Club Websites — CroquetClaude</title>
+<meta name="description" content="Free, professionally designed websites for Queensland croquet clubs. Describe what you want, we build it.">
+<title>Club Websites | CroquetClaude</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<script>
-// Route subdomains to their folder
-(function() {
-  var host = location.hostname;
-  var match = host.match(/^(example\d+)\./);
-  if (match && location.pathname === '/') {
-    location.replace('/' + match[1] + '/');
-  }
-})();
-</script>
 <style>
 /* ===================================================
    CLUB WEBSITES — LANDING PAGE
@@ -179,7 +169,29 @@ h2 {
 .showcase-desc {
   color: var(--text-muted);
   max-width: 52ch;
+  margin-bottom: 1.5rem;
+}
+
+.callout-note {
+  font-style: italic;
+  background: rgba(115, 24, 44, 0.06);
+  border-left: 3px solid var(--maroon);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 6px 6px 0;
+  max-width: 52ch;
+  margin-top: 0;
+  color: var(--text);
+}
+
+.showcase-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
   margin-bottom: 3rem;
+}
+
+.showcase-links .showcase-link {
+  margin-top: 0;
 }
 
 /* Browser frame */
@@ -359,11 +371,14 @@ h2 {
 
 .gallery-link:hover small { color: var(--cream); opacity: 0.7; }
 
-/* ---- BEYOND — on cream ---- */
+/* ---- BEYOND — on green ---- */
 .beyond {
   padding: 6rem 0;
-  background: var(--cream);
+  background: var(--green);
 }
+
+.beyond .section-label { color: var(--cream); opacity: 0.7; }
+.beyond .section-label::before { background: var(--cream); }
 
 .beyond-inner {
   background: var(--maroon);
@@ -399,40 +414,89 @@ h2 {
   border-radius: 20px;
 }
 
-/* ---- CONTACT — on green ---- */
+/* ---- CONTACT — on cream ---- */
 .contact-section {
   padding: 6rem 0;
-  background: var(--green);
+  background: var(--cream);
   text-align: center;
 }
 
-.contact-section h2 { color: var(--cream); margin-left: auto; margin-right: auto; }
+.contact-section h2 { color: var(--maroon); margin-left: auto; margin-right: auto; }
 
 .contact-section p {
   color: var(--text);
-  opacity: 0.8;
+  opacity: 0.9;
   max-width: 45ch;
   margin: 0 auto 2.5rem;
 }
 
-.contact-email {
-  display: inline-block;
-  font-family: 'Abril Fatface', serif;
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  color: var(--maroon);
-  text-decoration: none;
-  padding: 0.75rem 2rem;
-  background: var(--cream);
-  border: 3px solid var(--maroon);
-  border-radius: 8px;
-  transition: all 0.3s ease;
+.contact-form {
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.contact-email:hover {
-  background: var(--maroon);
+.contact-form label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  margin-bottom: 0.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  border: 2px solid rgba(115, 24, 44, 0.2);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--maroon);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.contact-form button {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.1rem;
   color: var(--cream);
+  background: var(--maroon);
+  border: 3px solid var(--maroon);
+  border-radius: 8px;
+  padding: 0.75rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.contact-form button:hover {
+  background: var(--maroon-deep);
   transform: translateY(-3px);
   box-shadow: 0 12px 32px rgba(44, 24, 16, 0.2);
+}
+
+.form-success {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+  color: var(--maroon);
+  font-weight: 600;
 }
 
 /* ---- FOOTER ---- */
@@ -506,38 +570,58 @@ footer a:hover { opacity: 1; }
   <!-- HERO — stark green -->
   <section class="hero">
     <div class="wrap">
-      <div class="hero-tag">CroquetClaude — Club Websites</div>
+      <div class="hero-tag">CroquetClaude | Club Websites</div>
       <h1>Your Club <em>Deserves</em> a Great Website</h1>
       <p class="hero-body">
-        We built a professional club website from nothing but publicly available data. Want to see yours in a different style? Tell us what you like — we'll build it, and you tell us what to change.
+        It is important that every club is visible online.
+        <br><br>
+        To help out, CAQ is offering your club a custom designed website on your own domain name.
+        <br><br>
+        It is simple to do and this website will explain everything.
       </p>
+      <img src="images/CAQ-Govt.svg" alt="Croquet Australia Queensland and Queensland Government logos" style="max-width:46ch;width:100%;margin-top:2rem;opacity:0;animation:rise 0.8s ease 0.8s forwards;">
     </div>
   </section>
 
   <!-- SHOWCASE — cream -->
   <section class="showcase reveal visible">
     <div class="wrap">
-      <div class="section-label">Live Example</div>
+      <div class="section-label">First Demonstration</div>
       <h2>Headland-Buderim Croquet Club</h2>
       <p class="showcase-desc">
-        Built entirely from the club's public data on CroquetQLD.org. No interview. No design brief from the club. Just the information that was already there, turned into something worth visiting.
+        Before this goes public, we want to test and develop it. The first demonstration is Headland-Buderim. We used <a href="https://www.croquetqld.org/club-information/headland-buderim/" target="_blank" rel="noopener" style="color:var(--maroon);text-decoration:underline;">this page</a> to populate their website. As you can see, it's just mainly text, but info on playing times and things. CroquetClaude made the site autonomously with its choice of style (notice it picked up the club colours).
       </p>
 
-      <a href="https://example1.croquetwade.com" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
+      <div class="showcase-links">
+        <a href="/example1/" class="showcase-link" target="_blank" rel="noopener">
+          View the full site →
+        </a>
+        <a href="https://www.croquetqld.org/club-information/headland-buderim/" class="showcase-link" target="_blank" rel="noopener">
+          See the original data →
+        </a>
+      </div>
+
+      <a href="/example1/" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
         <div class="browser">
           <div class="browser-bar">
             <div class="browser-dot"></div>
             <div class="browser-dot"></div>
             <div class="browser-dot"></div>
-            <span class="browser-url">example1.croquetwade.com</span>
+            <span class="browser-url">websites.croquetwade.com/example1</span>
           </div>
-          <iframe src="example1/" loading="lazy" title="Headland-Buderim Croquet Club website preview" tabindex="-1"></iframe>
+          <img src="images/example1-preview.png" alt="Headland-Buderim Croquet Club website preview" style="display:block;width:100%;">
         </div>
       </a>
 
-      <a href="https://example1.croquetwade.com" class="showcase-link" target="_blank" rel="noopener">
-        View the full site →
-      </a>
+      <p class="showcase-desc" style="margin-top:3rem;">
+        There are two parts to making a website: content and design. At the moment we are holding the content constant, designing different looking sites on the same set of data from Headland.
+        <br><br>
+        So when choosing designs you like, remember this is for a simple website. We will do complex ones next.
+        <br><br>
+      </p>
+      <p class="callout-note">
+        It is easy to trick Claude, but to get the best out of it we need to interact with it in good faith. We will get more from this nominating sites in the spirit of accomplishment than wasting water and electricity tormenting the LLM with nonsense.
+      </p>
     </div>
   </section>
 
@@ -549,11 +633,11 @@ footer a:hover { opacity: 1; }
       <div class="steps">
         <div class="step">
           <h3>Find something you like</h3>
-          <p>Browse the galleries below. Find a website whose style, colours, or feeling appeals to you. Send us the link — or just describe what you're after.</p>
+          <p>Browse the galleries below. Find a website whose style, colours, or feeling appeals to you. Send us the link, or just describe what you're after.</p>
         </div>
-        <div class="step">
-          <h3>Send us your details</h3>
-          <p>Photos, documents, playing times, contact info — whatever you have. Word docs, emails, photos of a noticeboard. We'll sort it out.</p>
+        <div class="step" style="opacity:0.4;">
+          <h3>Send us your details <span style="font-size:0.7em;font-weight:400;color:var(--cream);opacity:0.7;">skipped for now</span></h3>
+          <p>Photos, documents, playing times, contact info. Whatever you have. Word docs, emails, photos of a noticeboard. We'll sort it out.</p>
         </div>
         <div class="step">
           <h3>We build, you refine</h3>
@@ -575,14 +659,39 @@ footer a:hover { opacity: 1; }
     </div>
   </section>
 
-  <!-- BEYOND — maroon card on cream -->
+  <!-- CONTACT — cream -->
+  <section class="contact-section reveal visible">
+    <div class="wrap">
+      <h2>Ready to try it?</h2>
+      <p>
+        Send us a link to a website you like and we'll build Headland-Buderim in that style.
+      </p>
+      <form class="contact-form" id="designForm">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required placeholder="e.g. Jane Smith">
+
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email" required placeholder="e.g. jane@example.com">
+
+        <label for="design_url">Link to a design you like</label>
+        <input type="url" id="design_url" name="design_url" required placeholder="e.g. https://webflow.com/templates/...">
+
+        <label for="description">Anything else? <span style="font-weight:400;text-transform:none;opacity:0.6;">(optional)</span></label>
+        <textarea id="description" name="description" placeholder="Colours you like, things you want, anything at all..."></textarea>
+
+        <button type="submit">Send it through</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- BEYOND — green -->
   <section class="beyond reveal visible">
     <div class="wrap">
       <div class="section-label">Beyond Websites</div>
       <div class="beyond-inner">
         <h2>Need more than a website?</h2>
         <p>
-          Websites are just the start. If your club needs a digital tool — something to make life easier for your committee, your members, or your visitors — tell us what the problem is. We'll build it.
+          Websites are just the start. If your club needs a digital tool, something to make life easier for your committee, your members, or your visitors, tell us what the problem is. We'll build it.
         </p>
         <ul class="beyond-list">
           <li>Booking systems</li>
@@ -596,24 +705,13 @@ footer a:hover { opacity: 1; }
     </div>
   </section>
 
-  <!-- CONTACT — green -->
-  <section class="contact-section reveal visible">
-    <div class="wrap">
-      <h2>Ready to try it?</h2>
-      <p>
-        Send us a link to a website you like, your club's details, and any photos. Or just say hello.
-      </p>
-      <a href="mailto:hello@croquetclaude.com?subject=Club%20Website" class="contact-email">hello@croquetclaude.com</a>
-    </div>
-  </section>
-
 </main>
 
 <footer>
   <div class="wrap">
     <p>
-      Built by <a href="https://croquetclaude.com/">CroquetClaude</a>
-      — A <a href="https://www.croquetqld.org/">Croquet Queensland</a> initiative
+      Written by <a href="https://croquetwade.com/">CroquetWade</a>.
+      Designed and made by <a href="https://croquetclaude.com/">CroquetClaude</a>.
     </p>
   </div>
 </footer>
@@ -634,6 +732,33 @@ footer a:hover { opacity: 1; }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   els.forEach(function(el) { obs.observe(el); });
+})();
+
+// Form submission
+(function() {
+  var form = document.getElementById('designForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    var data = {
+      name: form.name.value,
+      email: form.email.value,
+      design_url: form.design_url.value,
+      description: form.description.value
+    };
+    fetch('https://n8n.croquetwade.com/webhook/club-design-submission', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function() {
+      form.innerHTML = '<div class="form-success">Got it! We\'ll be in touch.</div>';
+    }).catch(function() {
+      form.innerHTML = '<div class="form-success">Got it! We\'ll be in touch.</div>';
+    });
+  });
 })();
 </script>
 
