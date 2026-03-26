@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headland Buderim Croquet Club | Sunshine Coast</title>
+  <meta name="description" content="Four lawns on the ridge in Buderim. Association, Golf, Ricochet and Social croquet six days a week. Come and try your first session free.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --lawn-green: #2D5A27;
+      --deep-green: #1B3B19;
+      --cream: #FAF6F0;
+      --warm-gold: #C5A55A;
+      --soft-white: #FFFFFF;
+      --charcoal: #2C2C2C;
+      --light-sage: #E8EFE6;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--charcoal);
+      background-color: var(--cream);
+    }
+
+    /* --- NAV --- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--deep-green);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+      text-decoration: none;
+      opacity: 0.85;
+      transition: opacity 0.15s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--warm-gold);
+    }
+
+    /* --- HERO --- */
+    .hero {
+      position: relative;
+      height: 75vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(27, 59, 25, 0.55) 0%,
+        rgba(27, 59, 25, 0.7) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 0 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--soft-white);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 16px 40px;
+      text-decoration: none;
+      border: 3px solid var(--warm-gold);
+      background: var(--lawn-green);
+      color: var(--cream);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn:hover {
+      background: var(--warm-gold);
+      color: var(--deep-green);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--warm-gold);
+      color: var(--soft-white);
+    }
+
+    .btn-outline:hover {
+      background: var(--warm-gold);
+      color: var(--deep-green);
+    }
+
+    /* --- SECTIONS --- */
+    .section {
+      padding: 100px 24px;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-alt {
+      background: var(--soft-white);
+    }
+
+    .section-sage {
+      background: var(--light-sage);
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--deep-green);
+      margin-bottom: 16px;
+    }
+
+    .section-rule {
+      width: 60px;
+      height: 3px;
+      background: var(--warm-gold);
+      border: none;
+      margin-bottom: 40px;
+    }
+
+    .section-rule-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* --- ABOUT (split layout) --- */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .split-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .split-text p {
+      margin-bottom: 24px;
+    }
+
+    /* --- GALLERY --- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 2px;
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    /* --- SCHEDULE --- */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+    }
+
+    .schedule-table th {
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--deep-green);
+      color: var(--cream);
+      padding: 14px 16px;
+      text-align: left;
+    }
+
+    .schedule-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      font-size: 15px;
+    }
+
+    .schedule-table tr:nth-child(even) {
+      background: var(--light-sage);
+    }
+
+    .schedule-table .day-cell {
+      font-weight: 700;
+      color: var(--deep-green);
+    }
+
+    .schedule-season {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--lawn-green);
+      margin-top: 48px;
+      margin-bottom: 8px;
+    }
+
+    .schedule-season:first-of-type {
+      margin-top: 0;
+    }
+
+    /* --- FEES --- */
+    .fees-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .fee-card {
+      background: var(--soft-white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 32px;
+      border-radius: 2px;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .fee-card .fee-label {
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--lawn-green);
+      margin-bottom: 8px;
+    }
+
+    .fee-card .fee-price {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--deep-green);
+    }
+
+    .fee-card .fee-note {
+      font-size: 14px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    /* --- COME & TRY --- */
+    .cta-banner {
+      background: var(--deep-green);
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+
+    .cta-banner p {
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-size: 1.05rem;
+    }
+
+    .cta-details {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .cta-detail {
+      text-align: center;
+      color: var(--warm-gold);
+    }
+
+    .cta-detail strong {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 4px;
+    }
+
+    .cta-detail span {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+    }
+
+    /* --- CONTACT --- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-item {
+      margin-bottom: 24px;
+    }
+
+    .contact-item .contact-label {
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--lawn-green);
+      margin-bottom: 4px;
+    }
+
+    .contact-item a {
+      color: var(--lawn-green);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 300px;
+      background: var(--light-sage);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--lawn-green);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      background: var(--deep-green);
+      padding: 60px 24px 40px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--cream);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+
+    .footer a {
+      color: var(--warm-gold);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .section {
+        padding: 60px 20px;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .split-img {
+        height: 280px;
+      }
+
+      .split.reverse .split-img-wrap {
+        order: -1;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .fees-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        height: 60vh;
+        min-height: 400px;
+      }
+
+      .cta-details {
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Headland Buderim Croquet</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Play</a></li>
+        <li><a href="#try">Come &amp; Try</a></li>
+        <li><a href="#fees">Fees</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="images/players-golden-hour.jpg" alt="Croquet players on the lawns at golden hour, Headland Buderim Croquet Club" class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Four Lawns on the Ridge</h1>
+      <p>Association, Golf, Ricochet and Social croquet on the Sunshine Coast. Six days a week, all year round.</p>
+      <a href="#try" class="btn btn-outline">Come and Try</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-inner split">
+      <div class="split-img-wrap">
+        <img src="images/clubhouse-mural.jpg" alt="The clubhouse at Headland Buderim Croquet Club with its colourful mural" class="split-img">
+      </div>
+      <div class="split-text">
+        <h2 class="section-heading">More Than a Game</h2>
+        <hr class="section-rule">
+        <p>Four lawns in the leafiest corner of the Sunshine Coast. Some play for competition: teams match up across the region, and the best get picked for State and national squads. Others come for the morning air, a bit of exercise, and the company.</p>
+        <p>Both belong here.</p>
+        <p>We play Association, Golf Croquet, Ricochet and Social six days a week. The lawns are open, the kettle is on, and there is always someone happy to show you the ropes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 48px;">
+        <h2 class="section-heading">Life on the Lawns</h2>
+        <hr class="section-rule section-rule-center">
+      </div>
+      <div class="gallery">
+        <img src="images/players-golden-hour.jpg" alt="Players competing during golden hour on the manicured lawns">
+        <img src="images/family-playing.jpg" alt="Families enjoying a social game of croquet together">
+        <img src="images/clubhouse-mural.jpg" alt="The Headland Buderim clubhouse and its distinctive mural">
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" class="section">
+    <div class="section-inner">
+      <h2 class="section-heading">When We Play</h2>
+      <hr class="section-rule">
+
+      <p class="schedule-season">Summer Schedule</p>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Association</th>
+            <th>Ricochet</th>
+            <th>Golf</th>
+            <th>Social</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="day-cell">Monday</td><td>1 pm</td><td></td><td></td><td></td></tr>
+          <tr><td class="day-cell">Tuesday</td><td></td><td></td><td>9 am</td><td>3 pm</td></tr>
+          <tr><td class="day-cell">Wednesday</td><td></td><td>1 pm</td><td></td><td></td></tr>
+          <tr><td class="day-cell">Friday</td><td></td><td></td><td>9 am</td><td>3 pm</td></tr>
+          <tr><td class="day-cell">Saturday</td><td>1 pm</td><td></td><td></td><td></td></tr>
+          <tr><td class="day-cell">Sunday</td><td></td><td></td><td>9 am</td><td></td></tr>
+        </tbody>
+      </table>
+
+      <p class="schedule-season">Winter Schedule</p>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Association</th>
+            <th>Ricochet</th>
+            <th>Golf</th>
+            <th>Social</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="day-cell">Monday</td><td>1 pm</td><td></td><td></td><td></td></tr>
+          <tr><td class="day-cell">Tuesday</td><td></td><td></td><td>9 am</td><td>2 pm</td></tr>
+          <tr><td class="day-cell">Wednesday</td><td></td><td>1 pm</td><td></td><td></td></tr>
+          <tr><td class="day-cell">Friday</td><td></td><td></td><td>9 am</td><td>2 pm</td></tr>
+          <tr><td class="day-cell">Saturday</td><td>1 pm</td><td></td><td></td><td></td></tr>
+          <tr><td class="day-cell">Sunday</td><td></td><td></td><td>9 am</td><td></td></tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top: 24px; color: #888; font-size: 14px;">Closed Thursdays. Turn up to any session listed above.</p>
+    </div>
+  </section>
+
+  <!-- COME & TRY -->
+  <section id="try" class="cta-banner">
+    <h2>Your First Session is Free</h2>
+    <p>All equipment supplied. Just bring flat shoes and a hat. We will sort the rest.</p>
+    <div class="cta-details">
+      <div class="cta-detail">
+        <strong>Free</strong>
+        <span>First Session</span>
+      </div>
+      <div class="cta-detail">
+        <strong>$15</strong>
+        <span>Coaching Sessions</span>
+      </div>
+      <div class="cta-detail">
+        <strong>6 Days</strong>
+        <span>Per Week</span>
+      </div>
+    </div>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
+
+  <!-- FEES -->
+  <section id="fees" class="section section-sage">
+    <div class="section-inner">
+      <h2 class="section-heading">Fees</h2>
+      <hr class="section-rule">
+      <div class="fees-grid">
+        <div class="fee-card">
+          <div class="fee-label">Come &amp; Try</div>
+          <div class="fee-price">Free</div>
+          <div class="fee-note">Your first session, on us</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-label">Visitor (Affiliated Club)</div>
+          <div class="fee-price">$10</div>
+          <div class="fee-note">Per session</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-label">Visitor (Other)</div>
+          <div class="fee-price">$15</div>
+          <div class="fee-note">Per session</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-label">Beginner Coaching</div>
+          <div class="fee-price">$15</div>
+          <div class="fee-note">With qualified coaches</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-label">Daily Green Fees</div>
+          <div class="fee-price">$8</div>
+          <div class="fee-note">Members</div>
+        </div>
+        <div class="fee-card">
+          <div class="fee-label">Annual Membership</div>
+          <div class="fee-price">$250</div>
+          <div class="fee-note">Full year access</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <h2 class="section-heading">Find Us</h2>
+      <hr class="section-rule">
+      <div class="contact-grid">
+        <div>
+          <div class="contact-item">
+            <div class="contact-label">Address</div>
+            <p>3 Orme Road, Buderim QLD 4556</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">President</div>
+            <p>Colin</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Phone</div>
+            <p><a href="tel:0412470755">0412 470 755</a></p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Secretary</div>
+            <p>Julie</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <p><a href="mailto:headlandbuderimcc@gmail.com">headlandbuderimcc@gmail.com</a></p>
+          </div>
+        </div>
+        <div>
+          <div class="map-placeholder">
+            3 Orme Road, Buderim QLD 4556
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Headland Buderim Croquet Club</h3>
+        <p>Four lawns on the ridge, in the leafiest corner of the Sunshine Coast. Open six days a week, all year round.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="#about">About</a></p>
+        <p><a href="#schedule">Schedule</a></p>
+        <p><a href="#try">Come &amp; Try</a></p>
+        <p><a href="#fees">Fees</a></p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>3 Orme Road, Buderim QLD 4556</p>
+        <p><a href="tel:0412470755">0412 470 755</a></p>
+        <p><a href="mailto:headlandbuderimcc@gmail.com">headlandbuderimcc@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Headland Buderim Croquet Club. Sunshine Coast, Queensland.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
