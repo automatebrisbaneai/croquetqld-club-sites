@@ -105,8 +105,9 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(27, 59, 25, 0.4) 0%,
-        rgba(27, 59, 25, 0.6) 100%
+        rgba(15, 32, 14, 0.35) 0%,
+        rgba(15, 32, 14, 0.55) 60%,
+        rgba(10, 22, 10, 0.7) 100%
       );
     }
 
@@ -523,15 +524,17 @@
 
     @media (max-width: 480px) {
       .nav-inner {
-        flex-direction: column;
         height: auto;
-        padding: 14px 0;
-        gap: 10px;
+        padding: 12px 0;
       }
       .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px;
+        gap: 12px 20px;
+      }
+      .nav-links a {
+        font-size: 10px;
+        letter-spacing: 0.14em;
       }
       .footer-links { flex-wrap: wrap; gap: 16px; }
     }
@@ -703,8 +706,9 @@
   <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="section-inner">
-      <h2 class="section-heading">Find Us</h2>
+      <h2 class="section-heading">We Would Love to Hear from You</h2>
       <hr class="section-rule">
+      <p style="color: var(--text-light); margin-bottom: 48px; max-width: 480px;">Whether you are thinking of joining, visiting from another club, or simply curious about the game, you are most welcome to get in touch.</p>
       <div class="contact-grid">
         <div>
           <div class="contact-item">
