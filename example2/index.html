@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Headland Buderim Croquet Club | Sunshine Coast</title>
-  <meta name="description" content="Four lawns on the ridge in Buderim. Association, Golf, Ricochet and Social croquet six days a week. Come and try your first session free.">
+  <meta name="description" content="Four lawns on the ridge in Buderim. Association, Golf, Ricochet and Social croquet six days a week. Your first session is free.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --lawn-green: #2D5A27;
       --deep-green: #1B3B19;
       --cream: #FAF6F0;
       --warm-gold: #C5A55A;
+      --gold-light: #D4BC7C;
       --soft-white: #FFFFFF;
       --charcoal: #2C2C2C;
-      --light-sage: #E8EFE6;
+      --text-light: #6B6B6B;
+      --light-sage: #EDF2EB;
+      --rule: #E0D8CC;
     }
 
     *, *::before, *::after {
@@ -25,74 +28,63 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Lato', sans-serif;
+      font-weight: 300;
       font-size: 17px;
-      line-height: 1.7;
+      line-height: 1.8;
       color: var(--charcoal);
       background-color: var(--cream);
     }
 
-    /* --- NAV --- */
+    /* --- NAV (lighter, more refined) --- */
     .nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--deep-green);
-      padding: 0 24px;
+      background: rgba(27, 59, 25, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 0 32px;
     }
 
     .nav-inner {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      height: 70px;
-    }
-
-    .nav-brand {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: var(--cream);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      justify-content: center;
+      gap: 48px;
+      height: 56px;
     }
 
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 36px;
       list-style: none;
     }
 
     .nav-links a {
       font-family: 'Lato', sans-serif;
-      font-weight: 600;
-      font-size: 13px;
+      font-weight: 400;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--cream);
+      letter-spacing: 0.18em;
+      color: rgba(250, 246, 240, 0.75);
       text-decoration: none;
-      opacity: 0.85;
-      transition: opacity 0.15s;
+      transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      opacity: 1;
       color: var(--warm-gold);
     }
 
     /* --- HERO --- */
     .hero {
       position: relative;
-      height: 75vh;
-      min-height: 500px;
+      height: 80vh;
+      min-height: 550px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -113,49 +105,58 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(27, 59, 25, 0.55) 0%,
-        rgba(27, 59, 25, 0.7) 100%
+        rgba(27, 59, 25, 0.4) 0%,
+        rgba(27, 59, 25, 0.6) 100%
       );
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 700px;
-      padding: 0 24px;
+      max-width: 640px;
+      padding: 0 32px;
+    }
+
+    .hero-club {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--warm-gold);
+      margin-bottom: 24px;
     }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
       color: var(--soft-white);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      line-height: 1.15;
+      line-height: 1.2;
       margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 32px;
-      line-height: 1.6;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 40px;
+      line-height: 1.7;
     }
 
     .btn {
       display: inline-block;
       font-family: 'Lato', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
+      font-weight: 400;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 16px 40px;
+      letter-spacing: 0.18em;
+      padding: 14px 44px;
       text-decoration: none;
-      border: 3px solid var(--warm-gold);
-      background: var(--lawn-green);
-      color: var(--cream);
-      transition: background 0.15s, color 0.15s;
+      border: 1px solid var(--warm-gold);
+      color: var(--soft-white);
+      background: transparent;
+      transition: background 0.2s, color 0.2s;
     }
 
     .btn:hover {
@@ -163,25 +164,56 @@
       color: var(--deep-green);
     }
 
-    .btn-outline {
-      background: transparent;
-      border-color: var(--warm-gold);
-      color: var(--soft-white);
+    .btn-solid {
+      background: var(--lawn-green);
+      border-color: var(--lawn-green);
+      color: var(--cream);
     }
 
-    .btn-outline:hover {
+    .btn-solid:hover {
       background: var(--warm-gold);
+      border-color: var(--warm-gold);
       color: var(--deep-green);
     }
 
     /* --- SECTIONS --- */
     .section {
-      padding: 100px 24px;
+      padding: 120px 32px;
     }
 
     .section-inner {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
+    }
+
+    .section-narrow {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--deep-green);
+      margin-bottom: 12px;
+    }
+
+    .section-heading-center {
+      text-align: center;
+    }
+
+    .section-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--warm-gold);
+      border: none;
+      margin-bottom: 48px;
+    }
+
+    .section-rule-center {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .section-alt {
@@ -192,269 +224,262 @@
       background: var(--light-sage);
     }
 
-    .section-heading {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--deep-green);
-      margin-bottom: 16px;
-    }
-
-    .section-rule {
-      width: 60px;
-      height: 3px;
-      background: var(--warm-gold);
-      border: none;
-      margin-bottom: 40px;
-    }
-
-    .section-rule-center {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* --- ABOUT (split layout) --- */
+    /* --- ABOUT (split, generous) --- */
     .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 80px;
       align-items: center;
     }
 
     .split-img {
       width: 100%;
-      height: 400px;
+      height: 480px;
       object-fit: cover;
-      border-radius: 2px;
+    }
+
+    .split-text {
+      max-width: 440px;
     }
 
     .split-text p {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      color: var(--text-light);
     }
 
-    /* --- GALLERY --- */
-    .gallery {
+    .split-text p.emphasis {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--lawn-green);
+      line-height: 1.6;
+    }
+
+    /* --- GALLERY (atmospheric, spacious) --- */
+    .gallery-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .gallery-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
     }
 
-    .gallery img {
+    .gallery-wide {
+      grid-column: 1 / -1;
+    }
+
+    .gallery-stack img {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      height: 400px;
       object-fit: cover;
-      border-radius: 2px;
-      transition: transform 0.2s;
+      transition: opacity 0.2s;
     }
 
-    .gallery img:hover {
-      transform: scale(1.03);
+    .gallery-row img {
+      height: 320px;
     }
 
-    /* --- SCHEDULE --- */
+    .gallery-stack img:hover {
+      opacity: 0.92;
+    }
+
+    /* --- SCHEDULE (refined, not spreadsheet) --- */
+    .schedule-block {
+      margin-bottom: 56px;
+    }
+
+    .schedule-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .schedule-label {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--lawn-green);
+      margin-bottom: 20px;
+    }
+
     .schedule-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 24px;
     }
 
     .schedule-table th {
       font-family: 'Lato', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
+      font-weight: 600;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      background: var(--deep-green);
-      color: var(--cream);
-      padding: 14px 16px;
+      letter-spacing: 0.15em;
+      color: var(--text-light);
+      padding: 12px 16px 12px 0;
       text-align: left;
+      border-bottom: 1px solid var(--rule);
     }
 
     .schedule-table td {
-      padding: 12px 16px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 14px 16px 14px 0;
+      border-bottom: 1px solid var(--rule);
       font-size: 15px;
-    }
-
-    .schedule-table tr:nth-child(even) {
-      background: var(--light-sage);
+      color: var(--text-light);
     }
 
     .schedule-table .day-cell {
-      font-weight: 700;
-      color: var(--deep-green);
-    }
-
-    .schedule-season {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--lawn-green);
-      margin-top: 48px;
-      margin-bottom: 8px;
-    }
-
-    .schedule-season:first-of-type {
-      margin-top: 0;
-    }
-
-    /* --- FEES --- */
-    .fees-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      margin-top: 24px;
-    }
-
-    .fee-card {
-      background: var(--soft-white);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      padding: 32px;
-      border-radius: 2px;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-    }
-
-    .fee-card .fee-label {
-      font-family: 'Lato', sans-serif;
       font-weight: 600;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--lawn-green);
-      margin-bottom: 8px;
+      color: var(--charcoal);
     }
 
-    .fee-card .fee-price {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 2rem;
-      color: var(--deep-green);
-    }
-
-    .fee-card .fee-note {
+    .schedule-note {
+      margin-top: 20px;
       font-size: 14px;
-      color: #888;
-      margin-top: 4px;
+      color: var(--text-light);
     }
 
     /* --- COME & TRY --- */
     .cta-banner {
       background: var(--deep-green);
       text-align: center;
-      padding: 80px 24px;
+      padding: 100px 32px;
     }
 
     .cta-banner h2 {
       font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
       color: var(--cream);
       margin-bottom: 16px;
     }
 
     .cta-banner p {
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 600px;
-      margin: 0 auto 32px;
-      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      font-size: 1rem;
     }
 
-    .cta-details {
+    .cta-facts {
       display: flex;
       justify-content: center;
-      gap: 48px;
-      margin-bottom: 40px;
+      gap: 64px;
+      margin-bottom: 48px;
       flex-wrap: wrap;
     }
 
-    .cta-detail {
+    .cta-fact {
       text-align: center;
-      color: var(--warm-gold);
     }
 
-    .cta-detail strong {
+    .cta-fact strong {
       display: block;
-      font-size: 1.3rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: var(--warm-gold);
       margin-bottom: 4px;
     }
 
-    .cta-detail span {
-      font-size: 13px;
+    .cta-fact span {
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      opacity: 0.8;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* --- FEES (consolidated, spacious) --- */
+    .fees-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      margin-top: 32px;
+    }
+
+    .fee-group h3 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--warm-gold);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .fee-line {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      font-size: 15px;
+      color: var(--text-light);
+    }
+
+    .fee-line strong {
+      font-weight: 600;
+      color: var(--charcoal);
     }
 
     /* --- CONTACT --- */
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
       align-items: start;
     }
 
     .contact-item {
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .contact-item .contact-label {
       font-weight: 600;
-      font-size: 13px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--lawn-green);
+      letter-spacing: 0.15em;
+      color: var(--warm-gold);
       margin-bottom: 4px;
+    }
+
+    .contact-item p {
+      color: var(--text-light);
     }
 
     .contact-item a {
       color: var(--lawn-green);
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.2s;
     }
 
-    .map-placeholder {
+    .contact-item a:hover {
+      border-color: var(--lawn-green);
+    }
+
+    .contact-map {
       width: 100%;
-      height: 300px;
-      background: var(--light-sage);
-      border-radius: 2px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--lawn-green);
-      font-weight: 600;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      height: 360px;
+      border: none;
+      filter: grayscale(30%) contrast(0.95);
     }
 
-    /* --- FOOTER --- */
+    /* --- FOOTER (lighter) --- */
     .footer {
       background: var(--deep-green);
-      padding: 60px 24px 40px;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 14px;
+      padding: 48px 32px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.45);
+      font-size: 13px;
     }
 
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
-    }
-
-    .footer h3 {
+    .footer-brand {
       font-family: 'Playfair Display', serif;
-      font-weight: 700;
+      font-weight: 400;
       font-size: 1rem;
-      color: var(--cream);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 8px;
     }
 
     .footer a {
@@ -462,88 +487,53 @@
       text-decoration: none;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
+    .footer-links {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
     }
 
-    .footer-bottom {
-      max-width: 1200px;
-      margin: 40px auto 0;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      text-align: center;
-      font-size: 13px;
+    .footer-links a {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.4);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--warm-gold);
     }
 
     /* --- RESPONSIVE --- */
     @media (max-width: 768px) {
-      .section {
-        padding: 60px 20px;
-      }
-
-      .split {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .split-img {
-        height: 280px;
-      }
-
-      .split.reverse .split-img-wrap {
-        order: -1;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .nav-links {
-        gap: 16px;
-      }
-
-      .nav-links a {
-        font-size: 11px;
-      }
-
-      .fees-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        height: 60vh;
-        min-height: 400px;
-      }
-
-      .cta-details {
-        gap: 24px;
-      }
+      .section { padding: 80px 24px; }
+      .split { grid-template-columns: 1fr; gap: 40px; }
+      .split-img { height: 300px; }
+      .split-text { max-width: 100%; }
+      .gallery-row { grid-template-columns: 1fr; }
+      .gallery-stack img { height: 260px; }
+      .gallery-row img { height: 260px; }
+      .fees-list { grid-template-columns: 1fr; gap: 32px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cta-facts { gap: 32px; }
+      .hero { height: 65vh; min-height: 420px; }
     }
 
     @media (max-width: 480px) {
       .nav-inner {
         flex-direction: column;
         height: auto;
-        padding: 16px 0;
-        gap: 12px;
+        padding: 14px 0;
+        gap: 10px;
       }
-
       .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
+        gap: 16px;
       }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
     }
   </style>
 </head>
@@ -552,10 +542,9 @@
   <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-brand">Headland Buderim Croquet</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#schedule">Play</a></li>
+        <li><a href="#schedule">Schedule</a></li>
         <li><a href="#try">Come &amp; Try</a></li>
         <li><a href="#fees">Fees</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -565,27 +554,28 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img src="images/players-golden-hour.jpg" alt="Croquet players on the lawns at golden hour, Headland Buderim Croquet Club" class="hero-img">
+    <img src="images/players-golden-hour.jpg" alt="Croquet players on the sunlit lawns at Headland Buderim Croquet Club" class="hero-img">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Four Lawns on the Ridge</h1>
-      <p>Association, Golf, Ricochet and Social croquet on the Sunshine Coast. Six days a week, all year round.</p>
-      <a href="#try" class="btn btn-outline">Come and Try</a>
+      <p class="hero-club">Headland Buderim Croquet Club</p>
+      <h1>Croquet on the Ridge</h1>
+      <p>Association, Golf, Ricochet and Social croquet on the Sunshine Coast. Six days a week, all year round. Visitors always welcome.</p>
+      <a href="#try" class="btn">Come and Try</a>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="section">
     <div class="section-inner split">
-      <div class="split-img-wrap">
-        <img src="images/clubhouse-mural.jpg" alt="The clubhouse at Headland Buderim Croquet Club with its colourful mural" class="split-img">
+      <div>
+        <img src="images/clubhouse-mural.jpg" alt="The clubhouse at Headland Buderim Croquet Club, with its colourful mural and manicured lawns" class="split-img">
       </div>
       <div class="split-text">
         <h2 class="section-heading">More Than a Game</h2>
         <hr class="section-rule">
-        <p>Four lawns in the leafiest corner of the Sunshine Coast. Some play for competition: teams match up across the region, and the best get picked for State and national squads. Others come for the morning air, a bit of exercise, and the company.</p>
-        <p>Both belong here.</p>
-        <p>We play Association, Golf Croquet, Ricochet and Social six days a week. The lawns are open, the kettle is on, and there is always someone happy to show you the ropes.</p>
+        <p>Four lawns in the leafiest corner of the Sunshine Coast. Some play for competition: teams match up across the region, and the best are selected for State and national squads. Others come for the morning air, a little exercise, and the company.</p>
+        <p class="emphasis">Both belong here.</p>
+        <p>We play Association, Golf Croquet, Ricochet and Social six days a week. The lawns are open, the kettle is on, and there is always someone glad to show you how it works.</p>
       </div>
     </div>
   </section>
@@ -593,84 +583,90 @@
   <!-- GALLERY -->
   <section class="section section-alt">
     <div class="section-inner">
-      <div style="text-align:center; margin-bottom: 48px;">
+      <div class="section-heading-center">
         <h2 class="section-heading">Life on the Lawns</h2>
         <hr class="section-rule section-rule-center">
       </div>
-      <div class="gallery">
-        <img src="images/players-golden-hour.jpg" alt="Players competing during golden hour on the manicured lawns">
-        <img src="images/family-playing.jpg" alt="Families enjoying a social game of croquet together">
-        <img src="images/clubhouse-mural.jpg" alt="The Headland Buderim clubhouse and its distinctive mural">
+      <div class="gallery-stack">
+        <img src="images/players-golden-hour.jpg" alt="Players competing during golden hour on the manicured lawns" class="gallery-wide">
+        <div class="gallery-row">
+          <img src="images/family-playing.jpg" alt="Families enjoying a social afternoon of croquet">
+          <img src="images/clubhouse-mural.jpg" alt="The Headland Buderim clubhouse and its distinctive mural">
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SCHEDULE -->
   <section id="schedule" class="section">
-    <div class="section-inner">
+    <div class="section-inner section-narrow">
       <h2 class="section-heading">When We Play</h2>
       <hr class="section-rule">
 
-      <p class="schedule-season">Summer Schedule</p>
-      <table class="schedule-table">
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Association</th>
-            <th>Ricochet</th>
-            <th>Golf</th>
-            <th>Social</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="day-cell">Monday</td><td>1 pm</td><td></td><td></td><td></td></tr>
-          <tr><td class="day-cell">Tuesday</td><td></td><td></td><td>9 am</td><td>3 pm</td></tr>
-          <tr><td class="day-cell">Wednesday</td><td></td><td>1 pm</td><td></td><td></td></tr>
-          <tr><td class="day-cell">Friday</td><td></td><td></td><td>9 am</td><td>3 pm</td></tr>
-          <tr><td class="day-cell">Saturday</td><td>1 pm</td><td></td><td></td><td></td></tr>
-          <tr><td class="day-cell">Sunday</td><td></td><td></td><td>9 am</td><td></td></tr>
-        </tbody>
-      </table>
+      <div class="schedule-block">
+        <p class="schedule-label">Summer</p>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Association</th>
+              <th>Ricochet</th>
+              <th>Golf</th>
+              <th>Social</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="day-cell">Monday</td><td>1 pm</td><td></td><td></td><td></td></tr>
+            <tr><td class="day-cell">Tuesday</td><td></td><td></td><td>9 am</td><td>3 pm</td></tr>
+            <tr><td class="day-cell">Wednesday</td><td></td><td>1 pm</td><td></td><td></td></tr>
+            <tr><td class="day-cell">Friday</td><td></td><td></td><td>9 am</td><td>3 pm</td></tr>
+            <tr><td class="day-cell">Saturday</td><td>1 pm</td><td></td><td></td><td></td></tr>
+            <tr><td class="day-cell">Sunday</td><td></td><td></td><td>9 am</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
 
-      <p class="schedule-season">Winter Schedule</p>
-      <table class="schedule-table">
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Association</th>
-            <th>Ricochet</th>
-            <th>Golf</th>
-            <th>Social</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="day-cell">Monday</td><td>1 pm</td><td></td><td></td><td></td></tr>
-          <tr><td class="day-cell">Tuesday</td><td></td><td></td><td>9 am</td><td>2 pm</td></tr>
-          <tr><td class="day-cell">Wednesday</td><td></td><td>1 pm</td><td></td><td></td></tr>
-          <tr><td class="day-cell">Friday</td><td></td><td></td><td>9 am</td><td>2 pm</td></tr>
-          <tr><td class="day-cell">Saturday</td><td>1 pm</td><td></td><td></td><td></td></tr>
-          <tr><td class="day-cell">Sunday</td><td></td><td></td><td>9 am</td><td></td></tr>
-        </tbody>
-      </table>
+      <div class="schedule-block">
+        <p class="schedule-label">Winter</p>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Association</th>
+              <th>Ricochet</th>
+              <th>Golf</th>
+              <th>Social</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="day-cell">Monday</td><td>1 pm</td><td></td><td></td><td></td></tr>
+            <tr><td class="day-cell">Tuesday</td><td></td><td></td><td>9 am</td><td>2 pm</td></tr>
+            <tr><td class="day-cell">Wednesday</td><td></td><td>1 pm</td><td></td><td></td></tr>
+            <tr><td class="day-cell">Friday</td><td></td><td></td><td>9 am</td><td>2 pm</td></tr>
+            <tr><td class="day-cell">Saturday</td><td>1 pm</td><td></td><td></td><td></td></tr>
+            <tr><td class="day-cell">Sunday</td><td></td><td></td><td>9 am</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
 
-      <p style="margin-top: 24px; color: #888; font-size: 14px;">Closed Thursdays. Turn up to any session listed above.</p>
+      <p class="schedule-note">Closed Thursdays. Newcomers are welcome at any session.</p>
     </div>
   </section>
 
   <!-- COME & TRY -->
   <section id="try" class="cta-banner">
-    <h2>Your First Session is Free</h2>
-    <p>All equipment supplied. Just bring flat shoes and a hat. We will sort the rest.</p>
-    <div class="cta-details">
-      <div class="cta-detail">
+    <h2>Your First Session is Complimentary</h2>
+    <p>All equipment is provided. Flat shoes and a hat are all you need. We look forward to welcoming you.</p>
+    <div class="cta-facts">
+      <div class="cta-fact">
         <strong>Free</strong>
         <span>First Session</span>
       </div>
-      <div class="cta-detail">
+      <div class="cta-fact">
         <strong>$15</strong>
-        <span>Coaching Sessions</span>
+        <span>Coaching</span>
       </div>
-      <div class="cta-detail">
+      <div class="cta-fact">
         <strong>6 Days</strong>
         <span>Per Week</span>
       </div>
@@ -680,39 +676,25 @@
 
   <!-- FEES -->
   <section id="fees" class="section section-sage">
-    <div class="section-inner">
+    <div class="section-inner section-narrow">
       <h2 class="section-heading">Fees</h2>
       <hr class="section-rule">
-      <div class="fees-grid">
-        <div class="fee-card">
-          <div class="fee-label">Come &amp; Try</div>
-          <div class="fee-price">Free</div>
-          <div class="fee-note">Your first session, on us</div>
+      <div class="fees-list">
+        <div class="fee-group">
+          <h3>Visitors</h3>
+          <div class="fee-line"><span>Come and Try (first session)</span><strong>Free</strong></div>
+          <div class="fee-line"><span>Affiliated club member</span><strong>$10</strong></div>
+          <div class="fee-line"><span>Other visitors</span><strong>$15</strong></div>
         </div>
-        <div class="fee-card">
-          <div class="fee-label">Visitor (Affiliated Club)</div>
-          <div class="fee-price">$10</div>
-          <div class="fee-note">Per session</div>
+        <div class="fee-group">
+          <h3>Coaching</h3>
+          <div class="fee-line"><span>Beginner session</span><strong>$15</strong></div>
+          <div class="fee-line"><span>Golf and Association</span><strong>Covered</strong></div>
         </div>
-        <div class="fee-card">
-          <div class="fee-label">Visitor (Other)</div>
-          <div class="fee-price">$15</div>
-          <div class="fee-note">Per session</div>
-        </div>
-        <div class="fee-card">
-          <div class="fee-label">Beginner Coaching</div>
-          <div class="fee-price">$15</div>
-          <div class="fee-note">With qualified coaches</div>
-        </div>
-        <div class="fee-card">
-          <div class="fee-label">Daily Green Fees</div>
-          <div class="fee-price">$8</div>
-          <div class="fee-note">Members</div>
-        </div>
-        <div class="fee-card">
-          <div class="fee-label">Annual Membership</div>
-          <div class="fee-price">$250</div>
-          <div class="fee-note">Full year access</div>
+        <div class="fee-group">
+          <h3>Members</h3>
+          <div class="fee-line"><span>Daily green fees</span><strong>$8</strong></div>
+          <div class="fee-line"><span>Annual membership</span><strong>$250</strong></div>
         </div>
       </div>
     </div>
@@ -747,9 +729,13 @@
           </div>
         </div>
         <div>
-          <div class="map-placeholder">
-            3 Orme Road, Buderim QLD 4556
-          </div>
+          <iframe
+            class="contact-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3545.1!2d153.055!3d-26.684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s3+Orme+Road+Buderim+QLD+4556!5e0!3m2!1sen!2sau!4v1"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map showing Headland Buderim Croquet Club at 3 Orme Road, Buderim"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -757,27 +743,14 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-inner">
-      <div>
-        <h3>Headland Buderim Croquet Club</h3>
-        <p>Four lawns on the ridge, in the leafiest corner of the Sunshine Coast. Open six days a week, all year round.</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <p><a href="#about">About</a></p>
-        <p><a href="#schedule">Schedule</a></p>
-        <p><a href="#try">Come &amp; Try</a></p>
-        <p><a href="#fees">Fees</a></p>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <p>3 Orme Road, Buderim QLD 4556</p>
-        <p><a href="tel:0412470755">0412 470 755</a></p>
-        <p><a href="mailto:headlandbuderimcc@gmail.com">headlandbuderimcc@gmail.com</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Headland Buderim Croquet Club. Sunshine Coast, Queensland.</p>
+    <p class="footer-brand">Headland Buderim Croquet Club</p>
+    <p>3 Orme Road, Buderim QLD 4556 &middot; <a href="tel:0412470755">0412 470 755</a> &middot; <a href="mailto:headlandbuderimcc@gmail.com">headlandbuderimcc@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#try">Come &amp; Try</a>
+      <a href="#fees">Fees</a>
+      <a href="#contact">Contact</a>
     </div>
   </footer>
 
