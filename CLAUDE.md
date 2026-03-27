@@ -35,12 +35,16 @@ apps/club-sites/example[N]/
 
 ### Step 2: Site teardown
 
-Pull the reference site apart. Don't just look at it, read its source.
+Pull the reference site apart. Don't just look at it, read its source. This is the most important step — shallow teardown = wrong colours, wrong spacing, wrong feel.
 
 - Fetch the HTML source: `mcp__searxng__web_url_read` with the reference URL
+- **Extract exact CSS values** — not impressions. Actual hex colours, font-family names, font-weight values, px/rem sizes, gap/padding values. If the markdown return doesn't include stylesheet values, try fetching the CSS file directly (look for `<link rel="stylesheet">` URLs in the HTML).
 - Extract: colour values, font families, CSS animations/transitions, layout techniques (grid/flex/etc), spacing patterns, hover effects, scroll behaviours
 - Note specific techniques worth replicating (parallax, reveal animations, gradient overlays, etc.)
-- This is what stops you building a vague impression. You get the actual recipe.
+- **If you can't extract exact values:** note this explicitly in DESIGN.md, mark those values as estimates, and flag them for the Step 7b AI review.
+- This is what stops you building a vague impression. You get the actual recipe — not a guess at it.
+
+**Lesson learned (example2):** Fetching markdown content of royalhotel.com.au gave copy and structure but not CSS. The gold colour was invented (#C5A55A) and was wrong — too bright, too yellow. The AI reviewer caught it in Round 2. Fetch the stylesheet directly next time.
 
 ### Step 3: Generate DESIGN.md
 
@@ -103,6 +107,25 @@ What kills quality ("ugly glam"):
 - Effects that don't serve the concept
 - Generic stock-photo feel
 - Cramped spacing
+
+### Step 7b: AI committee review
+
+Before deploying, run the site through an AI reviewer playing the role of the submitter. This catches what self-review misses — tone, feel, elegance, copy register — and is cheap (~$0.002/call on OpenRouter).
+
+**How:**
+1. Call `mcp__openrouter__chat_completion` with model `x-ai/grok-4.20-beta` (or `google/gemini-3.1-pro-preview` — always search OpenRouter for current IDs)
+2. System prompt: set the AI as the person who submitted the form. Include their name, email, design_url, and description verbatim so it can judge in-character.
+3. User prompt: include the original request, the DESIGN.md, and the full HTML source. Ask for a 1-10 rating and specific feedback.
+4. Iterate until the AI rates 8+, or 3 rounds — whichever comes first.
+
+**Committee option (for important builds):** Run 2-3 models with different personas simultaneously (e.g. conservative treasurer, enthusiastic new member, tech-savvy younger player). Synthesise feedback before applying changes. More signals, better coverage.
+
+**Key prompt pattern:**
+> "Your original request was: [DESCRIPTION]. Here is what was built: [HTML]. Rate 1-10. What do you like? What would you change? Be specific and direct."
+
+Always tell the AI what its original request was — without this, it can't judge the gap between what was asked and what was delivered.
+
+**Lesson from example2:** Self-review scored the first build as 7/10. Grok scored it 6.5 and found the same issues plus several more. 4 rounds of AI review took the site from 6.5 to 9.6 in ~20 minutes at a total cost of $0.02.
 
 ### Step 8: Deploy
 
