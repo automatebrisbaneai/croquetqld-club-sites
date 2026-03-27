@@ -371,6 +371,222 @@ h2 {
 
 .gallery-link:hover small { color: var(--cream); opacity: 0.7; }
 
+/* ---- URL INPUT IN STEP ---- */
+.step-url-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  border: 2px solid rgba(115, 24, 44, 0.25);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text);
+  margin-top: 1.25rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+.step-url-input:focus {
+  outline: none;
+  border-color: var(--maroon);
+}
+.step-url-input::placeholder { color: var(--text-muted); opacity: 0.65; }
+
+/* ---- BELOW-STEPS FORM BLOCK ---- */
+.how-form-block {
+  background: var(--cream);
+  border-radius: 12px;
+  border: 2px solid var(--maroon);
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+.how-form-block label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  margin-bottom: 0.4rem;
+}
+.how-form-block input,
+.how-form-block textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  border: 2px solid rgba(115, 24, 44, 0.2);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+.how-form-block input:focus,
+.how-form-block textarea:focus { outline: none; border-color: var(--maroon); }
+.how-form-block textarea { resize: vertical; min-height: 80px; margin-bottom: 1.5rem; }
+.how-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.how-form-row .col > input { margin-bottom: 0; }
+.how-submit {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.05rem;
+  color: var(--cream);
+  background: var(--maroon);
+  border: 3px solid var(--maroon);
+  border-radius: 8px;
+  padding: 0.875rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+.how-submit:hover {
+  background: var(--maroon-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(44, 24, 16, 0.25);
+}
+.how-contact-note {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.how-contact-note a { color: var(--maroon); text-decoration: none; }
+.how-contact-note a:hover { text-decoration: underline; }
+
+/* ---- IDEA CARDS ---- */
+.idea-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.idea-card {
+  background: var(--cream);
+  border: 2px solid var(--maroon);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.idea-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(44, 24, 16, 0.2);
+}
+.idea-card-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  opacity: 0.5;
+  margin-bottom: 0.4rem;
+}
+.idea-card-name {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--maroon);
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+.idea-card-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+.idea-card-cta {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--maroon);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) { .idea-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) {
+  .idea-grid { grid-template-columns: 1fr; }
+  .how-form-row { grid-template-columns: 1fr; }
+}
+
+/* ---- EXAMPLES GALLERY ---- */
+.examples-section {
+  padding: 6rem 0;
+  background: var(--cream);
+}
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.example-gallery-card {
+  background: var(--white);
+  border: 2px solid rgba(115, 24, 44, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.example-gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 56px rgba(44, 24, 16, 0.1);
+}
+.example-gallery-preview {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.example-gallery-placeholder {
+  width: 100%;
+  height: 210px;
+  background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.example-gallery-body { padding: 1.5rem; }
+.example-gallery-title {
+  font-family: 'Abril Fatface', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--maroon);
+  margin-bottom: 0.3rem;
+}
+.example-gallery-meta {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+.example-gallery-summary {
+  font-size: 0.875rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+.example-gallery-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+.example-gallery-link {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--maroon);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s;
+}
+.example-gallery-link:hover { opacity: 0.65; }
+.example-gallery-link.muted { color: var(--text-muted); font-weight: 400; font-style: italic; }
+
+@media (max-width: 700px) { .examples-grid { grid-template-columns: 1fr; } }
+
 /* ---- BEYOND — on green ---- */
 .beyond {
   padding: 6rem 0;
@@ -622,50 +838,132 @@ footer a:hover { opacity: 1; }
     <div class="wrap">
       <div class="section-label">How It Works</div>
       <h2>Two steps. That's it.</h2>
-      <div class="steps" style="grid-template-columns: repeat(2, 1fr);">
-        <div class="step">
-          <h3>Pick a website you like</h3>
-          <p>Think of any website you have seen that looks good to you. A local business, a sports club, anything at all. Copy the address and send it through.</p>
+
+      <form id="designForm">
+        <div class="steps">
+          <div class="step">
+            <h3>Pick a website you like</h3>
+            <p>Think of any website you have seen that looks good to you. A local business, a sports club, anything at all. Paste the link right here.</p>
+            <input
+              class="step-url-input"
+              type="url"
+              id="design_url"
+              name="design_url"
+              required
+              placeholder="https://example.com">
+          </div>
+          <div class="step">
+            <h3>Tell us what to keep or change</h3>
+            <p>We build your club's site in that style and send you the link. Then you tell us what you like and what you want changed. That's it.</p>
+          </div>
         </div>
-        <div class="step">
-          <h3>Tell us what to keep or change</h3>
-          <p>We build your club's site in that style and send you the link. Then you tell us what you like and what you want changed. That's it.</p>
+
+        <div class="how-form-block">
+          <label for="description">Anything else you would like us to know <span style="font-weight:400;text-transform:none;opacity:0.6;">(optional)</span></label>
+          <textarea id="description" name="description" placeholder="Colours you like, things to include, anything at all..."></textarea>
+
+          <div class="how-form-row">
+            <div class="col">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Smith">
+            </div>
+            <div class="col">
+              <label for="email">Your email</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com">
+            </div>
+          </div>
+
+          <button type="submit" class="how-submit">Send it through</button>
+          <div class="how-contact-note">
+            Or email us directly: <a href="mailto:hello@croquetclaude.com">hello@croquetclaude.com</a>
+          </div>
         </div>
-      </div>
+      </form>
 
       <div class="galleries">
-        <h3>Need ideas? Browse these</h3>
-        <p>Pick any website whose look you like. You don't need to know why you like it, just send us the link.</p>
-        <div class="gallery-grid">
-          <a href="https://squarespace.com/templates" class="gallery-link" target="_blank" rel="noopener">Squarespace<small>Clean, professional styles</small></a>
-          <a href="https://onepagelove.com/" class="gallery-link" target="_blank" rel="noopener">One Page Love<small>Simple, one-page designs</small></a>
+        <h3>Need inspiration? Browse these</h3>
+        <p>Pick any website whose look you like. You don't need to know why you like it. Just paste the link above.</p>
+        <div class="idea-grid">
+          <a href="https://squarespace.com/templates" class="idea-card" target="_blank" rel="noopener">
+            <div class="idea-card-tag">Templates</div>
+            <div class="idea-card-name">Squarespace</div>
+            <div class="idea-card-desc">Clean, professional layouts. Great if you want a polished, established look that gives confidence.</div>
+            <div class="idea-card-cta">Browse templates →</div>
+          </a>
+          <a href="https://onepagelove.com/" class="idea-card" target="_blank" rel="noopener">
+            <div class="idea-card-tag">Minimal</div>
+            <div class="idea-card-name">One Page Love</div>
+            <div class="idea-card-desc">Elegant one-pagers. Good if you want something simple, unfussy, and easy to navigate on a phone.</div>
+            <div class="idea-card-cta">Browse designs →</div>
+          </a>
+          <a href="https://awwwards.com/websites" class="idea-card" target="_blank" rel="noopener">
+            <div class="idea-card-tag">Inspiration</div>
+            <div class="idea-card-name">Awwwards</div>
+            <div class="idea-card-desc">Award-winning sites from around the world. Browse the best of modern web design for bold ideas.</div>
+            <div class="idea-card-cta">Browse winners →</div>
+          </a>
+          <a href="https://webflow.com/templates" class="idea-card" target="_blank" rel="noopener">
+            <div class="idea-card-tag">Templates</div>
+            <div class="idea-card-name">Webflow Templates</div>
+            <div class="idea-card-desc">Professional templates built for sports clubs, community groups, and local organisations.</div>
+            <div class="idea-card-cta">Browse templates →</div>
+          </a>
+          <a href="https://lapa.ninja" class="idea-card" target="_blank" rel="noopener">
+            <div class="idea-card-tag">Real sites</div>
+            <div class="idea-card-name">Lapa Ninja</div>
+            <div class="idea-card-desc">A curated library of real landing pages. Good for seeing what actually works in practice, not just in theory.</div>
+            <div class="idea-card-cta">Browse pages →</div>
+          </a>
+          <a href="https://dribbble.com" class="idea-card" target="_blank" rel="noopener">
+            <div class="idea-card-tag">Design concepts</div>
+            <div class="idea-card-name">Dribbble</div>
+            <div class="idea-card-desc">Designer portfolios and concepts. More visual than functional, but full of colour and layout ideas.</div>
+            <div class="idea-card-cta">Browse designs →</div>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT — cream -->
-  <section class="contact-section reveal visible">
+  <!-- EXAMPLES GALLERY — cream -->
+  <section class="examples-section reveal visible">
     <div class="wrap">
-      <h2>Send us a link</h2>
-      <p>
-        Fill in your name, email, and a link to a website whose style you like. We'll take it from there.
-      </p>
-      <form class="contact-form" id="designForm">
-        <label for="name">Your name</label>
-        <input type="text" id="name" name="name" required placeholder="e.g. Jane Smith">
+      <div class="section-label">What We've Built</div>
+      <h2>Examples from the program</h2>
+      <p class="showcase-desc">Every example here started with a real website someone liked. Below is the inspiration they sent, and what we built from it. Each one uses the same club data, so you can focus on just the style.</p>
+      <div class="examples-grid">
 
-        <label for="email">Your email</label>
-        <input type="email" id="email" name="email" required placeholder="e.g. jane@example.com">
+        <div class="example-gallery-card">
+          <a href="/example1/" target="_blank" rel="noopener">
+            <img class="example-gallery-preview" src="images/example1-preview.png" alt="Headland-Buderim Croquet Club — Example 1">
+          </a>
+          <div class="example-gallery-body">
+            <div class="example-gallery-title">Buderim's Eternal Afternoon</div>
+            <div class="example-gallery-meta">Headland-Buderim Croquet Club</div>
+            <div class="example-gallery-summary">The brief was a feeling, not a reference site. Subtropical light, ginger heritage, a long unhurried afternoon on the ridge. Every colour and spacing decision was made to answer: does this feel like Buderim? The result is warm, unhurried, and unmistakably local.</div>
+            <div class="example-gallery-links">
+              <a href="/example1/" class="example-gallery-link" target="_blank" rel="noopener">View the site →</a>
+              <span class="example-gallery-link muted">Style developed by CroquetClaude</span>
+            </div>
+          </div>
+        </div>
 
-        <label for="design_url">Link to a design you like</label>
-        <input type="text" id="design_url" name="design_url" required placeholder="e.g. webflow.com/templates/...">
+        <div class="example-gallery-card">
+          <a href="/example2/" target="_blank" rel="noopener">
+            <img class="example-gallery-preview" src="/example2/images/players-golden-hour.jpg" alt="Headland-Buderim Croquet Club — Example 2">
+          </a>
+          <div class="example-gallery-body">
+            <div class="example-gallery-title">Gracious Heritage</div>
+            <div class="example-gallery-meta">Headland-Buderim Croquet Club</div>
+            <div class="example-gallery-summary">Inspired by the Royal Hotel Paddington: bold uppercase headlines, generous photography, and confident heritage typography. Translated to a croquet context, it became lawn-and-linen elegance: like walking through the clubhouse gate on a Saturday morning.</div>
+            <div class="example-gallery-links">
+              <a href="/example2/" class="example-gallery-link" target="_blank" rel="noopener">View the site →</a>
+              <a href="https://www.royalhotel.com.au/" class="example-gallery-link muted" target="_blank" rel="noopener">Original inspiration →</a>
+            </div>
+          </div>
+        </div>
 
-        <label for="description">Anything else? <span style="font-weight:400;text-transform:none;opacity:0.6;">(optional)</span></label>
-        <textarea id="description" name="description" placeholder="Colours you like, things you want, anything at all..."></textarea>
-
-        <button type="submit">Send it through</button>
-      </form>
+      </div>
     </div>
   </section>
 
@@ -719,11 +1017,19 @@ footer a:hover { opacity: 1; }
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     }).then(function() {
-      form.innerHTML = '<div class="form-success">Got it! We\'ll be in touch.</div>';
+      showSuccess();
     }).catch(function() {
-      form.innerHTML = '<div class="form-success">Got it! We\'ll be in touch.</div>';
+      showSuccess();
     });
   });
+  function showSuccess() {
+    var block = form.querySelector('.how-form-block');
+    if (block) {
+      block.innerHTML = '<div class="form-success" style="text-align:center;padding:2rem;font-size:1.1rem;color:var(--maroon);font-weight:600;">Got it. We\'ll be in touch soon.</div>';
+    }
+    var urlInput = form.querySelector('.step-url-input');
+    if (urlInput) urlInput.disabled = true;
+  }
 })();
 </script>
 
