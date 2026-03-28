@@ -3,7 +3,7 @@
 ## Submission Brief
 
 - **Name:** Jan Whitfield (Secretary) [GENERATED]
-- **Email:** headlandbuderimcc@gmail.com [GENERATED]
+- **Email:** jan.whitfield@pretendmail.com [GENERATED]
 - **Reference URL:** https://tenbinlabs.xyz
 - **Description:** "We'd love something sophisticated and modern. Tenbinlabs has that dark, clean feel that seems premium and serious. Our club has been around a long time and we're proud of our competitive players. We want something that feels like we mean business, but still welcoming."
 
