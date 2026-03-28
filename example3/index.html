@@ -52,10 +52,43 @@
     }
     .skip-link:focus { top: 16px; }
 
+    /* ── Announcement bar ──────────────────────────── */
+    .announcement-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 101;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: var(--bg);
+      border-bottom: 0.5px solid rgba(206, 202, 251, 0.2);
+    }
+
+    .announcement-bar p {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+    }
+
+    .announcement-bar strong {
+      font-weight: 500;
+    }
+
+    .announcement-bar .ann-sep {
+      color: rgba(206, 202, 251, 0.35);
+      font-size: 10px;
+    }
+
     /* ── Nav ───────────────────────────────────────── */
     nav {
       position: fixed;
-      top: 0;
+      top: 40px;
       left: 0;
       right: 0;
       z-index: 100;
@@ -597,7 +630,7 @@
 
     /* ── Mobile ────────────────────────────────────── */
     @media (max-width: 900px) {
-      nav { padding: 20px 24px; }
+      nav { padding: 20px 24px; top: 40px; }
 
       #hero { padding: 80px 24px 40px; }
       .hero-note { max-width: 100%; }
@@ -631,6 +664,10 @@
     }
 
     @media (max-width: 480px) {
+      .announcement-bar { height: 36px; }
+      .announcement-bar p { font-size: 10px; letter-spacing: 0.02em; }
+      .announcement-bar .ann-sep { display: none; }
+      nav { top: 36px; }
       h1 { font-size: clamp(38px, 11vw, 56px); }
       #hero { padding: 40px 20px 32px; min-height: auto; }
       .hero-content { gap: 14px; }
@@ -647,6 +684,11 @@
 <body>
 
   <a href="#schedule" class="skip-link">Skip to main content</a>
+
+  <!-- Announcement -->
+  <div class="announcement-bar">
+    <p><strong>Gala Day — Saturday 12 April 2026</strong> <span class="ann-sep">·</span> Golf Croquet Open <span class="ann-sep">·</span> Call Colin to enter: <a href="tel:0412470755" style="color: var(--accent); text-decoration: none; border-bottom: 0.5px dashed rgba(206,202,251,0.4);">0412 470 755</a></p>
+  </div>
 
   <!-- Nav -->
   <nav>
