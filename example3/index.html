@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Headland Buderim Croquet Club</title>
-  <meta name="description" content="Four lawns on the ridge. Competitive and social croquet on the Sunshine Coast. Come and try your first session free.">
+  <meta name="description" content="Four lawns on the ridge. Competitive and social croquet on the Sunshine Coast. First session free. No booking needed.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -31,23 +31,27 @@
       background: var(--bg);
       color: var(--text-secondary);
       font-family: var(--font-mono);
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: 17px;
+      line-height: 1.65;
       overflow-x: hidden;
-      position: relative;
     }
 
-    /* ── Grain texture overlay ─────────────────────── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-      background-size: 180px 180px;
-      opacity: 0.035;
-      pointer-events: none;
+    /* ── Skip link ──────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 24px;
+      background: var(--accent);
+      color: #000;
+      padding: 8px 16px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border-radius: 4px;
       z-index: 9999;
+      transition: top 200ms ease;
     }
+    .skip-link:focus { top: 16px; }
 
     /* ── Nav ───────────────────────────────────────── */
     nav {
@@ -131,16 +135,23 @@
       color: var(--accent);
     }
 
+    .btn-accent {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    .btn-accent:hover {
+      box-shadow: 0 4px 32px var(--glow);
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #000;
+    }
+
     /* ── Sections ──────────────────────────────────── */
     section {
       position: relative;
       width: 100%;
-    }
-
-    .divider {
-      border: none;
-      border-top: 0.5px dashed var(--divider);
-      margin: 0 40px;
     }
 
     /* ── Hero ──────────────────────────────────────── */
@@ -200,11 +211,16 @@
     }
 
     .hero-sub {
-      font-size: 16px;
+      font-size: 17px;
       color: var(--text-secondary);
       max-width: 520px;
       line-height: 1.7;
-      font-style: italic;
+    }
+
+    .hero-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.04em;
     }
 
     .hero-actions {
@@ -247,42 +263,6 @@
       color: var(--text-secondary);
     }
 
-    /* ── About ─────────────────────────────────────── */
-    #about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      padding: 120px 80px;
-      align-items: center;
-    }
-
-    .about-img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      filter: brightness(0.85);
-      border-radius: 2px;
-    }
-
-    .about-text h2 {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 54px);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--text-primary);
-      line-height: 1.05;
-      margin-bottom: 24px;
-    }
-
-    .about-text p {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-    }
-
-    .about-text p:last-child { margin-bottom: 0; }
-
     /* ── Schedule ──────────────────────────────────── */
     #schedule {
       padding: 120px 80px;
@@ -303,7 +283,15 @@
       letter-spacing: -0.03em;
       color: var(--text-primary);
       line-height: 1.05;
-      margin-bottom: 56px;
+      margin-bottom: 24px;
+    }
+
+    .schedule-intro {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.02em;
+      margin-bottom: 48px;
+      max-width: 540px;
     }
 
     .schedule-grid {
@@ -357,16 +345,24 @@
       text-align: right;
     }
 
-    /* ── Come and Try ──────────────────────────────── */
-    #come-and-try {
+    /* ── About and Welcome (merged) ────────────────── */
+    #about {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       padding: 120px 80px;
-      align-items: center;
+      align-items: start;
     }
 
-    #come-and-try .text-side h2 {
+    .about-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      filter: brightness(0.85);
+      border-radius: 2px;
+    }
+
+    .about-text h2 {
       font-family: var(--font-display);
       font-size: clamp(32px, 4vw, 54px);
       font-weight: 700;
@@ -376,16 +372,18 @@
       margin-bottom: 24px;
     }
 
-    #come-and-try .text-side p {
-      font-size: 16px;
+    .about-text p {
+      font-size: 17px;
       line-height: 1.8;
       color: var(--text-secondary);
       margin-bottom: 16px;
     }
 
+    .about-text p:last-of-type { margin-bottom: 24px; }
+
     .cat-list {
       list-style: none;
-      margin: 24px 0 32px;
+      margin: 0 0 32px;
     }
 
     .cat-list li {
@@ -399,19 +397,13 @@
       color: var(--text-secondary);
     }
 
+    .cat-list li:last-child { border-bottom: none; }
+
     .cat-list li::before {
       content: '//';
       color: var(--accent);
       font-size: 11px;
       flex-shrink: 0;
-    }
-
-    .cat-img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      filter: brightness(0.85);
-      border-radius: 2px;
     }
 
     /* ── Fees ──────────────────────────────────────── */
@@ -481,7 +473,7 @@
     }
 
     #contact p {
-      font-size: 16px;
+      font-size: 17px;
       line-height: 1.8;
       color: var(--text-secondary);
       margin-bottom: 32px;
@@ -528,7 +520,7 @@
       width: 100%;
       aspect-ratio: 4/3;
       object-fit: cover;
-      filter: brightness(0.6) contrast(1.05);
+      filter: brightness(0.75);
       border-radius: 2px;
     }
 
@@ -558,26 +550,18 @@
     /* ── Mobile ────────────────────────────────────── */
     @media (max-width: 900px) {
       nav { padding: 20px 24px; }
-      .divider { margin: 0 24px; }
 
-      #hero { padding: 100px 24px 48px; }
+      #hero { padding: 80px 24px 40px; }
       .stats-bar { gap: 40px; padding: 48px 24px 64px; }
+
+      #schedule { padding: 80px 24px; }
+      .schedule-grid { grid-template-columns: 1fr; gap: 48px; }
 
       #about {
         grid-template-columns: 1fr;
         gap: 40px;
         padding: 80px 24px;
       }
-
-      #schedule { padding: 80px 24px; }
-      .schedule-grid { grid-template-columns: 1fr; gap: 48px; }
-
-      #come-and-try {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 80px 24px;
-      }
-      #come-and-try .image-side { order: -1; }
 
       #fees { padding: 80px 24px; }
       .fees-grid {
@@ -608,6 +592,8 @@
 </head>
 <body>
 
+  <a href="#schedule" class="skip-link">Skip to main content</a>
+
   <!-- Nav -->
   <nav>
     <a href="#hero" class="nav-logo">
@@ -616,7 +602,7 @@
     </a>
     <div class="nav-cta">
       <a href="tel:0412470755" class="nav-phone">0412 470 755</a>
-      <a href="#come-and-try" class="btn">Come and try</a>
+      <a href="#about" class="btn btn-accent">Come and try</a>
     </div>
   </nav>
 
@@ -627,9 +613,10 @@
     <div class="hero-content">
       <p class="hero-label">Sunshine Coast, QLD / Since 1959</p>
       <h1>Four lawns<br>on the ridge.</h1>
-      <p class="hero-sub">Competitive and social croquet in the leafiest corner of the Sunshine Coast. First session free. All welcome.</p>
+      <p class="hero-sub">Competitive and social croquet in the leafiest corner of the Sunshine Coast.</p>
+      <p class="hero-note">First session free. No booking needed. Just turn up.</p>
       <div class="hero-actions">
-        <a href="#come-and-try" class="btn">Start playing</a>
+        <a href="#about" class="btn">Start playing</a>
         <a href="#schedule" class="btn btn-outline">View schedule</a>
       </div>
     </div>
@@ -655,25 +642,11 @@
     </div>
   </div>
 
-  <hr class="divider">
-
-  <!-- About -->
-  <section id="about">
-    <img src="images/clubhouse-bw.png" alt="Headland Buderim Croquet Club clubhouse" class="about-img">
-    <div class="about-text">
-      <p class="section-label">About the club</p>
-      <h2>Serious play. Good company.</h2>
-      <p>Some come for competition. Teams match up across the region, and the best get picked for State and national squads. Others come for the morning air, a bit of exercise, and the company. Both belong here.</p>
-      <p>Four lawns on the ridge, in Buderim. Open six days a week. Association, Golf, Ricochet, and Social Croquet.</p>
-    </div>
-  </section>
-
-  <hr class="divider">
-
   <!-- Schedule -->
   <section id="schedule">
     <p class="section-label">When we play</p>
     <h2 class="section-title">Play schedule</h2>
+    <p class="schedule-intro">New player? Any session works. Just turn up to whichever time suits you. No booking, no experience needed.</p>
     <div class="schedule-grid">
       <div class="schedule-season">
         <h3>Summer</h3>
@@ -684,7 +657,7 @@
         </div>
         <div class="schedule-row">
           <span class="schedule-day">Tuesday</span>
-          <span class="schedule-codes">Golf / Social</span>
+          <span class="schedule-codes">Golf Croquet / Social</span>
           <span class="schedule-time">9 am / 3 pm</span>
         </div>
         <div class="schedule-row">
@@ -694,7 +667,7 @@
         </div>
         <div class="schedule-row">
           <span class="schedule-day">Friday</span>
-          <span class="schedule-codes">Golf / Social</span>
+          <span class="schedule-codes">Golf Croquet / Social</span>
           <span class="schedule-time">9 am / 3 pm</span>
         </div>
         <div class="schedule-row">
@@ -704,7 +677,7 @@
         </div>
         <div class="schedule-row">
           <span class="schedule-day">Sunday</span>
-          <span class="schedule-codes">Golf</span>
+          <span class="schedule-codes">Golf Croquet</span>
           <span class="schedule-time">9 am</span>
         </div>
       </div>
@@ -717,7 +690,7 @@
         </div>
         <div class="schedule-row">
           <span class="schedule-day">Tuesday</span>
-          <span class="schedule-codes">Golf / Social</span>
+          <span class="schedule-codes">Golf Croquet / Social</span>
           <span class="schedule-time">9 am / 2 pm</span>
         </div>
         <div class="schedule-row">
@@ -727,7 +700,7 @@
         </div>
         <div class="schedule-row">
           <span class="schedule-day">Friday</span>
-          <span class="schedule-codes">Golf / Social</span>
+          <span class="schedule-codes">Golf Croquet / Social</span>
           <span class="schedule-time">9 am / 2 pm</span>
         </div>
         <div class="schedule-row">
@@ -737,36 +710,31 @@
         </div>
         <div class="schedule-row">
           <span class="schedule-day">Sunday</span>
-          <span class="schedule-codes">Golf</span>
+          <span class="schedule-codes">Golf Croquet</span>
           <span class="schedule-time">9 am</span>
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="divider">
-
-  <!-- Come and Try -->
-  <section id="come-and-try">
-    <div class="text-side">
-      <p class="section-label">New players</p>
-      <h2>Your first session is free.</h2>
-      <p>Bring flat shoes and a hat. We supply everything else. No experience needed, no booking required. Turn up to any session.</p>
+  <!-- About and Welcome (merged) -->
+  <section id="about">
+    <img src="images/clubhouse-bw.png" alt="Headland Buderim Croquet Club clubhouse" class="about-img">
+    <div class="about-text">
+      <p class="section-label">About the club</p>
+      <h2>Serious play. Good company.</h2>
+      <p>Some come for competition. Teams match up across the region, and the best get picked for State and national squads. Others come for the morning air, a bit of exercise, and the company. Both belong here.</p>
+      <p>Four lawns on the ridge at Buderim. Open six days a week. Competitive and social play in Association, Golf, Ricochet, and Social Croquet.</p>
       <ul class="cat-list">
-        <li>All equipment supplied (mallets and balls)</li>
-        <li>First session completely free</li>
-        <li>Coaching available: $15 per session</li>
-        <li>Golf and Association Croquet coaching with qualified coaches</li>
-        <li>Just show up to any session listed above</li>
+        <li>First session completely free. No obligation.</li>
+        <li>Bring flat shoes and a hat. Everything else supplied.</li>
+        <li>No experience needed. No booking required.</li>
+        <li>Coaching available: $15 per session with qualified coaches.</li>
+        <li>Just turn up to any session listed above.</li>
       </ul>
       <a href="mailto:headlandbuderimcc@gmail.com" class="btn">Get in touch</a>
     </div>
-    <div class="image-side">
-      <img src="images/players-bw.png" alt="Players at Headland Buderim Croquet Club" class="cat-img">
-    </div>
   </section>
-
-  <hr class="divider">
 
   <!-- Fees -->
   <section id="fees">
@@ -790,8 +758,6 @@
       </div>
     </div>
   </section>
-
-  <hr class="divider">
 
   <!-- Contact -->
   <section id="contact">
@@ -824,13 +790,13 @@
       <a href="mailto:headlandbuderimcc@gmail.com" class="btn">Send us a message</a>
     </div>
     <div>
-      <img src="images/hero-dusk.png" alt="Headland Buderim Croquet Club lawns at dusk" class="contact-image">
+      <img src="images/players-bw.png" alt="Players at Headland Buderim Croquet Club" class="contact-image">
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p class="footer-left">Headland Buderim Croquet Club &copy; 2026</p>
+    <p class="footer-left">Headland Buderim Croquet Club, Est. 1959</p>
     <p class="footer-right">3 Orme Road, Buderim QLD 4556</p>
   </footer>
 
