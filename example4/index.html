@@ -4,21 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Graceville Croquet Club</title>
-  <meta name="description" content="Three lawns in Chelmer, Brisbane. Competitive and social croquet ten minutes from the CBD. First session free.">
+  <meta name="description" content="Croquet in Brisbane's south-west. Three lawns in Chelmer, five days a week. No experience needed — first session free.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     /* ── Design tokens ─────────────────────────────── */
     :root {
       --bg:             #f7f7f5;
       --navy:           #060761;
-      --lime:           #d1fa30;
+      --lime:           #8cb369;
       --pale:           #ededfa;
       --text-primary:   #060761;
       --text-secondary: #3a3a6e;
       --divider:        rgba(6, 7, 97, 0.12);
-      --font:           'Space Grotesk', system-ui, sans-serif;
+      --font-head:      'Syne', system-ui, sans-serif;
+      --font-body:      'Space Grotesk', system-ui, sans-serif;
     }
 
     /* ── Reset ─────────────────────────────────────── */
@@ -27,7 +28,7 @@
     body {
       background: var(--bg);
       color: var(--text-primary);
-      font-family: var(--font);
+      font-family: var(--font-body);
       font-size: 16px;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -43,7 +44,7 @@
       background: var(--navy);
       color: #fff;
       padding: 8px 16px;
-      border-radius: 4px;
+      border-radius: 2px;
       font-size: 13px;
       z-index: 200;
     }
@@ -59,14 +60,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 24px 48px;
+      padding: 18px 48px;
       background: var(--bg);
       border-bottom: 1px solid var(--divider);
     }
 
     .nav-logo {
+      font-family: var(--font-head);
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--navy);
@@ -91,7 +93,7 @@
 
     .nav-phone {
       font-size: 13px;
-      font-weight: 500;
+      font-weight: 400;
       color: var(--navy);
       text-decoration: none;
       letter-spacing: 0.02em;
@@ -100,11 +102,10 @@
     /* ── Buttons ───────────────────────────────────── */
     .btn {
       display: inline-block;
-      font-family: var(--font);
+      font-family: var(--font-body);
       font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.02em;
       text-decoration: none;
       padding: 12px 24px;
       border-radius: 2px;
@@ -114,7 +115,7 @@
 
     .btn-primary {
       background: var(--navy);
-      color: var(--lime);
+      color: #fff;
     }
     .btn-primary:hover { background: #0a0a9a; }
 
@@ -122,26 +123,36 @@
       background: var(--lime);
       color: var(--navy);
     }
-    .btn-lime:hover { background: #c4ed20; }
+    .btn-lime:hover { background: #7ca358; }
 
     .btn-outline {
       background: transparent;
       color: var(--navy);
       border: 1.5px solid var(--navy);
     }
-    .btn-outline:hover { background: var(--navy); color: var(--lime); }
+    .btn-outline:hover { background: var(--navy); color: #fff; }
 
     /* ── Wrap ───────────────────────────────────────── */
     .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
 
     /* ── Section labels ─────────────────────────────── */
     .section-label {
+      font-family: var(--font-head);
       font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
+      font-weight: 400;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-secondary);
       margin-bottom: 16px;
+    }
+
+    /* ── Headings ──────────────────────────────────── */
+    h1, h2 {
+      font-family: var(--font-head);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      color: var(--navy);
+      line-height: 1.0;
     }
 
     /* ── Hero ──────────────────────────────────────── */
@@ -158,8 +169,9 @@
     .hero-left {}
 
     .hero-label {
+      font-family: var(--font-head);
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--text-secondary);
@@ -167,20 +179,15 @@
     }
 
     h1 {
-      font-family: var(--font);
-      font-size: clamp(48px, 6vw, 88px);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      color: var(--navy);
-      line-height: 0.95;
+      font-size: clamp(44px, 5.5vw, 72px);
       margin-bottom: 24px;
     }
 
     .hero-sub {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 400;
       color: var(--text-secondary);
-      line-height: 1.5;
+      line-height: 1.6;
       max-width: 420px;
       margin-bottom: 32px;
     }
@@ -197,7 +204,7 @@
 
     .hero-img-wrap {
       position: relative;
-      border-radius: 4px;
+      border-radius: 6px;
       overflow: hidden;
       aspect-ratio: 4/3;
     }
@@ -214,10 +221,10 @@
       left: 24px;
       background: var(--lime);
       color: var(--navy);
+      font-family: var(--font-body);
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.02em;
       padding: 8px 16px;
       border-radius: 2px;
     }
@@ -243,14 +250,16 @@
     }
 
     .stat-number {
+      font-family: var(--font-head);
       font-size: clamp(36px, 4vw, 56px);
-      font-weight: 700;
+      font-weight: 400;
       letter-spacing: -0.04em;
       color: var(--lime);
       line-height: 1;
     }
 
     .stat-label {
+      font-family: var(--font-body);
       font-size: 13px;
       font-weight: 400;
       color: rgba(255,255,255,0.6);
@@ -263,31 +272,28 @@
       padding: 100px 0;
     }
 
-    #schedule .wrap { }
-
     .schedule-header {
       margin-bottom: 48px;
     }
 
     h2 {
-      font-family: var(--font);
       font-size: clamp(32px, 4vw, 48px);
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      color: var(--navy);
-      line-height: 1.1;
-      padding-bottom: 12px;
-      border-bottom: 2px solid var(--lime);
-      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .schedule-intro {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 640px;
+      margin-bottom: 20px;
     }
 
     .schedule-note {
-      margin-top: 20px;
       background: var(--pale);
-      border-left: 3px solid var(--navy);
       padding: 16px 20px;
       max-width: 560px;
-      border-radius: 0 2px 2px 0;
+      border-radius: 2px;
     }
 
     .schedule-note p {
@@ -315,8 +321,9 @@
     }
 
     .schedule-day {
+      font-family: var(--font-head);
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 400;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-secondary);
@@ -345,22 +352,25 @@
       font-size: 13px;
     }
 
-    /* ── About ──────────────────────────────────────── */
+    /* ── About + Fees (merged) ──────────────────────── */
     #about {
       padding: 100px 0;
       background: var(--navy);
     }
 
-    #about .wrap {
+    .about-top {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
     }
 
+    #about .section-label {
+      color: rgba(255,255,255,0.5);
+    }
+
     #about h2 {
       color: var(--lime);
-      border-bottom-color: rgba(209,250,48,0.4);
     }
 
     .about-text p {
@@ -375,7 +385,7 @@
     }
 
     .about-img {
-      border-radius: 4px;
+      border-radius: 6px;
       overflow: hidden;
       aspect-ratio: 4/3;
     }
@@ -386,9 +396,18 @@
       object-fit: cover;
     }
 
-    /* ── Fees ──────────────────────────────────────── */
-    #fees {
-      padding: 100px 0;
+    .fees-block {
+      margin-top: 72px;
+      padding-top: 64px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .fees-block .section-label {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .fees-block h2 {
+      color: #fff;
     }
 
     .fees-grid {
@@ -396,48 +415,57 @@
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 0;
       margin-top: 40px;
-      border: 1px solid var(--divider);
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 2px;
       overflow: hidden;
     }
 
     .fee-card {
       padding: 28px 24px;
-      border-right: 1px solid var(--divider);
-      background: #fff;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
     }
 
     .fee-card:last-child { border-right: none; }
 
     .fee-card:first-child {
-      background: var(--navy);
+      background: rgba(255,255,255,0.12);
     }
 
-    .fee-card:first-child .fee-label { color: rgba(255,255,255,0.6); }
+    .fee-card:first-child .fee-label { color: rgba(255,255,255,0.5); }
     .fee-card:first-child .fee-amount { color: var(--lime); }
 
     .fee-label {
+      font-family: var(--font-head);
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--text-secondary);
+      color: rgba(255,255,255,0.5);
       margin-bottom: 12px;
     }
 
     .fee-amount {
+      font-family: var(--font-head);
       font-size: clamp(28px, 3vw, 40px);
-      font-weight: 700;
+      font-weight: 400;
       letter-spacing: -0.03em;
-      color: var(--navy);
+      color: #fff;
       line-height: 1;
     }
 
     .fee-note {
       font-size: 12px;
-      color: var(--text-secondary);
+      color: rgba(255,255,255,0.5);
       margin-top: 8px;
       line-height: 1.4;
+    }
+
+    .fees-visitor-note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
     }
 
     /* ── Contact ────────────────────────────────────── */
@@ -467,8 +495,9 @@
     }
 
     .contact-item-label {
+      font-family: var(--font-head);
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-secondary);
@@ -484,7 +513,7 @@
     a.contact-item-value:hover { color: #0a0a9a; }
 
     .contact-img {
-      border-radius: 4px;
+      border-radius: 6px;
       overflow: hidden;
       aspect-ratio: 4/3;
     }
@@ -506,6 +535,7 @@
     }
 
     footer p {
+      font-family: var(--font-head);
       font-size: 12px;
       color: rgba(255,255,255,0.4);
       letter-spacing: 0.04em;
@@ -520,7 +550,7 @@
 
     /* ── Mobile ─────────────────────────────────────── */
     @media (max-width: 900px) {
-      nav { padding: 20px 24px; }
+      nav { padding: 18px 24px; }
 
       #hero {
         grid-template-columns: 1fr;
@@ -534,13 +564,13 @@
       .stats-inner { flex-wrap: wrap; gap: 32px; }
 
       #schedule .wrap,
-      #fees .wrap,
       #contact .wrap { padding: 0 24px; }
 
-      #about .wrap {
+      #about .wrap { padding: 0 24px; }
+
+      .about-top {
         grid-template-columns: 1fr;
         gap: 48px;
-        padding: 0 24px;
       }
 
       .schedule-grid { grid-template-columns: 1fr; }
@@ -553,10 +583,10 @@
       .nav-phone { display: none; }
 
       #hero { padding: 100px 20px 48px; }
-      h1 { font-size: clamp(38px, 11vw, 56px); }
+      h1 { font-size: clamp(36px, 10vw, 52px); }
 
       .fees-grid { grid-template-columns: 1fr 1fr; }
-      .fee-card { border-bottom: 1px solid var(--divider); }
+      .fee-card { border-bottom: 1px solid rgba(255,255,255,0.15); }
 
       footer { flex-direction: column; text-align: center; padding: 32px 20px; }
     }
@@ -581,23 +611,23 @@
   <!-- Hero -->
   <section id="hero">
     <div class="hero-left">
-      <p class="hero-label">South Brisbane — Est. 1970</p>
-      <h1>Three lawns.<br>Ten minutes<br>from the city.</h1>
-      <p class="hero-sub">Chelmer's best-kept secret. Competitive, social, and welcoming. First session on us.</p>
+      <p class="hero-label">Chelmer, Brisbane — Est. 1970</p>
+      <h1>Come and try croquet. First visit free.</h1>
+      <p class="hero-sub">First session is completely free. Just turn up at 2:30 pm any day we play, ask for Pauline, and we'll take it from there. No booking, no experience needed. All equipment provided.</p>
       <div class="hero-actions">
-        <a href="#schedule" class="btn btn-lime">Come and try free</a>
-        <a href="#schedule" class="btn btn-outline">View schedule</a>
+        <a href="#schedule" class="btn btn-lime">See play times — first session free</a>
+        <a href="#about" class="btn btn-outline">About the club</a>
       </div>
     </div>
     <div class="hero-right">
       <div class="hero-img-wrap">
-        <img src="images/hero-action.png" alt="Croquet players in action at Graceville">
+        <img src="images/lawns-chelmer.png" alt="Three lawns at Graceville Croquet Club, Chelmer — hoops and boundaries visible">
         <div class="hero-badge">First session free</div>
       </div>
     </div>
   </section>
 
-  <!-- Stats -->
+  <!-- Stats (immediately after hero) -->
   <div class="stats-bar">
     <div class="stats-inner">
       <div class="stat">
@@ -619,60 +649,61 @@
     </div>
   </div>
 
-  <!-- Schedule -->
+  <!-- Schedule (after stats) -->
   <section id="schedule">
     <div class="wrap">
       <div class="schedule-header">
-        <p class="section-label">When we play</p>
-        <h2>Play schedule</h2>
+        <p class="section-label">Play Times</p>
+        <h2>When we play</h2>
+        <p class="schedule-intro">All sessions are open to beginners. Golf Croquet (GC) on Sunday, Monday, Tuesday and Friday is the easiest place to start. Ricochet (RC) and Association (AC) are also welcoming to newcomers.</p>
         <div class="schedule-note">
-          <p><strong>New player?</strong> Any session works for your first visit. Just turn up at the start time, ask for the secretary, and we'll take it from there. No booking needed.</p>
+          <p><strong>New player?</strong> Just turn up at 2:30 pm any weekday or Sunday, ask for the secretary (Pauline), and we'll take it from there. No booking needed.</p>
         </div>
       </div>
       <div class="schedule-grid">
         <div class="schedule-card">
           <div class="schedule-day">Sunday</div>
           <div class="schedule-session">
-            <span class="session-code">Golf Croquet</span>
+            <span class="session-code">Golf Croquet (GC)</span>
             <span class="session-time">2:30 pm</span>
           </div>
         </div>
         <div class="schedule-card">
           <div class="schedule-day">Monday</div>
           <div class="schedule-session">
-            <span class="session-code">Golf Croquet</span>
+            <span class="session-code">Golf Croquet (GC)</span>
             <span class="session-time">2:30 pm</span>
           </div>
         </div>
         <div class="schedule-card">
           <div class="schedule-day">Tuesday</div>
           <div class="schedule-session">
-            <span class="session-code">Golf Croquet</span>
+            <span class="session-code">Golf Croquet (GC)</span>
             <span class="session-time">2:30 pm</span>
           </div>
         </div>
         <div class="schedule-card">
           <div class="schedule-day">Wednesday</div>
           <div class="schedule-session">
-            <span class="session-code">Ricochet</span>
+            <span class="session-code">Ricochet (RC)</span>
             <span class="session-time">8:30 am</span>
           </div>
           <div class="schedule-session">
-            <span class="session-code">Golf Croquet</span>
+            <span class="session-code">Golf Croquet (GC)</span>
             <span class="session-time">2:30 pm</span>
           </div>
         </div>
         <div class="schedule-card">
           <div class="schedule-day">Friday</div>
           <div class="schedule-session">
-            <span class="session-code">Golf Croquet</span>
+            <span class="session-code">Golf Croquet (GC)</span>
             <span class="session-time">2:30 pm</span>
           </div>
         </div>
         <div class="schedule-card">
           <div class="schedule-day">Saturday</div>
           <div class="schedule-session">
-            <span class="session-code">Association</span>
+            <span class="session-code">Association (AC)</span>
             <span class="session-time">8:30 am</span>
           </div>
         </div>
@@ -680,57 +711,61 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About + Fees (merged, navy background) -->
   <section id="about">
     <div class="wrap">
-      <div class="about-text">
-        <p class="section-label" style="color: rgba(255,255,255,0.4);">Who we are</p>
-        <h2>Brisbane's game.</h2>
-        <p>Three lawns in the quiet streets of Chelmer, ten minutes from the city. Graceville has been part of this community since 1970. Some play for competition, others for the company. Both belong here.</p>
-        <p>Our players include state-level competitors and people who picked up a mallet for the first time last month. We have coaching, we have competitive ladders, and we have coffee after most sessions.</p>
-        <p>First session is free. All equipment supplied. Just bring flat shoes and a hat.</p>
-        <div style="margin-top: 32px;">
-          <a href="#contact" class="btn btn-lime">Get in touch</a>
-        </div>
-      </div>
-      <div class="about-img">
-        <img src="images/players-social.png" alt="Graceville Croquet Club players">
-      </div>
-    </div>
-  </section>
 
-  <!-- Fees -->
-  <section id="fees">
-    <div class="wrap">
-      <p class="section-label">What it costs</p>
-      <h2>Fees</h2>
-      <div class="fees-grid">
-        <div class="fee-card">
-          <div class="fee-label">First visit</div>
-          <div class="fee-amount">FREE</div>
-          <div class="fee-note">No booking, no commitment</div>
+      <!-- About -->
+      <div class="about-top">
+        <div class="about-text">
+          <p class="section-label">Who we are</p>
+          <h2>Est. 1970. Three lawns. One community.</h2>
+          <p>Home to three current Queensland state representatives and host of the 2023 QLD State Titles. Three lawns in the quiet streets of Chelmer, ten minutes from the city.</p>
+          <p>Our players include state-level competitors and people who picked up a mallet for the first time last month. We have coaching, competitive ladders, and coffee after most sessions.</p>
+          <p>First session is free. All equipment supplied. Just bring flat shoes and a hat.</p>
+          <div style="margin-top: 32px;">
+            <a href="#contact" class="btn btn-lime">Get in touch</a>
+          </div>
         </div>
-        <div class="fee-card">
-          <div class="fee-label">Visitor</div>
-          <div class="fee-amount">$10</div>
-          <div class="fee-note">Affiliated club members</div>
-        </div>
-        <div class="fee-card">
-          <div class="fee-label">Green fee</div>
-          <div class="fee-amount">$8</div>
-          <div class="fee-note">Members, per session</div>
-        </div>
-        <div class="fee-card">
-          <div class="fee-label">Annual</div>
-          <div class="fee-amount">$240</div>
-          <div class="fee-note">Full membership</div>
-        </div>
-        <div class="fee-card">
-          <div class="fee-label">Coaching</div>
-          <div class="fee-amount">$15</div>
-          <div class="fee-note">Per beginner session</div>
+        <div class="about-img">
+          <img src="images/lawns-chelmer.png" alt="Three lawns at Graceville Croquet Club, Chelmer — hoops and boundaries visible">
         </div>
       </div>
+
+      <!-- Fees -->
+      <div class="fees-block">
+        <p class="section-label">What it costs</p>
+        <h2>Fees</h2>
+        <div class="fees-grid">
+          <div class="fee-card">
+            <div class="fee-label">First visit</div>
+            <div class="fee-amount">FREE</div>
+            <div class="fee-note">No booking, no commitment</div>
+          </div>
+          <div class="fee-card">
+            <div class="fee-label">Visitor</div>
+            <div class="fee-amount">$10</div>
+            <div class="fee-note">Affiliated club members, per session</div>
+          </div>
+          <div class="fee-card">
+            <div class="fee-label">Green fee</div>
+            <div class="fee-amount">$8</div>
+            <div class="fee-note">Members, per session</div>
+          </div>
+          <div class="fee-card">
+            <div class="fee-label">Annual</div>
+            <div class="fee-amount">$240</div>
+            <div class="fee-note">Full membership</div>
+          </div>
+          <div class="fee-card">
+            <div class="fee-label">Coaching</div>
+            <div class="fee-amount">$15</div>
+            <div class="fee-note">Per beginner session</div>
+          </div>
+        </div>
+        <p class="fees-visitor-note">Affiliated club visitors from another QLD club: $10 per session (equipment included). First visit to Graceville is always free regardless of your membership status.</p>
+      </div>
+
     </div>
   </section>
 
