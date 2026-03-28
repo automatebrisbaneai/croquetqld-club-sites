@@ -218,9 +218,12 @@
     }
 
     .hero-note {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      color: var(--accent);
       letter-spacing: 0.04em;
+      border: 0.5px dashed rgba(206,202,251,0.4);
+      border-radius: 4px;
+      padding: 10px 20px;
     }
 
     .hero-actions {
@@ -287,11 +290,14 @@
     }
 
     .schedule-intro {
-      font-size: 15px;
-      color: rgba(255,255,255,0.5);
+      font-size: 16px;
+      color: var(--text-secondary);
       letter-spacing: 0.02em;
       margin-bottom: 48px;
-      max-width: 540px;
+      max-width: 580px;
+      padding: 16px 0;
+      border-top: 0.5px dashed var(--divider);
+      border-bottom: 0.5px dashed var(--divider);
     }
 
     .schedule-grid {
@@ -582,9 +588,12 @@
 
     @media (max-width: 480px) {
       h1 { font-size: clamp(40px, 12vw, 60px); }
+      #hero { padding: 64px 24px 32px; }
+      .hero-content { gap: 16px; }
       .hero-actions { flex-direction: column; width: 100%; max-width: 280px; }
       .hero-actions .btn { text-align: center; }
-      .stats-bar { gap: 28px; }
+      .hero-note { font-size: 13px; padding: 8px 16px; }
+      .stats-bar { gap: 28px; padding: 36px 24px 48px; }
       .stat-number { font-size: 36px; }
       .nav-phone { display: none; }
     }
@@ -614,7 +623,7 @@
       <p class="hero-label">Sunshine Coast, QLD / Since 1959</p>
       <h1>Four lawns<br>on the ridge.</h1>
       <p class="hero-sub">Competitive and social croquet in the leafiest corner of the Sunshine Coast.</p>
-      <p class="hero-note">First session free. No booking needed. Just turn up.</p>
+      <p class="hero-note">First session free. No booking needed. Just turn up to any session below. We supply the equipment.</p>
       <div class="hero-actions">
         <a href="#about" class="btn">Start playing</a>
         <a href="#schedule" class="btn btn-outline">View schedule</a>
