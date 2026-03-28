@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headland Buderim Croquet Club</title>
+  <meta name="description" content="Four lawns on the ridge. Competitive and social croquet on the Sunshine Coast. Come and try your first session free.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ── Design tokens ─────────────────────────────── */
+    :root {
+      --bg:             #000000;
+      --text-primary:   #ffffff;
+      --text-secondary: #f0f3f3;
+      --accent:         #cecafb;
+      --glass:          rgba(0, 0, 0, 0.4);
+      --glass-light:    rgba(255, 255, 255, 0.05);
+      --divider:        rgba(255, 255, 255, 0.25);
+      --glow:           rgba(204, 186, 228, 0.45);
+      --font-display:   'Syne', system-ui, sans-serif;
+      --font-mono:      'Space Mono', 'Courier New', monospace;
+    }
+
+    /* ── Reset ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scrollbar-width: none; }
+    html::-webkit-scrollbar { display: none; }
+    body {
+      background: var(--bg);
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ── Grain texture overlay ─────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+      opacity: 0.035;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── Nav ───────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 40px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+
+    .nav-logo span {
+      display: block;
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-phone {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: color 200ms ease;
+    }
+
+    .nav-phone:hover { color: var(--accent); }
+
+    .btn {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      background: var(--glass);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 300ms ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      box-shadow: 0 4px 32px var(--glow);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-outline {
+      background: rgba(0,0,0,0.05);
+      border: 1px solid var(--text-secondary);
+    }
+
+    .btn-outline:hover {
+      box-shadow: 0 4px 32px var(--glow);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── Sections ──────────────────────────────────── */
+    section {
+      position: relative;
+      width: 100%;
+    }
+
+    .divider {
+      border: none;
+      border-top: 0.5px dashed var(--divider);
+      margin: 0 40px;
+    }
+
+    /* ── Hero ──────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 40px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/players-golden-hour.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      filter: brightness(0.25) contrast(1.1);
+      z-index: 0;
+    }
+
+    .hero-bg-fade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, var(--bg) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      max-width: 900px;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 8vw, 110px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 0.95;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    /* ── Stats bar ─────────────────────────────────── */
+    .stats-bar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      padding: 60px 40px 80px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    /* ── About ─────────────────────────────────────── */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      padding: 120px 80px;
+      align-items: center;
+    }
+
+    .about-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      filter: brightness(0.7) contrast(1.05);
+      border-radius: 2px;
+    }
+
+    .about-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    /* ── Schedule ──────────────────────────────────── */
+    #schedule {
+      padding: 120px 80px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    h2.section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1.05;
+      margin-bottom: 56px;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+
+    .schedule-season h3 {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 0.5px dashed var(--divider);
+    }
+
+    .schedule-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 0.5px dashed rgba(255,255,255,0.1);
+    }
+
+    .schedule-row:last-child { border-bottom: none; }
+
+    .schedule-day {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-primary);
+      letter-spacing: 0.02em;
+      min-width: 100px;
+    }
+
+    .schedule-codes {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+    }
+
+    .schedule-time {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      min-width: 60px;
+      text-align: right;
+    }
+
+    /* ── Come and Try ──────────────────────────────── */
+    #come-and-try {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      padding: 120px 80px;
+      align-items: center;
+    }
+
+    #come-and-try .text-side h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    #come-and-try .text-side p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .cat-list {
+      list-style: none;
+      margin: 24px 0 32px;
+    }
+
+    .cat-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 0.5px dashed rgba(255,255,255,0.1);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .cat-list li::before {
+      content: '//';
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    .cat-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      filter: brightness(0.6) contrast(1.05);
+      border-radius: 2px;
+    }
+
+    /* ── Fees ──────────────────────────────────────── */
+    #fees {
+      padding: 120px 80px;
+    }
+
+    .fees-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 48px;
+      border: 0.5px solid var(--divider);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .fee-card {
+      padding: 40px 32px;
+      border-right: 0.5px solid var(--divider);
+      background: var(--glass-light);
+    }
+
+    .fee-card:last-child { border-right: none; }
+
+    .fee-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .fee-amount {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .fee-note {
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Contact ───────────────────────────────────── */
+    #contact {
+      padding: 120px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    #contact h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    #contact p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+
+    .contact-details {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .contact-details li {
+      display: flex;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 0.5px dashed rgba(255,255,255,0.1);
+      font-family: var(--font-mono);
+      font-size: 14px;
+    }
+
+    .contact-details li:last-child { border-bottom: none; }
+
+    .contact-key {
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 11px;
+      min-width: 80px;
+      padding-top: 2px;
+    }
+
+    .contact-val {
+      color: var(--text-secondary);
+    }
+
+    .contact-val a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 200ms ease;
+    }
+
+    .contact-val a:hover { color: var(--accent); }
+
+    .contact-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      filter: brightness(0.6) contrast(1.05);
+      border-radius: 2px;
+    }
+
+    /* ── Footer ────────────────────────────────────── */
+    footer {
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.5px dashed var(--divider);
+    }
+
+    .footer-left {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-right {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ── Mobile ────────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .divider { margin: 0 24px; }
+
+      #hero { padding: 100px 24px 48px; }
+      .stats-bar { gap: 40px; padding: 48px 24px 64px; }
+
+      #about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 80px 24px;
+      }
+
+      #schedule { padding: 80px 24px; }
+      .schedule-grid { grid-template-columns: 1fr; gap: 48px; }
+
+      #come-and-try {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 80px 24px;
+      }
+      #come-and-try .image-side { order: -1; }
+
+      #fees { padding: 80px 24px; }
+      .fees-grid {
+        grid-template-columns: 1fr;
+        border-radius: 4px;
+      }
+      .fee-card { border-right: none; border-bottom: 0.5px solid var(--divider); }
+      .fee-card:last-child { border-bottom: none; }
+
+      #contact {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 80px 24px;
+      }
+
+      footer { padding: 32px 24px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: clamp(40px, 12vw, 60px); }
+      .hero-actions { flex-direction: column; width: 100%; max-width: 280px; }
+      .hero-actions .btn { text-align: center; }
+      .stats-bar { gap: 28px; }
+      .stat-number { font-size: 36px; }
+      .nav-phone { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#hero" class="nav-logo">
+      Headland Buderim<br>Croquet Club
+      <span>Buderim, QLD</span>
+    </a>
+    <div class="nav-cta">
+      <a href="tel:0412470755" class="nav-phone">0412 470 755</a>
+      <a href="#come-and-try" class="btn">Come and try</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-bg-fade"></div>
+    <div class="hero-content">
+      <p class="hero-label">Sunshine Coast, QLD / Since 1959</p>
+      <h1>Four lawns<br>on the ridge.</h1>
+      <p class="hero-sub">Competitive and social croquet in the leafiest corner of the Sunshine Coast. First session free. All welcome.</p>
+      <div class="hero-actions">
+        <a href="#come-and-try" class="btn">Start playing</a>
+        <a href="#schedule" class="btn btn-outline">View schedule</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-number">4</span>
+      <span class="stat-label">Full-size lawns</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">50</span>
+      <span class="stat-label">Members</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">6</span>
+      <span class="stat-label">Days open</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">4</span>
+      <span class="stat-label">Codes played</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- About -->
+  <section id="about">
+    <img src="images/clubhouse-mural.jpg" alt="Headland Buderim Croquet Club clubhouse" class="about-img">
+    <div class="about-text">
+      <p class="section-label">About the club</p>
+      <h2>Serious play. Good company.</h2>
+      <p>Some come for competition. Teams match up across the region, and the best get picked for State and national squads. Others come for the morning air, a bit of exercise, and the company. Both belong here.</p>
+      <p>Four lawns on the ridge, in Buderim. Open six days a week. Association, Golf, Ricochet, and Social Croquet.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Schedule -->
+  <section id="schedule">
+    <p class="section-label">When we play</p>
+    <h2 class="section-title">Play schedule</h2>
+    <div class="schedule-grid">
+      <div class="schedule-season">
+        <h3>Summer</h3>
+        <div class="schedule-row">
+          <span class="schedule-day">Monday</span>
+          <span class="schedule-codes">Association</span>
+          <span class="schedule-time">1 pm</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Tuesday</span>
+          <span class="schedule-codes">Golf / Social</span>
+          <span class="schedule-time">9 am / 3 pm</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Wednesday</span>
+          <span class="schedule-codes">Ricochet</span>
+          <span class="schedule-time">1 pm</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Friday</span>
+          <span class="schedule-codes">Golf / Social</span>
+          <span class="schedule-time">9 am / 3 pm</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Saturday</span>
+          <span class="schedule-codes">Association</span>
+          <span class="schedule-time">1 pm</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Sunday</span>
+          <span class="schedule-codes">Golf</span>
+          <span class="schedule-time">9 am</span>
+        </div>
+      </div>
+      <div class="schedule-season">
+        <h3>Winter</h3>
+        <div class="schedule-row">
+          <span class="schedule-day">Monday</span>
+          <span class="schedule-codes">Association</span>
+          <span class="schedule-time">1 pm</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Tuesday</span>
+          <span class="schedule-codes">Golf / Social</span>
+          <span class="schedule-time">9 am / 2 pm</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Wednesday</span>
+          <span class="schedule-codes">Ricochet</span>
+          <span class="schedule-time">1 pm</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Friday</span>
+          <span class="schedule-codes">Golf / Social</span>
+          <span class="schedule-time">9 am / 2 pm</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Saturday</span>
+          <span class="schedule-codes">Association</span>
+          <span class="schedule-time">1 pm</span>
+        </div>
+        <div class="schedule-row">
+          <span class="schedule-day">Sunday</span>
+          <span class="schedule-codes">Golf</span>
+          <span class="schedule-time">9 am</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Come and Try -->
+  <section id="come-and-try">
+    <div class="text-side">
+      <p class="section-label">New players</p>
+      <h2>Your first session is free.</h2>
+      <p>Bring flat shoes and a hat. We supply everything else. No experience needed, no booking required. Turn up to any session.</p>
+      <ul class="cat-list">
+        <li>All equipment supplied (mallets and balls)</li>
+        <li>First session completely free</li>
+        <li>Coaching available: $15 per session</li>
+        <li>Golf and Association Croquet coaching with qualified coaches</li>
+        <li>Just show up to any session listed above</li>
+      </ul>
+      <a href="mailto:headlandbuderimcc@gmail.com" class="btn">Get in touch</a>
+    </div>
+    <div class="image-side">
+      <img src="images/family-playing.jpg" alt="Families playing croquet at Headland Buderim" class="cat-img">
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Fees -->
+  <section id="fees">
+    <p class="section-label">Membership and fees</p>
+    <h2 class="section-title">What it costs</h2>
+    <div class="fees-grid">
+      <div class="fee-card">
+        <p class="fee-label">First session</p>
+        <p class="fee-amount">Free</p>
+        <p class="fee-note">Come and try, no obligation</p>
+      </div>
+      <div class="fee-card">
+        <p class="fee-label">Annual membership</p>
+        <p class="fee-amount">$250</p>
+        <p class="fee-note">Plus $8 daily green fee</p>
+      </div>
+      <div class="fee-card">
+        <p class="fee-label">Visiting players</p>
+        <p class="fee-amount">$10-15</p>
+        <p class="fee-note">$10 affiliated club / $15 other</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Contact -->
+  <section id="contact">
+    <div>
+      <p class="section-label">Get in touch</p>
+      <h2>We would love to hear from you.</h2>
+      <p>Questions about the club, visits, or membership. Colin or Julie will get back to you promptly.</p>
+      <ul class="contact-details">
+        <li>
+          <span class="contact-key">President</span>
+          <span class="contact-val">Colin</span>
+        </li>
+        <li>
+          <span class="contact-key">Phone</span>
+          <span class="contact-val"><a href="tel:0412470755">0412 470 755</a></span>
+        </li>
+        <li>
+          <span class="contact-key">Secretary</span>
+          <span class="contact-val">Julie</span>
+        </li>
+        <li>
+          <span class="contact-key">Email</span>
+          <span class="contact-val"><a href="mailto:headlandbuderimcc@gmail.com">headlandbuderimcc@gmail.com</a></span>
+        </li>
+        <li>
+          <span class="contact-key">Address</span>
+          <span class="contact-val">3 Orme Road, Buderim QLD 4556</span>
+        </li>
+      </ul>
+      <a href="mailto:headlandbuderimcc@gmail.com" class="btn">Send us a message</a>
+    </div>
+    <div>
+      <img src="images/players-golden-hour.jpg" alt="Players at Headland Buderim Croquet Club" class="contact-image">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-left">Headland Buderim Croquet Club &copy; 2026</p>
+    <p class="footer-right">3 Orme Road, Buderim QLD 4556</p>
+  </footer>
+
+</body>
+</html>

@@ -741,12 +741,27 @@ footer a:hover { opacity: 1; }
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ---- STAGGERED CHILDREN ---- */
+.step, .idea-card, .example-gallery-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 130ms);
+}
+.steps.in .step, .idea-grid.in .idea-card,
+.examples-grid.in .example-gallery-card {
+  opacity: 1;
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -755,6 +770,7 @@ footer a:hover { opacity: 1; }
     transition-duration: 0.01ms !important;
   }
   .reveal { opacity: 1; transform: none; }
+  .step, .idea-card, .example-gallery-card { opacity: 1; transform: none; transition: none; }
 }
 
 :focus-visible {
@@ -806,7 +822,7 @@ footer a:hover { opacity: 1; }
 
       <form id="designForm">
         <div class="steps">
-          <div class="step">
+          <div class="step" style="--i:0">
             <h3>Pick a website you like</h3>
             <p>Think of any website you have seen that looks good to you. A local business, a sports club, anything at all. Paste the link right here.</p>
             <input
@@ -817,7 +833,7 @@ footer a:hover { opacity: 1; }
               required
               placeholder="https://example.com">
           </div>
-          <div class="step">
+          <div class="step" style="--i:1">
             <h3>Tell us what to keep or change</h3>
             <p>We build your club's site in that style and send you the link. Then you tell us what you like and what you want changed. That's it.</p>
             <p style="margin-top:0.75rem;font-size:0.82rem;color:var(--text-muted);">Right now we'll use example data from <a href="https://www.croquetqld.org/club-information/headland-buderim/" target="_blank" rel="noopener" style="color:var(--maroon);">Headland-Buderim on the CAQ site</a>. Your club's details come later.</p>
@@ -850,37 +866,37 @@ footer a:hover { opacity: 1; }
         <h3>Need inspiration? Browse these</h3>
         <p>Pick any website whose look you like. You don't need to know why you like it. Just paste the link above.</p>
         <div class="idea-grid">
-          <a href="https://squarespace.com/templates" class="idea-card" target="_blank" rel="noopener">
+          <a href="https://squarespace.com/templates" class="idea-card" style="--i:0" target="_blank" rel="noopener">
             <div class="idea-card-tag">Templates</div>
             <div class="idea-card-name">Squarespace</div>
             <div class="idea-card-desc">Clean, professional layouts. Great if you want a polished, established look that gives confidence.</div>
             <div class="idea-card-cta">Browse templates →</div>
           </a>
-          <a href="https://onepagelove.com/" class="idea-card" target="_blank" rel="noopener">
+          <a href="https://onepagelove.com/" class="idea-card" style="--i:1" target="_blank" rel="noopener">
             <div class="idea-card-tag">Minimal</div>
             <div class="idea-card-name">One Page Love</div>
             <div class="idea-card-desc">Elegant one-pagers. Good if you want something simple, unfussy, and easy to navigate on a phone.</div>
             <div class="idea-card-cta">Browse designs →</div>
           </a>
-          <a href="https://awwwards.com/websites" class="idea-card" target="_blank" rel="noopener">
+          <a href="https://awwwards.com/websites" class="idea-card" style="--i:2" target="_blank" rel="noopener">
             <div class="idea-card-tag">Inspiration</div>
             <div class="idea-card-name">Awwwards</div>
             <div class="idea-card-desc">Award-winning sites from around the world. Browse the best of modern web design for bold ideas.</div>
             <div class="idea-card-cta">Browse winners →</div>
           </a>
-          <a href="https://webflow.com/templates" class="idea-card" target="_blank" rel="noopener">
+          <a href="https://webflow.com/templates" class="idea-card" style="--i:3" target="_blank" rel="noopener">
             <div class="idea-card-tag">Templates</div>
             <div class="idea-card-name">Webflow Templates</div>
             <div class="idea-card-desc">Professional templates built for sports clubs, community groups, and local organisations.</div>
             <div class="idea-card-cta">Browse templates →</div>
           </a>
-          <a href="https://lapa.ninja" class="idea-card" target="_blank" rel="noopener">
+          <a href="https://lapa.ninja" class="idea-card" style="--i:4" target="_blank" rel="noopener">
             <div class="idea-card-tag">Real sites</div>
             <div class="idea-card-name">Lapa Ninja</div>
             <div class="idea-card-desc">A curated library of real landing pages. Good for seeing what actually works in practice, not just in theory.</div>
             <div class="idea-card-cta">Browse pages →</div>
           </a>
-          <a href="https://dribbble.com" class="idea-card" target="_blank" rel="noopener">
+          <a href="https://dribbble.com" class="idea-card" style="--i:5" target="_blank" rel="noopener">
             <div class="idea-card-tag">Design concepts</div>
             <div class="idea-card-name">Dribbble</div>
             <div class="idea-card-desc">Designer portfolios and concepts. More visual than functional, but full of colour and layout ideas.</div>
@@ -899,7 +915,7 @@ footer a:hover { opacity: 1; }
       <p class="showcase-desc">Every example here started with a real website someone liked. Below is the inspiration they sent, and what we built from it. Each one uses the same club data, so you can focus on just the style.</p>
       <div class="examples-grid">
 
-        <div class="example-gallery-card">
+        <div class="example-gallery-card" style="--i:0">
           <a href="/example1/" target="_blank" rel="noopener">
             <img class="example-gallery-preview" src="images/example1-preview.png" alt="Headland-Buderim Croquet Club — Example 1">
           </a>
@@ -914,7 +930,7 @@ footer a:hover { opacity: 1; }
           </div>
         </div>
 
-        <div class="example-gallery-card">
+        <div class="example-gallery-card" style="--i:1">
           <a href="/example2/" target="_blank" rel="noopener">
             <img class="example-gallery-preview" src="/example2/images/players-golden-hour.jpg" alt="Headland-Buderim Croquet Club — Example 2">
           </a>
@@ -947,20 +963,27 @@ footer a:hover { opacity: 1; }
 
 <script>
 (function() {
-  var els = document.querySelectorAll('.reveal');
   if (!window.IntersectionObserver) {
-    els.forEach(function(el) { el.classList.add('visible'); });
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+    document.querySelectorAll('.steps, .idea-grid, .examples-grid').forEach(function(el) { el.classList.add('in'); });
     return;
   }
+
+  // Existing reveal system
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  els.forEach(function(el) { obs.observe(el); });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+
+  // Staggered child reveals — observe the grids, not the parent sections
+  var staggerObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); staggerObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.steps, .idea-grid, .examples-grid').forEach(function(el) { staggerObs.observe(el); });
 })();
 
 // Form submission
