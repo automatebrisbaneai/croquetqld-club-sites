@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nundah Croquet Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --surface: #FFFFFF;
+      --text: #1F1F1F;
+      --text-mid: #6A6A6A;
+      --accent: #B85C38;
+      --accent-dark: #9A4A2C;
+      --accent-light: #F5EDE7;
+      --divider: #E8E3DC;
+      --footer-bg: #1F1F1F;
+      --footer-text: #C8C0B8;
+      --nav-height: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nunito', sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--divider);
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-logo {
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      font-size: 1.05rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.015em;
+      flex-shrink: 0;
+      margin-right: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-weight: 400;
+      font-size: 13.5px;
+      color: var(--text-mid);
+      text-decoration: none;
+      letter-spacing: -0.025em;
+      transition: color 150ms ease;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .btn-nav {
+      flex-shrink: 0;
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 9px 20px;
+      border-radius: 100px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 500;
+      font-size: 13.5px;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      transition: background 200ms ease;
+      white-space: nowrap;
+    }
+
+    .btn-nav:hover { background: var(--accent-dark); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: url('images/hero-photo.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      padding-top: var(--nav-height);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 14, 8, 0.15);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 660px;
+      padding: 0 24px;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      font-size: 2.9rem;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .hero-free-note {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 100px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+    }
+
+    .hero-turn-up {
+      font-size: 15px;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 26px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      transition: background 200ms ease;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.22);
+      transition: background 200ms ease;
+      display: inline-block;
+    }
+
+    .btn-ghost:hover { background: rgba(255,255,255,0.15); }
+
+    /* SHARED */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    section h2 {
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      font-size: 1.9rem;
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+
+    /* COME AND TRY */
+    .come-try {
+      padding: 100px 0;
+      background: var(--surface);
+    }
+
+    .come-try-inner { text-align: center; }
+
+    .come-try h2 { margin-bottom: 12px; }
+
+    .come-try-sub {
+      color: var(--text-mid);
+      max-width: 480px;
+      margin: 0 auto 44px;
+      font-size: 16px;
+    }
+
+    .come-try-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      max-width: 820px;
+      margin: 0 auto 44px;
+      text-align: left;
+    }
+
+    .come-try-point {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 20px;
+      border-top: 1px solid var(--divider);
+    }
+
+    .come-try-point h3 {
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      font-size: 1rem;
+      letter-spacing: -0.015em;
+      color: var(--text);
+    }
+
+    .come-try-point p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 100px 0;
+      background: var(--bg);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 60fr 40fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about h2 { margin-bottom: 16px; }
+
+    .about p {
+      color: var(--text-mid);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--divider);
+    }
+
+    .stat-number {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -0.025em;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-mid);
+      margin-top: 4px;
+    }
+
+    .about-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    /* SCHEDULE */
+    .schedule {
+      padding: 100px 0;
+      background: var(--surface);
+    }
+
+    .schedule-header { margin-bottom: 36px; }
+    .schedule h2 { margin-bottom: 12px; }
+
+    .schedule-intro {
+      color: var(--text-mid);
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .schedule-codes {
+      font-size: 15px;
+      color: var(--text-mid);
+      margin-bottom: 16px;
+    }
+
+    .schedule-visitor-note {
+      display: inline-block;
+      padding: 10px 16px;
+      background: var(--accent-light);
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      line-height: 1.55;
+      margin-bottom: 32px;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .schedule-table th {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      padding: 0 0 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .schedule-table td {
+      padding: 11px 0;
+      font-size: 15px;
+      border-bottom: 1px solid var(--divider);
+      color: var(--text);
+      vertical-align: middle;
+    }
+
+    .schedule-table tr:last-child td { border-bottom: none; }
+
+    .schedule-table td:last-child {
+      color: var(--accent);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .code-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 3px;
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .schedule-note {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--text-mid);
+    }
+
+    /* READY TO JOIN */
+    .ready-join {
+      padding: 64px 0;
+      background: var(--accent-light);
+      text-align: center;
+    }
+
+    .ready-join h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .ready-join p {
+      color: var(--text-mid);
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    /* FEES */
+    .fees {
+      padding: 100px 0;
+      background: var(--bg);
+    }
+
+    .fees-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .fees h2 { margin-bottom: 10px; }
+
+    .fees-desc {
+      color: var(--text-mid);
+      font-size: 16px;
+    }
+
+    .fees-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .fees-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 28px;
+    }
+
+    .fees-table tr { border-bottom: 1px solid var(--divider); }
+    .fees-table tr:last-child { border-bottom: none; }
+
+    .fees-table td {
+      padding: 14px 8px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .fees-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 100px 0;
+      background: var(--surface);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contact h2 { margin-bottom: 10px; }
+
+    .contact-desc {
+      color: var(--text-mid);
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+
+    .contact-people { display: flex; flex-direction: column; }
+
+    .contact-person {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .contact-person:first-child { padding-top: 0; }
+    .contact-person:last-child { border-bottom: none; }
+
+    .contact-role {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+    }
+
+    .contact-name {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      color: var(--text);
+    }
+
+    .contact-detail {
+      font-size: 15px;
+      color: var(--text-mid);
+    }
+
+    .contact-detail a {
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: color 150ms;
+    }
+
+    .contact-detail a:hover { color: var(--accent); }
+
+    .contact-location {
+      background: var(--bg);
+      border: 1px solid var(--divider);
+      border-radius: 4px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-location svg {
+      color: var(--accent);
+      width: 22px;
+      height: 22px;
+      margin-bottom: 4px;
+    }
+
+    .contact-location h3 {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      color: var(--text);
+    }
+
+    .contact-location address {
+      font-style: normal;
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.55;
+    }
+
+    .contact-location p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+      width: fit-content;
+      transition: opacity 150ms;
+    }
+
+    .map-link:hover { opacity: 0.7; }
+
+    /* FOOTER */
+    footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 60px 0 0;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 60px;
+      padding-bottom: 40px;
+    }
+
+    .footer-logo {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--footer-text);
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-links h4 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.22);
+      margin-bottom: 16px;
+    }
+
+    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .footer-links a {
+      font-size: 14px;
+      color: var(--footer-text);
+      text-decoration: none;
+      transition: color 150ms;
+    }
+
+    .footer-links a:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.20);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      nav { padding: 0 20px; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0; right: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--divider);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 16px;
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-hamburger { display: flex; margin-left: auto; }
+      .btn-nav { display: none; }
+
+      .hero h1 { font-size: 2rem; }
+      .hero-turn-up { font-size: 14px; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+
+      .container { padding: 0 20px; }
+
+      .come-try { padding: 72px 0; }
+      .come-try-points { grid-template-columns: 1fr; gap: 24px; }
+
+      .about { padding: 72px 0; }
+      .about-inner { grid-template-columns: 1fr; gap: 28px; }
+      .about-image { order: -1; }
+      .about-stats { gap: 20px; }
+
+      .schedule { padding: 72px 0; }
+
+      .ready-join { padding: 48px 0; }
+
+      .fees { padding: 72px 0; }
+      .fees-inner { grid-template-columns: 1fr; gap: 28px; }
+
+      .contact { padding: 72px 0; }
+      .contact-inner { grid-template-columns: 1fr; gap: 32px; }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Nundah Croquet Club</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#fees">Fees</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#come-try" class="btn-nav">Join Us</a>
+      <button class="nav-hamburger" aria-label="Open menu"
+        onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-label">Nundah, Brisbane</span>
+      <h1>New to croquet? Your first session is free.</h1>
+      <div class="hero-free-note">No booking needed. Just turn up in flat shoes.</div>
+      <p class="hero-turn-up">We will look after the rest. Mallets, balls, and a welcome from the club.</p>
+      <div class="hero-buttons">
+        <a href="#come-try" class="btn-primary">How to Come and Play</a>
+        <a href="#schedule" class="btn-ghost">View the Schedule</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COME AND TRY -->
+  <section class="come-try" id="come-try">
+    <div class="container come-try-inner">
+      <span class="section-label">New Players Welcome</span>
+      <h2>Come and try for free</h2>
+      <p class="come-try-sub">Your first session costs nothing. No experience, no special gear. Pick a session and turn up.</p>
+      <div class="come-try-points">
+        <div class="come-try-point">
+          <h3>No booking needed</h3>
+          <p>Just arrive at any session. Someone will welcome you, explain the game, and get you on a lawn within a few minutes.</p>
+        </div>
+        <div class="come-try-point">
+          <h3>Everything provided</h3>
+          <p>Mallets, balls, and hoops are supplied. Bring flat-soled shoes and a hat. That is all you need.</p>
+        </div>
+        <div class="come-try-point">
+          <h3>Coaching available</h3>
+          <p>Qualified coaches run $15 sessions in Golf and Association Croquet. Ask about coaching when you arrive.</p>
+        </div>
+      </div>
+      <a href="#schedule" class="btn-primary" style="background:var(--accent);">View the Session Times</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div>
+          <span class="section-label">About the Club</span>
+          <h2>A welcoming club with four lawns and six days a week</h2>
+          <p>Competitive players and social players both belong here. Closed Thursdays; all other days, just turn up.</p>
+          <div class="about-stats">
+            <div>
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Members</div>
+            </div>
+            <div>
+              <div class="stat-number">4</div>
+              <div class="stat-label">Full-size lawns</div>
+            </div>
+            <div>
+              <div class="stat-number">6</div>
+              <div class="stat-label">Days a week</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="images/clubhouse-warm.jpg" alt="Nundah Croquet Club" class="about-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="schedule" id="schedule">
+    <div class="container">
+      <div class="schedule-header">
+        <span class="section-label">When to Come</span>
+        <h2>Session Schedule</h2>
+        <p class="schedule-intro">Closed Thursdays. All other days, just turn up to the session that suits you.</p>
+        <p class="schedule-codes">Golf Croquet is the easiest to learn and most popular for beginners. The other codes are different ways to play.</p>
+        <span class="schedule-visitor-note">Visitors from all clubs are welcome at any session without prior arrangement, including Tuesday 9 am.<br><strong>Tuesday 9 am:</strong> our main competitive Golf Croquet session. Play is at a good standard. Just turn up.</span>
+      </div>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Code</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td><span class="code-badge">Association</span></td><td>1 pm</td></tr>
+          <tr><td>Tuesday</td><td><span class="code-badge">Golf</span></td><td>9 am</td></tr>
+          <tr><td>Tuesday</td><td><span class="code-badge">Social</span></td><td>3 pm</td></tr>
+          <tr><td>Wednesday</td><td><span class="code-badge">Ricochet</span></td><td>1 pm</td></tr>
+          <tr><td>Friday</td><td><span class="code-badge">Golf</span></td><td>9 am</td></tr>
+          <tr><td>Friday</td><td><span class="code-badge">Social</span></td><td>3 pm</td></tr>
+          <tr><td>Saturday</td><td><span class="code-badge">Association</span></td><td>1 pm</td></tr>
+          <tr><td>Sunday</td><td><span class="code-badge">Golf</span></td><td>9 am</td></tr>
+        </tbody>
+      </table>
+      <p class="schedule-note">Social sessions run from 2 pm in winter (April to September). All other session times are year-round.</p>
+    </div>
+  </section>
+
+  <!-- READY TO JOIN -->
+  <section class="ready-join">
+    <div class="container">
+      <h2>Thinking about joining?</h2>
+      <p>Your first session is free. Come along, see how you go, and ask us about membership on the day.</p>
+      <a href="#fees" class="btn-primary">See Fees and Membership</a>
+    </div>
+  </section>
+
+  <!-- FEES -->
+  <section class="fees" id="fees">
+    <div class="container">
+      <div class="fees-inner">
+        <div>
+          <span class="section-label">Fees and Costs</span>
+          <h2>Simple, straightforward pricing</h2>
+          <p class="fees-desc">Try it free. Visitors from affiliated clubs are welcome at $10 per day. No prior arrangement needed.</p>
+          <table class="fees-table">
+            <tbody>
+              <tr>
+                <td>Come and Try (first session)</td>
+                <td style="text-align:right;font-weight:600;color:#3A7D44;">FREE</td>
+              </tr>
+              <tr>
+                <td>Visitor, affiliated club (per day)</td>
+                <td>$10</td>
+              </tr>
+              <tr>
+                <td>Visitor, other (per day)</td>
+                <td>$15</td>
+              </tr>
+              <tr>
+                <td>Beginner coaching session</td>
+                <td>$15</td>
+              </tr>
+              <tr>
+                <td>Green fees (member, daily)</td>
+                <td>$8</td>
+              </tr>
+              <tr>
+                <td>Annual membership</td>
+                <td>$250</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <img src="images/lawns-wide.jpg" alt="The four lawns at Nundah Croquet Club" class="fees-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div>
+          <span class="section-label">Get in Touch</span>
+          <h2>Happy to hear from you</h2>
+          <p class="contact-desc">Questions about visiting, joining, or coaching? Reach out to our President or Secretary directly.</p>
+          <div class="contact-people">
+            <div class="contact-person">
+              <span class="contact-role">President</span>
+              <span class="contact-name">Colin</span>
+              <span class="contact-detail"><a href="tel:0412470755">0412 470 755</a></span>
+            </div>
+            <div class="contact-person">
+              <span class="contact-role">Secretary</span>
+              <span class="contact-name">Patricia Kerr</span>
+              <span class="contact-detail"><a href="mailto:patricia.kerr@nundahcroquet.org.au">patricia.kerr@nundahcroquet.org.au</a></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="contact-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <h3>Nundah Croquet Club</h3>
+            <address>
+              Kalinga Park<br>
+              Nundah QLD 4012
+            </address>
+            <p>Closed Thursdays. All other days, come to any session. No need to call ahead for your first visit.</p>
+            <a href="https://maps.google.com/?q=Kalinga+Park+Nundah+QLD+4012" target="_blank" rel="noopener" class="map-link">Open in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">Nundah Croquet Club</div>
+          <p>Four lawns in the heart of Nundah. Open six days a week, welcoming players of every level.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="#come-try">Come and Try</a></li>
+            <li><a href="#about">About the Club</a></li>
+            <li><a href="#schedule">Session Schedule</a></li>
+            <li><a href="#fees">Fees</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Nundah Croquet Club, Kalinga Park, Nundah QLD 4012. Part of Croquet Queensland.</span>
+        <span>Site by CroquetClaude</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
