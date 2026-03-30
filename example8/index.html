@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bundaberg Croquet Club: 29 Quay St, Bundaberg QLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #3A6B35;
+    --green-light: #EDF5EC;
+    --cream: #FCF9F0;
+    --text: #1A2B19;
+    --gold: #B8860B;
+    --white: #FFFFFF;
+    --pad: clamp(20px, 4vw, 60px);
+    --max: 1200px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--cream);
+  }
+
+  /* ── HEADER STRIP ── */
+  .site-header {
+    background: var(--green);
+    border-bottom: 3px solid var(--gold);
+    padding: 36px var(--pad);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .header-left {}
+  .header-est {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.3rem;
+  }
+  .header-name {
+    font-family: 'Abril Fatface', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .header-tagline {
+    font-size: 0.9rem;
+    color: var(--cream);
+    opacity: 0.7;
+    margin-top: 0.5rem;
+  }
+  .header-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--green);
+    padding: 12px 28px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    flex-shrink: 0;
+    align-self: center;
+    transition: opacity 0.2s;
+  }
+  .header-cta:hover { opacity: 0.85; }
+
+  /* ── BENTO GRID ── */
+  .bento-wrapper {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 1.5rem var(--pad) 3rem;
+  }
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 280px;
+    gap: 1.25rem;
+  }
+
+  /* Card base */
+  .card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-label {
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.6rem;
+  }
+  .card-heading {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.75rem;
+  }
+
+  /* ── CARD: Hero Image (2col x 2row) ── */
+  .card-hero {
+    grid-column: span 2;
+    grid-row: span 2;
+    position: relative;
+  }
+  .card-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+  .hero-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 43, 25, 0.72);
+    padding: 20px 24px;
+    color: var(--cream);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  /* ── CARD: Play Times (2col x 1row) ── */
+  .card-schedule {
+    grid-column: span 2;
+    background: var(--green);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card-schedule .card-label { color: var(--gold); }
+  .card-schedule .card-heading { color: var(--cream); margin-bottom: 1rem; }
+  .schedule-rows { display: flex; flex-direction: column; gap: 0.5rem; }
+  .schedule-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(252,249,240,0.15);
+    padding-bottom: 0.4rem;
+  }
+  .schedule-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .sched-day { color: var(--cream); font-weight: 600; font-size: 0.95rem; }
+  .sched-time { color: var(--gold); font-weight: 600; font-size: 0.88rem; }
+
+  /* ── CARD: Champion (1col x 1row) ── */
+  .card-champion {
+    grid-column: span 1;
+    background: var(--gold);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card-champion .card-label { color: var(--green); }
+  .card-champion .card-heading { color: var(--green); font-size: 1.15rem; }
+  .champion-stat {
+    font-family: 'Abril Fatface', serif;
+    font-size: 3rem;
+    color: var(--green);
+    line-height: 1;
+    margin: 0.25rem 0;
+  }
+  .champion-sub { font-size: 0.82rem; color: var(--green); opacity: 0.8; }
+
+  /* ── CARD: Come and Try (1col x 1row) ── */
+  .card-come-try {
+    grid-column: span 1;
+    background: var(--green-light);
+    border: 3px solid var(--green);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-come-try .card-heading { font-size: 1.1rem; }
+  .ct-link {
+    display: inline-block;
+    background: var(--green);
+    color: var(--cream);
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  /* ── CARD: About (2col x 1row) ── */
+  .card-about {
+    grid-column: span 2;
+    background: var(--white);
+    border: 3px solid var(--green);
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card-about p { font-size: 0.95rem; line-height: 1.7; }
+
+  /* ── CARD: Fees (1col x 1row) ── */
+  .card-fees {
+    grid-column: span 1;
+    background: var(--cream);
+    border: 3px solid var(--green);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .fee-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(58,107,53,0.2);
+  }
+  .fee-row:last-child { border-bottom: none; }
+  .fee-name { font-size: 0.85rem; color: var(--text); }
+  .fee-price {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.3rem;
+    color: var(--green);
+  }
+
+  /* ── CARD: Contact (1col x 1row) ── */
+  .card-contact {
+    grid-column: span 1;
+    background: var(--text);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.9rem;
+  }
+  .card-contact .card-label { color: var(--gold); }
+  .card-contact .card-heading { color: var(--cream); font-size: 1.1rem; }
+  .contact-line {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .contact-line img { width: 16px; height: 16px; filter: invert(1); opacity: 0.7; }
+  .contact-line a, .contact-line span {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.85rem;
+    opacity: 0.88;
+  }
+  .contact-line a:hover { opacity: 1; text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green);
+    padding: 20px var(--pad);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .footer-name {
+    font-family: 'Abril Fatface', serif;
+    font-size: 0.85rem;
+    color: var(--cream);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .footer-note { font-size: 0.75rem; color: var(--cream); opacity: 0.5; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    .bento-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+    }
+    .card-hero { grid-column: span 2; min-height: 240px; }
+    .card-schedule { grid-column: span 2; }
+    .card-about { grid-column: span 2; }
+    .card-champion, .card-come-try, .card-fees, .card-contact {
+      grid-column: span 1;
+      min-height: 220px;
+    }
+  }
+  @media (max-width: 520px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .card-hero, .card-schedule, .card-about,
+    .card-champion, .card-come-try, .card-fees, .card-contact {
+      grid-column: span 1;
+    }
+    .site-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER STRIP -->
+<header class="site-header">
+  <div class="header-left">
+    <p class="header-est">Bundaberg, Queensland</p>
+    <h1 class="header-name">Bundaberg<br>Croquet Club</h1>
+    <p class="header-tagline">Mondays, Wednesdays and Friday afternoons. 29 Quay St.</p>
+  </div>
+  <a href="mailto:bundaberg@croquetqld.org" class="header-cta">Get in Touch</a>
+</header>
+
+<!-- BENTO GRID -->
+<main class="bento-wrapper">
+  <div class="bento-grid">
+
+    <!-- HERO IMAGE -->
+    <div class="card card-hero">
+      <img src="images/Banner-01.jpg" alt="Bundaberg Croquet Club players in action">
+      <p class="hero-caption">Bundaberg Croquet Club, Quay Street</p>
+    </div>
+
+    <!-- SCHEDULE -->
+    <div class="card card-schedule">
+      <p class="card-label">When We Play</p>
+      <h2 class="card-heading">Playing Schedule</h2>
+      <div class="schedule-rows">
+        <div class="schedule-row">
+          <span class="sched-day">Monday</span>
+          <span class="sched-time">7:30am</span>
+        </div>
+        <div class="schedule-row">
+          <span class="sched-day">Wednesday</span>
+          <span class="sched-time">7:30am</span>
+        </div>
+        <div class="schedule-row">
+          <span class="sched-day">Friday</span>
+          <span class="sched-time">2:00pm (seasonal)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAMPION -->
+    <div class="card card-champion">
+      <p class="card-label">Club Champion</p>
+      <h2 class="card-heading">Terry</h2>
+      <p class="champion-stat">3x</p>
+      <p class="champion-sub">Queensland State Champion</p>
+    </div>
+
+    <!-- COME AND TRY -->
+    <div class="card card-come-try">
+      <div>
+        <p class="card-label">New Players</p>
+        <h2 class="card-heading">Come and Try</h2>
+        <p style="font-size:0.88rem; margin-top:0.5rem;">No equipment, no experience needed. Just show up at 29 Quay St and introduce yourself.</p>
+      </div>
+      <a href="mailto:bundaberg@croquetqld.org" class="ct-link">Get in touch</a>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="card card-about">
+      <p class="card-label">About the Club</p>
+      <h2 class="card-heading">Community, Friendly, Bundaberg</h2>
+      <p>The Bundaberg Croquet Club has been part of life along the Burnett for many years. We are a community club in the truest sense, and we welcome anyone who wants to give the game a go. Our members range from seasoned competitors to first-timers, and our champion player Terry holds three Queensland state titles. We're proud of our competition record and prouder still of the club atmosphere.</p>
+    </div>
+
+    <!-- FEES -->
+    <div class="card card-fees">
+      <p class="card-label">Membership</p>
+      <h2 class="card-heading">Join Us</h2>
+      <div class="fee-row">
+        <span class="fee-name">Full Member</span>
+        <span class="fee-price">$120</span>
+      </div>
+      <div class="fee-row">
+        <span class="fee-name">Social Member</span>
+        <span class="fee-price">$60</span>
+      </div>
+      <p style="font-size:0.78rem; margin-top:0.75rem; opacity:0.65;">Covers all regular Monday and Wednesday sessions.</p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="card card-contact">
+      <p class="card-label">Find Us</p>
+      <h2 class="card-heading">Contact</h2>
+      <div class="contact-line">
+        <img src="https://api.iconify.design/lucide/map-pin.svg" alt="">
+        <span>29 Quay St, Bundaberg QLD 4670</span>
+      </div>
+      <div class="contact-line">
+        <img src="https://api.iconify.design/lucide/phone.svg" alt="">
+        <a href="tel:0741528472">(07) 4152 8472</a>
+      </div>
+      <div class="contact-line">
+        <img src="https://api.iconify.design/lucide/mail.svg" alt="">
+        <a href="mailto:bundaberg@croquetqld.org">bundaberg@croquetqld.org</a>
+      </div>
+      <div class="contact-line">
+        <img src="https://api.iconify.design/lucide/external-link.svg" alt="">
+        <a href="https://maps.google.com/?q=29+Quay+St+Bundaberg+QLD" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+
+  </div><!-- /bento-grid -->
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Bundaberg Croquet Club</span>
+  <span class="footer-note">29 Quay St, Bundaberg QLD 4670. Member of Croquet Association of Queensland.</span>
+</footer>
+
+</body>
+</html>
