@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headland Buderim Croquet Club</title>
+  <meta name="description" content="Four lawns on the ridge. Competitive and social croquet on the Sunshine Coast. First session free.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ─── Tokens ─────────────────────────────────────────────── */
+    :root {
+      --bg:           #000000;
+      --text:         #ffffff;
+      --muted:        #8a9090;
+      --accent:       #cecafb;
+      --glass:        rgba(255,255,255,0.04);
+      --divider:      rgba(255,255,255,0.12);
+      --glow:         rgba(204,186,228,0.35);
+      --sidebar-w:    264px;
+      --display:      'Syne', system-ui, sans-serif;
+      --mono:         'Space Mono', 'Courier New', monospace;
+    }
+
+    /* ─── Reset ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.08) transparent;
+    }
+    body {
+      background: var(--bg);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 15px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    /* ─── Noise layer ────────────────────────────────────────── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ─── Layout ─────────────────────────────────────────────── */
+    .layout {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      min-height: 100vh;
+    }
+
+    /* ─── Sidebar ────────────────────────────────────────────── */
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: var(--sidebar-w);
+      background: var(--bg);
+      border-right: 1px dashed var(--divider);
+      display: flex;
+      flex-direction: column;
+      padding: 44px 36px;
+      z-index: 100;
+    }
+
+    .sidebar__name {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--text);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .sidebar__sub {
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0;
+    }
+
+    .s-divider {
+      border: none;
+      border-top: 1px dashed var(--divider);
+      margin: 36px 0 28px;
+    }
+
+    .sidebar__nav {
+      list-style: none;
+      flex: 1;
+    }
+
+    .sidebar__nav li { margin-bottom: 2px; }
+
+    .sidebar__nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 9px 0;
+      border-bottom: 1px dashed transparent;
+      transition: color 200ms, border-color 200ms;
+    }
+
+    .sidebar__nav a .nav-num {
+      color: rgba(206,202,251,0.35);
+      font-size: 9px;
+    }
+
+    .sidebar__nav a:hover,
+    .sidebar__nav a.active {
+      color: var(--text);
+      border-bottom-color: rgba(255,255,255,0.1);
+    }
+
+    .sidebar__nav a.active .nav-num {
+      color: var(--accent);
+    }
+
+    .sidebar__cta {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #000;
+      background: var(--accent);
+      text-align: center;
+      text-decoration: none;
+      padding: 13px;
+      margin-bottom: 32px;
+      transition: background 200ms, box-shadow 200ms;
+    }
+
+    .sidebar__cta:hover {
+      background: #fff;
+      box-shadow: 0 0 24px var(--glow);
+    }
+
+    .sidebar__foot {
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      line-height: 1.9;
+      border-top: 1px dashed var(--divider);
+      padding-top: 24px;
+    }
+
+    .sidebar__foot a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px dashed transparent;
+      transition: color 150ms, border-color 150ms;
+    }
+
+    .sidebar__foot a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ─── Main ───────────────────────────────────────────────── */
+    .main { margin-left: var(--sidebar-w); }
+
+    /* ─── Hero ───────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 72px 80px;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.28) contrast(1.15) saturate(0.5);
+    }
+
+    .hero__gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.92) 0%,
+        rgba(0,0,0,0.3) 50%,
+        transparent 100%
+      );
+    }
+
+    .hero__content { position: relative; z-index: 2; max-width: 660px; }
+
+    .hero__eyebrow {
+      font-size: 9.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .hero__heading {
+      font-family: var(--display);
+      font-size: clamp(3.2rem, 6.5vw, 5.8rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.97;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .hero__body {
+      font-size: 14px;
+      color: #707878;
+      max-width: 380px;
+      line-height: 1.8;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 48px;
+      right: 80px;
+      writing-mode: vertical-rl;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+      z-index: 2;
+    }
+
+    /* ─── Stats strip ────────────────────────────────────────── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px dashed var(--divider);
+    }
+
+    .stat {
+      padding: 36px 28px;
+      border-right: 1px dashed var(--divider);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat__n {
+      font-family: var(--display);
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat__l {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ─── Section base ───────────────────────────────────────── */
+    .section {
+      padding: 96px 80px;
+      border-bottom: 1px dashed var(--divider);
+    }
+
+    .section__tag {
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 44px;
+      opacity: 0.8;
+    }
+
+    .section__h {
+      font-family: var(--display);
+      font-size: clamp(2rem, 3.8vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 40px;
+    }
+
+    /* ─── About ──────────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 58% 38%;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-grid p {
+      margin-bottom: 18px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .about-grid p:last-child { margin-bottom: 0; }
+
+    .about-codes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 36px;
+    }
+
+    .code-tag {
+      font-size: 9.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border: 1px dashed var(--divider);
+      color: var(--muted);
+      transition: border-color 200ms, color 200ms;
+    }
+
+    .code-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+    .about-img {
+      position: relative;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      filter: brightness(0.42) contrast(1.1) grayscale(0.35);
+      display: block;
+    }
+
+    .about-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px dashed rgba(255,255,255,0.1);
+      pointer-events: none;
+    }
+
+    /* ─── Schedule ───────────────────────────────────────────── */
+    .schedule-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    thead th {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 0 20px 14px 20px;
+      text-align: left;
+      border-bottom: 1px dashed var(--divider);
+      font-weight: 400;
+    }
+
+    tbody td {
+      padding: 16px 20px;
+      border-bottom: 1px dashed rgba(255,255,255,0.05);
+      vertical-align: top;
+      color: var(--muted);
+      transition: color 150ms;
+    }
+
+    tbody tr:hover td { color: var(--text); background: var(--glass); }
+
+    tbody td:first-child {
+      color: var(--text);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .closed-row td { color: rgba(255,255,255,0.2); font-style: italic; }
+    .closed-row td:first-child { color: rgba(255,255,255,0.2); font-weight: 400; }
+
+    td.time { color: #b8bfbf; }
+    td.no-play { color: rgba(255,255,255,0.15); }
+
+    /* ─── Come and Try ───────────────────────────────────────── */
+    .try-grid {
+      display: grid;
+      grid-template-columns: 46% 50%;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .try-steps { list-style: none; margin-top: 8px; }
+
+    .try-step {
+      display: flex;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px dashed var(--divider);
+    }
+
+    .try-step:last-child { border-bottom: none; }
+
+    .try-num {
+      font-family: var(--display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: rgba(206,202,251,0.3);
+      min-width: 28px;
+      line-height: 1.1;
+    }
+
+    .try-step strong {
+      display: block;
+      color: var(--text);
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+
+    .try-step p { font-size: 13px; line-height: 1.7; }
+
+    .try-img { position: relative; }
+
+    .try-img img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: brightness(0.38) contrast(1.1) grayscale(0.3);
+      display: block;
+    }
+
+    .try-glass {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px dashed var(--divider);
+      padding: 20px 24px;
+    }
+
+    .try-glass p {
+      font-size: 12px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ─── Fees ───────────────────────────────────────────────── */
+    .fees-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--divider);
+      border: 1px dashed var(--divider);
+    }
+
+    .fee {
+      background: var(--bg);
+      padding: 32px 28px;
+      transition: background 200ms;
+    }
+
+    .fee:hover { background: var(--glass); }
+
+    .fee--hi { background: rgba(206,202,251,0.05); }
+
+    .fee__price {
+      font-family: var(--display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      display: block;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .fee__label {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .fee__desc {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ─── Contact ────────────────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .contact-field { margin-bottom: 32px; }
+
+    .contact-label {
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .contact-value {
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .contact-value a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--divider);
+      transition: border-color 150ms, color 150ms;
+    }
+
+    .contact-value a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .address-box {
+      border: 1px dashed var(--divider);
+      padding: 28px 28px;
+      margin-top: 8px;
+    }
+
+    .address-box p {
+      font-size: 13px;
+      line-height: 2;
+      color: var(--muted);
+    }
+
+    .directions-link {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px dashed var(--accent);
+      padding: 11px 20px;
+      transition: background 200ms, box-shadow 200ms;
+    }
+
+    .directions-link:hover {
+      background: rgba(206,202,251,0.08);
+      box-shadow: 0 0 18px var(--glow);
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────── */
+    footer {
+      padding: 36px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .foot-name {
+      font-family: var(--display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .foot-credit {
+      font-size: 9.5px;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.18);
+    }
+
+    /* ─── Mobile nav ─────────────────────────────────────────── */
+    .mobile-bar { display: none; }
+
+    /* ─── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .layout { grid-template-columns: 1fr; }
+
+      .sidebar { display: none; }
+
+      .mobile-bar {
+        display: flex;
+        position: fixed;
+        inset: 0 0 auto 0;
+        height: 52px;
+        background: rgba(0,0,0,0.88);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px dashed var(--divider);
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        z-index: 200;
+      }
+
+      .mobile-bar__name {
+        font-family: var(--display);
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: var(--text);
+      }
+
+      .mobile-bar__cta {
+        font-size: 9.5px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #000;
+        background: var(--accent);
+        text-decoration: none;
+        padding: 8px 14px;
+      }
+
+      .main { margin-left: 0; padding-top: 52px; }
+
+      .hero { height: 80vh; padding: 48px 28px; }
+
+      .hero__scroll { display: none; }
+
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(3) { border-top: 1px dashed var(--divider); }
+      .stat:nth-child(4) { border-top: 1px dashed var(--divider); border-right: none; }
+
+      .section { padding: 60px 28px; }
+
+      .about-grid,
+      .try-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      .fees-grid { grid-template-columns: 1fr; }
+
+      footer { padding: 28px 28px; flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile top bar -->
+  <nav class="mobile-bar" aria-label="Site navigation">
+    <span class="mobile-bar__name">Headland Buderim CC</span>
+    <a href="#come-try" class="mobile-bar__cta">Come and Try</a>
+  </nav>
+
+  <div class="layout">
+
+    <!-- ── Sidebar ────────────────────────────────────────── -->
+    <aside class="sidebar">
+
+      <div class="sidebar__name">
+        Headland<br>Buderim<br>Croquet<br>Club
+      </div>
+      <div class="sidebar__sub">Buderim, QLD</div>
+
+      <hr class="s-divider">
+
+      <nav aria-label="Site navigation">
+        <ul class="sidebar__nav">
+          <li>
+            <a href="#about" data-section="about">
+              <span class="nav-num">01</span> About
+            </a>
+          </li>
+          <li>
+            <a href="#schedule" data-section="schedule">
+              <span class="nav-num">02</span> Schedule
+            </a>
+          </li>
+          <li>
+            <a href="#come-try" data-section="come-try">
+              <span class="nav-num">03</span> Come and Try
+            </a>
+          </li>
+          <li>
+            <a href="#fees" data-section="fees">
+              <span class="nav-num">04</span> Fees
+            </a>
+          </li>
+          <li>
+            <a href="#contact" data-section="contact">
+              <span class="nav-num">05</span> Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="#come-try" class="sidebar__cta">First Session Free</a>
+
+      <div class="sidebar__foot">
+        <a href="tel:0412470755">0412 470 755</a><br>
+        <a href="mailto:headlandbuderimcc@gmail.com">headlandbuderimcc@gmail.com</a>
+      </div>
+
+    </aside>
+
+    <!-- ── Main ───────────────────────────────────────────── -->
+    <main class="main">
+
+      <!-- Hero -->
+      <div class="hero" aria-label="Hero">
+        <img class="hero__bg"
+             src="../example3/images/players-golden-hour.jpg"
+             alt="Players on the lawns at dusk, Buderim">
+        <div class="hero__gradient" aria-hidden="true"></div>
+        <div class="hero__content">
+          <span class="hero__eyebrow">Sunshine Coast, Queensland</span>
+          <h1 class="hero__heading">Four lawns<br>on the ridge.</h1>
+          <p class="hero__body">Competitive and social croquet in Buderim. Six days a week, all year. First session is free.</p>
+        </div>
+        <span class="hero__scroll" aria-hidden="true">Scroll</span>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats" role="presentation">
+        <div class="stat">
+          <span class="stat__n">4</span>
+          <span class="stat__l">Full-size lawns</span>
+        </div>
+        <div class="stat">
+          <span class="stat__n">50+</span>
+          <span class="stat__l">Members</span>
+        </div>
+        <div class="stat">
+          <span class="stat__n">6</span>
+          <span class="stat__l">Days a week</span>
+        </div>
+        <div class="stat">
+          <span class="stat__n">4</span>
+          <span class="stat__l">Codes played</span>
+        </div>
+      </div>
+
+      <!-- About -->
+      <section class="section" id="about">
+        <span class="section__tag">01 / About</span>
+        <div class="about-grid">
+          <div>
+            <h2 class="section__h">A club that knows<br>what it's about.</h2>
+            <p>Four lawns on the ridge, in the leafiest corner of the Sunshine Coast. Some play for competition, teams match up across the region, and the best get picked for State and national squads.</p>
+            <p>Others come for the morning air, a bit of exercise, and the company. Both belong here.</p>
+            <p>Six days a week. All year. Closed Thursday.</p>
+            <div class="about-codes">
+              <span class="code-tag">Association</span>
+              <span class="code-tag">Golf Croquet</span>
+              <span class="code-tag">Ricochet</span>
+              <span class="code-tag">Social</span>
+            </div>
+          </div>
+          <div class="about-img">
+            <img src="../example3/images/clubhouse-mural.jpg" alt="Headland Buderim clubhouse">
+          </div>
+        </div>
+      </section>
+
+      <!-- Schedule -->
+      <section class="section" id="schedule">
+        <span class="section__tag">02 / Schedule</span>
+        <h2 class="section__h">When we play.</h2>
+        <div class="schedule-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Association</th>
+                <th>Ricochet</th>
+                <th>Golf</th>
+                <th>Social</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td class="time">1 pm</td>
+                <td class="no-play">-</td>
+                <td class="no-play">-</td>
+                <td class="no-play">-</td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td class="no-play">-</td>
+                <td class="no-play">-</td>
+                <td class="time">9 am</td>
+                <td class="time">3 pm</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td class="no-play">-</td>
+                <td class="time">1 pm</td>
+                <td class="no-play">-</td>
+                <td class="no-play">-</td>
+              </tr>
+              <tr class="closed-row">
+                <td>Thursday</td>
+                <td colspan="4">Closed</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td class="no-play">-</td>
+                <td class="no-play">-</td>
+                <td class="time">9 am</td>
+                <td class="time">3 pm</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td class="time">1 pm</td>
+                <td class="no-play">-</td>
+                <td class="no-play">-</td>
+                <td class="no-play">-</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td class="no-play">-</td>
+                <td class="no-play">-</td>
+                <td class="time">9 am</td>
+                <td class="no-play">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Come and Try -->
+      <section class="section" id="come-try">
+        <span class="section__tag">03 / Come and Try</span>
+        <div class="try-grid">
+          <div>
+            <h2 class="section__h">The first one<br>is on us.</h2>
+            <ul class="try-steps">
+              <li class="try-step">
+                <span class="try-num">01</span>
+                <div>
+                  <strong>Turn up.</strong>
+                  <p>No booking needed. Show up to any session on the schedule above.</p>
+                </div>
+              </li>
+              <li class="try-step">
+                <span class="try-num">02</span>
+                <div>
+                  <strong>Bring flat shoes and a hat.</strong>
+                  <p>Mallets and balls are provided. Equipment is there when you arrive.</p>
+                </div>
+              </li>
+              <li class="try-step">
+                <span class="try-num">03</span>
+                <div>
+                  <strong>First session is free.</strong>
+                  <p>Coaching is $15. Annual membership is $250. No other commitments.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="try-img">
+            <img src="../example3/images/family-playing.jpg"
+                 alt="Families playing croquet on the lawns">
+            <div class="try-glass">
+              <p>Qualified coaches for Golf and Association Croquet. $15 per session. No experience needed to start.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fees -->
+      <section class="section" id="fees">
+        <span class="section__tag">04 / Fees</span>
+        <h2 class="section__h">What it costs.</h2>
+        <div class="fees-grid">
+          <div class="fee">
+            <span class="fee__price">Free</span>
+            <span class="fee__label">First session</span>
+            <p class="fee__desc">Turn up to any session. No booking. No commitment. Bring flat shoes.</p>
+          </div>
+          <div class="fee fee--hi">
+            <span class="fee__price">$250</span>
+            <span class="fee__label">Annual membership</span>
+            <p class="fee__desc">Full membership. All sessions, all codes. Includes green fees throughout the year.</p>
+          </div>
+          <div class="fee">
+            <span class="fee__price">$15</span>
+            <span class="fee__label">Coaching</span>
+            <p class="fee__desc">Qualified coaches for Golf and Association Croquet. Per session.</p>
+          </div>
+          <div class="fee">
+            <span class="fee__price">$8</span>
+            <span class="fee__label">Member green fee</span>
+            <p class="fee__desc">Daily green fee for current members, per session.</p>
+          </div>
+          <div class="fee">
+            <span class="fee__price">$10</span>
+            <span class="fee__label">Affiliated visitor</span>
+            <p class="fee__desc">Visitors from other affiliated croquet clubs, per session.</p>
+          </div>
+          <div class="fee">
+            <span class="fee__price">$15</span>
+            <span class="fee__label">Visitor</span>
+            <p class="fee__desc">Non-affiliated visitors, per session. Come and try any code.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section" id="contact">
+        <span class="section__tag">05 / Contact</span>
+        <div class="contact-grid">
+          <div>
+            <h2 class="section__h">Find us.</h2>
+            <div class="contact-field">
+              <span class="contact-label">President</span>
+              <div class="contact-value">Colin</div>
+            </div>
+            <div class="contact-field">
+              <span class="contact-label">Phone</span>
+              <div class="contact-value">
+                <a href="tel:0412470755">0412 470 755</a>
+              </div>
+            </div>
+            <div class="contact-field">
+              <span class="contact-label">Secretary</span>
+              <div class="contact-value">Julie</div>
+            </div>
+            <div class="contact-field">
+              <span class="contact-label">Email</span>
+              <div class="contact-value">
+                <a href="mailto:headlandbuderimcc@gmail.com">headlandbuderimcc@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="contact-field">
+              <span class="contact-label">Location</span>
+              <div class="contact-value">3 Orme Road, Buderim QLD 4556</div>
+            </div>
+            <div class="address-box">
+              <p>
+                On the ridge, off Orme Road.<br>
+                Parking on site.<br>
+                Open six days a week.<br>
+                Closed Thursday.
+              </p>
+            </div>
+            <a href="https://maps.google.com/?q=3+Orme+Road+Buderim+QLD+4556"
+               class="directions-link"
+               target="_blank"
+               rel="noopener noreferrer">
+              Get directions
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <span class="foot-name">Headland Buderim Croquet Club</span>
+        <span class="foot-credit">Designed by CroquetClaude</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.sidebar__nav a[data-section]');
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => {
+            a.classList.toggle('active', a.dataset.section === e.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sections.forEach(s => obs.observe(s));
+  </script>
+
+</body>
+</html>
