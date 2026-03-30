@@ -165,9 +165,9 @@
   .sched-day { color: var(--cream); font-weight: 600; font-size: 0.95rem; }
   .sched-time { color: var(--gold); font-weight: 600; font-size: 0.88rem; }
 
-  /* ── CARD: Champion (1col x 1row) ── */
+  /* ── CARD: Champion (2col x 1row) ── */
   .card-champion {
-    grid-column: span 1;
+    grid-column: span 2;
     background: var(--gold);
     padding: 28px 24px;
     display: flex;
@@ -178,7 +178,7 @@
   .card-champion .card-heading { color: var(--green); font-size: 1.15rem; }
   .champion-stat {
     font-family: 'Abril Fatface', serif;
-    font-size: 3rem;
+    font-size: 5rem;
     color: var(--green);
     line-height: 1;
     margin: 0.25rem 0;
@@ -301,7 +301,8 @@
     .card-hero { grid-column: span 2; min-height: 240px; }
     .card-schedule { grid-column: span 2; }
     .card-about { grid-column: span 2; }
-    .card-champion, .card-come-try, .card-fees, .card-contact {
+    .card-champion { grid-column: span 2; }
+    .card-come-try, .card-fees, .card-contact {
       grid-column: span 1;
       min-height: 220px;
     }
@@ -321,7 +322,7 @@
 <!-- HEADER STRIP -->
 <header class="site-header">
   <div class="header-left">
-    <p class="header-est">Bundaberg, Queensland</p>
+    <p class="header-est">Est. 1952, Bundaberg Queensland</p>
     <h1 class="header-name">Bundaberg<br>Croquet Club</h1>
     <p class="header-tagline">Mondays, Wednesdays and Friday afternoons. 29 Quay St.</p>
   </div>
@@ -353,12 +354,12 @@
         </div>
         <div class="schedule-row">
           <span class="sched-day">Friday</span>
-          <span class="sched-time">2:00pm (seasonal)</span>
+          <span class="sched-time">2:00pm</span>
         </div>
       </div>
     </div>
 
-    <!-- CHAMPION -->
+    <!-- CHAMPION (2col — committee request) -->
     <div class="card card-champion">
       <p class="card-label">Club Champion</p>
       <h2 class="card-heading">Terry</h2>
@@ -380,7 +381,7 @@
     <div class="card card-about">
       <p class="card-label">About the Club</p>
       <h2 class="card-heading">Community, Friendly, Bundaberg</h2>
-      <p>The Bundaberg Croquet Club has been part of life along the Burnett for many years. We are a community club in the truest sense, and we welcome anyone who wants to give the game a go. Our members range from seasoned competitors to first-timers, and our champion player Terry holds three Queensland state titles. We're proud of our competition record and prouder still of the club atmosphere.</p>
+      <p>The Bundaberg Croquet Club was founded in 1952 and has been part of life along the Burnett ever since. We are a community club in the truest sense, and we welcome anyone who wants to give the game a go. Our members range from seasoned competitors to first-timers, and our champion player Terry holds three Queensland state titles. Over 70 years of croquet in Bundaberg and we're still playing every Monday and Wednesday morning.</p>
     </div>
 
     <!-- FEES -->
