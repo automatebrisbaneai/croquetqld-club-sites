@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tell us about your club and we'll build you a website that feels like yours.">
+<title>Get Started | Club Websites | CroquetClaude</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --maroon: #73182C;
+  --maroon-deep: #5a1323;
+  --green: #82b25e;
+  --green-dark: #6a944c;
+  --cream: #FCF6DA;
+  --cream-dark: #f0e8c4;
+  --white: #FFFDF5;
+  --text: #2c1810;
+  --text-muted: #6b5c54;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Progress bar ──────────────────────────────── */
+
+.progress-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white);
+  border-bottom: 1px solid var(--cream-dark);
+  padding: 16px 24px;
+}
+
+.progress-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.progress-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  height: 6px;
+  background: var(--cream-dark);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--maroon);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+/* ── Main content ──────────────────────────────── */
+
+.wizard {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.question-card {
+  max-width: 600px;
+  width: 100%;
+  display: none;
+}
+
+.question-card.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.question-number {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.question-heading {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.question-helper {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* ── Form inputs ───────────────────────────────── */
+
+textarea, input[type="text"], input[type="url"], input[type="email"] {
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 16px;
+  border: 2px solid var(--cream-dark);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text);
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border-color: var(--maroon);
+}
+
+textarea::placeholder, input::placeholder {
+  color: #b8a898;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ── Checkboxes ────────────────────────────────── */
+
+.checkbox-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 2px solid var(--cream-dark);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.checkbox-item:hover {
+  border-color: var(--green-dark);
+}
+
+.checkbox-item.selected {
+  border-color: var(--maroon);
+  background: rgba(115, 24, 44, 0.04);
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--maroon);
+  flex-shrink: 0;
+}
+
+.checkbox-item span {
+  font-size: 17px;
+}
+
+.checkbox-limit {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* ── Skip checkbox ─────────────────────────────── */
+
+.skip-option {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.skip-option input { accent-color: var(--text-muted); width: 18px; height: 18px; }
+.skip-option span { font-size: 15px; color: var(--text-muted); }
+
+/* ── File upload ───────────────────────────────── */
+
+.upload-area {
+  border: 2px dashed var(--cream-dark);
+  border-radius: 12px;
+  padding: 40px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 16px;
+}
+
+.upload-area:hover { border-color: var(--green-dark); background: rgba(130,178,94,0.04); }
+
+.upload-area input[type="file"] { display: none; }
+
+.upload-icon { font-size: 36px; margin-bottom: 8px; }
+.upload-text { font-size: 16px; color: var(--text-muted); }
+.upload-text strong { color: var(--maroon); }
+
+.upload-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.upload-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--cream);
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.upload-item .remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+}
+
+.category-select {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  padding: 6px 10px;
+  border: 1px solid var(--cream-dark);
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--text);
+}
+
+/* ── Buttons ───────────────────────────────────── */
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 52px;
+}
+
+.btn-primary {
+  background: var(--maroon);
+  color: var(--cream);
+  flex: 1;
+}
+
+.btn-primary:hover { background: var(--maroon-deep); }
+.btn-primary:disabled { background: #cbb8b0; cursor: not-allowed; }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-muted);
+  border: 2px solid var(--cream-dark);
+}
+
+.btn-secondary:hover { border-color: var(--text-muted); color: var(--text); }
+
+.save-later {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  width: 100%;
+}
+
+/* ── Welcome screen ────────────────────────────── */
+
+.welcome-card {
+  text-align: center;
+  max-width: 540px;
+}
+
+.welcome-card .question-heading {
+  font-size: clamp(32px, 6vw, 44px);
+  margin-bottom: 20px;
+}
+
+.welcome-card p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.welcome-card .time-note {
+  font-size: 15px;
+  color: var(--green-dark);
+  margin-bottom: 36px;
+}
+
+/* ── Done screen ───────────────────────────────── */
+
+.done-card {
+  text-align: center;
+  max-width: 540px;
+}
+
+.done-card .done-icon { font-size: 48px; margin-bottom: 16px; }
+
+.done-card .question-heading {
+  font-size: clamp(28px, 5vw, 36px);
+  margin-bottom: 16px;
+}
+
+.done-card p {
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+/* ── Intro fields (name + email) ───────────────── */
+
+.intro-fields {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+/* ── Saving indicator ──────────────────────────── */
+
+.saving-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  margin-left: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.saving-dot.visible { opacity: 1; }
+
+/* ── Responsive ────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .wizard { padding: 24px 16px; }
+  .btn-row { flex-direction: column; }
+  .btn { width: 100%; }
+  .btn-secondary { order: 2; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress -->
+<div class="progress-wrap" id="progressWrap" style="display:none">
+  <div class="progress-inner">
+    <div class="progress-label">
+      <span id="progressText">Question 1 of 7</span>
+      <span class="saving-dot" id="savingDot"></span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Wizard container -->
+<div class="wizard">
+
+  <!-- Welcome -->
+  <div class="question-card active" id="screen-welcome">
+    <div class="welcome-card">
+      <h1 class="question-heading">Let's build your club's website</h1>
+      <p>We'll ask you a few questions about your club so we can make something that really feels like yours.</p>
+      <p>There are no wrong answers. Just tell us what makes your club special.</p>
+      <p class="time-note">Takes about 5 minutes</p>
+
+      <div class="intro-fields" style="text-align:left">
+        <div class="input-group">
+          <label class="input-label" for="intro-name">Your name</label>
+          <input type="text" id="intro-name" placeholder="Jane Smith" required>
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="intro-email">Your email</label>
+          <input type="email" id="intro-email" placeholder="jane@example.com" required>
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="intro-club">Your club's name</label>
+          <input type="text" id="intro-club" placeholder="Buderim Croquet Club" required>
+        </div>
+      </div>
+
+      <div class="btn-row" style="justify-content:center">
+        <button class="btn btn-primary" onclick="startDiscovery()">Get started</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q1: Identity -->
+  <div class="question-card" id="screen-1">
+    <div class="question-number">Question 1 of 7</div>
+    <h2 class="question-heading">What makes your club special?</h2>
+    <p class="question-helper">Think about what a new member would notice on their first visit. The lawns? The people? The location? A few sentences is plenty.</p>
+    <textarea id="q1-answer" rows="5" placeholder="e.g. We have four beautiful lawns overlooking the valley, and most of our members have been playing together for over ten years."></textarea>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goBack()">Back</button>
+      <button class="btn btn-primary" onclick="goNext()">Next</button>
+    </div>
+    <button class="save-later" onclick="saveLater()">Save and finish later</button>
+  </div>
+
+  <!-- Q2: Purpose -->
+  <div class="question-card" id="screen-2">
+    <div class="question-number">Question 2 of 7</div>
+    <h2 class="question-heading">What 3 things should a visitor find on your website?</h2>
+    <p class="question-helper">If someone lands on your site, what do they need most? Pick your top three.</p>
+    <div class="checkbox-grid" id="q2-options">
+      <label class="checkbox-item"><input type="checkbox" value="When we play" data-q="2"><span>When we play</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="How to get started" data-q="2"><span>How to get started</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Where to find us" data-q="2"><span>Where to find us</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Contact details" data-q="2"><span>Contact details</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Membership info and fees" data-q="2"><span>Membership info and fees</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Venue hire" data-q="2"><span>Venue hire</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Club history" data-q="2"><span>Club history</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Coaching programs" data-q="2"><span>Coaching programs</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Tournament calendar" data-q="2"><span>Tournament calendar</span></label>
+    </div>
+    <div class="checkbox-limit" id="q2-limit">Pick up to 3</div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goBack()">Back</button>
+      <button class="btn btn-primary" onclick="goNext()">Next</button>
+    </div>
+    <button class="save-later" onclick="saveLater()">Save and finish later</button>
+  </div>
+
+  <!-- Q3: Audience -->
+  <div class="question-card" id="screen-3">
+    <div class="question-number">Question 3 of 7</div>
+    <h2 class="question-heading">Who are you hoping to reach?</h2>
+    <p class="question-helper">Tick everyone you would like to visit your website.</p>
+    <div class="checkbox-grid" id="q3-options">
+      <label class="checkbox-item"><input type="checkbox" value="New members who have never played" data-q="3"><span>New members who have never played</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Existing members" data-q="3"><span>Existing members</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Visitors from other clubs" data-q="3"><span>Visitors from other clubs</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Local community and council" data-q="3"><span>Local community and council</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Families" data-q="3"><span>Families</span></label>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goBack()">Back</button>
+      <button class="btn btn-primary" onclick="goNext()">Next</button>
+    </div>
+    <button class="save-later" onclick="saveLater()">Save and finish later</button>
+  </div>
+
+  <!-- Q4: Design taste -->
+  <div class="question-card" id="screen-4">
+    <div class="question-number">Question 4 of 7</div>
+    <h2 class="question-heading">Name one or two websites you like the look of</h2>
+    <p class="question-helper">They don't need to be croquet sites. Any website whose look and feel you enjoy. We'll use these as inspiration.</p>
+    <div class="input-group">
+      <label class="input-label" for="q4-url1">Website 1</label>
+      <input type="url" id="q4-url1" placeholder="https://example.com">
+    </div>
+    <div class="input-group">
+      <label class="input-label" for="q4-url2">Website 2 (optional)</label>
+      <input type="url" id="q4-url2" placeholder="https://another-example.com">
+    </div>
+    <div class="input-group">
+      <label class="input-label" for="q4-why">What do you like about them?</label>
+      <textarea id="q4-why" rows="3" placeholder="e.g. I like the colours and the way the photos are laid out"></textarea>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goBack()">Back</button>
+      <button class="btn btn-primary" onclick="goNext()">Next</button>
+    </div>
+    <button class="save-later" onclick="saveLater()">Save and finish later</button>
+  </div>
+
+  <!-- Q5: Assets -->
+  <div class="question-card" id="screen-5">
+    <div class="question-number">Question 5 of 7</div>
+    <h2 class="question-heading">What photos do you have?</h2>
+    <p class="question-helper">Real photos make a huge difference. Upload what you have now. You can always add more later.</p>
+
+    <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+      <input type="file" id="fileInput" multiple accept="image/*,.pdf" onchange="handleFiles(this.files)">
+      <div class="upload-icon">📷</div>
+      <div class="upload-text">Click to upload photos<br><strong>Lawns, clubhouse, members playing, logo</strong></div>
+    </div>
+    <ul class="upload-list" id="uploadList"></ul>
+
+    <label class="skip-option">
+      <input type="checkbox" id="q5-later" onchange="toggleSkip(5)">
+      <span>I'll add photos later</span>
+    </label>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goBack()">Back</button>
+      <button class="btn btn-primary" onclick="goNext()">Next</button>
+    </div>
+    <button class="save-later" onclick="saveLater()">Save and finish later</button>
+  </div>
+
+  <!-- Q6: Constraints -->
+  <div class="question-card" id="screen-6">
+    <div class="question-number">Question 6 of 7</div>
+    <h2 class="question-heading">Is there anything your current setup must keep?</h2>
+    <p class="question-helper">For example: a specific email address, a web address people already know, a booking system, colours from your uniform.</p>
+    <textarea id="q6-answer" rows="4" placeholder="e.g. Our email is secretary@ourclub.com and we want to keep using it"></textarea>
+    <label class="skip-option">
+      <input type="checkbox" id="q6-skip" onchange="toggleSkip(6)">
+      <span>Nothing comes to mind</span>
+    </label>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goBack()">Back</button>
+      <button class="btn btn-primary" onclick="goNext()">Next</button>
+    </div>
+    <button class="save-later" onclick="saveLater()">Save and finish later</button>
+  </div>
+
+  <!-- Q7: Identity anchor -->
+  <div class="question-card" id="screen-7">
+    <div class="question-number">Question 7 of 7</div>
+    <h2 class="question-heading">What's the one thing that would make you say "yes, that's us"?</h2>
+    <p class="question-helper">It could be a colour, a feeling, a phrase, a photo. The thing that captures your club's personality.</p>
+    <textarea id="q7-answer" rows="4" placeholder="e.g. The green of our lawns with the mountains in the background"></textarea>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goBack()">Back</button>
+      <button class="btn btn-primary" onclick="finishDiscovery()">Finish</button>
+    </div>
+  </div>
+
+  <!-- Done -->
+  <div class="question-card" id="screen-done">
+    <div class="done-card">
+      <div class="done-icon">✓</div>
+      <h2 class="question-heading">That's everything we need</h2>
+      <p>We'll build two versions of your website. One that matches what you described, and one that's a creative surprise.</p>
+      <p>We'll email you when they're ready for you to look at.</p>
+      <p style="margin-top:24px; font-size:15px; color:var(--green-dark);">You can close this page now.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── Config ──────────────────────────────────────
+const PB_URL = 'https://pb.croquetwade.com';
+const QUESTIONS = [
+  { key: 'identity',       text: 'What makes your club special?' },
+  { key: 'purpose',        text: 'What 3 things should a visitor find on your website?' },
+  { key: 'audience',       text: 'Who are you hoping to reach?' },
+  { key: 'design_taste',   text: 'Name one or two websites you like the look of' },
+  { key: 'assets',         text: 'What photos do you have?' },
+  { key: 'constraints',    text: 'Is there anything your current setup must keep?' },
+  { key: 'identity_anchor',text: "What's the one thing that would make you say 'yes, that's us'?" },
+];
+
+// ── State ───────────────────────────────────────
+let currentScreen = 'welcome';
+let projectId = null;
+let uploadedFiles = [];
+
+// ── PocketBase (loaded via CDN at top of body) ──
+// We'll use fetch directly since the SDK CDN may not be available
+// Simple PB API wrapper
+
+async function pbCreate(collection, data) {
+  const res = await fetch(`${PB_URL}/api/collections/${collection}/records`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  return res.json();
+}
+
+async function pbUpdate(collection, id, data) {
+  const res = await fetch(`${PB_URL}/api/collections/${collection}/records/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  return res.json();
+}
+
+async function pbList(collection, filter) {
+  const params = new URLSearchParams({ filter, perPage: '50' });
+  const res = await fetch(`${PB_URL}/api/collections/${collection}/records?${params}`);
+  return res.json();
+}
+
+async function pbUploadFile(collection, projectRelId, file, category) {
+  const formData = new FormData();
+  formData.append('project', projectRelId);
+  formData.append('file', file);
+  formData.append('category', category);
+  formData.append('used_in_build', false);
+  const res = await fetch(`${PB_URL}/api/collections/${collection}/records`, {
+    method: 'POST',
+    body: formData
+  });
+  return res.json();
+}
+
+// ── Init ────────────────────────────────────────
+
+function init() {
+  // Check URL for resume
+  const params = new URLSearchParams(window.location.search);
+  const resumeId = params.get('id') || localStorage.getItem('website_project_id');
+  if (resumeId) {
+    resumeProject(resumeId);
+  }
+
+  // Checkbox selection highlighting
+  document.querySelectorAll('.checkbox-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      if (e.target.tagName === 'INPUT') return; // let native handle
+      const cb = this.querySelector('input[type="checkbox"]');
+      const q = cb.dataset.q;
+
+      // Enforce max 3 for Q2
+      if (q === '2' && !cb.checked) {
+        const checked = document.querySelectorAll('#q2-options input:checked');
+        if (checked.length >= 3) return;
+      }
+
+      cb.checked = !cb.checked;
+      this.classList.toggle('selected', cb.checked);
+    });
+
+    const cb = item.querySelector('input[type="checkbox"]');
+    cb.addEventListener('change', function() {
+      item.classList.toggle('selected', this.checked);
+
+      // Enforce max 3 for Q2
+      if (this.dataset.q === '2') {
+        const checked = document.querySelectorAll('#q2-options input:checked');
+        if (checked.length > 3) {
+          this.checked = false;
+          item.classList.remove('selected');
+        }
+        document.getElementById('q2-limit').textContent =
+          checked.length >= 3 ? '3 selected' : `Pick up to 3 (${checked.length} selected)`;
+      }
+    });
+  });
+
+  // Drag and drop for upload area
+  const area = document.getElementById('uploadArea');
+  if (area) {
+    area.addEventListener('dragover', e => { e.preventDefault(); area.style.borderColor = 'var(--green)'; });
+    area.addEventListener('dragleave', () => { area.style.borderColor = ''; });
+    area.addEventListener('drop', e => {
+      e.preventDefault();
+      area.style.borderColor = '';
+      handleFiles(e.dataTransfer.files);
+    });
+  }
+}
+
+// ── Resume existing project ─────────────────────
+
+async function resumeProject(id) {
+  try {
+    const res = await fetch(`${PB_URL}/api/collections/website_projects/records/${id}`);
+    if (!res.ok) { localStorage.removeItem('website_project_id'); return; }
+    const project = await res.json();
+    projectId = id;
+    localStorage.setItem('website_project_id', id);
+
+    // Fill intro fields
+    document.getElementById('intro-name').value = project.initiated_by || '';
+    document.getElementById('intro-email').value = project.club_email || '';
+    document.getElementById('intro-club').value = project.club_name || '';
+
+    // Load existing responses
+    const responses = await pbList('website_responses', `project="${id}"`);
+    if (responses.items) {
+      for (const r of responses.items) {
+        loadResponse(r);
+      }
+    }
+
+    // Jump to next unanswered question
+    const progress = project.discovery_progress || 0;
+    if (progress >= 7) {
+      showScreen('done');
+    } else if (progress > 0) {
+      showScreen(String(progress + 1));
+    } else {
+      // Has project but no answers yet — go to Q1
+      showScreen('1');
+      document.getElementById('progressWrap').style.display = 'block';
+    }
+  } catch(e) {
+    localStorage.removeItem('website_project_id');
+  }
+}
+
+function loadResponse(r) {
+  switch(r.question_key) {
+    case 'identity':
+      document.getElementById('q1-answer').value = r.answer || '';
+      break;
+    case 'purpose':
+      if (r.answer_options) {
+        const vals = typeof r.answer_options === 'string' ? JSON.parse(r.answer_options) : r.answer_options;
+        document.querySelectorAll('#q2-options input').forEach(cb => {
+          if (vals.includes(cb.value)) { cb.checked = true; cb.closest('.checkbox-item').classList.add('selected'); }
+        });
+      }
+      break;
+    case 'audience':
+      if (r.answer_options) {
+        const vals = typeof r.answer_options === 'string' ? JSON.parse(r.answer_options) : r.answer_options;
+        document.querySelectorAll('#q3-options input').forEach(cb => {
+          if (vals.includes(cb.value)) { cb.checked = true; cb.closest('.checkbox-item').classList.add('selected'); }
+        });
+      }
+      break;
+    case 'design_taste':
+      try {
+        const d = typeof r.answer_options === 'string' ? JSON.parse(r.answer_options) : r.answer_options;
+        if (d) {
+          document.getElementById('q4-url1').value = d.url1 || '';
+          document.getElementById('q4-url2').value = d.url2 || '';
+          document.getElementById('q4-why').value = d.why || '';
+        }
+      } catch(e) {}
+      break;
+    case 'assets':
+      if (r.answer === 'later') { document.getElementById('q5-later').checked = true; }
+      break;
+    case 'constraints':
+      if (r.answer === 'nothing') {
+        document.getElementById('q6-skip').checked = true;
+      } else {
+        document.getElementById('q6-answer').value = r.answer || '';
+      }
+      break;
+    case 'identity_anchor':
+      document.getElementById('q7-answer').value = r.answer || '';
+      break;
+  }
+}
+
+// ── Navigation ──────────────────────────────────
+
+function showScreen(id) {
+  document.querySelectorAll('.question-card').forEach(c => c.classList.remove('active'));
+  const target = document.getElementById('screen-' + id);
+  if (target) target.classList.add('active');
+  currentScreen = id;
+
+  // Update progress
+  const qNum = parseInt(id);
+  if (!isNaN(qNum) && qNum >= 1 && qNum <= 7) {
+    document.getElementById('progressWrap').style.display = 'block';
+    document.getElementById('progressText').textContent = `Question ${qNum} of 7`;
+    document.getElementById('progressFill').style.width = `${((qNum - 1) / 7) * 100}%`;
+  } else if (id === 'done') {
+    document.getElementById('progressFill').style.width = '100%';
+    document.getElementById('progressText').textContent = 'Complete';
+  } else {
+    document.getElementById('progressWrap').style.display = 'none';
+  }
+}
+
+async function startDiscovery() {
+  const name = document.getElementById('intro-name').value.trim();
+  const email = document.getElementById('intro-email').value.trim();
+  const club = document.getElementById('intro-club').value.trim();
+
+  if (!name || !email || !club) {
+    alert('Please fill in your name, email, and club name.');
+    return;
+  }
+
+  // Create or update project
+  if (!projectId) {
+    const project = await pbCreate('website_projects', {
+      club_name: club,
+      club_email: email,
+      initiated_by: name,
+      status: 'discovery',
+      discovery_progress: 0,
+      refinement_round: 0,
+    });
+    projectId = project.id;
+    localStorage.setItem('website_project_id', projectId);
+  } else {
+    await pbUpdate('website_projects', projectId, {
+      club_name: club,
+      club_email: email,
+      initiated_by: name,
+    });
+  }
+
+  showScreen('1');
+}
+
+function goBack() {
+  const qNum = parseInt(currentScreen);
+  if (qNum === 1) {
+    showScreen('welcome');
+  } else if (qNum > 1) {
+    showScreen(String(qNum - 1));
+  }
+}
+
+async function goNext() {
+  const qNum = parseInt(currentScreen);
+  await saveCurrentAnswer(qNum);
+  showSaving();
+
+  if (qNum < 7) {
+    showScreen(String(qNum + 1));
+  }
+}
+
+async function finishDiscovery() {
+  await saveCurrentAnswer(7);
+
+  // Mark discovery complete
+  if (projectId) {
+    await pbUpdate('website_projects', projectId, {
+      status: 'building',
+      discovery_progress: 7,
+      discovery_completed: new Date().toISOString(),
+    });
+  }
+
+  showScreen('done');
+}
+
+function saveLater() {
+  const qNum = parseInt(currentScreen);
+  saveCurrentAnswer(qNum);
+  alert('Your progress has been saved. You can come back anytime using the link we email you.');
+}
+
+// ── Save answers ────────────────────────────────
+
+async function saveCurrentAnswer(qNum) {
+  if (!projectId || qNum < 1 || qNum > 7) return;
+
+  const q = QUESTIONS[qNum - 1];
+  let answer = '';
+  let answer_options = null;
+
+  switch(qNum) {
+    case 1:
+      answer = document.getElementById('q1-answer').value.trim();
+      break;
+    case 2:
+      const q2checked = Array.from(document.querySelectorAll('#q2-options input:checked')).map(cb => cb.value);
+      answer_options = q2checked;
+      answer = q2checked.join(', ');
+      break;
+    case 3:
+      const q3checked = Array.from(document.querySelectorAll('#q3-options input:checked')).map(cb => cb.value);
+      answer_options = q3checked;
+      answer = q3checked.join(', ');
+      break;
+    case 4:
+      const url1 = document.getElementById('q4-url1').value.trim();
+      const url2 = document.getElementById('q4-url2').value.trim();
+      const why = document.getElementById('q4-why').value.trim();
+      answer_options = { url1, url2, why };
+      answer = [url1, url2].filter(Boolean).join(', ');
+      break;
+    case 5:
+      answer = document.getElementById('q5-later').checked ? 'later' : `${uploadedFiles.length} files uploaded`;
+      break;
+    case 6:
+      answer = document.getElementById('q6-skip').checked ? 'nothing' : document.getElementById('q6-answer').value.trim();
+      break;
+    case 7:
+      answer = document.getElementById('q7-answer').value.trim();
+      break;
+  }
+
+  // Upsert: check if response exists for this question
+  try {
+    const existing = await pbList('website_responses', `project="${projectId}" && question_number=${qNum}`);
+    if (existing.items && existing.items.length > 0) {
+      await pbUpdate('website_responses', existing.items[0].id, {
+        answer,
+        answer_options: answer_options ? JSON.stringify(answer_options) : null,
+      });
+    } else {
+      await pbCreate('website_responses', {
+        project: projectId,
+        question_number: qNum,
+        question_key: q.key,
+        question_text: q.text,
+        answer,
+        answer_options: answer_options ? JSON.stringify(answer_options) : null,
+      });
+    }
+
+    // Update progress
+    await pbUpdate('website_projects', projectId, {
+      discovery_progress: Math.max(qNum),
+    });
+  } catch(e) {
+    console.error('Save failed:', e);
+  }
+}
+
+// ── File upload ─────────────────────────────────
+
+async function handleFiles(files) {
+  for (const file of files) {
+    if (file.size > 20 * 1024 * 1024) {
+      alert(`${file.name} is too large (max 20MB)`);
+      continue;
+    }
+
+    // Guess category from filename
+    let category = 'photo_other';
+    const lower = file.name.toLowerCase();
+    if (lower.includes('logo') || lower.includes('crest') || lower.includes('badge')) category = 'logo';
+    else if (lower.includes('lawn') || lower.includes('green') || lower.includes('court')) category = 'photo_lawns';
+    else if (lower.includes('club') || lower.includes('house') || lower.includes('pavilion')) category = 'photo_clubhouse';
+    else if (lower.includes('member') || lower.includes('player') || lower.includes('people')) category = 'photo_members';
+
+    // Upload to PocketBase
+    if (projectId) {
+      try {
+        const result = await pbUploadFile('website_assets', projectId, file, category);
+        uploadedFiles.push({ id: result.id, name: file.name, category });
+        renderUploadList();
+      } catch(e) {
+        console.error('Upload failed:', e);
+        alert(`Failed to upload ${file.name}. Please try again.`);
+      }
+    }
+  }
+}
+
+function renderUploadList() {
+  const list = document.getElementById('uploadList');
+  list.innerHTML = uploadedFiles.map((f, i) => `
+    <li class="upload-item">
+      <span>${f.name}</span>
+      <select class="category-select" onchange="updateCategory(${i}, this.value)">
+        <option value="photo_lawns" ${f.category === 'photo_lawns' ? 'selected' : ''}>Lawns</option>
+        <option value="photo_clubhouse" ${f.category === 'photo_clubhouse' ? 'selected' : ''}>Clubhouse</option>
+        <option value="photo_members" ${f.category === 'photo_members' ? 'selected' : ''}>Members</option>
+        <option value="logo" ${f.category === 'logo' ? 'selected' : ''}>Logo</option>
+        <option value="photo_other" ${f.category === 'photo_other' ? 'selected' : ''}>Other</option>
+      </select>
+      <button class="remove" onclick="removeFile(${i})">✕</button>
+    </li>
+  `).join('');
+}
+
+async function updateCategory(idx, category) {
+  uploadedFiles[idx].category = category;
+  if (uploadedFiles[idx].id) {
+    await pbUpdate('website_assets', uploadedFiles[idx].id, { category });
+  }
+}
+
+async function removeFile(idx) {
+  const f = uploadedFiles[idx];
+  if (f.id) {
+    try {
+      await fetch(`${PB_URL}/api/collections/website_assets/records/${f.id}`, { method: 'DELETE' });
+    } catch(e) {}
+  }
+  uploadedFiles.splice(idx, 1);
+  renderUploadList();
+}
+
+function toggleSkip(qNum) {
+  if (qNum === 6) {
+    const skip = document.getElementById('q6-skip').checked;
+    document.getElementById('q6-answer').disabled = skip;
+    if (skip) document.getElementById('q6-answer').value = '';
+  }
+}
+
+// ── Visual feedback ─────────────────────────────
+
+function showSaving() {
+  const dot = document.getElementById('savingDot');
+  dot.classList.add('visible');
+  setTimeout(() => dot.classList.remove('visible'), 1200);
+}
+
+// ── Boot ────────────────────────────────────────
+init();
+</script>
+
+</body>
+</html>
