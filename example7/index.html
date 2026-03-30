@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ipswich Croquet Club: Queens Park, Ipswich</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --maroon: #73182C;
+    --gold: #C4973A;
+    --cream: #FCF6DA;
+    --cream-light: #FDF8EE;
+    --text: #2C1810;
+    --content-max: 1100px;
+    --pad: clamp(24px, 5vw, 80px);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--cream);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--maroon);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--pad);
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.1rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  /* ── HERO (split-screen) ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 64px);
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px var(--pad) 80px 80px;
+    background: var(--cream);
+  }
+  .hero-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-family: 'Abril Fatface', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--maroon);
+    margin-bottom: 1.5rem;
+  }
+  .hero-tagline {
+    font-size: 1.15rem;
+    color: var(--text);
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    opacity: 0.85;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--maroon);
+    color: var(--cream);
+    padding: 14px 32px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 3px solid var(--maroon);
+    transition: background 0.2s, color 0.2s;
+    align-self: flex-start;
+  }
+  .hero-cta:hover { background: transparent; color: var(--maroon); }
+  .hero-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+  }
+  .hero-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+
+  /* ── SECTION BASE ── */
+  section { width: 100%; }
+  .section-inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 80px var(--pad);
+  }
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .section-heading {
+    font-family: 'Abril Fatface', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--maroon);
+    margin-bottom: 1.5rem;
+  }
+  .gold-rule {
+    width: 48px;
+    height: 3px;
+    background: var(--gold);
+    margin-bottom: 2rem;
+  }
+
+  /* ── ABOUT (reverse split) ── */
+  .about { background: var(--cream-light); }
+  .about-grid {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    min-height: 440px;
+  }
+  .about-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 360px;
+  }
+  .about-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  .about-content {
+    padding: 80px 80px 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-quote {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text);
+    border-left: 4px solid var(--gold);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  /* ── SCHEDULE ── */
+  .schedule { background: var(--cream); }
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 3px solid var(--maroon);
+    margin-top: 2rem;
+  }
+  .schedule-day {
+    padding: 40px 32px;
+    border-right: 1px solid var(--maroon);
+  }
+  .schedule-day:last-child { border-right: none; }
+  .day-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .day-name {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.8rem;
+    color: var(--maroon);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+  .day-time {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .day-note {
+    font-size: 0.88rem;
+    color: var(--text);
+    opacity: 0.7;
+    margin-top: 0.4rem;
+  }
+
+  /* ── COME AND TRY ── */
+  .come-try { background: var(--maroon); }
+  .come-try-grid {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 80px var(--pad);
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 4rem;
+    align-items: start;
+  }
+  .come-try .section-label { color: var(--gold); }
+  .come-try .section-heading { color: var(--cream); }
+  .come-try p {
+    color: var(--cream);
+    opacity: 0.9;
+    margin-bottom: 1rem;
+  }
+  .come-try .gold-rule { background: var(--gold); }
+  .facts-panel {
+    border: 2px solid var(--gold);
+    padding: 36px 32px;
+    margin-top: 0.5rem;
+  }
+  .fact-item {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(196,151,58,0.3);
+    display: flex;
+    flex-direction: column;
+  }
+  .fact-item:last-child { border-bottom: none; }
+  .fact-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+  }
+  .fact-value {
+    font-size: 1rem;
+    color: var(--cream);
+    font-weight: 600;
+  }
+  .ct-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--maroon);
+    padding: 14px 32px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 3px solid var(--gold);
+    margin-top: 2rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  .ct-cta:hover { background: transparent; color: var(--gold); }
+
+  /* ── FEES ── */
+  .fees { background: var(--cream-light); }
+  .fees-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .fee-card {
+    border: 3px solid var(--maroon);
+    padding: 44px 36px;
+    text-align: center;
+  }
+  .fee-type {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .fee-amount {
+    font-family: 'Abril Fatface', serif;
+    font-size: 3.5rem;
+    color: var(--maroon);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .fee-period { font-size: 0.88rem; color: var(--text); opacity: 0.65; }
+  .fee-desc { font-size: 0.92rem; color: var(--text); margin-top: 1rem; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--cream); }
+  .contact .section-inner { text-align: center; max-width: 700px; }
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  .contact-link { color: var(--maroon); text-decoration: none; font-weight: 600; }
+  .contact-link:hover { text-decoration: underline; }
+  .find-us {
+    margin-top: 2.5rem;
+    padding: 32px;
+    border: 3px solid var(--maroon);
+    text-align: left;
+  }
+  .find-us-heading {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--maroon);
+    margin-bottom: 0.75rem;
+  }
+  .find-us p { font-size: 0.95rem; }
+  .map-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 2px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--maroon);
+    padding: 28px var(--pad);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-name {
+    font-family: 'Abril Fatface', serif;
+    font-size: 0.9rem;
+    color: var(--cream);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .footer-note {
+    font-size: 0.78rem;
+    color: var(--cream);
+    opacity: 0.55;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-image { min-height: 260px; position: relative; }
+    .hero-content { padding: 52px 24px; }
+    .hero-image img { position: absolute; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-image { min-height: 240px; }
+    .about-content { padding: 44px 24px; }
+    .schedule-grid { grid-template-columns: 1fr; }
+    .schedule-day { border-right: none; border-bottom: 1px solid var(--maroon); }
+    .schedule-day:last-child { border-bottom: none; }
+    .come-try-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .fees-grid { grid-template-columns: 1fr; }
+    .nav-links { gap: 1.5rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .find-us { text-align: left; }
+    .contact .section-inner { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Ipswich Croquet Club</a>
+  <ul class="nav-links">
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#come-try">Come and Try</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-label">Queens Park, Ipswich</p>
+    <h1 class="hero-title">Croquet.<br>Mornings.<br>Good people.</h1>
+    <p class="hero-tagline">We play Tuesday, Thursday, and Saturday mornings at 8am. Everyone is welcome, no experience needed.</p>
+    <a href="#come-try" class="hero-cta">Come and Try</a>
+  </div>
+  <div class="hero-image">
+    <img src="images/come_and_try_croquet.jpg" alt="Members of Ipswich Croquet Club enjoying a Come and Try morning at Queens Park">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-grid">
+    <div class="about-image">
+      <img src="images/come_and_try_croquet.jpg" alt="Playing croquet at Ipswich" loading="lazy">
+    </div>
+    <div class="about-content">
+      <p class="section-label">About the Club</p>
+      <h2 class="section-heading">More Than a Game</h2>
+      <div class="gold-rule"></div>
+      <p>The Ipswich Croquet Club has been part of Queens Park for many years. We are a friendly, sociable club, and Tuesday mornings are as much about the morning tea as anything that happens on the lawn.</p>
+      <blockquote class="about-quote">"Kevin has been president for twelve years and knows everyone by name. We're not serious competitors, we just love the game and love getting together."</blockquote>
+      <p style="font-size:0.9rem; opacity:0.7;">Younger players are coming through now too. If you've always been curious about croquet, this is a good place to start.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule" id="schedule">
+  <div class="section-inner">
+    <p class="section-label">When We Play</p>
+    <h2 class="section-heading">Playing Schedule</h2>
+    <div class="gold-rule"></div>
+    <p style="max-width:560px; margin-bottom:0;">All sessions start at 8am at Queens Park. Arrive a few minutes early the first time and someone will meet you at the gate.</p>
+    <div class="schedule-grid">
+      <div class="schedule-day">
+        <p class="day-label">Morning session</p>
+        <p class="day-name">Tuesday</p>
+        <p class="day-time">8:00am</p>
+        <p class="day-note">The social session. Morning tea on the lawn.</p>
+      </div>
+      <div class="schedule-day">
+        <p class="day-label">Morning session</p>
+        <p class="day-name">Thursday</p>
+        <p class="day-time">8:00am</p>
+        <p class="day-note">Smaller group, great for new players to practise.</p>
+      </div>
+      <div class="schedule-day">
+        <p class="day-label">Morning session</p>
+        <p class="day-name">Saturday</p>
+        <p class="day-time">8:00am</p>
+        <p class="day-note">Come and Try on the first Saturday of each month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COME AND TRY -->
+<section class="come-try" id="come-try">
+  <div class="come-try-grid">
+    <div>
+      <p class="section-label">New to Croquet</p>
+      <h2 class="section-heading">Come and Try</h2>
+      <div class="gold-rule"></div>
+      <p>Every first Saturday of the month we run a Come and Try morning. No equipment needed, no experience expected. Just show up at Queens Park off Ellenborough Street and follow the signs to the lawns.</p>
+      <p>A club member will walk you through the basics. You'll play a few ends, have a chat over morning tea, and see if it suits you. Most people who come once come back.</p>
+      <a href="mailto:ipswich@croquetqld.org" class="ct-cta">Get in touch</a>
+    </div>
+    <div>
+      <div class="facts-panel">
+        <div class="fact-item">
+          <span class="fact-label">When</span>
+          <span class="fact-value">First Saturday of each month</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">Start time</span>
+          <span class="fact-value">8:00am</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">Location</span>
+          <span class="fact-value">Queens Park, Ipswich</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">What to bring</span>
+          <span class="fact-value">Flat-soled shoes. Everything else provided.</span>
+        </div>
+        <div class="fact-item">
+          <span class="fact-label">Cost</span>
+          <span class="fact-value">Free</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="fees" id="fees">
+  <div class="section-inner">
+    <p class="section-label">Membership</p>
+    <h2 class="section-heading">It's Affordable</h2>
+    <div class="gold-rule"></div>
+    <p style="max-width:520px; margin-bottom:0;">Croquet is one of the most affordable sports you can take up. Annual membership covers all regular sessions.</p>
+    <div class="fees-grid">
+      <div class="fee-card">
+        <p class="fee-type">Full Member</p>
+        <p class="fee-amount">$120</p>
+        <p class="fee-period">per year</p>
+        <p class="fee-desc">Full access to all sessions, Tuesday through Saturday. Vote at club meetings.</p>
+      </div>
+      <div class="fee-card">
+        <p class="fee-type">Social Member</p>
+        <p class="fee-amount">$60</p>
+        <p class="fee-period">per year</p>
+        <p class="fee-desc">Play at your own pace. Great if you can't commit to a regular schedule.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <p class="section-label">How to Find Us</p>
+    <h2 class="section-heading">Get in Touch</h2>
+    <div class="gold-rule" style="margin: 0 auto 2rem;"></div>
+    <div class="contact-details">
+      <div class="contact-item">
+        <img class="contact-icon" src="https://api.iconify.design/lucide/mail.svg" alt="">
+        <a href="mailto:ipswich@croquetqld.org" class="contact-link">ipswich@croquetqld.org</a>
+      </div>
+      <div class="contact-item">
+        <img class="contact-icon" src="https://api.iconify.design/lucide/phone.svg" alt="">
+        <a href="tel:0401696906" class="contact-link">0401 696 906</a>
+      </div>
+      <div class="contact-item">
+        <img class="contact-icon" src="https://api.iconify.design/lucide/map-pin.svg" alt="">
+        <span>Queens Park, Ipswich QLD 4305</span>
+      </div>
+    </div>
+    <div class="find-us">
+      <p class="find-us-heading">Getting Here</p>
+      <p>Our lawns are in Queens Park, Ipswich. The main entrance to the croquet grounds is off Ellenborough Street. There is a car park just inside the gate. If you're coming for the first time, park near the gate and walk toward the lawns. You'll hear us before you see us.</p>
+      <a href="https://maps.google.com/?q=Queens+Park+Ipswich+QLD" target="_blank" rel="noopener" class="map-link">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Ipswich Croquet Club</span>
+  <span class="footer-note">Queens Park, Ipswich QLD. Member of Croquet Association of Queensland.</span>
+</footer>
+
+</body>
+</html>
