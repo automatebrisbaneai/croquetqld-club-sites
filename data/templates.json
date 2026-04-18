@@ -1,0 +1,191 @@
+[
+  {
+    "id": "example1",
+    "name": "Buderim's Eternal Afternoon",
+    "layout_pattern": "Vertical Scroll with curved section transitions",
+    "mood": "Unhurried, leafy, golden",
+    "photo_dependency": "low",
+    "best_for": ["schedule", "how_to_join", "location", "contact", "history"],
+    "palette_family": "warm",
+    "typography": "Playfair Display + Work Sans",
+    "palette": {
+      "primary": "#E57325",
+      "secondary": "#4E6D50",
+      "background": "#F5F0E8",
+      "accent": "#B08968"
+    },
+    "concept": "Subtropical garden village — ginger warmth, canopy greens, ridge earth. A living postcard from Buderim.",
+    "reference_url": null,
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example1.jpg",
+    "live_url": "https://websites.croquetwade.com/example1/"
+  },
+  {
+    "id": "example2",
+    "name": "Heritage Lawn Club",
+    "layout_pattern": "Alternating photo-text blocks with full-width hero",
+    "mood": "Classic, refined, confident",
+    "photo_dependency": "high",
+    "best_for": ["schedule", "how_to_join", "location", "contact", "history", "tournaments"],
+    "palette_family": "warm",
+    "typography": "Playfair Display + Lato",
+    "palette": {
+      "primary": "#2D5A27",
+      "secondary": "#C5A55A",
+      "background": "#FAF6F0",
+      "accent": "#1B3B19"
+    },
+    "concept": "Gracious heritage venue — bold serif headlines, generous photography, lawn-and-linen elegance. Royal Hotel Paddington inspired.",
+    "reference_url": "https://www.royalhotel.com.au/",
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example2.jpg",
+    "live_url": "https://websites.croquetwade.com/example2/"
+  },
+  {
+    "id": "example3",
+    "name": "Ridge at Nightfall",
+    "layout_pattern": "Vertical Scroll with full-viewport dark sections",
+    "mood": "Dark, deliberate, premium",
+    "photo_dependency": "medium",
+    "best_for": ["schedule", "contact", "tournaments", "coaching"],
+    "palette_family": "cool",
+    "typography": "Syne + Space Mono",
+    "palette": {
+      "primary": "#000000",
+      "secondary": "#cecafb",
+      "background": "#000000",
+      "accent": "#cecafb"
+    },
+    "concept": "Institutional minimalism on black — frosted glass, noise texture, lavender accents. For clubs that know their craft.",
+    "reference_url": "https://tenbinlabs.xyz",
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example3.jpg",
+    "live_url": "https://websites.croquetwade.com/example3/"
+  },
+  {
+    "id": "example4",
+    "name": "Electric Greens",
+    "layout_pattern": "Bold sections with dominant typography on cream",
+    "mood": "Clean, confident, modern",
+    "photo_dependency": "medium",
+    "best_for": ["how_to_join", "schedule", "coaching", "fees", "contact"],
+    "palette_family": "bold",
+    "typography": "Space Grotesk + Space Grotesk",
+    "palette": {
+      "primary": "#060761",
+      "secondary": "#d1fa30",
+      "background": "#f7f7f5",
+      "accent": "#d1fa30"
+    },
+    "concept": "Bold sports-club energy — deep navy, electric lime accent, enormous typography. The antidote to every dusty club website.",
+    "reference_url": "https://www.jumpseatupgrades.com/",
+    "club_data": "graceville",
+    "preview_image": "previews/example4.jpg",
+    "live_url": "https://websites.croquetwade.com/example4/"
+  },
+  {
+    "id": "example5",
+    "name": "Morning Light",
+    "layout_pattern": "Two-column with clean card sections",
+    "mood": "Warm, friendly, community",
+    "photo_dependency": "low",
+    "best_for": ["how_to_join", "schedule", "fees", "contact", "location"],
+    "palette_family": "warm",
+    "typography": "Lora + Nunito",
+    "palette": {
+      "primary": "#B85C38",
+      "secondary": "#1F1F1F",
+      "background": "#FAFAF7",
+      "accent": "#F5EDE7"
+    },
+    "concept": "Friendly neighbour's door — clean, restrained, community-focused. Terracotta warmth on white. Brisbane Open House inspired.",
+    "reference_url": "https://www.brisbaneopenhouse.com.au",
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example5.jpg",
+    "live_url": "https://websites.croquetwade.com/example5/"
+  },
+  {
+    "id": "example6",
+    "name": "Garden City Botanical",
+    "layout_pattern": "Two-column editorial with full-width hero",
+    "mood": "Botanical, steady, welcoming",
+    "photo_dependency": "low",
+    "best_for": ["how_to_join", "schedule", "history", "contact", "fees", "location"],
+    "palette_family": "neutral",
+    "typography": "Fraunces + DM Sans",
+    "palette": {
+      "primary": "#5B6B35",
+      "secondary": "#C47F3A",
+      "background": "#FAF8F4",
+      "accent": "#EDF1E6"
+    },
+    "concept": "Eighty years in the Garden City — sage green, amber accent, botanical serif. The feel of a morning walk through Queens Park.",
+    "reference_url": "https://www.tcof.com.au",
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example6.jpg",
+    "live_url": "https://websites.croquetwade.com/example6/"
+  },
+  {
+    "id": "example7",
+    "name": "Queens Park Editorial",
+    "layout_pattern": "Split-Screen with alternating 50/50 sections",
+    "mood": "Heritage, editorial, confident",
+    "photo_dependency": "medium",
+    "best_for": ["schedule", "how_to_join", "fees", "contact", "location"],
+    "palette_family": "warm",
+    "typography": "Abril Fatface + Source Sans 3",
+    "palette": {
+      "primary": "#73182C",
+      "secondary": "#C4973A",
+      "background": "#FCF6DA",
+      "accent": "#C4973A"
+    },
+    "concept": "Heritage warmth with editorial confidence — maroon and gold, sharp geometry, split-screen layouts. A club that already knows it's good.",
+    "reference_url": null,
+    "club_data": "ipswich",
+    "preview_image": "previews/example7.jpg",
+    "live_url": "https://websites.croquetwade.com/example7/"
+  },
+  {
+    "id": "example8",
+    "name": "Bundaberg Bento",
+    "layout_pattern": "Card Mosaic (Bento Grid) with header strip",
+    "mood": "Organised, modern, warm",
+    "photo_dependency": "medium",
+    "best_for": ["schedule", "how_to_join", "fees", "contact", "tournaments"],
+    "palette_family": "neutral",
+    "typography": "Abril Fatface + Source Sans 3",
+    "palette": {
+      "primary": "#3A6B35",
+      "secondary": "#B8860B",
+      "background": "#FCF9F0",
+      "accent": "#EDF5EC"
+    },
+    "concept": "Bento grid curating the club story into distinct cards — each card makes one clear statement. Modern layout, warm Queensland palette.",
+    "reference_url": null,
+    "club_data": "bundaberg",
+    "preview_image": "previews/example8.jpg",
+    "live_url": "https://websites.croquetwade.com/example8/"
+  },
+  {
+    "id": "example9",
+    "name": "Ridge at Nightfall v2",
+    "layout_pattern": "Sidebar Navigation with scrolling main content",
+    "mood": "Dark, minimal, structural",
+    "photo_dependency": "medium",
+    "best_for": ["schedule", "contact", "fees", "tournaments", "coaching"],
+    "palette_family": "cool",
+    "typography": "Syne + Space Mono",
+    "palette": {
+      "primary": "#000000",
+      "secondary": "#cecafb",
+      "background": "#000000",
+      "accent": "#cecafb"
+    },
+    "concept": "The tenbinlabs aesthetic done properly — fixed sidebar navigation, pure black, lavender accent, dashed borders. Maximum contrast with typical club sites.",
+    "reference_url": "https://tenbinlabs.xyz",
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example9.jpg",
+    "live_url": "https://websites.croquetwade.com/example9/"
+  }
+]

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Tell us about your club and we'll build you a website that feels like yours.">
+<meta name="description" content="Tell us about your club and we'll build you a free website.">
 <title>Get Started | Club Websites | CroquetClaude</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,6 +101,11 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .question-card.active { animation: none; }
+  .progress-fill { transition: none; }
+}
+
 .question-number {
   font-size: 14px;
   color: var(--text-muted);
@@ -127,7 +132,7 @@ body {
 
 /* ── Form inputs ───────────────────────────────── */
 
-textarea, input[type="text"], input[type="url"], input[type="email"] {
+textarea, input[type="text"], input[type="url"], input[type="email"], select {
   width: 100%;
   font-family: 'DM Sans', sans-serif;
   font-size: 18px;
@@ -141,13 +146,22 @@ textarea, input[type="text"], input[type="url"], input[type="email"] {
   resize: vertical;
 }
 
-textarea:focus, input:focus {
+textarea:focus, input:focus, select:focus {
   outline: none;
   border-color: var(--maroon);
 }
 
 textarea::placeholder, input::placeholder {
   color: #b8a898;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b5c54' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
 }
 
 .input-group {
@@ -159,6 +173,56 @@ textarea::placeholder, input::placeholder {
   font-weight: 500;
   color: var(--text-muted);
   margin-bottom: 6px;
+  display: block;
+}
+
+/* ── Radio buttons ─────────────────────────────── */
+
+.radio-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 2px solid var(--cream-dark);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.radio-item:hover {
+  border-color: var(--green-dark);
+}
+
+.radio-item.selected {
+  border-color: var(--maroon);
+  background: rgba(115, 24, 44, 0.04);
+}
+
+.radio-item input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--maroon);
+  flex-shrink: 0;
+}
+
+.radio-item span {
+  font-size: 17px;
+}
+
+/* ── "Other" text input for radio ──────────────── */
+
+.other-text-wrap {
+  margin-top: 10px;
+  display: none;
+}
+
+.other-text-wrap.visible {
   display: block;
 }
 
@@ -201,82 +265,6 @@ textarea::placeholder, input::placeholder {
   font-size: 17px;
 }
 
-.checkbox-limit {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 8px;
-}
-
-/* ── Skip checkbox ─────────────────────────────── */
-
-.skip-option {
-  margin-top: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.skip-option input { accent-color: var(--text-muted); width: 18px; height: 18px; }
-.skip-option span { font-size: 15px; color: var(--text-muted); }
-
-/* ── File upload ───────────────────────────────── */
-
-.upload-area {
-  border: 2px dashed var(--cream-dark);
-  border-radius: 12px;
-  padding: 40px 24px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s;
-  margin-bottom: 16px;
-}
-
-.upload-area:hover { border-color: var(--green-dark); background: rgba(130,178,94,0.04); }
-
-.upload-area input[type="file"] { display: none; }
-
-.upload-icon { font-size: 36px; margin-bottom: 8px; }
-.upload-text { font-size: 16px; color: var(--text-muted); }
-.upload-text strong { color: var(--maroon); }
-
-.upload-list {
-  list-style: none;
-  display: grid;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.upload-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px;
-  background: var(--cream);
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-.upload-item .remove {
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
-  font-size: 18px;
-  padding: 4px 8px;
-}
-
-.category-select {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
-  padding: 6px 10px;
-  border: 1px solid var(--cream-dark);
-  border-radius: 6px;
-  background: var(--white);
-  color: var(--text);
-}
-
 /* ── Buttons ───────────────────────────────────── */
 
 .btn-row {
@@ -314,6 +302,15 @@ textarea::placeholder, input::placeholder {
 }
 
 .btn-secondary:hover { border-color: var(--text-muted); color: var(--text); }
+
+.btn-skip {
+  background: transparent;
+  color: var(--text-muted);
+  border: 2px solid var(--cream-dark);
+  flex: 1;
+}
+
+.btn-skip:hover { border-color: var(--text-muted); color: var(--text); }
 
 .save-later {
   display: block;
@@ -375,6 +372,17 @@ textarea::placeholder, input::placeholder {
   margin-bottom: 12px;
 }
 
+.done-card .sub-text {
+  font-size: 15px;
+  color: var(--green-dark);
+  margin-top: 24px;
+}
+
+.done-card .sub-text a {
+  color: var(--maroon);
+  text-decoration: underline;
+}
+
 /* ── Intro fields (name + email) ───────────────── */
 
 .intro-fields {
@@ -414,7 +422,7 @@ textarea::placeholder, input::placeholder {
 <div class="progress-wrap" id="progressWrap" style="display:none">
   <div class="progress-inner">
     <div class="progress-label">
-      <span id="progressText">Question 1 of 7</span>
+      <span id="progressText">Question 1 of 6</span>
       <span class="saving-dot" id="savingDot"></span>
     </div>
     <div class="progress-bar">
@@ -430,9 +438,9 @@ textarea::placeholder, input::placeholder {
   <div class="question-card active" id="screen-welcome">
     <div class="welcome-card">
       <h1 class="question-heading">Let's build your club's website</h1>
-      <p>We'll ask you a few questions about your club so we can make something that really feels like yours.</p>
-      <p>There are no wrong answers. Just tell us what makes your club special.</p>
-      <p class="time-note">Takes about 5 minutes</p>
+      <p>We'll ask you a few quick questions so we can build something that really fits your club.</p>
+      <p>There are no wrong answers.</p>
+      <p class="time-note">Takes about 2 minutes</p>
 
       <div class="intro-fields" style="text-align:left">
         <div class="input-group">
@@ -440,12 +448,23 @@ textarea::placeholder, input::placeholder {
           <input type="text" id="intro-name" placeholder="Jane Smith" required>
         </div>
         <div class="input-group">
-          <label class="input-label" for="intro-email">Your email</label>
-          <input type="email" id="intro-email" placeholder="jane@example.com" required>
-        </div>
-        <div class="input-group">
           <label class="input-label" for="intro-club">Your club's name</label>
           <input type="text" id="intro-club" placeholder="Buderim Croquet Club" required>
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="intro-role">Your role at the club</label>
+          <select id="intro-role" required>
+            <option value="" disabled selected>Choose one</option>
+            <option value="President">President</option>
+            <option value="Secretary">Secretary</option>
+            <option value="Committee member">Committee member</option>
+            <option value="Member">Member</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label class="input-label" for="intro-email">Your email</label>
+          <input type="email" id="intro-email" placeholder="jane@example.com" required>
         </div>
       </div>
 
@@ -455,12 +474,22 @@ textarea::placeholder, input::placeholder {
     </div>
   </div>
 
-  <!-- Q1: Identity -->
+  <!-- Q1: Web presence -->
   <div class="question-card" id="screen-1">
-    <div class="question-number">Question 1 of 7</div>
-    <h2 class="question-heading">What makes your club special?</h2>
-    <p class="question-helper">Think about what a new member would notice on their first visit. The lawns? The people? The location? A few sentences is plenty.</p>
-    <textarea id="q1-answer" rows="5" placeholder="e.g. We have four beautiful lawns overlooking the valley, and most of our members have been playing together for over ten years."></textarea>
+    <div class="question-number">Question 1 of 6</div>
+    <h2 class="question-heading">Does your club have a website right now?</h2>
+    <div class="radio-grid" id="q1-options">
+      <label class="radio-item"><input type="radio" name="q1" value="We don't have one"><span>We don't have one</span></label>
+      <label class="radio-item"><input type="radio" name="q1" value="We have a Facebook page"><span>We have a Facebook page</span></label>
+      <label class="radio-item"><input type="radio" name="q1" value="We have an old website we never update"><span>We have an old website we never update</span></label>
+      <label class="radio-item"><input type="radio" name="q1" value="We have a Revolutionise page"><span>We have a Revolutionise page</span></label>
+      <label class="radio-item"><input type="radio" name="q1" value="Other"><span>Other</span></label>
+    </div>
+    <div class="other-text-wrap" id="q1-other-wrap">
+      <div class="input-group" style="margin-top:0">
+        <input type="text" id="q1-other-text" placeholder="Tell us what you have...">
+      </div>
+    </div>
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="goBack()">Back</button>
       <button class="btn btn-primary" onclick="goNext()">Next</button>
@@ -468,23 +497,22 @@ textarea::placeholder, input::placeholder {
     <button class="save-later" onclick="saveLater()">Save and finish later</button>
   </div>
 
-  <!-- Q2: Purpose -->
+  <!-- Q2: Visitor needs -->
   <div class="question-card" id="screen-2">
-    <div class="question-number">Question 2 of 7</div>
-    <h2 class="question-heading">What 3 things should a visitor find on your website?</h2>
-    <p class="question-helper">If someone lands on your site, what do they need most? Pick your top three.</p>
+    <div class="question-number">Question 2 of 6</div>
+    <h2 class="question-heading">What should people find on your site?</h2>
+    <p class="question-helper">Pick everything that matters. We'll figure out the priority.</p>
     <div class="checkbox-grid" id="q2-options">
-      <label class="checkbox-item"><input type="checkbox" value="When we play" data-q="2"><span>When we play</span></label>
-      <label class="checkbox-item"><input type="checkbox" value="How to get started" data-q="2"><span>How to get started</span></label>
-      <label class="checkbox-item"><input type="checkbox" value="Where to find us" data-q="2"><span>Where to find us</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Play times and schedule" data-q="2"><span>Play times and schedule</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="How to join or Come & Try" data-q="2"><span>How to join or Come and Try</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Location and directions" data-q="2"><span>Location and directions</span></label>
       <label class="checkbox-item"><input type="checkbox" value="Contact details" data-q="2"><span>Contact details</span></label>
-      <label class="checkbox-item"><input type="checkbox" value="Membership info and fees" data-q="2"><span>Membership info and fees</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Fees and membership" data-q="2"><span>Fees and membership</span></label>
       <label class="checkbox-item"><input type="checkbox" value="Venue hire" data-q="2"><span>Venue hire</span></label>
       <label class="checkbox-item"><input type="checkbox" value="Club history" data-q="2"><span>Club history</span></label>
       <label class="checkbox-item"><input type="checkbox" value="Coaching programs" data-q="2"><span>Coaching programs</span></label>
-      <label class="checkbox-item"><input type="checkbox" value="Tournament calendar" data-q="2"><span>Tournament calendar</span></label>
+      <label class="checkbox-item"><input type="checkbox" value="Tournaments and events" data-q="2"><span>Tournaments and events</span></label>
     </div>
-    <div class="checkbox-limit" id="q2-limit">Pick up to 3</div>
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="goBack()">Back</button>
       <button class="btn btn-primary" onclick="goNext()">Next</button>
@@ -492,17 +520,16 @@ textarea::placeholder, input::placeholder {
     <button class="save-later" onclick="saveLater()">Save and finish later</button>
   </div>
 
-  <!-- Q3: Audience -->
+  <!-- Q3: Photo readiness -->
   <div class="question-card" id="screen-3">
-    <div class="question-number">Question 3 of 7</div>
-    <h2 class="question-heading">Who are you hoping to reach?</h2>
-    <p class="question-helper">Tick everyone you would like to visit your website.</p>
-    <div class="checkbox-grid" id="q3-options">
-      <label class="checkbox-item"><input type="checkbox" value="New members who have never played" data-q="3"><span>New members who have never played</span></label>
-      <label class="checkbox-item"><input type="checkbox" value="Existing members" data-q="3"><span>Existing members</span></label>
-      <label class="checkbox-item"><input type="checkbox" value="Visitors from other clubs" data-q="3"><span>Visitors from other clubs</span></label>
-      <label class="checkbox-item"><input type="checkbox" value="Local community and council" data-q="3"><span>Local community and council</span></label>
-      <label class="checkbox-item"><input type="checkbox" value="Families" data-q="3"><span>Families</span></label>
+    <div class="question-number">Question 3 of 6</div>
+    <h2 class="question-heading">How are you for photos of the club?</h2>
+    <p class="question-helper">Phone photos are perfect. We'll ask for specific ones later.</p>
+    <div class="radio-grid" id="q3-options">
+      <label class="radio-item"><input type="radio" name="q3" value="We've got heaps"><span>We've got heaps</span></label>
+      <label class="radio-item"><input type="radio" name="q3" value="A few on someone's phone"><span>A few on someone's phone</span></label>
+      <label class="radio-item"><input type="radio" name="q3" value="We could take some"><span>We could take some</span></label>
+      <label class="radio-item"><input type="radio" name="q3" value="We don't have any"><span>We don't have any</span></label>
     </div>
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="goBack()">Back</button>
@@ -511,22 +538,14 @@ textarea::placeholder, input::placeholder {
     <button class="save-later" onclick="saveLater()">Save and finish later</button>
   </div>
 
-  <!-- Q4: Design taste -->
+  <!-- Q4: Tech comfort -->
   <div class="question-card" id="screen-4">
-    <div class="question-number">Question 4 of 7</div>
-    <h2 class="question-heading">Name one or two websites you like the look of</h2>
-    <p class="question-helper">They don't need to be croquet sites. Any website whose look and feel you enjoy. We'll use these as inspiration.</p>
-    <div class="input-group">
-      <label class="input-label" for="q4-url1">Website 1</label>
-      <input type="url" id="q4-url1" placeholder="https://example.com">
-    </div>
-    <div class="input-group">
-      <label class="input-label" for="q4-url2">Website 2 (optional)</label>
-      <input type="url" id="q4-url2" placeholder="https://another-example.com">
-    </div>
-    <div class="input-group">
-      <label class="input-label" for="q4-why">What do you like about them?</label>
-      <textarea id="q4-why" rows="3" placeholder="e.g. I like the colours and the way the photos are laid out"></textarea>
+    <div class="question-number">Question 4 of 6</div>
+    <h2 class="question-heading">How comfortable are you with computers?</h2>
+    <div class="radio-grid" id="q4-options">
+      <label class="radio-item"><input type="radio" name="q4" value="Very comfortable"><span>Very comfortable</span></label>
+      <label class="radio-item"><input type="radio" name="q4" value="Enough to get by"><span>Enough to get by</span></label>
+      <label class="radio-item"><input type="radio" name="q4" value="Not at all"><span>Not at all -- someone else handles this for me</span></label>
     </div>
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="goBack()">Back</button>
@@ -535,24 +554,16 @@ textarea::placeholder, input::placeholder {
     <button class="save-later" onclick="saveLater()">Save and finish later</button>
   </div>
 
-  <!-- Q5: Assets -->
+  <!-- Q5: Who updates -->
   <div class="question-card" id="screen-5">
-    <div class="question-number">Question 5 of 7</div>
-    <h2 class="question-heading">What photos do you have?</h2>
-    <p class="question-helper">Real photos make a huge difference. Upload what you have now. You can always add more later.</p>
-
-    <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
-      <input type="file" id="fileInput" multiple accept="image/*,.pdf" onchange="handleFiles(this.files)">
-      <div class="upload-icon">📷</div>
-      <div class="upload-text">Click to upload photos<br><strong>Lawns, clubhouse, members playing, logo</strong></div>
+    <div class="question-number">Question 5 of 6</div>
+    <h2 class="question-heading">Who would keep the website up to date?</h2>
+    <div class="radio-grid" id="q5-options">
+      <label class="radio-item"><input type="radio" name="q5" value="Me"><span>Me</span></label>
+      <label class="radio-item"><input type="radio" name="q5" value="Our secretary"><span>Our secretary</span></label>
+      <label class="radio-item"><input type="radio" name="q5" value="We'd need help with that"><span>We'd need help with that</span></label>
+      <label class="radio-item"><input type="radio" name="q5" value="Not sure yet"><span>Not sure yet</span></label>
     </div>
-    <ul class="upload-list" id="uploadList"></ul>
-
-    <label class="skip-option">
-      <input type="checkbox" id="q5-later" onchange="toggleSkip(5)">
-      <span>I'll add photos later</span>
-    </label>
-
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="goBack()">Back</button>
       <button class="btn btn-primary" onclick="goNext()">Next</button>
@@ -560,43 +571,25 @@ textarea::placeholder, input::placeholder {
     <button class="save-later" onclick="saveLater()">Save and finish later</button>
   </div>
 
-  <!-- Q6: Constraints -->
+  <!-- Q6: Anything else -->
   <div class="question-card" id="screen-6">
-    <div class="question-number">Question 6 of 7</div>
-    <h2 class="question-heading">Is there anything your current setup must keep?</h2>
-    <p class="question-helper">For example: a specific email address, a web address people already know, a booking system, colours from your uniform.</p>
-    <textarea id="q6-answer" rows="4" placeholder="e.g. Our email is secretary@ourclub.com and we want to keep using it"></textarea>
-    <label class="skip-option">
-      <input type="checkbox" id="q6-skip" onchange="toggleSkip(6)">
-      <span>Nothing comes to mind</span>
-    </label>
+    <div class="question-number">Question 6 of 6</div>
+    <h2 class="question-heading">Anything else we should know?</h2>
+    <textarea id="q6-answer" rows="5" placeholder="Colours you like, things you definitely want or don't want, anything at all..."></textarea>
     <div class="btn-row">
       <button class="btn btn-secondary" onclick="goBack()">Back</button>
-      <button class="btn btn-primary" onclick="goNext()">Next</button>
-    </div>
-    <button class="save-later" onclick="saveLater()">Save and finish later</button>
-  </div>
-
-  <!-- Q7: Identity anchor -->
-  <div class="question-card" id="screen-7">
-    <div class="question-number">Question 7 of 7</div>
-    <h2 class="question-heading">What's the one thing that would make you say "yes, that's us"?</h2>
-    <p class="question-helper">It could be a colour, a feeling, a phrase, a photo. The thing that captures your club's personality.</p>
-    <textarea id="q7-answer" rows="4" placeholder="e.g. The green of our lawns with the mountains in the background"></textarea>
-    <div class="btn-row">
-      <button class="btn btn-secondary" onclick="goBack()">Back</button>
-      <button class="btn btn-primary" onclick="finishDiscovery()">Finish</button>
+      <button class="btn btn-skip" onclick="finishDiscovery('skip')">Nothing comes to mind</button>
+      <button class="btn btn-primary" onclick="finishDiscovery('submit')">Finish</button>
     </div>
   </div>
 
   <!-- Done -->
   <div class="question-card" id="screen-done">
     <div class="done-card">
-      <div class="done-icon">✓</div>
-      <h2 class="question-heading">That's everything we need</h2>
-      <p>We'll build two versions of your website. One that matches what you described, and one that's a creative surprise.</p>
-      <p>We'll email you when they're ready for you to look at.</p>
-      <p style="margin-top:24px; font-size:15px; color:var(--green-dark);">You can close this page now.</p>
+      <div class="done-icon">&#10003;</div>
+      <h2 class="question-heading" id="done-heading">You're all set.</h2>
+      <p id="done-body">CroquetClaude will be in touch by email within a day or two with some template options. Keep an eye on your inbox.</p>
+      <p class="sub-text">Questions? Email <a href="mailto:hello@croquetclaude.com">hello@croquetclaude.com</a></p>
     </div>
   </div>
 
@@ -605,24 +598,21 @@ textarea::placeholder, input::placeholder {
 <script>
 // ── Config ──────────────────────────────────────
 const PB_URL = 'https://pb.croquetwade.com';
+const TOTAL_QUESTIONS = 6;
 const QUESTIONS = [
-  { key: 'identity',       text: 'What makes your club special?' },
-  { key: 'purpose',        text: 'What 3 things should a visitor find on your website?' },
-  { key: 'audience',       text: 'Who are you hoping to reach?' },
-  { key: 'design_taste',   text: 'Name one or two websites you like the look of' },
-  { key: 'assets',         text: 'What photos do you have?' },
-  { key: 'constraints',    text: 'Is there anything your current setup must keep?' },
-  { key: 'identity_anchor',text: "What's the one thing that would make you say 'yes, that's us'?" },
+  { key: 'web_presence',    text: 'Does your club have a website right now?' },
+  { key: 'visitor_needs',   text: 'What should people find on your site?' },
+  { key: 'photo_readiness', text: 'How are you for photos of the club?' },
+  { key: 'tech_comfort',    text: 'How comfortable are you with computers?' },
+  { key: 'site_updater',    text: 'Who would keep the website up to date?' },
+  { key: 'anything_else',   text: 'Anything else we should know?' },
 ];
 
 // ── State ───────────────────────────────────────
 let currentScreen = 'welcome';
 let projectId = null;
-let uploadedFiles = [];
 
-// ── PocketBase (loaded via CDN at top of body) ──
-// We'll use fetch directly since the SDK CDN may not be available
-// Simple PB API wrapper
+// ── PocketBase API wrapper ──────────────────────
 
 async function pbCreate(collection, data) {
   const res = await fetch(`${PB_URL}/api/collections/${collection}/records`, {
@@ -648,19 +638,6 @@ async function pbList(collection, filter) {
   return res.json();
 }
 
-async function pbUploadFile(collection, projectRelId, file, category) {
-  const formData = new FormData();
-  formData.append('project', projectRelId);
-  formData.append('file', file);
-  formData.append('category', category);
-  formData.append('used_in_build', false);
-  const res = await fetch(`${PB_URL}/api/collections/${collection}/records`, {
-    method: 'POST',
-    body: formData
-  });
-  return res.json();
-}
-
 // ── Init ────────────────────────────────────────
 
 function init() {
@@ -671,19 +648,33 @@ function init() {
     resumeProject(resumeId);
   }
 
+  // Radio button selection highlighting
+  document.querySelectorAll('.radio-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      if (e.target.tagName === 'INPUT') {
+        // Native click on the radio itself
+        updateRadioHighlights(this.closest('.radio-grid'));
+        checkOtherVisibility(this);
+        return;
+      }
+      const rb = this.querySelector('input[type="radio"]');
+      rb.checked = true;
+      updateRadioHighlights(this.closest('.radio-grid'));
+      checkOtherVisibility(this);
+    });
+
+    const rb = item.querySelector('input[type="radio"]');
+    rb.addEventListener('change', function() {
+      updateRadioHighlights(this.closest('.radio-grid'));
+      checkOtherVisibility(item);
+    });
+  });
+
   // Checkbox selection highlighting
   document.querySelectorAll('.checkbox-item').forEach(item => {
     item.addEventListener('click', function(e) {
-      if (e.target.tagName === 'INPUT') return; // let native handle
+      if (e.target.tagName === 'INPUT') return;
       const cb = this.querySelector('input[type="checkbox"]');
-      const q = cb.dataset.q;
-
-      // Enforce max 3 for Q2
-      if (q === '2' && !cb.checked) {
-        const checked = document.querySelectorAll('#q2-options input:checked');
-        if (checked.length >= 3) return;
-      }
-
       cb.checked = !cb.checked;
       this.classList.toggle('selected', cb.checked);
     });
@@ -691,30 +682,30 @@ function init() {
     const cb = item.querySelector('input[type="checkbox"]');
     cb.addEventListener('change', function() {
       item.classList.toggle('selected', this.checked);
-
-      // Enforce max 3 for Q2
-      if (this.dataset.q === '2') {
-        const checked = document.querySelectorAll('#q2-options input:checked');
-        if (checked.length > 3) {
-          this.checked = false;
-          item.classList.remove('selected');
-        }
-        document.getElementById('q2-limit').textContent =
-          checked.length >= 3 ? '3 selected' : `Pick up to 3 (${checked.length} selected)`;
-      }
     });
   });
+}
 
-  // Drag and drop for upload area
-  const area = document.getElementById('uploadArea');
-  if (area) {
-    area.addEventListener('dragover', e => { e.preventDefault(); area.style.borderColor = 'var(--green)'; });
-    area.addEventListener('dragleave', () => { area.style.borderColor = ''; });
-    area.addEventListener('drop', e => {
-      e.preventDefault();
-      area.style.borderColor = '';
-      handleFiles(e.dataTransfer.files);
-    });
+function updateRadioHighlights(grid) {
+  if (!grid) return;
+  grid.querySelectorAll('.radio-item').forEach(item => {
+    const rb = item.querySelector('input[type="radio"]');
+    item.classList.toggle('selected', rb.checked);
+  });
+}
+
+function checkOtherVisibility(radioItem) {
+  // Show/hide "Other" text input for Q1
+  const rb = radioItem.querySelector('input[type="radio"]');
+  if (rb && rb.name === 'q1') {
+    const otherWrap = document.getElementById('q1-other-wrap');
+    const selectedVal = document.querySelector('input[name="q1"]:checked');
+    if (selectedVal && selectedVal.value === 'Other') {
+      otherWrap.classList.add('visible');
+      document.getElementById('q1-other-text').focus();
+    } else {
+      otherWrap.classList.remove('visible');
+    }
   }
 }
 
@@ -729,9 +720,12 @@ async function resumeProject(id) {
     localStorage.setItem('website_project_id', id);
 
     // Fill intro fields
-    document.getElementById('intro-name').value = project.initiated_by || '';
+    document.getElementById('intro-name').value = project.contact_name || project.initiated_by || '';
     document.getElementById('intro-email').value = project.club_email || '';
     document.getElementById('intro-club').value = project.club_name || '';
+    if (project.contact_role) {
+      document.getElementById('intro-role').value = project.contact_role;
+    }
 
     // Load existing responses
     const responses = await pbList('website_responses', `project="${id}"`);
@@ -743,12 +737,12 @@ async function resumeProject(id) {
 
     // Jump to next unanswered question
     const progress = project.discovery_progress || 0;
-    if (progress >= 7) {
+    if (progress >= TOTAL_QUESTIONS) {
       showScreen('done');
+      updateDoneScreen(project.contact_name || project.initiated_by || '', project.club_name || '', project.club_email || '');
     } else if (progress > 0) {
       showScreen(String(progress + 1));
     } else {
-      // Has project but no answers yet — go to Q1
       showScreen('1');
       document.getElementById('progressWrap').style.display = 'block';
     }
@@ -759,10 +753,37 @@ async function resumeProject(id) {
 
 function loadResponse(r) {
   switch(r.question_key) {
-    case 'identity':
-      document.getElementById('q1-answer').value = r.answer || '';
+    case 'web_presence': {
+      const knownValues = [
+        "We don't have one",
+        "We have a Facebook page",
+        "We have an old website we never update",
+        "We have a Revolutionise page",
+        "Other"
+      ];
+      let radioVal = r.answer || '';
+      // If the stored answer isn't a known radio value, it was "Other" with custom text
+      if (radioVal && !knownValues.includes(radioVal)) {
+        const otherRadio = document.querySelector('input[name="q1"][value="Other"]');
+        if (otherRadio) {
+          otherRadio.checked = true;
+          otherRadio.closest('.radio-item').classList.add('selected');
+        }
+        document.getElementById('q1-other-text').value = radioVal;
+        document.getElementById('q1-other-wrap').classList.add('visible');
+      } else {
+        const radio = document.querySelector(`input[name="q1"][value="${radioVal}"]`);
+        if (radio) {
+          radio.checked = true;
+          radio.closest('.radio-item').classList.add('selected');
+          if (radioVal === 'Other') {
+            document.getElementById('q1-other-wrap').classList.add('visible');
+          }
+        }
+      }
       break;
-    case 'purpose':
+    }
+    case 'visitor_needs':
       if (r.answer_options) {
         const vals = typeof r.answer_options === 'string' ? JSON.parse(r.answer_options) : r.answer_options;
         document.querySelectorAll('#q2-options input').forEach(cb => {
@@ -770,36 +791,25 @@ function loadResponse(r) {
         });
       }
       break;
-    case 'audience':
-      if (r.answer_options) {
-        const vals = typeof r.answer_options === 'string' ? JSON.parse(r.answer_options) : r.answer_options;
-        document.querySelectorAll('#q3-options input').forEach(cb => {
-          if (vals.includes(cb.value)) { cb.checked = true; cb.closest('.checkbox-item').classList.add('selected'); }
-        });
+    case 'photo_readiness': {
+      const radio = document.querySelector(`input[name="q3"][value="${r.answer}"]`);
+      if (radio) { radio.checked = true; radio.closest('.radio-item').classList.add('selected'); }
+      break;
+    }
+    case 'tech_comfort': {
+      const radio = document.querySelector(`input[name="q4"][value="${r.answer}"]`);
+      if (radio) { radio.checked = true; radio.closest('.radio-item').classList.add('selected'); }
+      break;
+    }
+    case 'site_updater': {
+      const radio = document.querySelector(`input[name="q5"][value="${r.answer}"]`);
+      if (radio) { radio.checked = true; radio.closest('.radio-item').classList.add('selected'); }
+      break;
+    }
+    case 'anything_else':
+      if (r.answer && r.answer !== 'skip') {
+        document.getElementById('q6-answer').value = r.answer;
       }
-      break;
-    case 'design_taste':
-      try {
-        const d = typeof r.answer_options === 'string' ? JSON.parse(r.answer_options) : r.answer_options;
-        if (d) {
-          document.getElementById('q4-url1').value = d.url1 || '';
-          document.getElementById('q4-url2').value = d.url2 || '';
-          document.getElementById('q4-why').value = d.why || '';
-        }
-      } catch(e) {}
-      break;
-    case 'assets':
-      if (r.answer === 'later') { document.getElementById('q5-later').checked = true; }
-      break;
-    case 'constraints':
-      if (r.answer === 'nothing') {
-        document.getElementById('q6-skip').checked = true;
-      } else {
-        document.getElementById('q6-answer').value = r.answer || '';
-      }
-      break;
-    case 'identity_anchor':
-      document.getElementById('q7-answer').value = r.answer || '';
       break;
   }
 }
@@ -814,10 +824,10 @@ function showScreen(id) {
 
   // Update progress
   const qNum = parseInt(id);
-  if (!isNaN(qNum) && qNum >= 1 && qNum <= 7) {
+  if (!isNaN(qNum) && qNum >= 1 && qNum <= TOTAL_QUESTIONS) {
     document.getElementById('progressWrap').style.display = 'block';
-    document.getElementById('progressText').textContent = `Question ${qNum} of 7`;
-    document.getElementById('progressFill').style.width = `${((qNum - 1) / 7) * 100}%`;
+    document.getElementById('progressText').textContent = `Question ${qNum} of ${TOTAL_QUESTIONS}`;
+    document.getElementById('progressFill').style.width = `${((qNum - 1) / TOTAL_QUESTIONS) * 100}%`;
   } else if (id === 'done') {
     document.getElementById('progressFill').style.width = '100%';
     document.getElementById('progressText').textContent = 'Complete';
@@ -830,9 +840,10 @@ async function startDiscovery() {
   const name = document.getElementById('intro-name').value.trim();
   const email = document.getElementById('intro-email').value.trim();
   const club = document.getElementById('intro-club').value.trim();
+  const role = document.getElementById('intro-role').value;
 
-  if (!name || !email || !club) {
-    alert('Please fill in your name, email, and club name.');
+  if (!name || !email || !club || !role) {
+    alert('Please fill in all fields.');
     return;
   }
 
@@ -841,7 +852,8 @@ async function startDiscovery() {
     const project = await pbCreate('website_projects', {
       club_name: club,
       club_email: email,
-      initiated_by: name,
+      contact_name: name,
+      contact_role: role,
       status: 'discovery',
       discovery_progress: 0,
       refinement_round: 0,
@@ -852,7 +864,8 @@ async function startDiscovery() {
     await pbUpdate('website_projects', projectId, {
       club_name: club,
       club_email: email,
-      initiated_by: name,
+      contact_name: name,
+      contact_role: role,
     });
   }
 
@@ -873,24 +886,43 @@ async function goNext() {
   await saveCurrentAnswer(qNum);
   showSaving();
 
-  if (qNum < 7) {
+  if (qNum < TOTAL_QUESTIONS) {
     showScreen(String(qNum + 1));
   }
 }
 
-async function finishDiscovery() {
-  await saveCurrentAnswer(7);
+async function finishDiscovery(mode) {
+  // Save Q6
+  if (mode === 'skip') {
+    // Save "skip" as the answer
+    await saveCurrentAnswer(6, true);
+  } else {
+    await saveCurrentAnswer(6, false);
+  }
 
   // Mark discovery complete
   if (projectId) {
     await pbUpdate('website_projects', projectId, {
-      status: 'building',
-      discovery_progress: 7,
+      status: 'discovery_complete',
+      discovery_progress: TOTAL_QUESTIONS,
       discovery_completed: new Date().toISOString(),
     });
   }
 
+  // Personalise the done screen
+  const name = document.getElementById('intro-name').value.trim();
+  const club = document.getElementById('intro-club').value.trim();
+  const email = document.getElementById('intro-email').value.trim();
+  updateDoneScreen(name, club, email);
+
   showScreen('done');
+}
+
+function updateDoneScreen(name, club, email) {
+  const firstName = name.split(' ')[0] || name;
+  document.getElementById('done-heading').textContent = `You're all set, ${firstName}.`;
+  document.getElementById('done-body').innerHTML =
+    `CroquetClaude will be in touch by email within a day or two with some template options for ${club}. Keep an eye on your inbox at <strong>${email}</strong>.`;
 }
 
 function saveLater() {
@@ -901,42 +933,48 @@ function saveLater() {
 
 // ── Save answers ────────────────────────────────
 
-async function saveCurrentAnswer(qNum) {
-  if (!projectId || qNum < 1 || qNum > 7) return;
+async function saveCurrentAnswer(qNum, isSkip) {
+  if (!projectId || qNum < 1 || qNum > TOTAL_QUESTIONS) return;
 
   const q = QUESTIONS[qNum - 1];
   let answer = '';
   let answer_options = null;
 
   switch(qNum) {
-    case 1:
-      answer = document.getElementById('q1-answer').value.trim();
+    case 1: {
+      const selected = document.querySelector('input[name="q1"]:checked');
+      if (selected) {
+        if (selected.value === 'Other') {
+          answer = document.getElementById('q1-other-text').value.trim() || 'Other';
+        } else {
+          answer = selected.value;
+        }
+      }
       break;
-    case 2:
-      const q2checked = Array.from(document.querySelectorAll('#q2-options input:checked')).map(cb => cb.value);
-      answer_options = q2checked;
-      answer = q2checked.join(', ');
+    }
+    case 2: {
+      const checked = Array.from(document.querySelectorAll('#q2-options input:checked')).map(cb => cb.value);
+      answer_options = checked;
+      answer = checked.join(', ');
       break;
-    case 3:
-      const q3checked = Array.from(document.querySelectorAll('#q3-options input:checked')).map(cb => cb.value);
-      answer_options = q3checked;
-      answer = q3checked.join(', ');
+    }
+    case 3: {
+      const selected = document.querySelector('input[name="q3"]:checked');
+      answer = selected ? selected.value : '';
       break;
-    case 4:
-      const url1 = document.getElementById('q4-url1').value.trim();
-      const url2 = document.getElementById('q4-url2').value.trim();
-      const why = document.getElementById('q4-why').value.trim();
-      answer_options = { url1, url2, why };
-      answer = [url1, url2].filter(Boolean).join(', ');
+    }
+    case 4: {
+      const selected = document.querySelector('input[name="q4"]:checked');
+      answer = selected ? selected.value : '';
       break;
-    case 5:
-      answer = document.getElementById('q5-later').checked ? 'later' : `${uploadedFiles.length} files uploaded`;
+    }
+    case 5: {
+      const selected = document.querySelector('input[name="q5"]:checked');
+      answer = selected ? selected.value : '';
       break;
+    }
     case 6:
-      answer = document.getElementById('q6-skip').checked ? 'nothing' : document.getElementById('q6-answer').value.trim();
-      break;
-    case 7:
-      answer = document.getElementById('q7-answer').value.trim();
+      answer = isSkip ? 'skip' : document.getElementById('q6-answer').value.trim();
       break;
   }
 
@@ -965,80 +1003,6 @@ async function saveCurrentAnswer(qNum) {
     });
   } catch(e) {
     console.error('Save failed:', e);
-  }
-}
-
-// ── File upload ─────────────────────────────────
-
-async function handleFiles(files) {
-  for (const file of files) {
-    if (file.size > 20 * 1024 * 1024) {
-      alert(`${file.name} is too large (max 20MB)`);
-      continue;
-    }
-
-    // Guess category from filename
-    let category = 'photo_other';
-    const lower = file.name.toLowerCase();
-    if (lower.includes('logo') || lower.includes('crest') || lower.includes('badge')) category = 'logo';
-    else if (lower.includes('lawn') || lower.includes('green') || lower.includes('court')) category = 'photo_lawns';
-    else if (lower.includes('club') || lower.includes('house') || lower.includes('pavilion')) category = 'photo_clubhouse';
-    else if (lower.includes('member') || lower.includes('player') || lower.includes('people')) category = 'photo_members';
-
-    // Upload to PocketBase
-    if (projectId) {
-      try {
-        const result = await pbUploadFile('website_assets', projectId, file, category);
-        uploadedFiles.push({ id: result.id, name: file.name, category });
-        renderUploadList();
-      } catch(e) {
-        console.error('Upload failed:', e);
-        alert(`Failed to upload ${file.name}. Please try again.`);
-      }
-    }
-  }
-}
-
-function renderUploadList() {
-  const list = document.getElementById('uploadList');
-  list.innerHTML = uploadedFiles.map((f, i) => `
-    <li class="upload-item">
-      <span>${f.name}</span>
-      <select class="category-select" onchange="updateCategory(${i}, this.value)">
-        <option value="photo_lawns" ${f.category === 'photo_lawns' ? 'selected' : ''}>Lawns</option>
-        <option value="photo_clubhouse" ${f.category === 'photo_clubhouse' ? 'selected' : ''}>Clubhouse</option>
-        <option value="photo_members" ${f.category === 'photo_members' ? 'selected' : ''}>Members</option>
-        <option value="logo" ${f.category === 'logo' ? 'selected' : ''}>Logo</option>
-        <option value="photo_other" ${f.category === 'photo_other' ? 'selected' : ''}>Other</option>
-      </select>
-      <button class="remove" onclick="removeFile(${i})">✕</button>
-    </li>
-  `).join('');
-}
-
-async function updateCategory(idx, category) {
-  uploadedFiles[idx].category = category;
-  if (uploadedFiles[idx].id) {
-    await pbUpdate('website_assets', uploadedFiles[idx].id, { category });
-  }
-}
-
-async function removeFile(idx) {
-  const f = uploadedFiles[idx];
-  if (f.id) {
-    try {
-      await fetch(`${PB_URL}/api/collections/website_assets/records/${f.id}`, { method: 'DELETE' });
-    } catch(e) {}
-  }
-  uploadedFiles.splice(idx, 1);
-  renderUploadList();
-}
-
-function toggleSkip(qNum) {
-  if (qNum === 6) {
-    const skip = document.getElementById('q6-skip').checked;
-    document.getElementById('q6-answer').disabled = skip;
-    if (skip) document.getElementById('q6-answer').value = '';
   }
 }
 
