@@ -1,0 +1,34 @@
+{
+  "_comment": "Real-club fixture for Headland Buderim Croquet Club. Source: apps/club-sites/data/headland-buderim.md. Used to dry-run the pipeline against a real club's content before a true wizard submission.",
+  "slug": "headland-buderim",
+  "club_name": "Headland Buderim Croquet Club",
+  "tagline": "Four lawns on the ridge, in the leafiest corner of the Sunshine Coast",
+  "color_primary": "#3A6B35",
+  "color_secondary": "#B8860B",
+  "color_accent": "#FCF9F0",
+  "about": "Some come for competition. Teams match up across the region, and the best get picked for State and national squads. Others come for the morning air, a bit of exercise, and the company. Both belong here.\n\nFour full-size lawns on the ridge at Buderim. Open six days a week. Association, Golf Croquet, Ricochet, and Social Croquet.",
+  "play_schedule": "Monday 1 pm — Association\nTuesday 9 am — Golf Croquet\nTuesday 3 pm — Social\nWednesday 1 pm — Ricochet\nFriday 9 am — Golf Croquet\nFriday 3 pm — Social\nSaturday 1 pm — Association\nSunday 9 am — Golf Croquet\n\nWinter (Apr–Sep): Tuesday and Friday social sessions move to 2 pm.",
+  "come_and_try": "First session is free. All equipment supplied — bring flat shoes and a hat. Turn up to any session listed.\n\n$15 coaching sessions available with qualified coaches in Golf and Association Croquet.",
+  "fees": "Come and Try (first session): free\nVisitor, affiliated club: $10\nVisitor, other: $15\nBeginner coaching: $15 per session\nGreen fees, member daily: $8\nAnnual membership: $250",
+  "address": "3 Orme Road, Buderim QLD 4556",
+  "phone": "0412 470 755",
+  "public_email": "headlandbuderimcc@gmail.com",
+  "assets": [
+    {
+      "category": "photo_clubhouse",
+      "file_path": "apps/club-sites/example1/images/clubhouse-mural.jpg"
+    },
+    {
+      "category": "photo_lawns",
+      "file_path": "apps/club-sites/example5/images/lawns-wide.jpg"
+    },
+    {
+      "category": "photo_players",
+      "file_path": "apps/club-sites/example1/images/players-golden-hour.jpg"
+    },
+    {
+      "category": "photo_social",
+      "file_path": "apps/club-sites/example1/images/family-playing.jpg"
+    }
+  ]
+}

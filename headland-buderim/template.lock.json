@@ -1,0 +1,12 @@
+{
+  "template_id": "example5",
+  "template_name": "Morning Light (minimalist)",
+  "source_summary": {
+    "slug": "headland-buderim",
+    "club_name": "Headland Buderim Croquet Club",
+    "color_primary": "#3A6B35",
+    "color_secondary": "#B8860B",
+    "color_accent": "#FCF9F0"
+  },
+  "asset_count": 4
+}
