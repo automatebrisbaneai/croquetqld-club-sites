@@ -1,0 +1,31 @@
+{
+  "id": "example5",
+  "name": "Morning Light (minimalist)",
+  "colour_map": {
+    "--accent": "color_primary",
+    "--accent-dark": "color_secondary",
+    "--accent-light": "color_accent"
+  },
+  "text_map": {
+    "club-name": "club_name",
+    "tagline": "tagline",
+    "about-paragraph": "about",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "address": "address",
+    "phone": "phone",
+    "public-email": "public_email"
+  },
+  "image_map": {
+    "hero-photo": "photo_clubhouse",
+    "players-photo": "photo_players",
+    "lawns-photo": "photo_lawns"
+  },
+  "optional_sections": {
+    "fees": ".fees",
+    "come_and_try": ".come-try",
+    "address": ".map-block"
+  },
+  "has_map": true
+}

@@ -1,0 +1,29 @@
+{
+  "id": "example8",
+  "name": "Bundaberg Bento (sage + gold)",
+  "colour_map": {
+    "--green": "color_primary",
+    "--gold": "color_secondary",
+    "--cream": "color_accent"
+  },
+  "text_map": {
+    "club-name": "club_name",
+    "tagline": "tagline",
+    "about-paragraph": "about",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "address": "address",
+    "phone": "phone",
+    "public-email": "public_email"
+  },
+  "image_map": {
+    "hero-photo": "photo_clubhouse"
+  },
+  "optional_sections": {
+    "fees": ".card-fees",
+    "come_and_try": ".card-come-try",
+    "address": ".card-map"
+  },
+  "has_map": true
+}

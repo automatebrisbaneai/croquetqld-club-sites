@@ -1,0 +1,12 @@
+{
+  "template_id": "example5",
+  "template_name": "Morning Light (minimalist)",
+  "source_summary": {
+    "slug": "_test_club",
+    "club_name": "Test Croquet & Mallet Sports Club",
+    "color_primary": "#2D5A27",
+    "color_secondary": "#C5A55A",
+    "color_accent": "#FAF6F0"
+  },
+  "asset_count": 5
+}

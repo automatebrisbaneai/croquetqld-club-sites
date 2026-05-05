@@ -1,0 +1,38 @@
+{
+  "_comment": "Test fixture for fill-template.py + test-templates.py. A realistic but invented club used to render every template against the substitution contract. Edit this file to widen the test surface (longer name, missing fields, edge-case colours).",
+  "slug": "_test_club",
+  "club_name": "Test Croquet & Mallet Sports Club",
+  "tagline": "Three lawns by the river, eighty members, open six days a week",
+  "color_primary": "#2D5A27",
+  "color_secondary": "#C5A55A",
+  "color_accent": "#FAF6F0",
+  "about": "We've been playing on the three lawns at Riverside Park since 1967. Around eighty members, all welcome \u2014 competitive players, social players, and absolute beginners.\n\nWe play Association, Golf, and Ricochet. Equipment supplied. The clubhouse opens an hour before play for a cuppa and a chat.",
+  "play_schedule": "Monday 1pm \u2014 Association Croquet\nWednesday 9am \u2014 Golf Croquet\nFriday 1pm \u2014 Ricochet\nSaturday 2pm \u2014 Social play (all codes)\n\nSummer hours apply Oct\u2013Apr (start 30 minutes earlier).",
+  "come_and_try": "First Tuesday of every month, 10am. Free. Equipment provided.\n\nWear flat shoes and bring a hat. We'll teach you the basics in about 90 minutes.",
+  "fees": "Visitor green fee: $5\nFirst Come & Try: free\nFull membership: $140 / year (concession $90)\nCoaching: free for members, $20 / session for non-members",
+  "address": "12 Riverside Drive, Riverbank QLD 4560\n(Parking available on Park Road, behind the bowls club)",
+  "phone": "0412 345 678",
+  "public_email": "secretary@testcroquet.org.au",
+  "assets": [
+    {
+      "category": "photo_clubhouse",
+      "file_path": "apps/club-sites/example1/images/clubhouse-mural.jpg"
+    },
+    {
+      "category": "photo_lawns",
+      "file_path": "apps/club-sites/example5/images/lawns-wide.jpg"
+    },
+    {
+      "category": "photo_players",
+      "file_path": "apps/club-sites/example1/images/players-golden-hour.jpg"
+    },
+    {
+      "category": "photo_social",
+      "file_path": "apps/club-sites/example1/images/family-playing.jpg"
+    },
+    {
+      "category": "photo_closeup",
+      "file_path": "apps/club-sites/example5/images/lawns-morning.jpg"
+    }
+  ]
+}

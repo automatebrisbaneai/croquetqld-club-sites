@@ -1,0 +1,27 @@
+{
+  "id": "example3",
+  "name": "Ridge at Nightfall (dark)",
+  "colour_map": {},
+  "text_map": {
+    "club-name": "club_name",
+    "tagline": "tagline",
+    "about-paragraph": "about",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "address": "address",
+    "phone": "phone",
+    "public-email": "public_email"
+  },
+  "image_map": {
+    "hero-photo": "photo_clubhouse",
+    "lawns-photo": "photo_lawns",
+    "social-photo": "photo_social"
+  },
+  "optional_sections": {
+    "fees": "#fees",
+    "come_and_try": "#come-and-try",
+    "address": ".map-block"
+  },
+  "has_map": true
+}
