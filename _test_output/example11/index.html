@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-edit-id="page-title">Test Croquet &amp; Mallet Sports Club</title>
+<meta name="description" data-edit-id="meta-description" content="A growing club on four lawns. Come and try.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest: #2D5A27;
+    --forest-deep: #1F3A0F;
+    --ember: #C5A55A;
+    --cream: #FAF6F0;
+    --paper: #FFFDF7;
+    --ink: #1C1C1C;
+    --ink-muted: #5E5E5E;
+    --rule: rgba(45,80,22,0.12);
+    --next-bar-height: 38px;
+    --pad-x: clamp(20px, 5vw, 56px);
+  }
+
+  html { scroll-behavior: smooth; scroll-padding-top: calc(var(--next-bar-height) + 64px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+  ul { list-style: none; }
+
+  /* ── NEXT SESSION BAR ─────────── */
+  .next-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 60;
+    background: var(--forest);
+    color: var(--cream);
+    text-align: center;
+    padding: 10px var(--pad-x);
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    height: var(--next-bar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── NAV ──────────────────────── */
+  nav {
+    position: sticky;
+    top: var(--next-bar-height);
+    z-index: 55;
+    background: var(--cream);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px var(--pad-x);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .nav-logo {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--forest);
+    text-decoration: none;
+    letter-spacing: -0.005em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+  }
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 200ms;
+  }
+  .nav-links a:hover { color: var(--ember); }
+
+  body { padding-top: var(--next-bar-height); }
+
+  /* ── HERO ─────────────────────── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    min-height: 540px;
+    background: var(--cream);
+  }
+  .hero-photo-wrap {
+    background: var(--forest);
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-panel {
+    padding: clamp(40px, 6vw, 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--cream);
+  }
+  .hero-panel h1 {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    color: var(--forest);
+    margin-bottom: 18px;
+  }
+  .hero-panel .hero-tagline {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--forest);
+    color: var(--cream);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: background 200ms ease;
+    align-self: flex-start;
+  }
+  .hero-cta:hover { background: var(--forest-deep); }
+
+  /* ── ABOUT STRIP ──────────────── */
+  .about-strip {
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 40px var(--pad-x);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+  .about-strip .kicker {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 6px;
+  }
+  .about-strip .stat-value {
+    font-family: 'Domine', serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--forest);
+    line-height: 1;
+  }
+
+  /* ── ABOUT PARAGRAPH ──────────── */
+  .about {
+    padding: clamp(56px, 7vw, 96px) var(--pad-x);
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .kicker {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ember);
+    display: block;
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.1;
+    color: var(--forest);
+    margin-bottom: 24px;
+  }
+  .about p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  /* ── VISIT ────────────────────── */
+  .visit {
+    background: var(--paper);
+    padding: clamp(56px, 7vw, 96px) var(--pad-x);
+  }
+  .visit-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .visit-photo {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  .visit-content h2 { margin-bottom: 20px; }
+  .visit-schedule {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--ink);
+    white-space: pre-wrap;
+    margin-bottom: 24px;
+  }
+  .visit-address {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .map-block {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    position: relative;
+    background: var(--cream);
+  }
+  .map-block iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  .map-fallback-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px;
+    text-align: center;
+    color: var(--forest);
+    background: var(--cream);
+  }
+  .map-fallback-wrap p {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .map-fallback-wrap a {
+    color: var(--forest);
+    font-size: 0.85rem;
+    text-decoration: underline;
+  }
+
+  /* ── COME AND TRY BAND ────────── */
+  .section-cat {
+    background: var(--forest);
+    color: var(--cream);
+    padding: clamp(64px, 8vw, 112px) var(--pad-x);
+    text-align: center;
+  }
+  .section-cat .kicker { color: var(--ember); }
+  .section-cat h2 { color: var(--cream); margin-bottom: 24px; }
+  .section-cat p {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    max-width: 620px;
+    margin: 0 auto 32px;
+    opacity: 0.92;
+  }
+  .cat-btn {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--forest);
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 200ms ease;
+  }
+  .cat-btn:hover { background: var(--paper); }
+
+  /* ── SPOTLIGHT ────────────────── */
+  .section-spotlight {
+    padding: clamp(64px, 7vw, 96px) var(--pad-x);
+    background: var(--cream);
+  }
+  .spotlight-header {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 40px;
+  }
+  .spotlight-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .spotlight-card {
+    background: var(--paper);
+    border-radius: 12px;
+    padding: 28px;
+    border: 1px solid var(--rule);
+  }
+  .spotlight-photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    background: var(--cream);
+  }
+  .spotlight-name {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--forest);
+    margin-bottom: 8px;
+  }
+  .spotlight-quote {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    font-style: italic;
+  }
+
+  /* ── FEES ─────────────────────── */
+  .section-fees {
+    padding: clamp(56px, 7vw, 96px) var(--pad-x);
+    text-align: center;
+    background: var(--paper);
+  }
+  .fees-card {
+    max-width: 540px;
+    margin: 0 auto;
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 36px 32px;
+    border: 1px solid var(--rule);
+  }
+  .fees-text {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--ink);
+    white-space: pre-wrap;
+  }
+
+  /* ── CONTACT ──────────────────── */
+  .contact {
+    padding: clamp(56px, 7vw, 96px) var(--pad-x);
+    background: var(--cream);
+  }
+  .contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .contact-grid {
+    max-width: 920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .contact-card {
+    background: var(--paper);
+    border-radius: 12px;
+    padding: 28px;
+    border: 1px solid var(--rule);
+    text-align: center;
+  }
+  .contact-card .kicker { margin-bottom: 10px; }
+  .contact-card a, .contact-card .contact-text {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--forest);
+    text-decoration: none;
+    line-height: 1.4;
+  }
+  .contact-card a:hover { color: var(--ember); }
+
+  /* ── FOOTER ───────────────────── */
+  footer {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 36px var(--pad-x);
+    text-align: center;
+  }
+  .footer-name {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .footer-acknowledgment {
+    font-size: 0.82rem;
+    opacity: 0.75;
+    line-height: 1.6;
+    max-width: 580px;
+    margin: 0 auto 12px;
+  }
+  .footer-credit {
+    font-size: 0.72rem;
+    opacity: 0.5;
+  }
+
+  /* ── RESPONSIVE ──────────────── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-photo-wrap { min-height: 280px; }
+    .hero-panel { padding: 40px var(--pad-x); }
+    .about-strip { grid-template-columns: 1fr; gap: 24px; }
+    .visit-grid { grid-template-columns: 1fr; gap: 28px; }
+    .spotlight-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .next-bar { font-size: 0.82rem; padding: 8px 12px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY NEXT-SESSION BAR -->
+<div class="next-bar">
+  <span data-edit-id="next-session-line">This Saturday 2pm — just turn up. Bring flat shoes.</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" data-edit-id="club-name">Test Croquet &amp; Mallet Sports Club</a>
+  <ul class="nav-links">
+    <li><a href="#visit">Visit</a></li>
+    <li><a href="#come-and-try">Come &amp; Try</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo-wrap">
+    <img id="hero-photo" src="images/photo_players.jpg" alt="" aria-hidden="true">
+  </div>
+  <div class="hero-panel">
+    <h1 data-edit-id="hero-club-name">Test Croquet &amp; Mallet Sports Club</h1>
+    <p class="hero-tagline" data-edit-id="tagline">Three lawns by the river, eighty members, open six days a week</p>
+    <a href="#come-and-try" class="hero-cta" data-edit-id="hero-cta-text">Come this Saturday</a>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div>
+    <div class="kicker">Established</div>
+    <div class="stat-value" data-edit-id="established-line">Est. 1962</div>
+  </div>
+  <div>
+    <div class="kicker">Members</div>
+    <div class="stat-value" data-edit-id="members-line">~50 members</div>
+  </div>
+  <div>
+    <div class="kicker">Codes played</div>
+    <div class="stat-value" data-edit-id="codes-line">Association &amp; Golf</div>
+  </div>
+</section>
+
+<!-- ABOUT PARAGRAPH -->
+<section class="about">
+  <span class="kicker">Why we play</span>
+  <h2 data-edit-id="about-heading">Why we play</h2>
+  <p data-edit-id="about-paragraph">We've been playing on the three lawns at Riverside Park since 1967. Around eighty members, all welcome — competitive players, social players, and absolute beginners.
+
+We play Association, Golf, and Ricochet. Equipment supplied. The clubhouse opens an hour before play for a cuppa and a chat.</p>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit">
+  <div class="visit-grid">
+    <div>
+      <img id="lawns-photo" src="images/photo_lawns.jpg" alt="" class="visit-photo" aria-hidden="true">
+    </div>
+    <div class="visit-content">
+      <span class="kicker">Visit</span>
+      <h2 data-edit-id="visit-heading">When and where</h2>
+      <p class="visit-schedule" data-edit-id="play-schedule">Monday 1pm — Association Croquet
+Wednesday 9am — Golf Croquet
+Friday 1pm — Ricochet
+Saturday 2pm — Social play (all codes)
+
+Summer hours apply Oct–Apr (start 30 minutes earlier).</p>
+      <p class="visit-address" data-edit-id="address">12 Riverside Drive, Riverbank QLD 4560
+(Parking available on Park Road, behind the bowls club)</p>
+      <div class="map-block">
+        <div class="map-fallback-wrap">
+          <p>Find us</p>
+          <a data-edit-id="map-fallback" href="https://maps.google.com/?q=17+Park+Lane+Buderim+QLD+4556" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+        <iframe id="map-iframe" src="https://www.google.com/maps?q=12%20Riverside%20Drive%2C%20Riverbank%20QLD%204560%20%28Parking%20available%20on%20Park%20Road%2C%20behind%20the%20bowls%20club%29&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COME AND TRY -->
+<section class="section-cat" id="come-and-try">
+  <span class="kicker">Come and try</span>
+  <h2 data-edit-id="cat-heading">Your first session</h2>
+  <p data-edit-id="come-and-try">First Tuesday of every month, 10am. Free. Equipment provided.
+
+Wear flat shoes and bring a hat. We'll teach you the basics in about 90 minutes.</p>
+  <a class="cat-btn" data-edit-id="public-email" href="mailto:secretary@testcroquet.org.au">secretary@testcroquet.org.au</a>
+</section>
+
+<!-- MEMBER SPOTLIGHT -->
+<section class="section-spotlight">
+  <div class="spotlight-header">
+    <span class="kicker">Members</span>
+    <h2 data-edit-id="spotlight-heading">Faces of the club</h2>
+  </div>
+  <div class="spotlight-grid">
+    <div class="spotlight-card">
+      <img id="spotlight-1-photo" src="images/spotlight-1.jpg" alt="" class="spotlight-photo" aria-hidden="true">
+      <div class="spotlight-name" data-edit-id="spotlight-1-name">Margaret</div>
+      <p class="spotlight-quote" data-edit-id="spotlight-1-quote">Twenty years here. The best Tuesday mornings of my week.</p>
+    </div>
+    <div class="spotlight-card">
+      <img id="spotlight-2-photo" src="images/spotlight-2.jpg" alt="" class="spotlight-photo" aria-hidden="true">
+      <div class="spotlight-name" data-edit-id="spotlight-2-name">David</div>
+      <p class="spotlight-quote" data-edit-id="spotlight-2-quote">Came along for one session, joined the same week. Five years later, here we are.</p>
+    </div>
+    <div class="spotlight-card">
+      <img id="spotlight-3-photo" src="images/spotlight-3.jpg" alt="" class="spotlight-photo" aria-hidden="true">
+      <div class="spotlight-name" data-edit-id="spotlight-3-name">Sarah</div>
+      <p class="spotlight-quote" data-edit-id="spotlight-3-quote">A great club for newcomers. They taught me everything.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="section-fees">
+  <span class="kicker">Membership</span>
+  <h2 data-edit-id="fees-heading">What it costs</h2>
+  <div class="fees-card">
+    <p class="fees-text" data-edit-id="fees">Visitor green fee: $5
+First Come &amp; Try: free
+Full membership: $140 / year (concession $90)
+Coaching: free for members, $20 / session for non-members</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-header">
+    <span class="kicker">Get in touch</span>
+    <h2 data-edit-id="contact-heading">Say hello</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="kicker">Phone</div>
+      <a data-edit-id="phone" href="tel:0412345678">0412 345 678</a>
+    </div>
+    <div class="contact-card">
+      <div class="kicker">Email</div>
+      <a data-edit-id="public-email-contact" href="mailto:hello@example.org">secretary@testcroquet.org.au</a>
+    </div>
+    <div class="contact-card">
+      <div class="kicker">Address</div>
+      <span class="contact-text" data-edit-id="address-contact">12 Riverside Drive, Riverbank QLD 4560
+(Parking available on Park Road, behind the bowls club)</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name" data-edit-id="footer-name">Test Croquet &amp; Mallet Sports Club</div>
+  <p class="footer-acknowledgment" data-edit-id="footer-acknowledgment">We play on the traditional lands of the Aboriginal peoples and pay our respects to Elders past and present.</p>
+  <p class="footer-credit" data-edit-id="footer-credit">Site by CroquetClaude with the help of the committee.</p>
+</footer>
+
+<script src="https://edit.croquetwade.com/edit.js"
+        data-stack="git"
+        data-site="club-sites"
+        data-html-file="example11/index.html"
+        defer></script>
+
+</body>
+</html>

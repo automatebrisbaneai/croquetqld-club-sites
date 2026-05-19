@@ -1,34 +1,37 @@
 {
-  "id": "example5",
-  "name": "Morning Light (minimalist)",
+  "id": "example7",
+  "name": "Queens Park Editorial (maroon + gold)",
   "colour_map": {
-    "--accent": "color_primary",
-    "--accent-dark": "color_secondary",
-    "--accent-light": "color_accent"
+    "--maroon": "color_primary",
+    "--gold": "color_secondary",
+    "--cream": "color_accent"
   },
   "text_map": {
     "page-title": "club_name",
     "meta-description": "tagline",
     "club-name": "club_name",
-    "hero-location": "address",
+    "hero-club-name": "club_name",
+    "footer-name": "club_name",
     "tagline": "tagline",
     "about-paragraph": "about",
     "play-schedule": "play_schedule",
+    "address": "address",
+    "address-contact": "address",
     "come-and-try": "come_and_try",
     "fees": "fees",
-    "address": "address",
     "phone": "phone",
-    "public-email": "public_email"
+    "public-email": "public_email",
+    "public-email-contact": "public_email"
   },
   "image_map": {
     "logo": "logo",
     "hero-photo": "photo_clubhouse",
-    "players-photo": "photo_players",
+    "about-photo": "photo_clubhouse",
     "lawns-photo": "photo_lawns"
   },
   "optional_sections": {
-    "fees": ".fees",
-    "come_and_try": ".come-try",
+    "fees": ".section-fees",
+    "come_and_try": ".section-cat",
     "address": ".map-block"
   },
   "has_map": true

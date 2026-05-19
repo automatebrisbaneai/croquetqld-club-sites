@@ -1,32 +1,36 @@
 {
-  "id": "example8",
-  "name": "Bundaberg Bento (sage + gold)",
+  "id": "example10",
+  "name": "Halcyon Quiet (sage + cream)",
   "colour_map": {
-    "--green": "color_primary",
-    "--gold": "color_secondary",
+    "--sage": "color_primary",
+    "--sand": "color_secondary",
     "--cream": "color_accent"
   },
   "text_map": {
     "page-title": "club_name",
     "meta-description": "tagline",
     "club-name": "club_name",
+    "hero-club-name": "club_name",
     "tagline": "tagline",
+    "established": "tagline",
     "about-paragraph": "about",
     "play-schedule": "play_schedule",
+    "address": "address",
+    "address-contact": "address",
     "come-and-try": "come_and_try",
     "fees": "fees",
-    "address": "address",
     "phone": "phone",
-    "public-email": "public_email"
+    "public-email": "public_email",
+    "public-email-contact": "public_email"
   },
   "image_map": {
     "logo": "logo",
     "hero-photo": "photo_clubhouse"
   },
   "optional_sections": {
-    "fees": ".card-fees",
-    "come_and_try": ".card-come-try",
-    "address": ".card-map"
+    "fees": ".section-fees",
+    "come_and_try": ".section-come-and-try",
+    "address": ".map-block"
   },
   "has_map": true
 }

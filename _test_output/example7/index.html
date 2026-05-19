@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-edit-id="page-title">A Heritage Croquet Club</title>
+<title data-edit-id="page-title">Test Croquet &amp; Mallet Sports Club</title>
 <meta name="description" data-edit-id="meta-description" content="Established croquet on heritage lawns. Visitors welcome.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,10 +12,10 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --maroon: #73182C;
+    --maroon: #2D5A27;
     --maroon-deep: #5A1323;
-    --gold: #C4973A;
-    --cream: #FCF6DA;
+    --gold: #C5A55A;
+    --cream: #FAF6F0;
     --cream-warm: #F0E8C4;
     --ink: #2C1810;
     --ink-muted: #6B5C54;
@@ -62,7 +62,6 @@
     text-decoration: none;
     text-transform: uppercase;
   }
-  .club-logo[src=""] { display: none !important; }
   .nav-links {
     display: flex;
     gap: 32px;
@@ -411,10 +410,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
-    <img id="logo" class="club-logo" src="" alt="" style="height:36px;width:auto;display:none;" onload="if(this.src && this.getAttribute('src')){this.style.display='block'}">
-    <span class="nav-logo" data-edit-id="club-name">A Heritage Croquet Club</span>
-  </a>
+  <a href="#" class="nav-logo" data-edit-id="club-name">Test Croquet &amp; Mallet Sports Club</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#visit">Visit</a></li>
@@ -427,26 +423,26 @@
 <section class="hero">
   <div class="hero-text">
     <span class="eyebrow" data-edit-id="established">Est. 1962</span>
-    <h1 data-edit-id="hero-club-name">A Heritage Croquet Club</h1>
-    <p class="hero-tagline" data-edit-id="tagline">Croquet in Queensland, since 1962.</p>
+    <h1 data-edit-id="hero-club-name">Test Croquet &amp; Mallet Sports Club</h1>
+    <p class="hero-tagline" data-edit-id="tagline">Three lawns by the river, eighty members, open six days a week</p>
     <a href="#come-and-try" class="hero-cta" data-edit-id="hero-cta-text">Your first session</a>
   </div>
   <div class="hero-photo-wrap">
-    <img id="hero-photo" src="images/hero-photo.jpg" alt="" aria-hidden="true">
+    <img id="hero-photo" src="images/photo_clubhouse.jpg" alt="" aria-hidden="true">
   </div>
 </section>
 
 <!-- ABOUT (split, photo L text R) -->
 <section class="about" id="about">
   <div class="about-photo-panel">
-    <img id="about-photo" src="images/about-photo.jpg" alt="" aria-hidden="true">
+    <img id="about-photo" src="images/photo_clubhouse.jpg" alt="" aria-hidden="true">
   </div>
   <div class="about-text">
     <span class="eyebrow">About the club</span>
     <h2 data-edit-id="about-heading">A club with weight</h2>
-    <p data-edit-id="about-paragraph">Our club has run continuously since 1962. Fifty members across four lawns. Tournaments, social roll-ups, coaching for newcomers — all of it serious, none of it solemn.
+    <p data-edit-id="about-paragraph">We've been playing on the three lawns at Riverside Park since 1967. Around eighty members, all welcome — competitive players, social players, and absolute beginners.
 
-If you've played before, you'll find a club that meets the standard. If you haven't, you'll find people glad to teach you.</p>
+We play Association, Golf, and Ricochet. Equipment supplied. The clubhouse opens an hour before play for a cuppa and a chat.</p>
   </div>
 </section>
 
@@ -457,20 +453,22 @@ If you've played before, you'll find a club that meets the standard. If you have
     <h2 data-edit-id="visit-heading">Plan your visit</h2>
     <p class="visit-schedule" data-edit-id="play-schedule">Monday 1pm — Association Croquet
 Wednesday 9am — Golf Croquet
-Saturday 2pm — Social play
+Friday 1pm — Ricochet
+Saturday 2pm — Social play (all codes)
 
-Visitors welcome any session.</p>
-    <p class="visit-address" data-edit-id="address">17 Park Lane, Buderim QLD 4556</p>
+Summer hours apply Oct–Apr (start 30 minutes earlier).</p>
+    <p class="visit-address" data-edit-id="address">12 Riverside Drive, Riverbank QLD 4560
+(Parking available on Park Road, behind the bowls club)</p>
     <div class="map-block">
       <div class="map-fallback-wrap">
         <p>Find us</p>
         <a data-edit-id="map-fallback" href="https://maps.google.com/?q=17+Park+Lane+Buderim+QLD+4556" target="_blank" rel="noopener">Open in Google Maps</a>
       </div>
-      <iframe id="map-iframe" src="https://www.google.com/maps?q=17+Park+Lane+Buderim+QLD+4556&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <iframe id="map-iframe" src="https://www.google.com/maps?q=12%20Riverside%20Drive%2C%20Riverbank%20QLD%204560%20%28Parking%20available%20on%20Park%20Road%2C%20behind%20the%20bowls%20club%29&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
   </div>
   <div class="visit-photo-panel">
-    <img id="lawns-photo" src="images/lawns-photo.jpg" alt="" aria-hidden="true">
+    <img id="lawns-photo" src="images/photo_lawns.jpg" alt="" aria-hidden="true">
   </div>
 </section>
 
@@ -478,8 +476,10 @@ Visitors welcome any session.</p>
 <section class="section-cat" id="come-and-try">
   <span class="eyebrow">Come and try</span>
   <h2 data-edit-id="cat-heading">Your first session</h2>
-  <p data-edit-id="come-and-try">First Tuesday of each month, 10am. Free. Flat shoes — everything else provided. Email or call ahead so we know to expect you.</p>
-  <a class="cat-btn" data-edit-id="public-email" href="mailto:hello@example.org">Email us</a>
+  <p data-edit-id="come-and-try">First Tuesday of every month, 10am. Free. Equipment provided.
+
+Wear flat shoes and bring a hat. We'll teach you the basics in about 90 minutes.</p>
+  <a class="cat-btn" data-edit-id="public-email" href="mailto:secretary@testcroquet.org.au">secretary@testcroquet.org.au</a>
 </section>
 
 <!-- FEES -->
@@ -487,10 +487,10 @@ Visitors welcome any session.</p>
   <span class="eyebrow">Membership</span>
   <h2 data-edit-id="fees-heading">Membership</h2>
   <div class="fees-card">
-    <p class="fees-text" data-edit-id="fees">Annual membership: $120
-Family: $200
-Pensioner: $90
-Includes club fees and CAQ affiliation.</p>
+    <p class="fees-text" data-edit-id="fees">Visitor green fee: $5
+First Come &amp; Try: free
+Full membership: $140 / year (concession $90)
+Coaching: free for members, $20 / session for non-members</p>
   </div>
 </section>
 
@@ -503,18 +503,19 @@ Includes club fees and CAQ affiliation.</p>
     </div>
     <div class="contact-card">
       <span class="eyebrow">Email</span>
-      <a data-edit-id="public-email-contact" href="mailto:hello@example.org">hello@example.org</a>
+      <a data-edit-id="public-email-contact" href="mailto:hello@example.org">secretary@testcroquet.org.au</a>
     </div>
     <div class="contact-card">
       <span class="eyebrow">Address</span>
-      <span class="contact-text" data-edit-id="address-contact">17 Park Lane, Buderim QLD 4556</span>
+      <span class="contact-text" data-edit-id="address-contact">12 Riverside Drive, Riverbank QLD 4560
+(Parking available on Park Road, behind the bowls club)</span>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-name" data-edit-id="footer-name">A Heritage Croquet Club</div>
+  <div class="footer-name" data-edit-id="footer-name">Test Croquet &amp; Mallet Sports Club</div>
   <p class="footer-acknowledgment" data-edit-id="footer-acknowledgment">We play on the traditional lands of the Aboriginal peoples and pay our respects to Elders past and present. Always was, always will be.</p>
   <p class="footer-credit" data-edit-id="footer-credit">Site by CroquetClaude with the help of the committee.</p>
 </footer>

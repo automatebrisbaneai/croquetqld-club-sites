@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nundah Croquet Club</title>
+  <title data-edit-id="page-title">Nundah Croquet Club</title>
+  <meta name="description" data-edit-id="meta-description" content="A welcoming croquet club. Visitors always welcome — first session is free.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
@@ -64,8 +65,8 @@
       text-decoration: none;
       letter-spacing: -0.015em;
       flex-shrink: 0;
-      margin-right: auto;
     }
+    .club-logo[src=""] { display: none !important; }
 
     .nav-links {
       display: flex;
@@ -726,7 +727,10 @@
 
   <nav>
     <div class="nav-inner">
-      <a href="#" class="nav-logo" data-edit-id="club-name">Nundah Croquet Club</a>
+      <a href="#" class="nav-logo-link" style="display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;">
+        <img id="logo" class="club-logo" src="" alt="" style="height:34px;width:auto;display:none;" onload="if(this.src && this.getAttribute('src')){this.style.display='block'}">
+        <span class="nav-logo" data-edit-id="club-name">Nundah Croquet Club</span>
+      </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#schedule">Schedule</a></li>
@@ -746,8 +750,8 @@
     <img id="hero-photo" class="hero-photo" src="images/hero-photo.jpg" alt="" aria-hidden="true">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-label">Nundah, Brisbane</span>
-      <h1 data-edit-id="tagline">New to croquet? Your first session is free.</h1>
+      <span class="hero-label" data-edit-id="hero-location">Nundah, Brisbane</span>
+      <h1 data-edit-id="hero-cta">New to croquet? Your first session is free.</h1>
       <div class="hero-free-note">No booking needed. Just turn up in flat shoes.</div>
       <p class="hero-turn-up">We will look after the rest. Mallets, balls, and a welcome from the club.</p>
       <div class="hero-buttons">
@@ -867,7 +871,7 @@ Nundah QLD 4012</address>
             <div class="map-block">
               <div class="map-fallback">
                 <p>Find Us</p>
-                <a href="https://maps.google.com/?q=Kalinga+Park+Nundah+QLD+4012" target="_blank" rel="noopener">Open in Google Maps</a>
+                <a data-edit-id="map-fallback" href="https://maps.google.com/?q=Kalinga+Park+Nundah+QLD+4012" target="_blank" rel="noopener">Open in Google Maps</a>
               </div>
               <iframe id="map-iframe" src="https://www.google.com/maps?q=Kalinga+Park+Nundah+QLD+4012&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             </div>
@@ -896,8 +900,9 @@ Nundah QLD 4012</address>
           </ul>
         </div>
       </div>
+      <p class="footer-acknowledgment" data-edit-id="footer-acknowledgment" style="font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6;max-width:540px;margin:0 auto 16px;text-align:center;padding-bottom:16px;">We play on the traditional lands of the Aboriginal peoples and pay our respects to Elders past and present.</p>
       <div class="footer-bottom">
-        <span>Part of Croquet Queensland.</span>
+        <span data-edit-id="footer-credit-left">Part of Croquet Queensland.</span>
         <span>Site by CroquetClaude</span>
       </div>
     </div>

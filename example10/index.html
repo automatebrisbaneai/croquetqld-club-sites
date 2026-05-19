@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-edit-id="page-title">A Quiet Croquet Club</title>
+<meta name="description" data-edit-id="meta-description" content="Croquet on the lawns. Visitors welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .club-logo[src=""] { display: none !important; }
+
+  :root {
+    --sage: #7C8B6F;
+    --sand: #D9CFBE;
+    --cream: #F6F0E4;
+    --ink: #1F1F1F;
+    --ink-muted: #6A6A6A;
+    --rule: rgba(31,31,31,0.08);
+    --section-pad-y: clamp(56px, 9vw, 120px);
+    --content-max: 680px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  a { color: inherit; }
+
+  /* ── NAV ────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    padding: 18px clamp(20px, 5vw, 48px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 200ms ease, border-color 200ms ease;
+    border-bottom: 1px solid transparent;
+  }
+  nav.scrolled {
+    background: var(--cream);
+    border-bottom-color: var(--rule);
+  }
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  nav.hero-mode .nav-logo { color: var(--cream); }
+  nav.scrolled .nav-logo { color: var(--ink); }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    transition: opacity 150ms ease;
+  }
+  nav.hero-mode .nav-links a { color: var(--cream); }
+  nav.scrolled .nav-links a { color: var(--ink); }
+  .nav-links a:hover { opacity: 0.65; }
+
+  /* ── HERO ───────────────────────── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+  }
+  .hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(31,31,31,0.12) 0%, rgba(31,31,31,0.05) 35%, rgba(31,31,31,0.55) 100%);
+  }
+  .hero-content {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: clamp(48px, 10vh, 120px);
+    text-align: center;
+    padding: 0 clamp(20px, 5vw, 48px);
+    z-index: 2;
+    color: var(--cream);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 12px;
+  }
+  .hero p {
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    max-width: 540px;
+    margin: 0 auto;
+    opacity: 0.92;
+  }
+
+  /* ── SECTIONS ───────────────────── */
+  section {
+    padding: var(--section-pad-y) clamp(20px, 5vw, 48px);
+  }
+  .narrow {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 500;
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+
+  /* ── ESTABLISHED LINE ───────────── */
+  .established-section {
+    padding: clamp(40px, 7vw, 80px) clamp(20px, 5vw, 48px);
+    text-align: center;
+  }
+  .established-line {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    color: var(--sage);
+    letter-spacing: 0.01em;
+  }
+
+  /* ── WAVY DIVIDER ──────────────── */
+  .wavy-divider {
+    display: block;
+    width: 100%;
+    height: 24px;
+    margin: 0 auto;
+  }
+
+  /* ── ABOUT ──────────────────────── */
+  .about p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--ink);
+    max-width: 580px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* ── VISIT ──────────────────────── */
+  .visit {
+    background: rgba(217, 207, 190, 0.18); /* sand at low opacity */
+  }
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 72px);
+    max-width: 880px;
+    margin: 0 auto;
+    align-items: start;
+    text-align: left;
+  }
+  .visit h2 { text-align: left; }
+  .visit-block .eyebrow { margin-bottom: 14px; }
+  .schedule-text, .address-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--ink);
+    white-space: pre-wrap;
+  }
+  .map-block {
+    margin-top: 20px;
+    border: 1px solid var(--rule);
+    width: 100%;
+    aspect-ratio: 16/10;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  .map-block iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  .map-fallback-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px;
+    text-align: center;
+    color: var(--sage);
+    background: var(--cream);
+  }
+  .map-fallback-wrap p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+  .map-fallback-wrap a {
+    color: var(--sage);
+    font-size: 0.85rem;
+    text-decoration: underline;
+  }
+
+  /* ── COME AND TRY ───────────────── */
+  .cat p { margin-bottom: 16px; }
+  .cat-email {
+    display: inline-block;
+    margin-top: 4px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--sage);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* ── FEES ───────────────────────── */
+  .fees-text {
+    font-size: 1rem;
+    line-height: 1.85;
+    white-space: pre-wrap;
+    color: var(--ink);
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ── CONTACT ────────────────────── */
+  .contact {
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    padding-top: clamp(40px, 7vw, 80px);
+    padding-bottom: clamp(40px, 7vw, 80px);
+  }
+  .contact .contact-line {
+    display: block;
+    padding: 8px 0;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .contact a {
+    color: var(--sage);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 200ms ease;
+  }
+  .contact a:hover { border-bottom-color: var(--sage); }
+
+  /* ── FOOTER ────────────────────── */
+  footer {
+    padding: 36px 24px;
+    text-align: center;
+    background: var(--cream);
+    border-top: 1px solid var(--rule);
+  }
+  .footer-line {
+    font-size: 0.8125rem;
+    color: var(--sage);
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .footer-acknowledgment {
+    font-size: 0.7rem;
+    color: var(--ink-muted);
+    line-height: 1.65;
+    max-width: 560px;
+    margin: 14px auto 0;
+    opacity: 0.7;
+  }
+
+  /* ── RESPONSIVE ─────────────────── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .visit-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .visit h2 { text-align: center; }
+    .visit-block .eyebrow { text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content { bottom: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="hero-mode" id="siteNav">
+  <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <img id="logo" class="club-logo" src="" alt="" style="height:32px;width:auto;display:none;" onload="if(this.src && this.getAttribute('src')){this.style.display='block'}">
+    <span class="nav-logo" data-edit-id="club-name">A Quiet Croquet Club</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#visit">Visit</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img id="hero-photo" src="images/hero-photo.jpg" alt="" aria-hidden="true">
+  <div class="hero-content">
+    <h1 data-edit-id="hero-club-name">A Quiet Croquet Club</h1>
+    <p data-edit-id="tagline">Croquet on these greens since 1962.</p>
+  </div>
+</section>
+
+<!-- ESTABLISHED -->
+<section class="established-section">
+  <p class="established-line" data-edit-id="established">Croquet on these greens since 1962.</p>
+</section>
+
+<svg class="wavy-divider" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,12 Q150,0 300,12 T600,12 T900,12 T1200,12" fill="none" stroke="#D9CFBE" stroke-width="1.5"/>
+</svg>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="narrow">
+    <span class="eyebrow">About the club</span>
+    <h2 data-edit-id="about-heading">A note from the green</h2>
+    <p data-edit-id="about-paragraph">We've played croquet on these greens for many years. The four lawns sit at the back of the park, behind the jacarandas. About fifty of us meet through the week — competitive players, social players, and a steady stream of people who came along once and stayed.
+
+Everything is provided. The lawns are maintained. The kettle is on by 9.30.</p>
+  </div>
+</section>
+
+<svg class="wavy-divider" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,12 Q150,0 300,12 T600,12 T900,12 T1200,12" fill="none" stroke="#D9CFBE" stroke-width="1.5"/>
+</svg>
+
+<!-- VISIT -->
+<section class="visit" id="visit">
+  <div class="visit-grid">
+    <div class="visit-block">
+      <span class="eyebrow">When we play</span>
+      <p class="schedule-text" data-edit-id="play-schedule">Monday 1pm — Association Croquet
+Wednesday 9am — Golf Croquet
+Saturday 2pm — Social play
+
+Visitors always welcome on Saturday.</p>
+    </div>
+    <div class="visit-block">
+      <span class="eyebrow">Where to find us</span>
+      <p class="address-text" data-edit-id="address">17 Park Lane
+Buderim QLD 4556</p>
+      <div class="map-block">
+        <div class="map-fallback-wrap">
+          <p>Find us</p>
+          <a data-edit-id="map-fallback" href="https://maps.google.com/?q=17+Park+Lane+Buderim+QLD+4556" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+        <iframe id="map-iframe" src="https://www.google.com/maps?q=17+Park+Lane+Buderim+QLD+4556&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wavy-divider" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,12 Q150,0 300,12 T600,12 T900,12 T1200,12" fill="none" stroke="#D9CFBE" stroke-width="1.5"/>
+</svg>
+
+<!-- COME AND TRY -->
+<section class="cat section-come-and-try">
+  <div class="narrow">
+    <span class="eyebrow">Come and try</span>
+    <h2 data-edit-id="cat-heading">Your first session</h2>
+    <p data-edit-id="come-and-try">First Tuesday of each month, 10am. Free. Wear flat shoes — everything else is provided. No need to book, just come along.</p>
+    <a class="cat-email" data-edit-id="public-email" href="mailto:hello@example.org">hello@example.org</a>
+  </div>
+</section>
+
+<svg class="wavy-divider section-fees-divider" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,12 Q150,0 300,12 T600,12 T900,12 T1200,12" fill="none" stroke="#D9CFBE" stroke-width="1.5"/>
+</svg>
+
+<!-- FEES -->
+<section class="section-fees">
+  <div class="narrow">
+    <span class="eyebrow">Membership</span>
+    <p class="fees-text" data-edit-id="fees">Annual membership: $120
+Family: $200
+Pensioner: $90
+Includes club fees and CAQ affiliation.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <span class="eyebrow">Get in touch</span>
+  <h2 data-edit-id="contact-heading">Say hello</h2>
+  <a class="contact-line" data-edit-id="phone" href="tel:0412345678">0412 345 678</a>
+  <a class="contact-line" data-edit-id="public-email-contact" href="mailto:hello@example.org">hello@example.org</a>
+  <span class="contact-line" data-edit-id="address-contact">17 Park Lane, Buderim QLD 4556</span>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-line" data-edit-id="footer-line">Your local croquet club. Built with care.</p>
+  <p class="footer-acknowledgment" data-edit-id="footer-acknowledgment">We play on the traditional lands of the Aboriginal peoples and pay our respects to Elders past and present.</p>
+</footer>
+
+<script>
+  // Nav: switch from hero-mode (light text on photo) to scrolled (dark on cream) after scrolling past the hero
+  const nav = document.getElementById('siteNav');
+  function updateNav() {
+    if (window.scrollY > window.innerHeight * 0.85) {
+      nav.classList.remove('hero-mode');
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.add('hero-mode');
+      nav.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+</script>
+
+<script src="https://edit.croquetwade.com/edit.js"
+        data-stack="git"
+        data-site="club-sites"
+        data-html-file="example10/index.html"
+        defer></script>
+
+</body>
+</html>
