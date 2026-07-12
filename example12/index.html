@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A community croquet club on heritage lawns. Garden Green Leading template — mature community register, lived-in, garden-adjacent.">
+<title data-edit-id="page-title">A Heritage Croquet Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=EB+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 18px; line-height: 1.7; color: var(--text); background: var(--ivory); -webkit-font-smoothing: antialiased; }
+
+:root {
+  --green-heritage: #3B7A57;
+  --green-deep: #1E4A33;
+  --green-soft: #A8C976;
+  --stone-warm: #D4C5A9;
+  --ivory: #FAF8F4;
+  --amber: #E8831A;
+  --text: #1A1A1A;
+  --text-mid: #5C5A55;
+  --divider: #E0D8CC;
+  --nav-height: 72px;
+  --content-max: 1080px;
+}
+
+h1, h2, h3 { font-family: 'Merriweather', Georgia, serif; font-weight: 700; color: var(--green-deep); }
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.15; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; margin-bottom: 0.6em; }
+h3 { font-size: 1.25rem; line-height: 1.3; margin-bottom: 0.5em; color: var(--green-heritage); }
+.eyebrow { font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-weight: 500; font-size: 0.95rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-heritage); margin-bottom: 0.75rem; display: block; }
+p { margin-bottom: 1rem; }
+a { color: var(--green-heritage); text-decoration: underline; text-underline-offset: 3px; }
+a:hover, a:focus { color: var(--green-deep); text-decoration-thickness: 2px; }
+img { max-width: 100%; height: auto; display: block; }
+.whitespace-pre { white-space: pre-line; }
+
+.container { max-width: var(--content-max); margin: 0 auto; padding: 0 24px; }
+
+nav { position: sticky; top: 0; left: 0; width: 100%; min-height: var(--nav-height); background: var(--ivory); border-bottom: 1px solid var(--divider); z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 8px 24px; flex-wrap: wrap; gap: 12px; }
+.nav-logo { font-family: 'Merriweather', serif; font-weight: 700; font-size: 1.2rem; color: var(--green-deep); text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav-links a { font-family: Georgia, serif; font-weight: 700; font-size: 0.95rem; color: var(--text); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a:focus { border-bottom-color: var(--green-heritage); }
+.nav-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 24px; background: var(--green-heritage); color: var(--ivory) !important; border-radius: 4px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover, .nav-cta:focus { background: var(--green-deep); border-bottom-color: transparent !important; }
+
+.section-hero { display: flex; flex-direction: column; min-height: 70vh; }
+.hero-image { width: 100%; height: 50vh; object-fit: cover; }
+.hero-image-overlay { position: relative; }
+.hero-image-overlay::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(30, 70, 50, 0.15) 100%); pointer-events: none; }
+.hero-panel { padding: 64px 24px; background: var(--ivory); display: flex; flex-direction: column; justify-content: center; }
+.hero-panel h1 { margin-bottom: 1rem; }
+.hero-panel .tagline { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--text-mid); margin-bottom: 1.5rem; }
+.hero-panel .btn { align-self: flex-start; margin-top: 0.5rem; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; background: var(--green-heritage); color: var(--ivory); font-family: Georgia, serif; font-weight: 700; font-size: 1rem; text-decoration: none; border: none; border-radius: 4px; cursor: pointer; transition: background 0.2s; }
+.btn:hover, .btn:focus { background: var(--green-deep); color: var(--ivory); }
+
+section { padding: 100px 0; }
+.section-stone { background: var(--stone-warm); }
+.section-stone h2 { color: var(--green-deep); }
+.section-deep { background: var(--green-deep); color: var(--ivory); }
+.section-deep h2, .section-deep h3 { color: var(--ivory); }
+.section-deep a { color: var(--green-soft); }
+
+.leaf-divider { display: flex; align-items: center; justify-content: center; padding: 24px 0; gap: 16px; }
+.leaf-divider .rule { flex: 1; max-width: 200px; height: 1px; background: var(--green-soft); }
+.leaf-divider svg { width: 40px; height: 40px; fill: var(--green-soft); }
+
+.pullquote { border-left: 4px solid var(--green-heritage); padding: 16px 0 16px 28px; margin: 36px 0; font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.4rem; line-height: 1.5; color: var(--green-deep); max-width: 740px; }
+
+.visit-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-top: 32px; }
+.card { background: var(--ivory); border: 1px solid var(--divider); border-radius: 4px; padding: 28px; }
+.map-container { position: relative; width: 100%; padding-top: 66.67%; overflow: hidden; border: 1px solid var(--divider); border-radius: 4px; }
+.map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+.fees-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+.fees-table th, .fees-table td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--divider); }
+.fees-table th { font-family: Georgia, serif; font-weight: 700; background: var(--green-heritage); color: var(--ivory); }
+.fees-table tr:nth-child(even) td { background: rgba(168, 201, 118, 0.15); }
+
+.contact-list { list-style: none; padding: 0; }
+.contact-list li { display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--divider); }
+.contact-list li:last-child { border-bottom: none; }
+.contact-list a { word-break: break-all; }
+
+footer { padding: 48px 0 32px; text-align: center; }
+footer p { font-size: 1rem; margin-bottom: 0.5rem; }
+footer .small { font-size: 0.85rem; opacity: 0.7; }
+
+@media (min-width: 480px) {
+  .hero-panel { padding: 80px 40px; }
+}
+@media (min-width: 768px) {
+  .section-hero { flex-direction: row; min-height: 90vh; }
+  .hero-image { width: 55%; height: 90vh; }
+  .hero-panel { width: 45%; padding: 80px 48px; }
+  .visit-grid { grid-template-columns: 1fr 1fr; }
+  .visit-grid .map-container { grid-column: 1 / -1; }
+}
+@media (min-width: 1024px) {
+  .visit-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .visit-grid .map-container { grid-column: auto; }
+  .hero-panel { padding: 120px 64px; }
+}
+
+:focus-visible { outline: 3px solid var(--green-heritage); outline-offset: 2px; }
+.btn:focus-visible { outline: 3px solid var(--green-deep); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <a href="#" class="nav-logo"><span data-edit-id="club-name">A Heritage Croquet Club</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#visit">Visit</a></li>
+    <li><a href="#come-and-try">Come &amp; Try</a></li>
+    <li><a href="#contact" class="nav-cta">Visit Us</a></li>
+  </ul>
+</nav>
+
+<section class="section-hero" aria-label="Hero">
+  <img id="hero-photo" data-photo-edit-id="photo_lawns" src="images/hero-photo.jpg" alt="The lawns and clubhouse" class="hero-image" loading="eager">
+  <div class="hero-panel">
+    <span class="eyebrow" data-edit-id="hero-location">Queens Park, Brisbane</span>
+    <h1><span data-edit-id="club-name">A Heritage Croquet Club</span></h1>
+    <p class="tagline" data-edit-id="tagline">A lawn, a clubhouse, and a community of croquet players.</p>
+    <a href="#come-and-try" class="btn">Come and Try</a>
+  </div>
+</section>
+
+<div class="leaf-divider" aria-hidden="true">
+  <div class="rule"></div>
+  <svg viewBox="0 0 32 32"><path d="M16 2 C 22 8 22 16 16 30 C 10 16 10 8 16 2 Z M16 8 L 16 26" stroke="currentColor" fill="none" stroke-width="1.2"/></svg>
+  <div class="rule"></div>
+</div>
+
+<section id="about" aria-labelledby="about-heading">
+  <div class="container" style="max-width:720px;">
+    <h2 id="about-heading" data-edit-id="about-heading">About the club</h2>
+    <p class="whitespace-pre" data-edit-id="about-paragraph">The club has played on these lawns for many years. The site sits quietly within its garden setting — old trees, well-kept turf, a clubhouse that's seen most of our members through three generations.
+
+About sixty of us meet through the week. We're a friendly bunch — competitive when we want to be, social the rest of the time. Beginners and visitors are always welcome.</p>
+    <blockquote class="pullquote" data-edit-id="pullquote">Some people come for the croquet. Most come for the tea, and stay for the croquet.</blockquote>
+  </div>
+</section>
+
+<div class="leaf-divider" aria-hidden="true">
+  <div class="rule"></div>
+  <svg viewBox="0 0 32 32"><path d="M16 2 C 22 8 22 16 16 30 C 10 16 10 8 16 2 Z M16 8 L 16 26" stroke="currentColor" fill="none" stroke-width="1.2"/></svg>
+  <div class="rule"></div>
+</div>
+
+<section id="visit" aria-labelledby="visit-heading" class="section-stone">
+  <div class="container">
+    <h2 id="visit-heading" style="text-align:center;">Visit</h2>
+    <div class="visit-grid">
+
+      <div class="card">
+        <h3>Play schedule</h3>
+        <div class="whitespace-pre" data-edit-id="play-schedule">Tuesday 9am — Association Croquet
+Thursday 9am — Golf Croquet
+Saturday 1pm — Social play, all codes
+
+All sessions are open to visiting members and absolute beginners.</div>
+      </div>
+
+      <div class="card section-visit-map">
+        <h3>Find us</h3>
+        <address style="font-style:normal; margin-bottom:14px;" data-edit-id="address">Queens Park, Brisbane QLD</address>
+        <div class="map-container">
+          <iframe id="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3538!2d153.039!3d-27.471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1" allowfullscreen="" loading="lazy" title="Map showing the club location"></iframe>
+        </div>
+        <a data-edit-id="map-fallback" href="https://maps.google.com/?q=Queens+Park+Brisbane+QLD" target="_blank" rel="noopener" style="display:block; margin-top:10px; font-size:0.95rem;">Open in Google Maps</a>
+      </div>
+
+      <div class="card">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li>
+            <span aria-hidden="true">📞</span>
+            <a data-edit-id="phone" href="tel:0400000000">Call the secretary</a>
+          </li>
+          <li>
+            <span aria-hidden="true">✉️</span>
+            <a data-edit-id="public-email" href="mailto:secretary@example.org.au">secretary@example.org.au</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="leaf-divider" aria-hidden="true">
+  <div class="rule"></div>
+  <svg viewBox="0 0 32 32"><path d="M16 2 C 22 8 22 16 16 30 C 10 16 10 8 16 2 Z M16 8 L 16 26" stroke="currentColor" fill="none" stroke-width="1.2"/></svg>
+  <div class="rule"></div>
+</div>
+
+<section id="come-and-try" class="section-come-and-try" aria-labelledby="come-heading">
+  <div class="container" style="max-width:760px; text-align:center;">
+    <h2 id="come-heading">Come and try</h2>
+    <p class="whitespace-pre" style="margin:0 auto 28px;" data-edit-id="come-and-try">First Saturday of every month, 1pm.
+
+We provide mallets, balls, and someone to walk you through it. Wear flat shoes — anything else is up to you. No need to book; just come down.</p>
+    <a href="#contact" class="btn">Get in touch</a>
+  </div>
+</section>
+
+<div class="leaf-divider" aria-hidden="true">
+  <div class="rule"></div>
+  <svg viewBox="0 0 32 32"><path d="M16 2 C 22 8 22 16 16 30 C 10 16 10 8 16 2 Z M16 8 L 16 26" stroke="currentColor" fill="none" stroke-width="1.2"/></svg>
+  <div class="rule"></div>
+</div>
+
+<section id="fees" class="section-fees" aria-labelledby="fees-heading">
+  <div class="container" style="max-width:760px;">
+    <h2 id="fees-heading">Fees</h2>
+    <div data-edit-id="fees" class="whitespace-pre" style="margin-bottom:18px;">Visitor green fee: $5
+First Come &amp; Try: free
+Annual membership: $135 (concession $85)</div>
+  </div>
+</section>
+
+<div class="leaf-divider" aria-hidden="true">
+  <div class="rule"></div>
+  <svg viewBox="0 0 32 32"><path d="M16 2 C 22 8 22 16 16 30 C 10 16 10 8 16 2 Z M16 8 L 16 26" stroke="currentColor" fill="none" stroke-width="1.2"/></svg>
+  <div class="rule"></div>
+</div>
+
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="container" style="max-width:760px;">
+    <h2 id="contact-heading">Get in touch</h2>
+    <ul class="contact-list">
+      <li>
+        <span aria-hidden="true">📞</span>
+        <strong>Phone:</strong>
+        <a data-edit-id="phone" href="tel:0400000000">Call the secretary</a>
+      </li>
+      <li>
+        <span aria-hidden="true">✉️</span>
+        <strong>Email:</strong>
+        <a data-edit-id="public-email" href="mailto:secretary@example.org.au">secretary@example.org.au</a>
+      </li>
+      <li>
+        <span aria-hidden="true">📍</span>
+        <strong>Address:</strong>
+        <span data-edit-id="address">Queens Park, Brisbane QLD</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer class="section-deep">
+  <div class="container">
+    <p data-edit-id="footer-acknowledgment">We play on the lands of the Traditional Owners of this land, and pay respect to Elders past and present.</p>
+    <p class="small">&copy; 2025 <span data-edit-id="club-name">A Heritage Croquet Club</span></p>
+  </div>
+</footer>
+
+<div style="display:none;">
+  <img id="players-photo" data-photo-edit-id="photo_players" src="images/players-photo.jpg" alt="Members playing croquet">
+</div>
+
+<script src="https://edit.croquetwade.com/edit.js" data-stack="git" data-site="club-sites" data-html-file="example12/index.html" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "id": "example12",
+  "name": "Garden Green Leading",
+  "colour_map": {
+    "--green-heritage": "color_primary",
+    "--amber": "color_secondary",
+    "--stone-warm": "color_accent"
+  },
+  "text_map": {
+    "page-title": "club_name",
+    "club-name": "club_name",
+    "hero-location": "address",
+    "tagline": "tagline",
+    "about-heading": "about",
+    "about-paragraph": "about",
+    "pullquote": "tagline",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "address": "address",
+    "phone": "phone",
+    "public-email": "public_email",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "map-fallback": "address"
+  },
+  "image_map": {
+    "hero-photo": "photo_lawns",
+    "players-photo": "photo_players"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "come_and_try": ".section-come-and-try",
+    "address": ".section-visit-map"
+  },
+  "has_map": true
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A community croquet club. Photo-Led Documentary template — photography drives every section, type announces.">
+<title data-edit-id="page-title">Test Croquet &amp; Mallet Sports Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 18px; line-height: 1.6; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+
+:root {
+  --paper: #FFFFFF;
+  --stone-tint: #FAF6F0;
+  --ink: #C5A55A;
+  --text-mid: #5C5A55;
+  --accent-signal: #2D5A27;
+  --divider: #E0DAD2;
+  --nav-height: 60px;
+  --content-max: 880px;
+  --section-pad: 120px;
+}
+
+h1, h2, h3 { font-family: 'Inter', sans-serif; color: var(--ink); }
+h1 { font-weight: 800; font-size: clamp(2.8rem, 7vw, 5.6rem); line-height: 1.0; letter-spacing: -0.022em; }
+h2 { font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 0.6em; }
+h3 { font-weight: 600; font-size: 1.15rem; line-height: 1.3; margin-bottom: 0.5em; letter-spacing: 0.02em; }
+.eyebrow { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent-signal); margin-bottom: 1rem; display: block; }
+p { margin-bottom: 1rem; }
+a { color: var(--accent-signal); text-decoration: underline; text-underline-offset: 3px; }
+a:hover, a:focus { text-decoration-thickness: 2px; }
+img { max-width: 100%; height: auto; display: block; }
+.whitespace-pre { white-space: pre-line; }
+.caption { font-size: 0.85rem; font-weight: 500; color: var(--text-mid); letter-spacing: 0.02em; margin-top: 8px; }
+
+.container { max-width: var(--content-max); margin: 0 auto; padding: 0 24px; }
+
+/* NAV — translucent overlay on hero, solid after scroll */
+nav { position: sticky; top: 0; left: 0; width: 100%; min-height: var(--nav-height); background: var(--paper); border-bottom: 1px solid var(--divider); z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 8px 24px; flex-wrap: wrap; gap: 12px; }
+.nav-logo { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav-links a { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85rem; color: var(--ink); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a:focus { border-bottom-color: var(--accent-signal); }
+.nav-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 24px; background: var(--accent-signal); color: var(--paper) !important; border-radius: 4px; font-weight: 700; font-size: 0.85rem; text-decoration: none; letter-spacing: 0.02em; }
+.nav-cta:hover, .nav-cta:focus { background: #A6321F; border-bottom-color: transparent !important; }
+
+/* PHOTO BANDS — full-bleed with overlay-grade gradient for readable headlines */
+.photo-band { position: relative; width: 100%; height: 70vh; overflow: hidden; }
+.photo-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.photo-band::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.42) 100%); pointer-events: none; }
+.photo-band-content { position: absolute; bottom: 8%; left: 5%; right: 5%; color: var(--paper); z-index: 1; }
+.photo-band-content h1, .photo-band-content h2 { color: var(--paper); margin-bottom: 0.8rem; }
+.photo-band-content .eyebrow { color: var(--paper); opacity: 0.9; }
+.photo-band-content .tagline { font-size: 1.15rem; font-weight: 400; margin-bottom: 1.5rem; max-width: 600px; }
+.photo-band-content .btn { background: var(--accent-signal); color: var(--paper); }
+
+/* CONTENT BLOCKS — narrow column, generous padding */
+.content-block { padding: var(--section-pad) 0; background: var(--paper); }
+.content-block.stone { background: var(--stone-tint); }
+.content-block .container { max-width: var(--content-max); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; background: var(--accent-signal); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; text-decoration: none; border: none; border-radius: 4px; cursor: pointer; transition: background 0.2s; }
+.btn:hover, .btn:focus { background: #A6321F; color: var(--paper); }
+
+.fees-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+.fees-table th, .fees-table td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--divider); }
+.fees-table th { font-weight: 700; background: var(--ink); color: var(--paper); }
+.fees-table tr:nth-child(even) td { background: var(--stone-tint); }
+
+.contact-row { display: flex; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--divider); align-items: center; }
+.contact-row:last-child { border-bottom: none; }
+.contact-row strong { font-weight: 700; min-width: 80px; }
+
+footer.section-deep { padding: 48px 0 32px; text-align: center; background: var(--ink); color: var(--paper); }
+footer.section-deep p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+footer.section-deep .small { font-size: 0.85rem; opacity: 0.7; }
+
+@media (min-width: 768px) {
+  .photo-band { height: 100vh; }
+  .photo-band-content { bottom: 12%; left: 8%; right: 8%; }
+  .photo-band-content .tagline { font-size: 1.4rem; }
+}
+@media (min-width: 1024px) {
+  .container { padding: 0 40px; }
+}
+
+:focus-visible { outline: 3px solid var(--accent-signal); outline-offset: 2px; }
+.btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <a href="#" class="nav-logo"><span data-edit-id="club-name">Test Croquet &amp; Mallet Sports Club</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#visit">Visit</a></li>
+    <li><a href="#come-and-try">Come &amp; Try</a></li>
+    <li><a href="#contact" class="nav-cta">Visit</a></li>
+  </ul>
+</nav>
+
+<!-- PHOTO BAND 1 — HERO -->
+<section class="photo-band photo-band-hero" aria-label="Hero">
+  <img id="hero-photo" data-photo-edit-id="photo_clubhouse" src="images/photo_clubhouse.jpg" alt="The clubhouse at golden hour" loading="eager">
+  <div class="photo-band-content">
+    <span class="eyebrow" data-edit-id="hero-location">12 Riverside Drive, Riverbank QLD 4560
+(Parking available on Park Road, behind the bowls club)</span>
+    <h1><span data-edit-id="club-name">Test Croquet &amp; Mallet Sports Club</span></h1>
+    <p class="tagline" data-edit-id="tagline">Three lawns by the river, eighty members, open six days a week</p>
+    <a href="#come-and-try" class="btn">Come and Try</a>
+  </div>
+</section>
+
+<!-- CONTENT BLOCK 1 — ABOUT -->
+<section id="about" class="content-block">
+  <div class="container">
+    <span class="eyebrow">About</span>
+    <h2 data-edit-id="about-heading">We've been playing on the three lawns at Riverside Park since 1967. Around eighty members, all welcome — competitive players, social players, and absolute beginners.
+
+We play Association, Golf, and Ricochet. Equipment supplied. The clubhouse opens an hour before play for a cuppa and a chat.</h2>
+    <p class="whitespace-pre" data-edit-id="about-paragraph">We've been playing on the three lawns at Riverside Park since 1967. Around eighty members, all welcome — competitive players, social players, and absolute beginners.
+
+We play Association, Golf, and Ricochet. Equipment supplied. The clubhouse opens an hour before play for a cuppa and a chat.</p>
+  </div>
+</section>
+
+<!-- PHOTO BAND 2 — VISIT -->
+<section class="photo-band section-visit-map" id="visit" aria-label="Visit">
+  <img id="lawns-photo" data-photo-edit-id="photo_lawns" src="images/photo_lawns.jpg" alt="The lawns" loading="lazy">
+  <div class="photo-band-content">
+    <span class="eyebrow">Visit</span>
+    <h2>Find the lawns</h2>
+    <address data-edit-id="address" style="font-style:normal; font-size:1.05rem; max-width:600px;">12 Riverside Drive, Riverbank QLD 4560
+(Parking available on Park Road, behind the bowls club)</address>
+    <p class="caption" data-edit-id="lawns-caption">Three lawns by the river, eighty members, open six days a week</p>
+  </div>
+</section>
+
+<!-- CONTENT BLOCK 2 — SCHEDULE -->
+<section class="content-block stone">
+  <div class="container">
+    <span class="eyebrow">Schedule</span>
+    <h2>When we play</h2>
+    <div class="whitespace-pre" data-edit-id="play-schedule">Monday 1pm — Association Croquet
+Wednesday 9am — Golf Croquet
+Friday 1pm — Ricochet
+Saturday 2pm — Social play (all codes)
+
+Summer hours apply Oct–Apr (start 30 minutes earlier).</div>
+  </div>
+</section>
+
+<!-- CONTENT BLOCK 3 — COME AND TRY -->
+<section id="come-and-try" class="content-block section-come-and-try">
+  <div class="container">
+    <span class="eyebrow">Come and try</span>
+    <h2>Open day, first Saturday</h2>
+    <p class="whitespace-pre" style="font-size:1.1rem; line-height:1.7;" data-edit-id="come-and-try">First Tuesday of every month, 10am. Free. Equipment provided.
+
+Wear flat shoes and bring a hat. We'll teach you the basics in about 90 minutes.</p>
+    <a href="#contact" class="btn" style="margin-top:18px;">Get in touch</a>
+  </div>
+</section>
+
+<!-- PHOTO BAND 3 — MEMBERS (optional) -->
+<section class="photo-band photo-band-members" style="display:none" aria-label="Members at play">
+  <img id="players-photo" data-photo-edit-id="photo_players" src="images/photo_players.jpg" alt="Members playing" loading="lazy">
+  <div class="photo-band-content">
+    <span class="eyebrow">Members</span>
+    <p class="caption" data-edit-id="players-caption" style="color:var(--paper); font-size:1rem;">Three lawns by the river, eighty members, open six days a week</p>
+  </div>
+</section>
+
+<!-- CONTENT BLOCK 4 — FEES -->
+<section id="fees" class="content-block stone section-fees">
+  <div class="container">
+    <span class="eyebrow">Fees</span>
+    <h2>Membership</h2>
+    <div data-edit-id="fees" class="whitespace-pre" style="margin-bottom:16px;">Visitor green fee: $5
+First Come &amp; Try: free
+Full membership: $140 / year (concession $90)
+Coaching: free for members, $20 / session for non-members</div>
+  </div>
+</section>
+
+<!-- CONTENT BLOCK 5 — CONTACT -->
+<section id="contact" class="content-block">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h2>Get in touch</h2>
+    <div class="contact-row">
+      <strong>Phone:</strong>
+      <a data-edit-id="phone" href="tel:0412345678">0412 345 678</a>
+    </div>
+    <div class="contact-row">
+      <strong>Email:</strong>
+      <a data-edit-id="public-email" href="mailto:secretary@testcroquet.org.au">secretary@testcroquet.org.au</a>
+    </div>
+    <div class="contact-row">
+      <strong>Address:</strong>
+      <span data-edit-id="address">12 Riverside Drive, Riverbank QLD 4560
+(Parking available on Park Road, behind the bowls club)</span>
+    </div>
+    <div style="margin-top:20px;">
+      <a data-edit-id="map-fallback" href="https://maps.google.com/" target="_blank" rel="noopener">12 Riverside Drive, Riverbank QLD 4560
+(Parking available on Park Road, behind the bowls club)</a>
+    </div>
+    <iframe id="map-iframe" src="https://www.google.com/maps?q=12%20Riverside%20Drive%2C%20Riverbank%20QLD%204560%20%28Parking%20available%20on%20Park%20Road%2C%20behind%20the%20bowls%20club%29&output=embed" style="display:none;" title="Map" aria-hidden="true"></iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="section-deep">
+  <div class="container">
+    <p data-edit-id="footer-acknowledgment">We play on the lands of the Traditional Owners of this land, and pay respect to Elders past and present.</p>
+    <p class="small">&copy; 2025 <span data-edit-id="club-name">Test Croquet &amp; Mallet Sports Club</span></p>
+  </div>
+</footer>
+
+<script src="https://edit.croquetwade.com/edit.js" data-stack="git" data-site="club-sites" data-html-file="example14/index.html" defer></script>
+
+</body>
+</html>

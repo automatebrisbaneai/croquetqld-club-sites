@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A competitive croquet club. Bold Modern Sports-Club template — sport identity, heavy display type, black and paper bands.">
+<title data-edit-id="page-title">A Sports Croquet Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 18px; line-height: 1.55; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+
+:root {
+  --ink: #1A1A1A;
+  --paper: #F5F5F5;
+  --signal: #E8001D;
+  --accent-deep: #A6192E;
+  --text-mid: #5C5C5C;
+  --divider: #D0D0D0;
+  --nav-height: 60px;
+  --content-max: 1200px;
+  --section-pad: 100px;
+}
+
+h1, h2, h3 { font-family: 'Inter', sans-serif; color: var(--ink); }
+h1 { font-weight: 900; font-size: clamp(3rem, 9vw, 7rem); line-height: 1.0; letter-spacing: -0.028em; text-transform: uppercase; }
+h2 { font-weight: 900; font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.05; letter-spacing: -0.025em; text-transform: uppercase; margin-bottom: 0.5em; }
+h3 { font-weight: 700; font-size: 1.1rem; line-height: 1.3; margin-bottom: 0.5em; letter-spacing: 0.04em; text-transform: uppercase; }
+.eyebrow { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--signal); margin-bottom: 1rem; display: block; }
+p { margin-bottom: 1rem; }
+a { color: var(--signal); text-decoration: underline; text-underline-offset: 3px; }
+a:hover, a:focus { color: var(--accent-deep); text-decoration-thickness: 2px; }
+img { max-width: 100%; height: auto; display: block; }
+.whitespace-pre { white-space: pre-line; }
+
+.container { max-width: var(--content-max); margin: 0 auto; padding: 0 24px; }
+
+nav { position: sticky; top: 0; left: 0; width: 100%; min-height: var(--nav-height); background: var(--ink); border-bottom: none; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 8px 24px; flex-wrap: wrap; gap: 12px; }
+.nav-logo { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1rem; color: var(--paper); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links a { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.8rem; color: var(--paper); text-decoration: none; padding: 8px 0; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a:focus { border-bottom-color: var(--signal); }
+.nav-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px; background: var(--signal); color: var(--paper) !important; border-radius: 32px; font-weight: 700; font-size: 0.8rem; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; }
+.nav-cta:hover, .nav-cta:focus { background: var(--accent-deep); border-bottom-color: transparent !important; }
+
+/* HERO — black background, full-bleed action photo */
+.section-hero { position: relative; min-height: 90vh; background: var(--ink); display: flex; align-items: flex-end; padding-bottom: 60px; }
+.section-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+.section-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%); pointer-events: none; }
+.section-hero .hero-content { position: relative; z-index: 1; padding: 0 24px; max-width: var(--content-max); margin: 0 auto; width: 100%; }
+.section-hero h1, .section-hero .eyebrow { color: var(--paper); }
+.section-hero .eyebrow { color: var(--signal); }
+.section-hero .tagline { font-size: 1.3rem; color: var(--paper); margin: 0.8rem 0 1.8rem; max-width: 600px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; background: var(--signal); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border: none; border-radius: 32px; cursor: pointer; transition: background 0.2s; }
+.btn:hover, .btn:focus { background: var(--accent-deep); color: var(--paper); }
+
+/* SECTIONS — alternating ink/paper bands */
+section { padding: var(--section-pad) 0; }
+.section-ink { background: var(--ink); color: var(--paper); }
+.section-ink h2, .section-ink h3 { color: var(--paper); }
+.section-ink a { color: var(--signal); }
+.section-paper { background: var(--paper); }
+
+/* STATS BAND */
+.stats-row { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+.stat-cell .stat-value { font-family: 'Inter', sans-serif; font-weight: 900; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1; color: var(--signal); letter-spacing: -0.02em; display: block; }
+.stat-cell .stat-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--paper); margin-top: 8px; display: block; }
+
+/* SCHEDULE — dark grid */
+.schedule-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+.schedule-cell { padding: 24px; border: 2px solid var(--paper); }
+.schedule-cell strong { display: block; font-size: 1.05rem; margin-bottom: 4px; }
+
+.fees-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+.fees-cell { padding: 24px; border: 2px solid var(--ink); }
+.fees-cell strong { display: block; font-size: 1.6rem; font-weight: 900; color: var(--signal); margin-bottom: 4px; }
+
+.contact-row { display: flex; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--divider); align-items: center; font-size: 1.05rem; }
+.contact-row:last-child { border-bottom: none; }
+.contact-row strong { font-weight: 800; min-width: 100px; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.85rem; }
+
+footer.section-ink { padding: 48px 0 32px; text-align: center; }
+footer p { font-size: 0.95rem; margin-bottom: 0.5rem; }
+footer .small { font-size: 0.85rem; opacity: 0.7; }
+
+@media (min-width: 768px) {
+  .stats-row { grid-template-columns: repeat(3, 1fr); gap: 48px; }
+  .schedule-grid { grid-template-columns: repeat(3, 1fr); }
+  .fees-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .container { padding: 0 40px; }
+  .schedule-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+:focus-visible { outline: 3px solid var(--signal); outline-offset: 2px; }
+.btn:focus-visible { outline: 3px solid var(--paper); outline-offset: 4px; }
+</style>
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <a href="#" class="nav-logo"><span data-edit-id="club-name">A Sports Croquet Club</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#come-and-try">Try</a></li>
+    <li><a href="#contact" class="nav-cta">Come Try Saturday</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="section-hero" aria-label="Hero">
+  <img id="hero-photo" data-photo-edit-id="photo_players" src="images/hero-photo.jpg" alt="Players mid-game" loading="eager">
+  <div class="hero-content">
+    <span class="eyebrow" data-edit-id="hero-location">Sport Club</span>
+    <h1><span data-edit-id="club-name">A Sports Croquet Club</span></h1>
+    <p class="tagline" data-edit-id="tagline">Real sport, real lawns, real competition.</p>
+    <a href="#come-and-try" class="btn">Come Try Saturday</a>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="section-ink section-stats" aria-label="Club statistics">
+  <div class="container">
+    <span class="eyebrow">Track record</span>
+    <h2>We play this seriously</h2>
+    <div class="stats-row">
+      <div class="stat-cell">
+        <span class="stat-value" data-edit-id="stat-1-value">75+</span>
+        <span class="stat-label" data-edit-id="stat-1-label">Years playing</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-value" data-edit-id="stat-2-value">60</span>
+        <span class="stat-label" data-edit-id="stat-2-label">Active members</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-value" data-edit-id="stat-3-value">12+</span>
+        <span class="stat-label" data-edit-id="stat-3-label">State titles</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section-paper">
+  <div class="container" style="max-width:980px;">
+    <span class="eyebrow">About</span>
+    <h2 data-edit-id="about-heading">The club</h2>
+    <p class="whitespace-pre" style="font-size:1.1rem;" data-edit-id="about-paragraph">We have played croquet seriously for decades. About 60 members; a number of us ranked on the state circuit.
+
+We run Association, Golf, and Ricochet — beginner to A-grade. The lawns are kept to tournament standard. The pennant team plays each season.
+
+New players welcome at any level. We'll teach you to play; you decide how serious you get.</p>
+  </div>
+</section>
+
+<!-- SCHEDULE BAND -->
+<section id="schedule" class="section-ink">
+  <div class="container">
+    <span class="eyebrow">Schedule</span>
+    <h2>When we play</h2>
+    <div class="schedule-grid">
+      <div class="schedule-cell">
+        <strong>Tuesday 9am</strong>
+        <span>Association practice</span>
+      </div>
+      <div class="schedule-cell">
+        <strong>Thursday 9am</strong>
+        <span>Golf practice</span>
+      </div>
+      <div class="schedule-cell">
+        <strong>Saturday 1pm</strong>
+        <span>Pennant + social</span>
+      </div>
+      <div class="schedule-cell">
+        <strong>Sunday 1pm</strong>
+        <span>Beginners</span>
+      </div>
+    </div>
+    <div data-edit-id="play-schedule" class="whitespace-pre" style="margin-top:24px; opacity:0.85;">Visitors and beginners always welcome. Tournament-standard lawns. Coaching available.</div>
+  </div>
+</section>
+
+<!-- COME AND TRY -->
+<section id="come-and-try" class="section-paper section-come-and-try">
+  <div class="container" style="max-width:880px; text-align:center;">
+    <span class="eyebrow">Come and try</span>
+    <h2>Free taster Saturday</h2>
+    <p class="whitespace-pre" style="font-size:1.1rem; max-width:680px; margin: 0 auto 28px;" data-edit-id="come-and-try">Free taster session: Saturday 1pm, last Saturday of each month. Bring flat shoes. We provide mallets, balls, and the coach. You bring the swing.</p>
+    <a href="#contact" class="btn">Book your taster</a>
+  </div>
+</section>
+
+<!-- FEES -->
+<section id="fees" class="section-ink section-fees">
+  <div class="container" style="max-width:980px;">
+    <span class="eyebrow">Membership</span>
+    <h2>Fees</h2>
+    <div data-edit-id="fees" class="whitespace-pre" style="font-size:1.05rem;">Visitor green fee: $5
+First Come &amp; Try: free
+Annual membership: $135 (concession $85)
+Family membership: $220</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-paper">
+  <div class="container" style="max-width:880px;">
+    <span class="eyebrow">Contact</span>
+    <h2>Get in touch</h2>
+    <div class="contact-row">
+      <strong>Phone</strong>
+      <a data-edit-id="phone" href="tel:0400000000">Call the secretary</a>
+    </div>
+    <div class="contact-row">
+      <strong>Email</strong>
+      <a data-edit-id="public-email" href="mailto:secretary@example.org.au">secretary@example.org.au</a>
+    </div>
+    <div class="contact-row section-visit-map">
+      <strong>Address</strong>
+      <span data-edit-id="address">The lawns and clubhouse</span>
+    </div>
+    <div style="margin-top:24px;">
+      <a data-edit-id="map-fallback" href="https://maps.google.com/" target="_blank" rel="noopener">Open in Google Maps</a>
+    </div>
+    <iframe id="map-iframe" src="about:blank" style="display:none;" title="Map" aria-hidden="true"></iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="section-ink">
+  <div class="container">
+    <p data-edit-id="footer-acknowledgment">We play on the lands of the Traditional Owners of this land, and pay respect to Elders past and present.</p>
+    <p class="small">&copy; 2025 <span data-edit-id="club-name">A Sports Croquet Club</span></p>
+  </div>
+</footer>
+
+<!-- About photo placeholder (hidden from layout) -->
+<div style="display:none;">
+  <img id="about-photo" data-photo-edit-id="photo_lawns" src="images/about-photo.jpg" alt="The lawns">
+</div>
+
+<script src="https://edit.croquetwade.com/edit.js" data-stack="git" data-site="club-sites" data-html-file="example15/index.html" defer></script>
+
+</body>
+</html>

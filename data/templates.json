@@ -187,5 +187,110 @@
     "club_data": "headland-buderim",
     "preview_image": "previews/example9.jpg",
     "live_url": "https://websites.croquetwade.com/example9/"
+  },
+  {
+    "id": "example12",
+    "name": "Garden Green Leading",
+    "layout_pattern": "Structured editorial with leaf-silhouette dividers",
+    "mood": "Mature community, lived-in, garden-adjacent",
+    "photo_dependency": "medium",
+    "best_for": ["how_to_join", "schedule", "history", "contact", "location"],
+    "palette_family": "earthy",
+    "typography": "Merriweather + Georgia",
+    "palette": {
+      "primary": "#3B7A57",
+      "secondary": "#E8831A",
+      "background": "#FAF8F4",
+      "accent": "#D4C5A9"
+    },
+    "concept": "Morning walk through Queens Park — the place is half the story, the green carries it. National Trust restraint applied to a community croquet club. AI-generated 2026-05-24.",
+    "reference_url": "https://www.nationaltrust.org.uk/",
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example12.jpg",
+    "live_url": "https://websites.croquetwade.com/example12/"
+  },
+  {
+    "id": "example13",
+    "name": "Coastal Blue",
+    "layout_pattern": "Split-hero photo / panel with wave-divider sections",
+    "mood": "Bayside, breezy, weather-aware",
+    "photo_dependency": "medium",
+    "best_for": ["how_to_join", "schedule", "contact", "location"],
+    "palette_family": "cool",
+    "typography": "Montserrat + Open Sans",
+    "palette": {
+      "primary": "#1B6FA8",
+      "secondary": "#A8D5DC",
+      "background": "#FDFCF7",
+      "accent": "#F2E1C4"
+    },
+    "concept": "Bayside afternoon, salt on the breeze. Real-coastline blue, not fantasy-resort. AI-generated 2026-05-24 via DeepSeek V4 Flash (bake-off winner).",
+    "reference_url": "https://www.visitscotland.com/destinations-maps/coastal/",
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example13.jpg",
+    "live_url": "https://websites.croquetwade.com/example13/"
+  },
+  {
+    "id": "example14",
+    "name": "Photo-Led Documentary",
+    "layout_pattern": "Alternating photo-band / content-block rhythm",
+    "mood": "Editorial, considered, story-led",
+    "photo_dependency": "high",
+    "best_for": ["how_to_join", "history", "contact", "location"],
+    "palette_family": "neutral",
+    "typography": "Inter (800 + 400)",
+    "palette": {
+      "primary": "#C73E2C",
+      "secondary": "#1A1A1A",
+      "background": "#FFFFFF",
+      "accent": "#F7F4EF"
+    },
+    "concept": "National Geographic for a community club. Photography drives every section; type announces. AI-generated 2026-05-24.",
+    "reference_url": "https://www.discovertasmania.com.au/",
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example14.jpg",
+    "live_url": "https://websites.croquetwade.com/example14/"
+  },
+  {
+    "id": "example15",
+    "name": "Bold Modern Sports-Club",
+    "layout_pattern": "Black/paper section bands with heavy display type",
+    "mood": "Athletic, confident, sport-club identity",
+    "photo_dependency": "medium",
+    "best_for": ["schedule", "tournaments", "coaching", "contact", "fees"],
+    "palette_family": "bold",
+    "typography": "Inter (900 + 400)",
+    "palette": {
+      "primary": "#E8001D",
+      "secondary": "#1A1A1A",
+      "background": "#F5F5F5",
+      "accent": "#A6192E"
+    },
+    "concept": "Race-day morning at the lawns. We play this seriously — and the design says so. Inspired by On Running + Tracksmith. AI-generated 2026-05-24.",
+    "reference_url": "https://www.on-running.com/",
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example15.jpg",
+    "live_url": "https://websites.croquetwade.com/example15/"
+  },
+  {
+    "id": "example16",
+    "name": "Newspaper Journal Long-Form",
+    "layout_pattern": "Single-column article with drop cap + pullquotes",
+    "mood": "Editorial feature, story-led, considered",
+    "photo_dependency": "medium",
+    "best_for": ["history", "how_to_join", "contact", "location"],
+    "palette_family": "warm",
+    "typography": "Barlow Condensed + Georgia",
+    "palette": {
+      "primary": "#D1520A",
+      "secondary": "#1A1A1A",
+      "background": "#FAFAF8",
+      "accent": "#F6F0E8"
+    },
+    "concept": "Field Notes for a croquet club. Drop cap, pullquotes, ruled lines. AI-generated 2026-05-24.",
+    "reference_url": "https://www.fieldnotesbrand.com/",
+    "club_data": "headland-buderim",
+    "preview_image": "previews/example16.jpg",
+    "live_url": "https://websites.croquetwade.com/example16/"
   }
 ]

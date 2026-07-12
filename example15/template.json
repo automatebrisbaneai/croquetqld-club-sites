@@ -1,0 +1,40 @@
+{
+  "id": "example15",
+  "name": "Bold Modern Sports-Club",
+  "colour_map": {
+    "--signal": "color_primary"
+  },
+  "text_map": {
+    "page-title": "club_name",
+    "club-name": "club_name",
+    "hero-location": "address",
+    "tagline": "tagline",
+    "about-heading": "about",
+    "about-paragraph": "about",
+    "stat-1-value": "stat_1_value",
+    "stat-1-label": "stat_1_label",
+    "stat-2-value": "stat_2_value",
+    "stat-2-label": "stat_2_label",
+    "stat-3-value": "stat_3_value",
+    "stat-3-label": "stat_3_label",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "address": "address",
+    "phone": "phone",
+    "public-email": "public_email",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "map-fallback": "address"
+  },
+  "image_map": {
+    "hero-photo": "photo_players",
+    "about-photo": "photo_lawns"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "come_and_try": ".section-come-and-try",
+    "address": ".section-visit-map",
+    "stat_1_value": ".section-stats"
+  },
+  "has_map": true
+}

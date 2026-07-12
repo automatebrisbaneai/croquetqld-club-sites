@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sandgate Croquet Club – three lawns on the bay, since 1948. Join us for social and competitive croquet in Sandgate, QLD.">
+<title data-edit-id="page-title">Sandgate Croquet Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ----- RESET & BASE ----- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Open Sans', sans-serif; font-weight: 400; font-size: 18px; line-height: 1.65; color: var(--text); background: var(--paper); -webkit-font-smoothing: antialiased; }
+
+/* ----- CUSTOM PROPERTIES ----- */
+:root {
+  --ocean: #1B6FA8;
+  --ocean-deep: #0E4E7A;
+  --seafoam: #A8D5DC;
+  --sand: #F2E1C4;
+  --paper: #FDFCF7;
+  --text: #1A2A38;
+  --text-mid: #5A6B78;
+  --divider: #D6E0E8;
+  --cta-fill: #1B6FA8;
+  --nav-height: 64px;
+  --content-max: 1100px;
+  --section-pad: clamp(56px, 8vw, 120px);
+}
+
+/* ----- TYPOGRAPHY ----- */
+h1, h2, h3, .display, .eyebrow, .nav-link { font-family: 'Montserrat', sans-serif; }
+h1 { font-weight: 300; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.15; color: var(--text); }
+h2 { font-weight: 300; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.25; margin-bottom: 0.5em; }
+h3 { font-weight: 600; font-size: 1.2rem; }
+.eyebrow { font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ocean); margin-bottom: 0.75rem; display: block; }
+p, .body-text { margin-bottom: 1rem; }
+a { color: var(--ocean); text-decoration: underline; text-underline-offset: 2px; }
+a:hover, a:focus { text-decoration-thickness: 2px; }
+img { max-width: 100%; height: auto; display: block; }
+.whitespace-pre { white-space: pre-line; }
+
+/* ----- CONTAINER ----- */
+.container { max-width: var(--content-max); margin: 0 auto; padding: 0 24px; }
+
+/* ----- NAV ----- */
+nav { position: sticky; top: 0; left: 0; width: 100%; min-height: var(--nav-height); background: var(--paper); border-bottom: 1px solid var(--divider); z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 8px 24px; gap: 12px; }
+.nav-menu-toggle { display: inline-flex; align-items: center; justify-content: center; background: transparent; border: 1px solid var(--ocean); color: var(--ocean); width: 44px; height: 44px; cursor: pointer; font-size: 1.4rem; border-radius: 4px; }
+.nav-menu-toggle:focus-visible { outline: 3px solid var(--ocean); }
+@media (max-width: 767px) {
+  .nav-links { display: none; flex-basis: 100%; flex-direction: column; gap: 4px; padding: 8px 0; list-style: none; }
+  .nav-links.is-open { display: flex; }
+  .nav-links a { display: block; padding: 12px 0; font-size: 1rem; }
+}
+@media (min-width: 768px) {
+  .nav-menu-toggle { display: none; }
+}
+.nav-logo { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.1rem; color: var(--ocean); text-decoration: none; letter-spacing: -0.02em; }
+.nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav-links a { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text); text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+.nav-links a:hover, .nav-links a:focus { border-bottom-color: var(--ocean); }
+.nav-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 28px; background: var(--cta-fill); color: #fff !important; border-radius: 2px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; }
+.nav-cta:hover, .nav-cta:focus { background: var(--ocean-deep); border-bottom-color: transparent !important; }
+
+/* ----- HERO ----- */
+.section-hero { display: flex; flex-direction: column; min-height: 70vh; }
+.hero-image { width: 100%; height: 50vh; object-fit: cover; }
+.hero-panel { display: flex; flex-direction: column; justify-content: center; padding: 48px 24px; background: var(--paper); }
+.hero-panel h1 { margin-top: 0.25em; }
+.hero-panel .tagline { font-size: 1.2rem; color: var(--text-mid); margin-bottom: 1.5rem; }
+.hero-panel .btn { align-self: flex-start; }
+
+/* ----- BUTTONS ----- */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 32px; background: var(--cta-fill); color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; text-decoration: none; border: none; border-radius: 2px; cursor: pointer; transition: background 0.2s; }
+.btn:hover, .btn:focus { background: var(--ocean-deep); color: #fff; }
+.btn-outline { background: transparent; color: var(--ocean); border: 2px solid var(--ocean); }
+.btn-outline:hover, .btn-outline:focus { background: var(--ocean); color: #fff; }
+
+/* ----- SECTIONS ----- */
+section { padding: var(--section-pad) 0; }
+.section-sand { background: var(--sand); }
+.section-deep { background: var(--ocean-deep); color: var(--paper); }
+.section-deep a { color: var(--seafoam); }
+.section-deep .btn { background: var(--paper); color: var(--ocean-deep); }
+.section-deep .btn:hover { background: var(--seafoam); }
+
+/* ----- CARDS ----- */
+.card { background: var(--paper); border: 1px solid var(--divider); border-radius: 2px; padding: 24px; }
+.card h3 { margin-bottom: 0.5rem; }
+
+/* ----- WAVE DIVIDER ----- */
+.wave-divider { display: block; width: 100%; height: 48px; line-height: 0; }
+.wave-divider svg { width: 100%; height: 100%; display: block; fill: var(--seafoam); }
+.wave-divider-invert svg { fill: var(--paper); }
+
+/* ----- VISIT GRID ----- */
+.visit-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-top: 32px; }
+.visit-grid .card { height: 100%; }
+.map-container { position: relative; width: 100%; padding-top: 66.67%; overflow: hidden; border: 1px solid var(--divider); border-radius: 2px; }
+.map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.map-fallback { display: block; margin-top: 8px; font-size: 0.9rem; }
+
+/* ----- FEES TABLE ----- */
+.fees-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+.fees-table th, .fees-table td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--divider); }
+.fees-table tr:nth-child(even) { background: var(--seafoam); }
+.fees-table th { font-weight: 700; background: var(--ocean); color: #fff; }
+
+/* ----- CONTACT LIST ----- */
+.contact-list { list-style: none; }
+.contact-list li { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--seafoam); }
+.contact-list li:last-child { border-bottom: none; }
+.contact-list a { word-break: break-all; }
+
+/* ----- FOOTER ----- */
+footer { padding: 48px 0 24px; text-align: center; }
+footer p { font-size: 0.9rem; margin-bottom: 0.5rem; }
+footer .wave-divider { margin-bottom: 32px; }
+
+/* ----- RESPONSIVE ----- */
+@media (min-width: 480px) {
+  .hero-panel { padding: 64px 40px; }
+}
+
+@media (min-width: 768px) {
+  .section-hero { flex-direction: row; min-height: 100vh; }
+  .hero-image { width: 60%; height: 100vh; }
+  .hero-panel { width: 40%; padding: 80px 48px; }
+  .visit-grid { grid-template-columns: 1fr 1fr; }
+  .visit-grid .map-container { grid-column: 1 / -1; }
+  .nav-links { gap: 32px; }
+  #about .container { grid-template-columns: 1.4fr 1fr !important; align-items: start; }
+}
+
+@media (min-width: 1024px) {
+  .visit-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .visit-grid .map-container { grid-column: auto; }
+  .hero-panel { padding: 120px 64px; }
+  .container { padding: 0 40px; }
+}
+
+/* ----- ACCESSIBILITY ----- */
+:focus-visible { outline: 3px solid var(--ocean); outline-offset: 2px; }
+.nav-links a:focus-visible { border-bottom-color: var(--ocean); }
+.btn:focus-visible { outline: 3px solid var(--ocean-deep); outline-offset: 2px; }
+.card { background: var(--paper); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="#" class="nav-logo" data-edit-id="club-name">Sandgate Croquet Club</a>
+  <button class="nav-menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); document.getElementById('nav-links').classList.toggle('is-open');">
+    <span aria-hidden="true">☰</span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#come-and-try">Come &amp; Try</a></li>
+    <li><a href="#visit">Visit</a></li>
+    <li><a href="#come-and-try" class="nav-cta">Try Croquet</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="section-hero" aria-label="Hero">
+  <img id="hero-photo" data-photo-edit-id="photo_lawns" src="images/hero-photo.jpg" alt="Sandgate Croquet Club lawns looking across Moreton Bay" class="hero-image" loading="eager">
+  <div class="hero-panel">
+    <span class="eyebrow" data-edit-id="hero-location">47 Flinders Parade, Sandgate QLD 4017</span>
+    <h1><span data-edit-id="club-name">Sandgate Croquet Club</span></h1>
+    <p class="tagline" data-edit-id="tagline">Three lawns on the bay, since 1948</p>
+    <a href="#come-and-try" class="btn">Plan Your Visit</a>
+  </div>
+</section>
+
+<!-- WAVE DIVIDER -->
+<div class="wave-divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 48" preserveAspectRatio="none">
+    <path d="M0,24 Q150,8 300,24 T600,24 T900,24 T1200,24 V48 H0 Z" />
+  </svg>
+</div>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="container" style="max-width:980px; display:grid; grid-template-columns:1fr; gap:36px;">
+    <div>
+      <h2 id="about-heading" data-edit-id="about-heading">About</h2>
+      <p class="whitespace-pre" data-edit-id="about-paragraph">Sandgate Croquet Club has played on the foreshore lawns since 1948. The site looks across the mouth of the Brisbane River — old fig trees, well-kept turf, a clubhouse that's seen most of our members through three generations.
+
+About 65 of us meet through the week. We're a friendly bunch — competitive when we want to be, social the rest of the time. Beginners and visitors are always welcome.</p>
+    </div>
+    <figure style="margin:0;">
+      <img id="players-photo" data-photo-edit-id="photo_players" src="images/players-photo.jpg" alt="Members at Sandgate Croquet Club" style="width:100%; height:auto; border-radius:4px;">
+      <figcaption style="font-size:0.85rem; color:var(--text-mid); margin-top:8px; text-align:center;">Saturday social play, on the bay.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" aria-labelledby="visit-heading" class="section-sand">
+  <div class="container">
+    <h2 id="visit-heading" style="text-align:center;">Visit</h2>
+    <div class="visit-grid">
+
+      <!-- Schedule -->
+      <div class="card">
+        <h3>Play Schedule</h3>
+        <div class="whitespace-pre" data-edit-id="play-schedule">Tuesday 8.30am — Association Croquet (cool early start)
+Thursday 8.30am — Golf Croquet
+Saturday 2pm — Social play, all codes welcome
+
+Visitors and beginners always welcome. Bring a hat.</div>
+      </div>
+
+      <!-- Map -->
+      <div class="card section-visit-map">
+        <h3>Find Us</h3>
+        <address data-edit-id="address" style="font-style:normal; margin-bottom:12px;">47 Flinders Parade, Sandgate QLD 4017</address>
+        <div class="map-container">
+          <iframe id="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3538.5!2d153.069!3d-27.321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDE5JzE1LjYiUyAxNTPCsDA0JzA4LjQiRQ!5e0!3m2!1sen!2sau!4v1" allowfullscreen="" loading="lazy" title="Map showing Sandgate Croquet Club location"></iframe>
+        </div>
+        <a data-edit-id="map-fallback" href="https://maps.google.com/?q=47+Flinders+Parade+Sandgate+QLD+4017" target="_blank" rel="noopener" class="map-fallback">Open in Google Maps</a>
+      </div>
+
+      <!-- Contact Icons -->
+      <div class="card">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li>
+            <span aria-hidden="true">📞</span>
+            <a data-edit-id="phone" href="tel:0438271504">0438 271 504</a>
+          </li>
+          <li>
+            <span aria-hidden="true">✉️</span>
+            <a data-edit-id="public-email" href="mailto:secretary@sandgatecroquet.org.au">secretary@sandgatecroquet.org.au</a>
+          </li>
+          <li>
+            <span aria-hidden="true">📍</span>
+            <span>47 Flinders Parade, Sandgate QLD 4017</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COME AND TRY -->
+<section id="come-and-try" class="section-sand section-come-and-try" aria-labelledby="come-heading">
+  <div class="container" style="text-align:center;">
+    <h2 id="come-heading">Come &amp; Try</h2>
+    <p class="whitespace-pre" style="max-width:700px; margin:0 auto 32px;" data-edit-id="come-and-try">Second Saturday of every month, 2pm. Free.
+
+We provide mallets, balls, and the rules-in-plain-English version. Wear flat shoes and bring a hat — the lawn's exposed and the sun's honest.</p>
+    <a href="tel:0438271504" class="btn">Call to Book</a>
+  </div>
+</section>
+
+<!-- FEES (optional) -->
+<section id="fees" class="section-fees" aria-labelledby="fees-heading">
+  <div class="container" style="max-width:760px;">
+    <h2 id="fees-heading">Fees</h2>
+    <div data-edit-id="fees" class="whitespace-pre" style="margin-bottom:16px;">Visitor green fee: $5
+First Come &amp; Try: free
+Annual membership: $135 (concession $85)
+Family membership: $220</div>
+    <table class="fees-table" aria-label="Membership fees">
+      <thead>
+        <tr><th>Category</th><th>Cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Visitor green fee</td><td>$5</td></tr>
+        <tr><td>First Come &amp; Try</td><td>free</td></tr>
+        <tr><td>Annual membership</td><td>$135 (concession $85)</td></tr>
+        <tr><td>Family membership</td><td>$220</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:0.9rem; color:var(--text-mid);">Full details on request — just ask.</p>
+  </div>
+</section>
+
+<!-- WAVE DIVIDER -->
+<div class="wave-divider" aria-hidden="true">
+  <svg viewBox="0 0 1200 48" preserveAspectRatio="none">
+    <path d="M0,24 Q150,8 300,24 T600,24 T900,24 T1200,24 V48 H0 Z" />
+  </svg>
+</div>
+
+<!-- FOOTER -->
+<footer class="section-deep">
+  <div class="container">
+    <p data-edit-id="footer-acknowledgment">We play on the lands of the Quandamooka people, and pay respect to Elders past and present.</p>
+    <p style="margin-top:12px;">&copy; 2025 <span data-edit-id="club-name">Sandgate Croquet Club</span></p>
+  </div>
+</footer>
+
+<!-- PLAYERS PHOTO (placed after footer for layout, but still in DOM) -->
+<!-- players-photo now surfaced inline in the About section (R3 iteration cycle 17→18) -->
+
+<!-- EDITOR SCRIPT -->
+<script src="https://edit.croquetwade.com/edit.js" data-stack="git" data-site="club-sites" data-html-file="example13/index.html" defer></script>
+
+</body>
+</html>

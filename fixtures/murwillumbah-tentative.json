@@ -1,0 +1,31 @@
+{
+  "_comment": "Tentative fixture for Murwillumbah Croquet Club (NSW border). Built from public vault record + Knox Park / Mt Warning context. Schedule, about, fees are PLACEHOLDER until Joy Hughes (President + Secretary) provides them via wizard or email. Pre-built 2026-05-24 to speed G2-G4 once Wade picks Murwillumbah as the first real club.",
+  "slug": "murwillumbah",
+  "club_name": "Murwillumbah Croquet Club",
+  "tagline": "Croquet at Knox Park, in the foothills of Mount Warning",
+  "color_primary": "#3B7A57",
+  "color_secondary": "#E8831A",
+  "color_accent": "#FAF8F4",
+  "about": "[PLACEHOLDER — Joy to provide: how long the club has played at Knox Park, member count, what makes it distinctive in Murwillumbah]",
+  "play_schedule": "[PLACEHOLDER — Joy to provide: regular session days and times]",
+  "come_and_try": "[PLACEHOLDER — Joy to provide: open day format and frequency]",
+  "fees": "[PLACEHOLDER — Joy to provide if appropriate]",
+  "address": "Knox Park, Brisbane Street, Murwillumbah NSW 2489",
+  "phone": "0427 096 142",
+  "public_email": "bjhughes1@bigpond.com",
+  "footer_acknowledgment": "We play on the lands of the Bundjalung people, and pay respect to Elders past and present.",
+  "assets": [
+    {
+      "category": "photo_lawns",
+      "file_path": "apps/club-sites/example5/images/lawns-wide.jpg"
+    },
+    {
+      "category": "photo_clubhouse",
+      "file_path": "apps/club-sites/example5/images/hero-photo.jpg"
+    },
+    {
+      "category": "photo_players",
+      "file_path": "apps/club-sites/example5/images/clubhouse-warm.jpg"
+    }
+  ]
+}

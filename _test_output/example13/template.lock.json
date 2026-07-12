@@ -1,0 +1,12 @@
+{
+  "template_id": "example13",
+  "template_name": "Coastal Blue",
+  "source_summary": {
+    "slug": "_test_club",
+    "club_name": "Test Croquet & Mallet Sports Club",
+    "color_primary": "#2D5A27",
+    "color_secondary": "#C5A55A",
+    "color_accent": "#FAF6F0"
+  },
+  "asset_count": 5
+}
