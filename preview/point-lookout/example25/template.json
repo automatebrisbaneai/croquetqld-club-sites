@@ -1,0 +1,65 @@
+{
+  "id": "bento-facts",
+  "name": "Bento Facts",
+  "type": "template",
+  "version": "1.0.0",
+  "description": "Mixed-size bento tile grid that puts every club fact (where, when, fees, contact, members) on one screen without a long scroll-through story. Light, flat, rounded tiles for a fast-scanning visitor.",
+  "html_file": "index.html",
+  "text_map": {
+    "page-title": "club_name",
+    "club-name": "club_name",
+    "tagline": "tagline",
+    "about-heading": "about_heading",
+    "about-paragraph": "about",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "address": "address",
+    "phone": "phone",
+    "public-email": "public_email",
+    "members-link": "members_link",
+    "members-note": "members_note",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "map-fallback": "address"
+  },
+  "image_map": {
+    "logo": "logo",
+    "hero-photo": "photo_clubhouse",
+    "strip-photo-1": "photo_players",
+    "strip-photo-2": "photo_social",
+    "strip-photo-3": "photo_closeup",
+    "strip-photo-4": "photo_lawns"
+  },
+  "color_map": {
+    "--accent": "color_primary",
+    "--accent-tint": "color_secondary",
+    "--accent-soft": "color_accent"
+  },
+  "optional_sections": {
+    "fees": ".tile-fees",
+    "about": ".tile-about",
+    "photo_players": ".strip",
+    "members-link": ".tile-members__link"
+  },
+  "has_map": true,
+  "map": {
+    "iframe_id": "map-iframe",
+    "fallback_edit_id": "map-fallback",
+    "source": "address"
+  },
+  "editor_script": {
+    "src": "https://edit.croquetwade.com/edit.js",
+    "data_stack": "git",
+    "data_site": "club-sites",
+    "data_html_file": "bento-facts/index.html"
+  },
+  "breakpoints": [480, 768, 1024],
+  "accessibility": {
+    "min_body_text_px": 17,
+    "min_button_height_px": 56,
+    "cta_text_color": "#FFFFFF",
+    "nav_underline_on_hover_and_focus": true,
+    "content_visible_on_first_paint": true,
+    "mobile_nav_disclosure": "details/summary"
+  }
+}

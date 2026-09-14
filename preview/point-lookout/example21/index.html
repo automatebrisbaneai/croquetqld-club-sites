@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-edit-id="page-title">Point Lookout Croquet Club, Maryborough | Croquet Queensland</title>
+  <meta name="description" content="Four lawns, 33 Members, Cards played on Monday 1PM, mahjong played on Thursday 1PM">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "SportsActivityLocation",
+    "LocalBusiness"
+  ],
+  "name": "Point Lookout Croquet Club",
+  "sport": "Croquet",
+  "description": "Four lawns, 33 Members, Cards played on Monday 1PM, mahjong played on Thursday 1PM",
+  "url": "https://websites.croquetwade.com/point-lookout/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "23 North Street",
+    "addressLocality": "Maryborough",
+    "postalCode": "4650",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+  },
+  "telephone": "0407739120",
+  "email": "pointlookout@croquetqld.org",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-25.5274166",
+    "longitude": "152.6988814"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "08:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "13:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "opens": "08:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "13:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "13:00"
+    }
+  ]
+}
+</script>
+  <style>
+    :root {
+      --paper: #FFFFFF;
+      --stone-tint: #F7F4EF;
+      --ink: #1A1A1A;
+      --text-mid: #5C5A55;
+      --accent-signal: #203068;
+      --overlay-grade: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.42) 100%);
+      --font-display: 'Inter', 'Aktiv Grotesk', system-ui, -apple-system, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --nav-h: 60px;
+      --content-max: 880px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    a { color: inherit; }
+
+    /* ---------- NAV ---------- */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      color: #fff;
+      background: transparent;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+      transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+    }
+    .nav__brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    .nav__logo {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+      border-radius: 0;
+      filter: brightness(0) invert(1);
+      transition: filter 0.35s ease;
+    }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+    .nav__links a {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      padding: 4px 0;
+    }
+    .nav__links a:hover,
+    .nav__links a:focus {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1px;
+    }
+    .nav__cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 18px;
+      background: var(--accent-signal);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .nav__cta:hover,
+    .nav__cta:focus {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      filter: brightness(1.08);
+    }
+    .nav__menu { display: none; }
+    .nav__menu summary {
+      list-style: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 4px;
+    }
+    .nav__menu summary::-webkit-details-marker { display: none; }
+    .nav__menu[open] summary { border-color: rgba(0,0,0,0.3); }
+    .nav__menu__panel {
+      position: absolute;
+      top: calc(var(--nav-h) + 6px);
+      right: 24px;
+      background: var(--paper);
+      color: var(--ink);
+      border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 4px;
+      padding: 14px 18px;
+      min-width: 220px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+    }
+    .nav__menu__panel ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .nav__menu__panel a {
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      display: block;
+      padding: 4px 0;
+    }
+    .nav__menu__panel a:hover,
+    .nav__menu__panel a:focus { text-decoration: underline; text-underline-offset: 3px; }
+    .nav__menu__panel .nav__cta { width: 100%; margin-top: 4px; }
+
+    /* solidified nav after first band */
+    .nav.is-solid {
+      background: var(--stone-tint);
+      color: var(--ink);
+      border-bottom-color: rgba(0,0,0,0.12);
+    }
+    .nav.is-solid .nav__logo { filter: none; }
+    .nav.is-solid .nav__menu summary { border-color: rgba(0,0,0,0.3); }
+
+    /* ---------- PHOTO BANDS ---------- */
+    .photo-band {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .photo-band__img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    /* Keep the clubhouse signage clear of the fixed transparent header bar
+       (design review, 2026-09-15: default center/center clipped "...CLUB
+       Inc." under the nav on desktop 1440). */
+    #hero-photo { object-position: center 30%; }
+    .photo-band__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: var(--overlay-grade);
+      pointer-events: none;
+    }
+    .photo-band__overlay::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.12) 45%, transparent 70%);
+    }
+    .photo-band__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+      color: #fff;
+    }
+
+    /* hero */
+    .hero__eyebrow {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 18px;
+    }
+    .hero__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+    .hero__tagline {
+      font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+      font-weight: 400;
+      line-height: 1.4;
+      max-width: 30ch;
+      color: rgba(255,255,255,0.94);
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 0 30px;
+      background: var(--accent-signal);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+    .btn:hover,
+    .btn:focus {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+
+    /* where band */
+    .band-panel {
+      max-width: 560px;
+    }
+    .band-panel__eyebrow {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 14px;
+    }
+    .band-panel__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+    .band-panel__text {
+      font-size: 17px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.95);
+      white-space: pre-line;
+      margin-bottom: 22px;
+      max-width: 46ch;
+    }
+    .band-panel__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      padding-bottom: 3px;
+    }
+    .band-panel__link:hover,
+    .band-panel__link:focus {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      border-bottom-color: #fff;
+    }
+
+    /* members band */
+    .band-panel--members { max-width: 620px; }
+    .band-panel__caption {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 16px;
+    }
+    .band-panel__members-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      padding-bottom: 3px;
+    }
+    .band-panel__members-link:hover,
+    .band-panel__members-link:focus {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      border-bottom-color: #fff;
+    }
+
+    /* ---------- CONTENT BLOCKS ---------- */
+    .content {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 110px 24px;
+    }
+    .content--stone { background: var(--stone-tint); }
+    .content--stone .content__inner { max-width: var(--content-max); margin: 0 auto; }
+    .content__inner { max-width: var(--content-max); margin: 0 auto; }
+    .content__eyebrow {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-signal);
+      margin-bottom: 16px;
+    }
+    .content__title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 26px;
+    }
+    .content__text {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text-mid);
+      white-space: pre-line;
+      max-width: 62ch;
+    }
+    .content__text--lead { color: var(--ink); font-size: 18px; }
+    .content .btn { margin-top: 34px; }
+
+    /* fees */
+    .fees-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+    .fees-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      font-size: 17px;
+    }
+    .fees-list li:first-child { border-top: 1px solid rgba(0,0,0,0.1); }
+    .fees-list .fees-label { color: var(--ink); font-weight: 500; }
+    .fees-list .fees-value { color: var(--text-mid); text-align: right; }
+
+    /* contact */
+    .contact-list { list-style: none; }
+    .contact-list li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.12);
+    }
+    .contact-list li:first-child { border-top: 1px solid rgba(0,0,0,0.12); }
+    .contact-list .contact-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      flex-shrink: 0;
+    }
+    .contact-list .contact-value {
+      font-size: 17px;
+      color: var(--ink);
+      text-align: right;
+      word-break: break-word;
+    }
+    .contact-list a {
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,0.25);
+      padding-bottom: 1px;
+    }
+    .contact-list a:hover,
+    .contact-list a:focus {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      border-bottom-color: var(--accent-signal);
+    }
+
+    /* map */
+    .map-wrap {
+      margin-top: 40px;
+      border: 1px solid rgba(0,0,0,0.12);
+    }
+    .map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 340px;
+      border: 0;
+    }
+    .map-fallback {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--accent-signal);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(27,111,168,0.4);
+      padding-bottom: 2px;
+    }
+    .map-fallback:hover,
+    .map-fallback:focus {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.82);
+      padding: 64px 24px 40px;
+    }
+    .footer__inner {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+    .footer__name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .footer__ack {
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 60ch;
+      margin-bottom: 32px;
+    }
+    .footer__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.16);
+      padding-top: 24px;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .photo-band { height: 70vh; }
+      .content { padding: 72px 20px; }
+      .nav__links, .nav__cta { display: none; }
+      .nav__menu { display: block; }
+      .nav__brand { font-size: 14px; }
+      .hero__tagline { max-width: 40ch; }
+      #hero-photo { object-position: center 20%; }
+    }
+    @media (max-width: 480px) {
+      .photo-band { height: 70vh; }
+      .content { padding: 60px 18px; }
+      #hero-photo { object-position: center 15%; }
+      .content__title { font-size: 1.9rem; }
+      .fees-list li { flex-direction: column; gap: 4px; }
+      .fees-list .fees-value { text-align: left; }
+      .contact-list li { flex-direction: column; gap: 6px; }
+      .contact-list .contact-value { text-align: left; }
+      .footer__meta { flex-direction: column; gap: 8px; }
+    }
+  </style>
+<link rel="canonical" href="https://websites.croquetwade.com/point-lookout/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Point Lookout Croquet Club, Maryborough | Croquet Queensland">
+<meta property="og:description" content="Four lawns, 33 Members, Cards played on Monday 1PM, mahjong played on Thursday 1PM">
+<meta property="og:url" content="https://websites.croquetwade.com/point-lookout/">
+<meta property="og:image" content="images/photo_closeup.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="site-nav">
+    <a class="nav__brand" href="#top">
+      <img class="nav__logo" id="logo" data-photo-edit-id="logo"
+           src="images/logo.jpg"
+           alt="Point Lookout Croquet Club crest" width="30" height="30">
+      <span>Point Lookout Croquet Club</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#where">Where</a>
+      <a href="#when">When we play</a>
+      <a href="#come-and-try">Come and try</a>
+      <a href="#fees">Fees</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="nav__cta" href="#come-and-try">Come and try</a>
+
+    <details class="nav__menu">
+      <summary>Menu</summary>
+      <div class="nav__menu__panel">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#where">Where</a></li>
+          <li><a href="#when">When we play</a></li>
+          <li><a href="#come-and-try">Come and try</a></li>
+          <li><a href="#fees">Fees</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="tel:0407739120">Call 0407739120</a></li>
+          <li><a class="nav__cta" href="#come-and-try">Come and try</a></li>
+        </ul>
+      </div>
+    </details>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO / PHOTO BAND 1 -->
+    <section class="photo-band" aria-label="Members playing croquet on a wide morning-light lawn with the clubhouse behind">
+      <img class="photo-band__img" id="hero-photo" data-photo-edit-id="photo_clubhouse"
+           src="images/photo_clubhouse.jpg"
+           alt="A wide croquet lawn in morning light with the clubhouse in the background" width="1920" height="1080">
+      <div class="photo-band__overlay" aria-hidden="true"></div>
+      <div class="photo-band__content">
+        <span class="hero__eyebrow" data-edit-id="hero-location">Maryborough, Queensland</span>
+        <h1 class="hero__title" data-edit-id="club-name">Point Lookout, Maryborough</h1>
+        <p class="hero__tagline" data-edit-id="tagline">Four lawns, 33 Members, Cards played on Monday 1PM, mahjong played on Thursday 1PM</p>
+        <a class="btn" href="#come-and-try">Come and try</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="content" id="about">
+      <div class="content__inner">
+        <span class="content__eyebrow">About</span>
+        <h2 class="content__title" data-edit-id="about-heading">About the club</h2>
+        <p class="content__text content__text--lead" data-edit-id="about-paragraph">POINT LOOKOUT HISTORY
+
+On 21st September 1898 the Point Lookout Croquet Club was formally opened and named in the grounds of Stirling House in North Street, Maryborough, witnessed by a large gathering of over a hundred ladies and gentlemen.
+
+At that time Maryborough was the only major port north of Brisbane.  To notify the workers at the Maryborough wharfs that a ship was approaching, a lookout was stationed, where Churchill Street meets the river, to signal its approach, hence the name Point Lookout.
+
+The Club operated from Stirling House for three years,
+
+In 1900 the first intercity tournament was conducted in Maryborough between Point Lookout and a Brisbane team.
+
+The following year Point Lookout made a return visit to Brisbane.  They were successful on both occasions.
+
+Soon after the information of Point Lookout, two other croquet clubs were started in Maryborough.
+
+These operated for several years, finally closing in the 1960’s.  Clubs also opened in Gympie, Childers, Bundaberg, and Hervey Bay.
+
+Intercity games were played with members travelling first by train and then by bus to participate.
+
+These trips were very popular and a great social occasion.  Intercity competitions are still being held today.
+
+Unfortunately, the Gympie Club no longer exists.
+
+In 1902 Point Lookout was offered, and accepted, rental of its present site at 23 North Street, for ten pounds annually.
+
+In 1956, following the death of Miss Bonarius, the last remaining member of the family that owned the land, a decision was made to purchase.
+
+Mrs Alf Wynne, Patroness, and wife of the founder of Station 4MB, loaned the club the money to buy the land.
+
+When the loan was repaid, she donated the interest charged back to the club.
+
+Point Lookout is the only Croquet Club in Queensland that owns its own courts.
+
+From that time until present the club has progressed under the leadership of many dedicated members whose efforts ensured that Point Lookout increased the number of courts to four, added a club house and several sheds for storage and operated successfully and continually for the 125years it has existed.
+
+Point Lookout produced several players who played State, National and Interstate levels.
+
+One, Lorraine Bray, is listed on the Queensland Croquet Hall of Fame and the Australian Croquet Hall of Legends.
+
+The history of the club was celebrated at the Clubhouse on the 21st of September 2023 with a luncheon at which over 50 past and present members and guests attended.
+
+ 
+
+Fund Raising
+
+Point Lookout fund raises via- PLAYING Cards on a Monday, and, Mahjong on a Thursday.  We hold events such as High Teas etc.  We have club Tournaments, Regional Tournaments, Open Tournaments, and have started and new monthly Shield Tournament to encourage people to our town and our club.
+
+Our Mission                                                                                                               
+
+We wish to grow our club membership through advertising, social media and come &amp; try days.  We have a strong history and our members are mainly the retired and aged.  In saying that people of all ages are discovering Croquet is a stimulating way to get healthy exercise, and, have a good time together. Our members volunteer their time to help with the maintenance of the courts and grounds, which of course is forever ongoing and costly.  We have a great camaraderie and friendship within our club.  We are always brainstorming ways to encourage people to try our wonderful game.</p>
+      </div>
+    </section>
+
+    <!-- WHERE / PHOTO BAND 2 -->
+    <section class="photo-band" id="where" aria-label="The well-kept croquet lawns looking across the bay">
+      <img class="photo-band__img" id="lawns-photo" data-photo-edit-id="photo_lawns"
+           src="images/photo_lawns.jpg"
+           alt="Well-kept croquet lawns looking across the bay" width="1920" height="1080">
+      <div class="photo-band__overlay" aria-hidden="true"></div>
+      <div class="photo-band__content">
+        <div class="band-panel">
+          <span class="band-panel__eyebrow">Location</span>
+          <h2 class="band-panel__title">Where</h2>
+          <p class="band-panel__text" data-edit-id="address">23 North Street</p>
+          <a class="band-panel__link" href="https://www.google.com/maps/search/?api=1&query=23+North+Street%2C+Maryborough%2C+Queensland">Open in Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHEN WE PLAY -->
+    <section class="content" id="when">
+      <div class="content__inner">
+        <span class="content__eyebrow">Schedule</span>
+        <h2 class="content__title">When we play</h2>
+        <p class="content__text" data-edit-id="play-schedule">Tue 8:30am — Golf Croquet
+Sat 8:30am — Golf Croquet
+Tuesday 1:00pm — Association Croquet
+Wednesday 8:30am — Ricochet Croquet
+Friday 1:00pm — Golf,Ricochet,Association
+Saturday 1:00pm — Social all codes</p>
+      </div>
+    </section>
+
+    <!-- COME AND TRY -->
+    <section class="content content--stone section-come-and-try" id="come-and-try">
+      <div class="content__inner">
+        <span class="content__eyebrow">Get started</span>
+        <h2 class="content__title">Come and try</h2>
+        <p class="content__text" data-edit-id="come-and-try">Wear flat shoes,
+Mallets available </p>
+        <a class="btn" href="mailto:pointlookout@croquetqld.org">Book a place</a>
+      </div>
+    </section>
+
+    <!-- MEMBERS / PHOTO BAND 3 -->
+    <section class="photo-band photo-band-members" aria-label="Members playing croquet on a Saturday morning">
+      <img class="photo-band__img" id="players-photo" data-photo-edit-id="photo_players"
+           src="images/photo_players.jpeg"
+           alt="Members playing croquet on a Saturday morning" width="1920" height="1080">
+      <div class="photo-band__overlay" aria-hidden="true"></div>
+      <div class="photo-band__content">
+        <div class="band-panel band-panel--members">
+          <span class="band-panel__caption" data-edit-id="players-caption">Tue 8:30am — Golf Croquet
+Sat 8:30am — Golf Croquet
+Tuesday 1:00pm — Association Croquet
+Wednesday 8:30am — Ricochet Croquet
+Friday 1:00pm — Golf,Ricochet,Association
+Saturday 1:00pm — Social all codes</span>
+          <h2 class="band-panel__title">Members</h2>
+          <a class="band-panel__members-link" data-edit-id="members-link" href="https://www.revolutionise.com.au/pl">Log in to revSPORT</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEES -->
+    <section class="content section-fees" id="fees">
+      <div class="content__inner">
+        <span class="content__eyebrow">Membership</span>
+        <h2 class="content__title">Fees</h2>
+        <p class="content__text" data-edit-id="fees">$480.00 Annually</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="content" id="contact">
+      <div class="content__inner">
+        <span class="content__eyebrow">Get in touch</span>
+        <h2 class="content__title">Contact</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Phone</span>
+            <span class="contact-value"><a data-edit-id="phone" href="tel:0407739120">0407739120</a></span>
+          </li>
+          <li>
+            <span class="contact-label">Email</span>
+            <span class="contact-value"><a data-edit-id="public-email" href="mailto:pointlookout@croquetqld.org">pointlookout@croquetqld.org</a></span>
+          </li>
+          <li>
+            <span class="contact-label">Address</span>
+            <span class="contact-value" data-edit-id="address">23 North Street</span>
+          </li>
+        </ul>
+
+        <div class="section-where-map">
+          <div class="map-wrap">
+            <iframe id="map-iframe"
+                    title="Map to Point Lookout Croquet Club"
+                    src="https://www.google.com/maps?q=23%20North%20Street%2C%20Maryborough%2C%20Queensland&output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <a class="map-fallback" data-edit-id="map-fallback"
+             href="https://www.google.com/maps/search/?api=1&query=23+North+Street%2C+Maryborough%2C+Queensland">23 North Street</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__name">Point Lookout Croquet Club</p>
+      <p class="footer__ack" data-edit-id="footer-acknowledgment">Fraser Coast City Council</p>
+      <div class="footer__meta">
+        <span>© 2026 Point Lookout Croquet Club</span>
+        <span>Photography: club members</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('site-nav');
+      var hero = document.querySelector('.photo-band');
+      if (!nav || !hero) return;
+      var onScroll = function () {
+        var threshold = hero.offsetHeight - 60;
+        if (window.scrollY > threshold) {
+          nav.classList.add('is-solid');
+        } else {
+          nav.classList.remove('is-solid');
+        }
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+    })();
+  </script>
+<script src="https://edit.croquetwade.com/edit.js"
+        data-stack="git"
+        data-site="club-sites"
+        data-html-file="point-lookout/index.html"
+        data-comments="on"
+        defer></script>
+</body>
+</html>

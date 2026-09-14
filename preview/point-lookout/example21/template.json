@@ -1,0 +1,41 @@
+{
+  "id": "pNN-photo-led-documentary",
+  "name": "Photo-Led Documentary",
+  "version": "1.0.0",
+  "type": "template",
+  "status": "ready",
+  "description": "Full-bleed photography carries the page; type is utility only. Alternating photo-band and content-block rhythm reads like a magazine spread.",
+  "has_map": true,
+  "text_map": {
+    "page-title": "club_name",
+    "hero-location": "suburb_line",
+    "club-name": "club_name",
+    "tagline": "tagline",
+    "about-paragraph": "about",
+    "address": "address",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "players-caption": "play_schedule",
+    "members-link": "public_email",
+    "fees": "fees",
+    "phone": "phone",
+    "public-email": "public_email",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "map-fallback": "address"
+  },
+  "image_map": {
+    "logo": "logo",
+    "hero-photo": "photo_clubhouse",
+    "lawns-photo": "photo_lawns",
+    "players-photo": "photo_players"
+  },
+  "colour_map": {
+    "--accent-signal": "color_primary"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "come-and-try": ".section-come-and-try",
+    "photo_players": ".photo-band-members",
+    "address": ".section-where-map"
+  }
+}

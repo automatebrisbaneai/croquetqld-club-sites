@@ -1,0 +1,37 @@
+{
+  "id": "pNN-quiet-editorial",
+  "name": "Quiet Editorial",
+  "version": "1.0.0",
+  "type": "club-site",
+  "has_map": true,
+  "text_map": {
+    "hero-eyebrow": "suburb_line",
+    "club-name": "club_name_full",
+    "tagline": "tagline",
+    "hero-when": "play_schedule_first",
+    "hero-phone": "phone",
+    "about-heading": "club_name_full",
+    "about-paragraph": "about",
+    "address": "address",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "phone": "phone",
+    "public-email": "public_email",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "hero-address": "address",
+    "about-photo-caption": "suburb_line"
+  },
+  "image_map": {
+    "about-photo": "photo_clubhouse"
+  },
+  "colour_map": {
+    "--accent": "color_primary"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "address": ".section-where-map",
+    "members_link": ".members-link-row",
+    "footer_acknowledgment": ".footer-ack"
+  }
+}

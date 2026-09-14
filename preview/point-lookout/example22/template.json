@@ -1,0 +1,96 @@
+{
+  "id": "pNN-heritage-club",
+  "name": "Heritage Club",
+  "type": "template-brief",
+  "status": "brief",
+  "created": "2026-09-14",
+  "modified": "2026-09-14",
+  "html_file": "pNN-heritage-club/index.html",
+  "has_map": true,
+  "text_map": {
+    "page-title": "club_name",
+    "hero-established": "established_year",
+    "club-name": "club_name",
+    "hero-photo-caption": "suburb_line",
+    "nav-established": "established_year",
+    "hero-tagline": "tagline",
+    "footer-established": "established_year",
+    "about-heading": "about_heading",
+    "about-paragraph": "about",
+    "fees": "fees",
+    "address": "address",
+    "map-fallback": "address",
+    "play-schedule-note": "play_schedule",
+    "come-and-try": "come_and_try",
+    "phone": "phone",
+    "public-email": "public_email",
+    "members-note": "members_note",
+    "members-link": "revsport_url",
+    "footer-acknowledgment": "footer_acknowledgment"
+  },
+  "image_map": {
+    "hero-photo": "photo_clubhouse",
+    "about-photo": "photo_lawns",
+    "crest": "logo",
+    "crest-footer": "logo"
+  },
+  "colour_map": {
+    "--maroon-deep": "color_primary",
+    "--brass": "color_accent"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "hero-established": ".hero-established-eyebrow",
+    "established_year": ".established-year",
+    "members-link": ".members-link-row",
+    "address": ".section-where-map"
+  },
+  "seo": {
+    "h1": "{club_name} Croquet Club, {suburb}",
+    "meta_title": "{club_name} Croquet Club, {suburb} | Established {established_year} | Croquet Queensland",
+    "meta_description": "{about:155}"
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": ["SportsActivityLocation", "LocalBusiness"],
+    "name": "{club_name} Croquet Club",
+    "sport": "Croquet",
+    "foundingDate": "{established_year}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{address}",
+      "addressRegion": "QLD",
+      "addressCountry": "AU"
+    },
+    "telephone": "{phone}",
+    "email": "{public_email}",
+    "openingHours": "{play_schedule_schema}",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "{lat}",
+      "longitude": "{lng}"
+    }
+  },
+  "adaptive": {
+    "hero-established": {
+      "hidden_when": "no established_year",
+      "fallback": "hero-location eyebrow"
+    },
+    "crest": {
+      "hidden_when": "no crest image uploaded",
+      "fallback": "nav shows club name only, footer crest repeat drops"
+    },
+    "fees": {
+      "hidden_when": "empty",
+      "reflow": "Contact moves up"
+    },
+    "map": {
+      "hidden_when": "address empty",
+      "reflow": "Where becomes text-only"
+    }
+  },
+  "locality_hooks": {
+    "no_established_year": "recommend a different style in the wizard",
+    "established_before_1930": "footer gains a small 'over a century of croquet' line, generated from the year"
+  }
+}

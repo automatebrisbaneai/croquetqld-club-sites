@@ -1,0 +1,47 @@
+{
+  "id": "p10-first-visit",
+  "name": "First Visit / Wayfinding",
+  "type": "template",
+  "version": "1.0.0",
+  "has_map": true,
+  "text_map": {
+    "page-title": "club_name",
+    "club-name": "club_name",
+    "hero-summary": "tagline",
+    "address": "address",
+    "parking": "parking",
+    "come-and-try": "come_and_try",
+    "play-schedule": "play_schedule",
+    "about-heading": "about_heading",
+    "about-paragraph": "about",
+    "fees": "fees",
+    "phone": "phone",
+    "public-email": "public_email",
+    "members-link": "members_link",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "map-fallback": "address"
+  },
+  "image_map": {
+    "about-photo": "photo_players"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "parking": ".parking-line",
+    "members-link": ".members-link-row"
+  },
+  "colour_map": {
+    "--accent": "color_primary",
+    "--panel-bg": "color_accent"
+  },
+  "map": {
+    "enabled": true,
+    "iframe_id": "map-iframe",
+    "source": "address",
+    "fallback": "google_maps_search"
+  },
+  "seo": {
+    "h1": "{club_name} Croquet Club, {suburb}",
+    "meta_title": "{club_name} Croquet Club, {suburb} | Croquet Queensland",
+    "meta_description": "about"
+  }
+}

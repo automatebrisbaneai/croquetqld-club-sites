@@ -1,0 +1,23 @@
+{
+  "template_id": "example21",
+  "template_name": "Photo-Led Documentary",
+  "source_summary": {
+    "slug": "point-lookout",
+    "club_name": "Point Lookout",
+    "color_primary": "#203068",
+    "color_secondary": "#D8A018",
+    "color_accent": "#EEF0F7"
+  },
+  "asset_count": 6,
+  "directory_owned_snapshot": {
+    "club_name": "Point Lookout",
+    "tagline": "Four lawns, 33 Members, Cards played on Monday 1PM, mahjong played on Thursday 1PM",
+    "play_schedule": "Tue 8:30am \u2014 Golf Croquet\nSat 8:30am \u2014 Golf Croquet\nTuesday 1:00pm \u2014 Association Croquet\nWednesday 8:30am \u2014 Ricochet Croquet\nFriday 1:00pm \u2014 Golf,Ricochet,Association\nSaturday 1:00pm \u2014 Social all codes",
+    "come_and_try": "Wear flat shoes,\nMallets available ",
+    "fees": "$480.00 Annually",
+    "address": "23 North Street",
+    "phone": "0407739120",
+    "public_email": "pointlookout@croquetqld.org",
+    "members_link": "https://www.revolutionise.com.au/pl"
+  }
+}
