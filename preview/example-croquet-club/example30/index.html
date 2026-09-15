@@ -267,6 +267,21 @@
   .story-more__close{display:none;}
   details.story-details[open] .story-more__open{display:none;}
   details.story-details[open] .story-more__close{display:inline;}
+  details.fees-details{margin-top:10px;}
+  details.fees-details summary{
+    cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--display);font-size:.92rem;color:var(--paper);
+  }
+  details.fees-details summary::-webkit-details-marker{display:none;}
+  details.fees-details summary::after{
+    content:"+";font-size:1.2em;line-height:1;display:inline-flex;
+    width:20px;height:20px;border-radius:50%;align-items:center;justify-content:center;
+    border:2px solid var(--paper);flex:none;
+  }
+  details.fees-details[open] summary::after{content:"\2013";}
+  .fees-details__body{
+    margin:8px 0 0;font-size:.92rem;line-height:1.6;color:var(--paper);white-space:pre-line;
+  }
 
   /* ---------- FIND US ---------- */
   .findus__grid{display:grid;grid-template-columns:1fr;gap:28px;}
@@ -382,8 +397,7 @@
       <div class="ticket__item fee-slot">
         <b class="ticket__label">What it costs</b>
         <span class="ticket__value" data-edit-id="fees">Annual membership: $220 (or four quarterly instalments of $55)
-Green fees: $5 a visit (covers lawn upkeep and equipment)
-Junior membership (under 18): $60 (half price, mallets provided)</span>
+Green fees: $5 a visit (covers lawn upkeep and equipment)</span>
       </div>
       <div class="ticket__item">
         <b class="ticket__label">Ring us</b>
@@ -440,9 +454,12 @@ Sunday 8:00am–11:00am — Association / Ricochet</p>
         <div class="pricetag fee-slot">
           <b class="pricetag__label">Membership</b>
           <span class="pricetag__value" data-edit-id="fees">Annual membership: $220 (or four quarterly instalments of $55)
-Green fees: $5 a visit (covers lawn upkeep and equipment)
-Junior membership (under 18): $60 (half price, mallets provided)</span>
+Green fees: $5 a visit (covers lawn upkeep and equipment)</span>
           <p class="fee-first-visit-row" data-edit-id="fee-first-visit">First two visits free, mallets provided</p>
+          <details class="fees-details">
+            <summary>Full fee details</summary>
+            <p class="fees-details__body" data-edit-id="fees-full">Junior membership (under 18): $60 (half price, mallets provided)</p>
+          </details>
         </div>
       </div>
     </div>

@@ -253,6 +253,15 @@
   .story-more[open] summary::after{content:"hide the full story";}
   .story-more summary::before{content:"+";font-family:'Fraunces',serif;font-weight:900;font-size:1.3rem;color:var(--gold-deep);}
   .story-more[open] summary::before{content:"–";}
+  .fees-details{margin-top:14px;border-top:2px solid var(--ink);padding-top:12px;}
+  .fees-details summary{
+    cursor:pointer;list-style:none;font-weight:700;font-family:'Lora',serif;font-size:.92rem;
+    display:inline-flex;align-items:center;gap:8px;color:var(--ink);
+  }
+  .fees-details summary::-webkit-details-marker{display:none;}
+  .fees-details summary::before{content:"+";font-family:'Fraunces',serif;font-weight:900;font-size:1.2rem;color:var(--gold-deep);}
+  .fees-details[open] summary::before{content:"–";}
+  .fees-details .fees-details__body{margin:8px 0 0;font-family:inherit;font-weight:400;font-size:.92rem;color:var(--ink-soft);line-height:1.55;white-space:pre-line;}
   .welcome-lede{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;line-height:1.45;
     color:var(--ink);max-width:56ch;margin:0 0 8px;}
   .fee-first-visit-row{margin-top:2px;font-size:1rem;font-weight:500;color:var(--cream);}
@@ -414,8 +423,7 @@
           <div class="fact section-fees">
             <span class="fact__label">Cost</span>
             <span class="fact__value" data-edit-id="cover-cost">Annual membership: $220 (or four quarterly instalments of $55)
-Green fees: $5 a visit (covers lawn upkeep and equipment)
-Junior membership (under 18): $60 (half price, mallets provided)</span>
+Green fees: $5 a visit (covers lawn upkeep and equipment)</span>
             <p class="fee-first-visit-row" data-edit-id="fee-first-visit">First two visits free, mallets provided</p>
           </div>
           <div class="fact">
@@ -449,8 +457,11 @@ Sunday 8:00am–11:00am — Association / Ricochet</p>
         <div class="card card--fee section-fees">
           <h3>Membership</h3>
           <p data-edit-id="fees">Annual membership: $220 (or four quarterly instalments of $55)
-Green fees: $5 a visit (covers lawn upkeep and equipment)
-Junior membership (under 18): $60 (half price, mallets provided)</p>
+Green fees: $5 a visit (covers lawn upkeep and equipment)</p>
+          <details class="fees-details">
+            <summary>Full fee details</summary>
+            <p class="fees-details__body" data-edit-id="fees-full">Junior membership (under 18): $60 (half price, mallets provided)</p>
+          </details>
         </div>
       </div>
     </div>

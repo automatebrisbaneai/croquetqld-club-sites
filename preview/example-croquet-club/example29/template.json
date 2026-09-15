@@ -14,6 +14,7 @@
     "parking": "parking",
     "play-schedule": "play_schedule",
     "fees": "fees",
+    "fees-full": "fees_full",
     "come-and-try": "come_and_try",
     "phone": "phone",
     "public-email": "public_email",
@@ -32,6 +33,7 @@
   },
   "optional_sections": {
     "fees": ".t-fees",
+    "fees_full": ".fees-details",
     "parking": ".t-map__parking",
     "members_link": ".t-members",
     "contact_name": ".contact-name-row",

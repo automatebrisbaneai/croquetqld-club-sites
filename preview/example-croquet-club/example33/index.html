@@ -274,6 +274,15 @@
   .story__toggle:checked ~ .story__more .story__more-open{display:none;}
   .story__toggle:checked ~ .story__more .story__more-close{display:inline;}
   .story__toggle:checked ~ .story__more svg{transform:rotate(180deg);}
+  .fees-details{margin-top:10px;}
+  .fees-details summary{
+    cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;
+    font-weight:800;font-size:.82rem;color:var(--brand);
+  }
+  .fees-details summary::-webkit-details-marker{display:none;}
+  .fees-details summary::after{content:"+";font-size:1.15em;line-height:1;}
+  .fees-details[open] summary::after{content:"\2013";}
+  .fees-details__body{margin:6px 0 0;font-size:.85rem;line-height:1.55;color:var(--ink-soft,#555);white-space:pre-line;}
 
   /* ---------- Find us ---------- */
   .findus__grid{display:grid;gap:24px;}
@@ -445,9 +454,12 @@ Sunday 8:00am–11:00am — Association / Ricochet</p>
       <div class="section-fees schedule__sticker">
         <p class="sticker__label">Annual fee</p>
         <p class="sticker__value" data-edit-id="fees">Annual membership: $220 (or four quarterly instalments of $55)
-Green fees: $5 a visit (covers lawn upkeep and equipment)
-Junior membership (under 18): $60 (half price, mallets provided)</p>
+Green fees: $5 a visit (covers lawn upkeep and equipment)</p>
         <p class="fee-first-visit-row" data-edit-id="fee-first-visit">First two visits free, mallets provided</p>
+        <details class="fees-details">
+          <summary>Full fee details</summary>
+          <p class="fees-details__body" data-edit-id="fees-full">Junior membership (under 18): $60 (half price, mallets provided)</p>
+        </details>
       </div>
     </div>
   </section>

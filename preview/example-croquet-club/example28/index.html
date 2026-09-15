@@ -295,6 +295,22 @@
       .story:has(.story-fold:not([open])) .story__body{column-count:1;height:360px;}
     }
   }
+  .fees-fold{margin-top:10px;}
+  .fees-fold summary{
+    cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;
+    font-family:'Fraunces',serif;font-weight:700;font-size:.9rem;color:var(--navy);
+    padding:4px 0;min-height:var(--tap);
+  }
+  .fees-fold summary::-webkit-details-marker{display:none;}
+  .fees-fold summary::after{
+    content:"+";font-size:1.1em;line-height:1;flex:none;
+    width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;
+    border:2px solid var(--navy);border-radius:50%;color:var(--navy);
+  }
+  .fees-fold[open] summary::after{content:"\2013";}
+  .fees-fold__body{
+    margin:10px 0 0;font-size:.92rem;line-height:1.6;color:var(--navy-mid);white-space:pre-line;
+  }
 
   /* ========== GALLERY ========== */
   .gallery{background:var(--navy-deep);padding:6px 0;}
@@ -469,8 +485,7 @@
         <div class="fact fact--fees">
           <span class="fact__label">To join the club</span><!-- -->
           <p class="fact__value" data-edit-id="cost-value">Annual membership: $220 (or four quarterly instalments of $55)
-Green fees: $5 a visit (covers lawn upkeep and equipment)
-Junior membership (under 18): $60 (half price, mallets provided)</p>
+Green fees: $5 a visit (covers lawn upkeep and equipment)</p>
         </div>
         <div class="fact fee-first-visit-row">
           <span class="fact__label">First visit</span><!-- -->
@@ -603,10 +618,13 @@ Today the club sits on the same corner of land it started on, shaded by establis
           <div>
             <span class="label">Membership</span><!-- -->
             <p class="value" data-edit-id="fees" style="font-weight:500;font-size:1rem;">Annual membership: $220 (or four quarterly instalments of $55)
-Green fees: $5 a visit (covers lawn upkeep and equipment)
-Junior membership (under 18): $60 (half price, mallets provided)</p>
+Green fees: $5 a visit (covers lawn upkeep and equipment)</p>
           </div>
         </div>
+        <details class="fees-fold">
+          <summary>Full fee details</summary>
+          <p class="fees-fold__body" data-edit-id="fees-full">Junior membership (under 18): $60 (half price, mallets provided)</p>
+        </details>
         <div class="contact-card__ctas">
           <a class="btn btn--navy members-link-row" style="display:none" href="https://www.revolutionise.com.au/pl" data-edit-id="members-link" target="_blank" rel="noopener">Join online</a>
           <a class="btn btn--outline social-row" style="display:none" style="color:var(--navy);border-color:var(--navy-line);" href="" data-edit-id="facebook-link" target="_blank" rel="noopener">Find us on Facebook</a>
