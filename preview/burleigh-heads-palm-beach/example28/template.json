@@ -22,6 +22,7 @@
     "play-schedule": "play_schedule",
     "about-paragraph": "about",
     "fees": "fees",
+    "fees-full": "fees_full",
     "parking": "parking",
     "members-link": "members_link",
     "facebook-link": "facebook_url",
@@ -40,6 +41,7 @@
   },
   "optional_sections": {
     "fees": ".section-fees",
+    "fees_full": ".fees-fold",
     "parking": ".parking-row",
     "members_link": ".members-link-row",
     "facebook_url": ".social-row",

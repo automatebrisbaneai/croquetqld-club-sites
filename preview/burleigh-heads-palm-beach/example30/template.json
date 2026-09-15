@@ -12,6 +12,7 @@
     "address": "address",
     "play-schedule-first": "play_schedule_first",
     "fees": "fees",
+    "fees-full": "fees_full",
     "phone": "phone",
     "come-and-try": "come_and_try",
     "about-paragraph": "about",
@@ -35,6 +36,7 @@
   },
   "optional_sections": {
     "fees": ".fee-slot",
+    "fees_full": ".fees-details",
     "parking": ".parking-line",
     "contact_name": ".contact-name-row",
     "members_link": ".members-link-row",

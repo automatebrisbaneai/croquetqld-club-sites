@@ -13,6 +13,7 @@
     "come-and-try": "come_and_try",
     "play-schedule": "play_schedule",
     "fees": "fees",
+    "fees-full": "fees_full",
     "address": "address",
     "parking": "parking",
     "phone": "phone",
@@ -35,6 +36,7 @@
   },
   "optional_sections": {
     "fees": ".section-fees",
+    "fees_full": ".fees-details",
     "parking": ".parking-line",
     "members_link": ".members-link-row",
     "facebook_url": ".social-row",

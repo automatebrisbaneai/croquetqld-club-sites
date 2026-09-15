@@ -307,6 +307,26 @@
     transition:transform .28s var(--ease);
   }
   details.about-details[open] summary::after{content:"–";transform:rotate(180deg);}
+  details.fees-details{margin-top:10px;}
+  details.fees-details summary{
+    cursor:pointer;list-style:none;
+    display:inline-flex;align-items:center;gap:8px;
+    font-weight:800;font-size:14px;color:var(--tile-ink);
+    padding:2px 0;
+  }
+  details.fees-details summary::-webkit-details-marker{display:none;}
+  details.fees-details summary::after{
+    content:"+";font-size:1.2em;line-height:1;
+    display:inline-flex;width:20px;height:20px;border-radius:50%;
+    align-items:center;justify-content:center;
+    background:#fff;color:var(--tile-ink);
+    transition:transform .28s var(--ease);
+  }
+  details.fees-details[open] summary::after{content:"–";transform:rotate(180deg);}
+  .fees-details__body{
+    margin-top:8px;padding-top:8px;border-top:2px dashed var(--line);
+    font-size:14px;line-height:1.6;color:var(--ink-soft);white-space:pre-line;
+  }
   .about-prose{
     margin-top:18px;padding-top:18px;border-top:2px dashed var(--line);
     font-size:17.5px;line-height:1.75;color:var(--ink);
@@ -425,7 +445,12 @@ Saturday 8:00am — Ricochet / Association</p>
       <section class="tile tile--half t-soft t-fees">
         <p class="tag">Joining in</p>
         <h2>What it costs</h2>
-        <p class="fees-value" data-edit-id="fees">FEES  - As at 1 Jan 2026: 
+        <p class="fees-value" data-edit-id="fees">Annual membership: $280 (or four quarterly instalments of $70)
+Green fees: $6 a day, capped at $18 a week</p>
+        <p class="fee-first-visit-row" data-edit-id="fee-first-visit">Two free trial sessions, then $30 for four weeks' provisional membership.</p>
+        <details class="fees-details">
+          <summary>Full fee details</summary>
+          <p class="fees-details__body" data-edit-id="fees-full">FEES  - As at 1 Jan 2026: 
 
 After an initial two free trial sessions, prospective members are offered "Provisional Membership" for a period of 4 weeks. The cost of this membership is $30 and includes:
 
@@ -441,7 +466,7 @@ Junior players (under 21 years) pay half the membership fee and half the affilia
 Mallets are provided for beginners, but members are encouraged to obtain their own.  These are available either new or second-hand.
 
 Membership and green fees cover the continuous maintenance and renovation of our 3 lawns, purchase of equipment and payment of utilities and other operational costs.  Regular fund-raising efforts supplement the income from fees.</p>
-        <p class="fee-first-visit-row" data-edit-id="fee-first-visit">Two free trial sessions, then $30 for four weeks' provisional membership.</p>
+        </details>
       </section>
 
       <!-- 4: first visit -->

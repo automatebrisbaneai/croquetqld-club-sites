@@ -19,6 +19,7 @@
     "come-and-try": "come_and_try",
     "about-paragraph": "about",
     "fees": "fees",
+    "fees-full": "fees_full",
     "parking": "parking",
     "address": "address",
     "members-link": "members_link",
@@ -39,6 +40,7 @@
   },
   "optional_sections": {
     "fees": ".section-fees",
+    "fees_full": ".fees-details",
     "parking": ".parking-row",
     "members_link": ".members-link-row",
     "facebook_url": ".social-row",
