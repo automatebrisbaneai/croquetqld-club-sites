@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta name="robots" content="noindex">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-edit-id="page-title">Point Lookout Croquet Club, Maryborough | Croquet Queensland</title>
+<meta name="description" content="Four lawns, 33 Members, Cards played on Monday 1PM, mahjong played on Thursday 1PM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Point Lookout Croquet Club",
+  "sport": "Croquet",
+  "description": "Four lawns, 33 Members, Cards played on Monday 1PM, mahjong played on Thursday 1PM",
+  "url": "https://websites.croquetwade.com/point-lookout-round2/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "23 North Street",
+    "addressLocality": "Maryborough",
+    "postalCode": "4650",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+  },
+  "telephone": "0407739120",
+  "email": "pointlookout@croquetqld.org",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-25.5274166",
+    "longitude": "152.6988814"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "08:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "13:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "opens": "08:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "13:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "13:00"
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --navy:#203068;
+    --navy-deep:#141F45;
+    --gold:#D8A018;
+    --gold-deep:#B7860F;
+    --mist:#EEF0F7;
+    --ink:#20222B;
+    --ink-soft:#4B4D57;
+    --paper:#FBF9F4;
+    --paper-dim:#F3F0E7;
+    --line:#E2DFD4;
+    --line-on-navy:rgba(255,255,255,.16);
+    --white:#FFFFFF;
+    --radius:6px;
+    --radius-lg:10px;
+    --maxw:1160px;
+    --panel-w:420px;
+    --tap:44px;
+    --btn:54px;
+    --font-display:'Fraunces','Iowan Old Style',Georgia,serif;
+    --font-body:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --font-mono:ui-monospace,'SF Mono','Cascadia Mono','Consolas','Roboto Mono',monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    font-size:18px;
+    line-height:1.6;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  a:focus-visible,button:focus-visible,summary:focus-visible{
+    outline:3px solid var(--gold);
+    outline-offset:2px;
+  }
+  .wrap{padding:0 28px;}
+  .eyebrow{
+    font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--gold-deep);margin:0 0 10px;
+  }
+  h1,h2,h3{line-height:1.1;margin:0;font-family:var(--font-display);font-weight:600;}
+  h2{font-size:clamp(1.7rem,3.6vw,2.5rem);}
+  h3{font-size:1.2rem;font-weight:600;}
+
+  /* ================= LAYOUT ================= */
+  .layout{display:block;}
+  .panel{
+    background:var(--navy);
+    color:#EFEEF7;
+    border-bottom:1px solid var(--line-on-navy);
+  }
+  .panel__inner{padding:32px 28px 30px;position:relative;}
+  .scroll{background:var(--paper);min-width:0;}
+
+  /* ---- Panel brand ---- */
+  .panel__brand{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;}
+  .club-logo{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1.5px solid var(--line-on-navy);flex:none;}
+  .panel__hoop{color:var(--gold);flex:none;}
+  .panel__brand b{font-family:var(--font-display);font-weight:600;font-size:1.05rem;letter-spacing:.01em;color:#fff;}
+
+  .panel__h1{color:#fff;font-size:clamp(2.1rem,4.4vw,2.9rem);letter-spacing:-.01em;margin-bottom:8px;}
+  .panel__suburb{
+    font-family:var(--font-display);font-style:italic;font-weight:500;
+    font-size:1.15rem;color:var(--gold);margin:0 0 18px;
+  }
+  .panel__tagline{
+    font-size:1.05rem;line-height:1.55;color:#D8D9E8;
+    margin:0 0 24px;padding-top:18px;border-top:1px solid var(--line-on-navy);
+  }
+
+  .panel__map{
+    border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-on-navy);
+    background:#0F1733;margin-bottom:20px;
+  }
+  .panel__map iframe{width:100%;height:140px;border:0;display:block;filter:saturate(.85);}
+
+  /* Plain facts — quiet, monospace, always in view (cafe technica device) */
+  .panel__facts{margin:0;}
+  .panel__fact{
+    display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:baseline;
+    padding:10px 0;border-top:1px solid var(--line-on-navy);
+    font-family:var(--font-mono);
+  }
+  .panel__fact:last-child{border-bottom:1px solid var(--line-on-navy);}
+  .panel__fact dt{
+    font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:#8F94BB;margin:0;
+  }
+  .panel__fact dd{
+    margin:0;font-size:.95rem;line-height:1.4;color:#F1F1F6;
+    overflow-wrap:anywhere;
+  }
+  .panel__fact dd a{color:#F1F1F6;}
+  .panel__fact dd a:hover{color:var(--gold);}
+
+  .panel__mapfallback{
+    display:inline-flex;align-items:center;font-size:.85rem;font-weight:700;color:var(--gold);
+    margin:12px 0 22px;min-height:var(--tap);font-family:var(--font-mono);
+  }
+  .panel__mapfallback:hover{text-decoration:underline;}
+
+  .panel__jump{
+    display:flex;flex-wrap:wrap;gap:7px;margin-bottom:26px;
+    font-family:var(--font-mono);font-size:.82rem;color:#9195B8;
+  }
+  .panel__jump a{color:#D8D9E8;font-weight:600;min-height:var(--tap);display:inline-flex;align-items:center;}
+  .panel__jump a:hover{color:var(--gold);}
+  .panel__jump span{display:inline-flex;align-items:center;}
+
+  .panel__actions{display:flex;flex-direction:column;gap:12px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    min-height:var(--btn);padding:0 26px;
+    font-weight:700;font-size:1rem;font-family:var(--font-body);
+    border-radius:var(--radius-lg);cursor:pointer;text-decoration:none;
+    transition:transform .2s cubic-bezier(.2,.7,.2,1), box-shadow .2s cubic-bezier(.2,.7,.2,1), background .2s ease, border-color .2s ease;
+    border:1.5px solid transparent;
+  }
+  .btn__arrow{transition:transform .2s ease;}
+  .btn:hover .btn__arrow{transform:translateX(3px);}
+  .btn--primary{background:var(--gold);color:var(--navy-deep);}
+  .btn--primary:hover{background:#EBB531;transform:translateY(-2px);box-shadow:0 10px 22px rgba(216,160,24,.28);}
+  .btn--ghost{background:transparent;color:#fff;border-color:var(--line-on-navy);}
+  .btn--ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+  .btn--ghost svg{flex:none;}
+  .btn--light{background:var(--white);color:var(--navy);}
+  .btn--light:hover{background:var(--mist);transform:translateY(-2px);}
+
+  /* ================= HERO ================= */
+  .hero{position:relative;}
+  .hero__figure{margin:0;position:relative;}
+  .hero__figure img{width:100%;height:64vw;max-height:560px;min-height:280px;object-fit:cover;}
+  .hero__chip{
+    position:absolute;left:20px;bottom:-30px;right:20px;max-width:340px;
+    background:var(--white);border-radius:var(--radius-lg);
+    box-shadow:0 18px 40px rgba(20,31,69,.22);
+    padding:18px 20px;margin:0;
+  }
+  .hero__chip-label{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px;}
+  .hero__chip-label::before,.hero__chip-label::after{content:"";flex:none;width:14px;height:1px;background:var(--gold-deep);opacity:.6;}
+  .hero__chip-value{display:block;font-family:var(--font-display);font-weight:600;font-size:1.25rem;color:var(--navy);line-height:1.3;}
+  .hero__chip-link{display:inline-block;margin-top:10px;font-size:.85rem;font-weight:700;color:var(--navy);border-bottom:1.5px solid var(--gold);}
+  .hero__pin{
+    position:absolute;top:18px;right:18px;z-index:2;
+    display:flex;align-items:center;gap:8px;
+    background:rgba(20,31,69,.72);backdrop-filter:blur(3px);
+    color:#fff;font-size:.85rem;font-weight:600;
+    padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);
+  }
+  .hero__pin svg{flex:none;color:var(--gold);}
+
+  /* ================= SECTION SHELL ================= */
+  section.block{padding:74px 28px 56px;max-width:var(--maxw);}
+  .block__head{max-width:560px;margin-bottom:32px;}
+  .block__note{margin-top:22px;color:var(--ink-soft);font-size:.98rem;max-width:560px;}
+
+  /* ---- Ledger (play schedule) ---- */
+  .ledger__list{
+    font-size:1.15rem;line-height:44px;font-weight:600;color:var(--navy);
+    margin:0;padding:0 0 0 0;max-width:560px;white-space:pre-line;
+    background-image:repeating-linear-gradient(var(--line) 0 1px, transparent 1px 44px);
+    background-position:0 43px;
+  }
+
+  /* ---- Photo bands ---- */
+  .band{margin:0;}
+  .band img{width:100%;height:52vw;max-height:460px;min-height:220px;object-fit:cover;}
+
+  /* ---- Your first visit: photo left, plain facts right (woolmers device) ---- */
+  .try__grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:var(--maxw);}
+  .try__photo{margin:0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);}
+  .try__photo img{width:100%;height:220px;object-fit:cover;}
+  .try__intro{color:var(--ink-soft);margin:14px 0 22px;max-width:440px;}
+  .try__facts{list-style:none;margin:0 0 24px;padding:0;max-width:460px;}
+  .try__facts li{
+    display:grid;grid-template-columns:130px 1fr;gap:14px;align-items:baseline;
+    padding:14px 0;border-top:1px solid var(--line);font-family:var(--font-mono);
+  }
+  .try__facts li:last-child{border-bottom:1px solid var(--line);}
+  .try__facts-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);}
+  .try__facts li span:last-child{font-size:1.05rem;font-weight:600;color:var(--navy);white-space:pre-line;}
+
+  /* ---- Story ---- */
+  .story__grid{max-width:var(--maxw);}
+  .story__head{margin-bottom:28px;max-width:560px;}
+  .story__photo{margin:20px 0 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);max-width:320px;}
+  .story__photo img{width:100%;height:220px;object-fit:cover;}
+  .story__body{position:relative;max-width:640px;}
+  .story__clip{max-height:400px;overflow:hidden;position:relative;}
+  .story__clip::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:96px;
+    background:linear-gradient(to bottom,transparent,var(--paper));pointer-events:none;
+  }
+  .story__body:has(details.story-more[open]) .story__clip{max-height:none;}
+  .story__body:has(details.story-more[open]) .story__clip::after{content:none;}
+  @supports not selector(:has(a)){
+    .story__clip{max-height:none;}
+    .story__clip::after{content:none;}
+    details.story-more{display:none;}
+  }
+  .story__text{
+    font-size:1.05rem;line-height:1.75;color:var(--ink);white-space:pre-line;
+    max-width:100%;overflow-wrap:anywhere;margin:0;
+  }
+  .story__text::first-letter{
+    float:left;font-family:var(--font-display);font-weight:600;font-size:4.2em;
+    line-height:.82;padding:6px 10px 0 0;color:var(--navy);
+  }
+  details.story-more{margin-top:18px;border-top:2px solid var(--line);padding-top:16px;}
+  details.story-more summary{
+    cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:9px;
+    font-weight:700;font-size:1rem;color:var(--navy);min-height:var(--tap);
+  }
+  details.story-more summary::-webkit-details-marker{display:none;}
+  details.story-more .story-more__close{display:none;}
+  details.story-more[open] .story-more__open{display:none;}
+  details.story-more[open] .story-more__close{display:inline;}
+  details.story-more summary::after{
+    content:"+";font-family:var(--font-display);font-weight:700;font-size:1.25rem;
+    color:var(--gold-deep);line-height:1;transition:transform .25s ease;
+  }
+  details.story-more[open] summary::after{content:"\2013";}
+
+  /* ---- Contact ---- */
+  .contact__grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:var(--maxw);}
+  .contact__item{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:22px;display:flex;flex-direction:column;gap:6px;
+  }
+  .contact__item a{font-size:1.25rem;font-weight:700;color:var(--navy);min-height:var(--tap);display:inline-flex;align-items:center;}
+  .contact__item a:hover{color:var(--gold-deep);}
+  .contact__item p{margin:0;}
+
+  /* ================= FOOTER ================= */
+  .site-footer{background:var(--navy-deep);color:#CBCEE3;padding:52px 28px 36px;}
+  .footer__grid{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;gap:26px;}
+  .footer__grid b{font-family:var(--font-display);font-weight:600;color:#fff;font-size:1.15rem;}
+  .footer__ack{margin:14px 0 0;font-size:.95rem;line-height:1.6;max-width:480px;}
+  .footer__meta{margin-top:22px;font-size:.85rem;color:#8F93B4;}
+  .footer__nav{display:flex;flex-wrap:wrap;gap:16px 22px;}
+  .footer__nav a{font-weight:600;color:#CBCEE3;min-height:var(--tap);display:inline-flex;align-items:center;}
+  .footer__nav a:hover{color:var(--gold);}
+
+  /* ================= MOBILE BOTTOM BAR ================= */
+  .bottombar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:var(--navy-deep);border-top:1px solid var(--line-on-navy);
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;
+    box-shadow:0 -8px 24px rgba(0,0,0,.18);
+  }
+  .bottombar__btn{
+    flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:50px;border-radius:var(--radius);font-weight:700;font-size:.98rem;
+  }
+  .bottombar__btn--ghost{background:transparent;color:#fff;border:1.5px solid var(--line-on-navy);}
+  .bottombar__btn--primary{background:var(--gold);color:var(--navy-deep);}
+
+  /* ================= RESPONSIVE ================= */
+  @media (min-width:1000px){
+    .layout{display:grid;grid-template-columns:var(--panel-w) 1fr;align-items:start;}
+    .panel{
+      position:sticky;top:0;height:100vh;overflow-y:auto;
+      border-right:1px solid var(--line-on-navy);border-bottom:none;
+    }
+    .panel__inner{padding:44px 40px 36px;min-height:100%;display:flex;flex-direction:column;}
+    .panel__actions{margin-top:auto;flex-direction:row;}
+    .panel__actions .btn{flex:1;}
+    .try__grid{grid-template-columns:280px 1fr;align-items:start;gap:44px;}
+    .try__photo img{height:100%;min-height:360px;}
+    .story__grid{display:grid;grid-template-columns:280px 1fr;gap:52px;}
+    .story__head{margin-bottom:0;}
+    .story__body{min-width:0;}
+    section.block{padding:88px 48px 64px;}
+    .contact__grid{grid-template-columns:repeat(4,1fr);}
+    .footer__grid{flex-direction:row;justify-content:space-between;align-items:flex-start;}
+  }
+  @media (max-width:999px){
+    .bottombar{display:flex;}
+    body.has-bottombar{padding-bottom:74px;}
+  }
+  @media (max-width:640px){
+    body{font-size:17px;}
+    .wrap{padding:0 20px;}
+    .panel__inner{padding:26px 20px 26px;}
+    section.block{padding:52px 20px 40px;}
+    .hero__figure img{height:78vw;}
+    .hero__chip{left:16px;right:16px;bottom:-26px;max-width:none;padding:16px 18px;}
+    .band img{height:62vw;}
+    .try__facts li{grid-template-columns:1fr;gap:2px;}
+    .story__photo{max-width:none;}
+    .story__text::first-letter{font-size:3.4em;}
+  }
+</style>
+<link rel="canonical" href="https://websites.croquetwade.com/point-lookout-round2/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Point Lookout Croquet Club, Maryborough | Croquet Queensland">
+<meta property="og:description" content="Four lawns, 33 Members, Cards played on Monday 1PM, mahjong played on Thursday 1PM">
+<meta property="og:url" content="https://websites.croquetwade.com/point-lookout-round2/">
+<meta property="og:image" content="images/photo_closeup.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<div class="layout" id="top">
+
+  <!-- ============ LEFT PANEL (sticky on desktop, top block on mobile) ============ -->
+  <aside class="panel">
+    <div class="panel__inner">
+
+      <a class="panel__brand" href="#top">
+        <img class="club-logo" id="club-logo-img" data-photo-edit-id="logo" src="images/logo.jpg" alt="" width="38" height="38">
+        <svg class="panel__hoop" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20V9a8 8 0 0 1 16 0v11"/><circle cx="9" cy="20" r="1.6" fill="currentColor" stroke="none"/></svg>
+        <b data-edit-id="club-name">Point Lookout</b>
+      </a>
+
+      <h1 class="panel__h1" data-edit-id="club-name-full">Point Lookout Croquet Club, Maryborough</h1>
+      <p class="panel__suburb" data-edit-id="suburb-line">Maryborough, Queensland</p>
+
+      <p class="panel__tagline" data-edit-id="hero-summary">Four lawns, 33 Members, Cards played on Monday 1PM, mahjong played on Thursday 1PM</p>
+
+      <div class="panel__map">
+        <iframe id="map-iframe" title="Map to Point Lookout Croquet Club" src="https://www.google.com/maps?q=23%20North%20Street%2C%20Maryborough%2C%20Queensland&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <dl class="panel__facts">
+        <div class="panel__fact">
+          <dt>When</dt>
+          <dd data-edit-id="play-schedule-first">Tue 8:30am — Golf Croquet</dd>
+        </div>
+        <div class="panel__fact">
+          <dt>Where</dt>
+          <dd data-edit-id="address">23 North Street</dd>
+        </div>
+        <div class="panel__fact parking-line">
+          <dt>Parking</dt>
+          <dd data-edit-id="parking">Street Parking, clear Signage</dd>
+        </div>
+        <div class="panel__fact">
+          <dt>Phone</dt>
+          <dd><a href="tel:0407739120" data-edit-id="phone">0407739120</a></dd>
+        </div>
+      </dl>
+      <a class="panel__mapfallback" href="https://www.google.com/maps/search/?api=1&query=23+North+Street%2C+Maryborough%2C+Queensland" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
+
+      <nav class="panel__jump" aria-label="On this page">
+        <a href="#times">Times</a><span aria-hidden="true">/</span>
+        <a href="#story">Story</a><span aria-hidden="true">/</span>
+        <a href="#come-and-try">Visit</a><span aria-hidden="true">/</span>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="panel__actions">
+        <a class="btn btn--primary" href="#come-and-try">Come &amp; try <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn--ghost" href="tel:0407739120">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Ring us
+        </a>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ============ RIGHT COLUMN (scrolls) ============ -->
+  <main class="scroll">
+
+    <!-- HERO -->
+    <section class="hero">
+      <figure class="hero__figure">
+        <img id="hero-photo" data-photo-edit-id="photo_lawns" src="images/photo_lawns.jpg" alt="The croquet lawns at Point Lookout Croquet Club, Maryborough" width="1600" height="1000">
+        <p class="hero__pin">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-edit-id="suburb-line">Maryborough, Queensland</span>
+        </p>
+        <figcaption class="hero__chip">
+          <span class="hero__chip-label">Next on the lawn</span>
+          <span class="hero__chip-value" data-edit-id="play-schedule-first">Tue 8:30am — Golf Croquet</span>
+          <a class="hero__chip-link" href="#times">See the full week &darr;</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- PLAY TIMES -->
+    <section class="block ledger" id="times">
+      <div class="block__head">
+        <p class="eyebrow">Every week</p>
+        <h2>On the lawn this week</h2>
+      </div>
+      <p class="ledger__list" data-edit-id="play-schedule">Tue 8:30am — Golf Croquet
+Sat 8:30am — Golf Croquet
+Tuesday 1:00pm — Association Croquet
+Wednesday 8:30am — Ricochet Croquet
+Friday 1:00pm — Golf,Ricochet,Association
+Saturday 1:00pm — Social all codes</p>
+      <p class="block__note">New to the lawns? Come along on any of these days and say hello — everyone here started as a visitor once.</p>
+    </section>
+
+    <!-- PHOTO BAND: PLAYERS -->
+    <section class="band">
+      <img id="band-photo-players" data-photo-edit-id="photo_players" src="images/photo_players.jpeg" alt="Members playing a match at Point Lookout Croquet Club" width="1600" height="900">
+    </section>
+
+    <!-- YOUR FIRST VISIT: photo left, plain facts right -->
+    <section class="block try" id="come-and-try">
+      <div class="try__grid">
+        <figure class="try__photo">
+          <img id="closeup-photo" data-photo-edit-id="photo_closeup" src="images/photo_closeup.jpeg" alt="A mallet and ball on the lawn at Point Lookout Croquet Club">
+        </figure>
+        <div class="try__body">
+          <p class="eyebrow">No experience needed</p>
+          <h2>Your first visit</h2>
+          <p class="try__intro">Turn up on any of the days above, tell us it's your first time, and someone will walk you through your first few shots.</p>
+          <ul class="try__facts">
+            <li>
+              <span class="try__facts-label">What to bring</span>
+              <span data-edit-id="come-and-try">Wear flat shoes,
+Mallets available </span>
+            </li>
+            <li class="section-fees">
+              <span class="try__facts-label">Membership</span>
+              <span data-edit-id="fees">$480.00 Annually</span>
+            </li>
+          </ul>
+          <a class="btn btn--primary" href="tel:0407739120">Call to book in <span class="btn__arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="block story" id="story">
+      <div class="story__grid">
+        <div class="story__head">
+          <p class="eyebrow">A Maryborough institution</p>
+          <h2>Our story</h2>
+          <figure class="story__photo">
+            <img id="about-photo" data-photo-edit-id="photo_clubhouse" src="images/photo_clubhouse.jpg" alt="The clubhouse at Point Lookout Croquet Club" width="700" height="700">
+          </figure>
+        </div>
+        <div class="story__body">
+          <div class="story__clip">
+            <p class="story__text" data-edit-id="about-paragraph">POINT LOOKOUT HISTORY
+
+On 21st September 1898 the Point Lookout Croquet Club was formally opened and named in the grounds of Stirling House in North Street, Maryborough, witnessed by a large gathering of over a hundred ladies and gentlemen.
+
+At that time Maryborough was the only major port north of Brisbane.  To notify the workers at the Maryborough wharfs that a ship was approaching, a lookout was stationed, where Churchill Street meets the river, to signal its approach, hence the name Point Lookout.
+
+The Club operated from Stirling House for three years,
+
+In 1900 the first intercity tournament was conducted in Maryborough between Point Lookout and a Brisbane team.
+
+The following year Point Lookout made a return visit to Brisbane.  They were successful on both occasions.
+
+Soon after the information of Point Lookout, two other croquet clubs were started in Maryborough.
+
+These operated for several years, finally closing in the 1960’s.  Clubs also opened in Gympie, Childers, Bundaberg, and Hervey Bay.
+
+Intercity games were played with members travelling first by train and then by bus to participate.
+
+These trips were very popular and a great social occasion.  Intercity competitions are still being held today.
+
+Unfortunately, the Gympie Club no longer exists.
+
+In 1902 Point Lookout was offered, and accepted, rental of its present site at 23 North Street, for ten pounds annually.
+
+In 1956, following the death of Miss Bonarius, the last remaining member of the family that owned the land, a decision was made to purchase.
+
+Mrs Alf Wynne, Patroness, and wife of the founder of Station 4MB, loaned the club the money to buy the land.
+
+When the loan was repaid, she donated the interest charged back to the club.
+
+Point Lookout is the only Croquet Club in Queensland that owns its own courts.
+
+From that time until present the club has progressed under the leadership of many dedicated members whose efforts ensured that Point Lookout increased the number of courts to four, added a club house and several sheds for storage and operated successfully and continually for the 125years it has existed.
+
+Point Lookout produced several players who played State, National and Interstate levels.
+
+One, Lorraine Bray, is listed on the Queensland Croquet Hall of Fame and the Australian Croquet Hall of Legends.
+
+The history of the club was celebrated at the Clubhouse on the 21st of September 2023 with a luncheon at which over 50 past and present members and guests attended.
+
+ 
+
+Fund Raising
+
+Point Lookout fund raises via- PLAYING Cards on a Monday, and, Mahjong on a Thursday.  We hold events such as High Teas etc.  We have club Tournaments, Regional Tournaments, Open Tournaments, and have started and new monthly Shield Tournament to encourage people to our town and our club.
+
+Our Mission                                                                                                               
+
+We wish to grow our club membership through advertising, social media and come &amp; try days.  We have a strong history and our members are mainly the retired and aged.  In saying that people of all ages are discovering Croquet is a stimulating way to get healthy exercise, and, have a good time together. Our members volunteer their time to help with the maintenance of the courts and grounds, which of course is forever ongoing and costly.  We have a great camaraderie and friendship within our club.  We are always brainstorming ways to encourage people to try our wonderful game.</p>
+          </div>
+          <details class="story-more">
+            <summary>
+              <span class="story-more__open">Read the full story</span>
+              <span class="story-more__close">Show less</span>
+            </summary>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO BAND: SOCIAL -->
+    <section class="band">
+      <img id="band-photo-social" data-photo-edit-id="photo_social" src="images/photo_social.png" alt="A social afternoon at Point Lookout Croquet Club">
+    </section>
+
+    <!-- CONTACT -->
+    <section class="block contact" id="contact">
+      <div class="block__head">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Come and say hello</h2>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__item">
+          <p class="eyebrow">Phone</p>
+          <a href="tel:0407739120"><span data-edit-id="phone">0407739120</span></a>
+        </div>
+        <div class="contact__item">
+          <p class="eyebrow">Email</p>
+          <a href="mailto:pointlookout@croquetqld.org"><span data-edit-id="public-email">pointlookout@croquetqld.org</span></a>
+        </div>
+        <div class="contact__item contact-name-row">
+          <p class="eyebrow">Committee contact</p>
+          <p data-edit-id="contact-name">Wayne Lusk, president</p>
+        </div>
+        <div class="contact__item members-link-row">
+          <p class="eyebrow">Already a member?</p>
+          <a data-edit-id="members-link" href="https://www.revolutionise.com.au/pl">Log in to revSPORT</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ FOOTER (full width, below the sticky column) ============ -->
+<footer class="site-footer">
+  <div class="footer__grid">
+    <div>
+      <b data-edit-id="club-name">Point Lookout</b>
+      <p class="footer__ack" data-edit-id="footer-acknowledgment">Fraser Coast City Council</p>
+      <p class="footer__meta">&copy; <span id="year"></span> <b data-edit-id="club-name" style="font-size:.95rem;">Point Lookout</b></p>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      <a href="#times">Times</a>
+      <a href="#story">Our story</a>
+      <a href="#come-and-try">Come &amp; try</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BOTTOM BAR ============ -->
+<div class="bottombar">
+  <a class="bottombar__btn bottombar__btn--ghost" href="tel:0407739120">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Ring us
+  </a>
+  <a class="bottombar__btn bottombar__btn--primary" href="#come-and-try">Come &amp; try</a>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.body.classList.add('has-bottombar');
+</script>
+<script src="https://edit.croquetwade.com/edit.js"
+        data-stack="git"
+        data-site="club-sites"
+        data-html-file="point-lookout-round2/index.html"
+        data-comments="on"
+        defer></script>
+</body>
+</html>

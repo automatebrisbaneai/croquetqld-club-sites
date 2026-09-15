@@ -1,0 +1,45 @@
+{
+  "id": "example31",
+  "name": "Split Screen",
+  "type": "template",
+  "version": "1.0.0",
+  "has_map": true,
+  "text_map": {
+    "page-title": "club_name_full",
+    "club-name": "club_name",
+    "club-name-full": "club_name_full",
+    "suburb-line": "suburb_line",
+    "hero-summary": "tagline",
+    "address": "address",
+    "parking": "parking",
+    "phone": "phone",
+    "public-email": "public_email",
+    "play-schedule": "play_schedule",
+    "play-schedule-first": "play_schedule_first",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "about-paragraph": "about",
+    "members-link": "members_link",
+    "footer-acknowledgment": "footer_acknowledgment"
+  },
+  "image_map": {
+    "hero-photo": "photo_lawns",
+    "band-photo-players": "photo_players",
+    "about-photo": "photo_clubhouse",
+    "band-photo-social": "photo_social",
+    "closeup-photo": "photo_closeup",
+    "club-logo-img": "logo"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "parking": ".parking-line",
+    "members_link": ".members-link-row",
+    "contact_name": ".contact-name-row",
+    "logo": ".club-logo"
+  },
+  "colour_map": {
+    "--navy": "color_primary",
+    "--gold": "color_secondary",
+    "--mist": "color_accent"
+  }
+}
