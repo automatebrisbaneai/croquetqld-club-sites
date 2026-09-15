@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta name="robots" content="noindex">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-edit-id="page-title">Example Croquet Club Inc., Sampleton | Croquet Queensland</title>
+<meta name="description" content="Friendly lawns on the quiet edge of Sampleton">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,380;0,9..144,560;0,9..144,900;1,9..144,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "SportsActivityLocation",
+    "LocalBusiness"
+  ],
+  "name": "Example Croquet Club Inc.",
+  "sport": "Croquet",
+  "description": "Friendly lawns on the quiet edge of Sampleton",
+  "url": "https://websites.croquetwade.com/example-croquet-club/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 Example Street",
+    "addressLocality": "Sampleton",
+    "postalCode": "4270",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+  },
+  "telephone": "0400 000 000",
+  "email": "hello@example.org.au",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-27.5200",
+    "longitude": "153.0100"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "opens": "08:00",
+      "closes": "11:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "13:00",
+      "closes": "16:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "08:00",
+      "closes": "11:00"
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#1C2E4A;
+    --ink-soft:#3a4a86;
+    --gold:#F5F0DC;
+    --gold-deep:#9c7104;
+    --bronze:#7A5703;
+    --paper:#FBF3E4;
+    --paper-deep:#F3E7CD;
+    --cream:#FFFCF4;
+    --line:#E2D3AD;
+    --white:#FFFFFF;
+    --maxw:1180px;
+    --prose:640px;
+    --tap:44px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:112px;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Lora',Georgia,'Times New Roman',serif;
+    font-size:18px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  h1,h2,h3{
+    font-family:'Fraunces',Georgia,serif;
+    color:var(--ink);
+    margin:0;
+    line-height:1.02;
+    font-weight:900;
+    letter-spacing:-.01em;
+  }
+  a{color:var(--ink);}
+  a:focus-visible,button:focus-visible,summary:focus-visible{
+    outline:3px solid var(--gold-deep);outline-offset:3px;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+  .eyebrow{
+    font-family:'Lora',serif;font-style:italic;font-weight:600;
+    font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--bronze);margin:0 0 10px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";display:block;width:34px;height:1px;background:var(--gold-deep);flex:none;}
+  .accent{font-family:'Fraunces',serif;font-style:italic;font-weight:560;color:var(--bronze);}
+  section.block{padding:56px 0;position:relative;}
+  .block--tint{background:var(--paper-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .block__head{max-width:var(--prose);margin-bottom:30px;}
+  .block__head h2{font-size:clamp(1.7rem,5.4vw,2.5rem);}
+  .block__head p{margin:12px 0 0;color:var(--ink-soft);font-size:1.05rem;}
+  #schedule{
+    background:var(--paper);border-radius:26px 26px 0 0;
+    margin-top:-26px;position:relative;z-index:3;
+    box-shadow:0 -10px 24px rgba(15,21,46,.12);
+    padding-top:40px;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead{position:sticky;top:0;z-index:60;background:rgba(251,243,228,.94);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink);}
+  .masthead__utility{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);border-bottom:1px solid var(--line);}
+  .masthead__utility a{color:var(--ink-soft);display:inline-flex;align-items:center;gap:6px;min-height:32px;}
+  .masthead__utility a:hover{color:var(--ink);}
+  .masthead__main{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:64px;padding:8px 0;}
+  .masthead__brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;min-width:0;}
+  .club-logo{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--ink);background:var(--white);}
+  .masthead__name{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.05rem,3.4vw,1.5rem);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .masthead__nav{display:none;align-items:center;gap:4px;}
+  .masthead__nav a{
+    display:inline-flex;align-items:center;min-height:var(--tap);padding:0 12px;
+    font-family:'Lora',serif;font-weight:600;font-size:.92rem;color:var(--ink);
+    text-decoration:none;border-bottom:2px solid transparent;
+  }
+  .masthead__nav a:hover{border-bottom-color:var(--gold);}
+  .masthead__cta{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    min-height:var(--tap);padding:0 18px;margin-left:6px;
+    background:var(--ink);color:var(--cream)!important;font-weight:700;font-size:.92rem;
+    border-radius:2px;text-decoration:none!important;border-bottom:none!important;
+    font-family:'Lora',serif;
+  }
+  .masthead__cta:hover{background:var(--ink-soft);}
+  .masthead__details{margin-left:auto;}
+  .masthead__details summary{
+    list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
+    min-height:var(--tap);padding:0 14px;font-weight:700;color:var(--ink);
+    border:1.5px solid var(--ink);border-radius:2px;font-size:.88rem;
+  }
+  .masthead__details summary::-webkit-details-marker{display:none;}
+  .masthead__details[open] summary{background:var(--ink);color:var(--cream);}
+  .masthead__menu{display:flex;flex-direction:column;gap:2px;padding:10px 2px 2px;}
+  .masthead__menu a{display:flex;align-items:center;min-height:var(--tap);padding:0 10px;font-weight:600;color:var(--ink);text-decoration:none;border-radius:2px;}
+  .masthead__menu a:hover{background:var(--paper-deep);}
+  .masthead__menu .masthead__cta{justify-content:flex-start;margin:6px 0 0;}
+  .ring-icon{display:inline-flex;width:16px;height:16px;flex:none;}
+
+  /* ---------- Cover ---------- */
+  .cover{position:relative;min-height:clamp(600px,102svh,900px);display:flex;flex-direction:column;overflow:hidden;background:var(--ink);}
+  .cover__photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 72%;}
+  .cover__tone{position:absolute;inset:0;background:#1b2647;mix-blend-mode:multiply;opacity:.32;}
+  .cover__scrim{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(15,21,46,.62) 0%, rgba(15,21,46,.16) 34%, rgba(15,21,46,.22) 55%, rgba(15,21,46,.9) 100%);
+  }
+  .cover__content{position:relative;z-index:2;margin-top:auto;padding:20px 0 26px;color:var(--cream);}
+  .cover__tag{
+    display:inline-flex;align-items:center;gap:10px;margin:0 0 18px;
+    font-family:'Lora',serif;font-style:italic;font-weight:600;color:var(--gold);
+    font-size:.82rem;letter-spacing:.09em;text-transform:uppercase;
+    text-shadow:0 1px 10px rgba(0,0,0,.4);
+  }
+  .cover__tag .dot{color:var(--gold);opacity:.75;font-style:normal;}
+  .cover__badge{
+    width:30px;height:30px;border-radius:50%;object-fit:cover;flex:none;
+    border:1.5px solid rgba(255,255,255,.55);
+  }
+  .cover__headline{font-size:clamp(2.5rem,13.5vw,6.4rem);color:var(--cream);text-shadow:0 2px 24px rgba(0,0,0,.4);}
+  .cover__dek{
+    font-family:'Lora',serif;font-size:clamp(1.05rem,3.6vw,1.4rem);line-height:1.5;
+    color:var(--paper);max-width:38ch;margin:16px auto 0;font-weight:500;
+    text-shadow:0 1px 12px rgba(0,0,0,.35);
+  }
+  .cover__facts{position:relative;z-index:2;background:rgba(15,21,46,.88);border-top:1px solid rgba(216,160,24,.4);}
+  .cover__facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;padding:20px 0;}
+  .fact__label{display:block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:4px;}
+  .fact__value{font-family:'Lora',serif;font-weight:600;font-size:1rem;line-height:1.35;color:var(--cream);}
+  .fact__value a{color:var(--cream);text-decoration:none;}
+  .fact__value a:hover{text-decoration:underline;}
+  .cover__cta-row{padding:0 0 22px;display:flex;flex-direction:column;gap:12px;}
+  .cover__cta{
+    display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+    min-height:52px;background:var(--gold);color:var(--ink);font-weight:700;font-size:1.02rem;
+    border-radius:2px;text-decoration:none;font-family:'Lora',serif;
+  }
+  .cover__cta:hover{background:#e8b332;}
+  .cover__cta .arrow{transition:transform .2s cubic-bezier(.22,.68,0,1.01);}
+  .cover__cta:hover .arrow{transform:translateX(5px);}
+  .cover__cta--ghost{background:transparent;color:var(--cream);border:1.5px solid rgba(251,243,228,.55);}
+  .cover__cta--ghost:hover{background:rgba(251,243,228,.12);border-color:var(--cream);}
+
+  /* ---------- Schedule ---------- */
+  .listings{display:grid;grid-template-columns:1fr;gap:18px;}
+  .card{background:var(--cream);border:1px solid var(--line);border-radius:2px;padding:26px 24px;}
+  .card--schedule{border-top:4px solid var(--ink);}
+  .card--schedule h3{font-size:1.3rem;margin-bottom:14px;}
+  .card--schedule p{white-space:pre-line;margin:0;font-size:1.02rem;line-height:1.85;font-family:'Lora',serif;}
+  .card--fee{border-top:4px solid var(--gold);display:flex;flex-direction:column;gap:6px;}
+  .card--fee h3{font-size:1.1rem;}
+  .card--fee p{white-space:pre-line;margin:0;font-family:'Fraunces',serif;font-weight:600;font-size:1.7rem;color:var(--ink);}
+  .card-row{display:grid;grid-template-columns:1fr;gap:18px;}
+
+  /* ---------- Visit / recipe card ---------- */
+  .visit__grid{display:grid;grid-template-columns:1fr;gap:0;}
+  .visit__photo{aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line);}
+  .visit__photo img{width:100%;height:100%;object-fit:cover;}
+  .recipe{background:var(--cream);border:1.5px solid var(--ink);padding:28px 24px;position:relative;}
+  .recipe::before{content:"";position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px solid var(--gold);pointer-events:none;}
+  .recipe__kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--bronze);}
+  .recipe__title{font-family:'Fraunces',serif;font-weight:900;font-size:1.5rem;margin:6px 0 16px;}
+  .recipe__body{white-space:pre-line;font-size:1.03rem;line-height:1.8;margin:0 0 20px;}
+  .recipe__ring{
+    display:inline-flex;align-items:center;gap:10px;min-height:var(--tap);padding:0 20px;
+    background:var(--ink);color:var(--cream);font-weight:700;text-decoration:none;border-radius:2px;
+  }
+  .recipe__ring:hover{background:var(--ink-soft);}
+
+  /* ---------- Story ---------- */
+  .story__top{display:grid;grid-template-columns:1fr;gap:28px;align-items:start;margin-bottom:34px;}
+  blockquote.pullquote{
+    margin:0;font-family:'Fraunces',serif;font-style:italic;font-weight:560;
+    font-size:clamp(1.5rem,5.4vw,2.15rem);line-height:1.28;color:var(--ink);
+    position:relative;padding-left:.1em;
+  }
+  blockquote.pullquote::before{
+    content:"\201C";display:block;font-family:'Fraunces',serif;font-weight:900;font-style:normal;
+    font-size:3.6rem;color:var(--gold);line-height:.5;margin-bottom:.15em;
+  }
+  .timeline{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+  .milestone{display:grid;grid-template-columns:84px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline;}
+  .milestone__year{font-family:'Fraunces',serif;font-weight:900;font-size:1.15rem;color:var(--bronze);}
+  .milestone__text{margin:0;font-size:.98rem;color:var(--ink-soft);line-height:1.5;}
+  .story-more{margin-top:30px;border-top:2px solid var(--ink);padding-top:18px;}
+  .story-more summary{
+    cursor:pointer;list-style:none;font-weight:700;font-family:'Lora',serif;font-size:1rem;
+    display:inline-flex;align-items:center;gap:8px;color:var(--ink);
+  }
+  .story-more summary::-webkit-details-marker{display:none;}
+  .story-more summary::after{content:"the full story";font-weight:500;color:var(--ink-soft);}
+  .story-more[open] summary::after{content:"hide the full story";}
+  .story-more summary::before{content:"+";font-family:'Fraunces',serif;font-weight:900;font-size:1.3rem;color:var(--gold-deep);}
+  .story-more[open] summary::before{content:"–";}
+  .welcome-lede{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;line-height:1.45;
+    color:var(--ink);max-width:56ch;margin:0 0 8px;}
+  .fee-first-visit-row{margin-top:2px;font-size:1rem;font-weight:500;color:var(--cream);}
+  .story-copy{margin-top:18px;}
+  .story-copy p{
+    white-space:pre-line;margin:0;font-size:1.02rem;line-height:1.78;
+    color:var(--ink);
+  }
+  .story-copy p::first-letter{
+    font-family:'Fraunces',serif;font-weight:900;font-size:3.4em;float:left;
+    line-height:.82;padding:.03em .07em 0 0;color:var(--ink);
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery__grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .gallery__item{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--ink);}
+  .gallery__item img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.22,.68,0,1.01);}
+  .gallery__item:hover img{transform:scale(1.045);}
+  .gallery__item--wide{grid-column:1/-1;aspect-ratio:16/10;}
+  .gallery__item--sq{aspect-ratio:1/1;}
+  .gallery__cap{
+    position:absolute;left:0;right:0;bottom:0;padding:10px 12px;
+    background:linear-gradient(0deg,rgba(15,21,46,.82),rgba(15,21,46,0));
+    color:var(--cream);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
+  }
+
+  /* ---------- Details ---------- */
+  .details__grid{display:grid;grid-template-columns:1fr;gap:18px;}
+  .spec{background:var(--cream);border:1px solid var(--line);padding:22px;}
+  .spec h3{font-size:1.05rem;font-family:'Fraunces',serif;font-weight:900;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line);}
+  .spec .address-line{font-family:'Fraunces',serif;font-weight:700;font-size:1.2rem;margin:0 0 8px;}
+  .parking-row{display:flex;gap:8px;font-size:.95rem;color:var(--ink-soft);margin:0 0 14px;}
+  .parking-row strong{color:var(--ink);}
+  .map-frame{position:relative;border:1px solid var(--line);overflow:hidden;min-height:220px;}
+  .map-frame iframe{width:100%;height:100%;min-height:220px;border:0;display:block;}
+  .map-fallback{
+    position:absolute;left:10px;bottom:10px;background:var(--cream);color:var(--ink);
+    font-weight:700;font-size:.82rem;padding:8px 12px;border-radius:2px;text-decoration:none;
+    box-shadow:0 3px 10px rgba(20,28,58,.2);
+  }
+  .contact-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .contact-list a{font-weight:700;font-size:1.1rem;text-decoration:none;color:var(--ink);}
+  .contact-list a:hover{color:var(--gold-deep);}
+  .contact-list .clabel{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);font-weight:700;margin-bottom:2px;}
+  .contact-name-row{font-size:.92rem;color:var(--ink-soft);margin-top:10px;}
+  .members-link-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;background:var(--paper-deep);border:1px dashed var(--ink-soft);padding:16px 18px;margin-top:18px;}
+  .members-link-row p{margin:0;font-weight:600;}
+  .members-link-row a{font-weight:700;}
+  .social-row{margin-top:14px;}
+  .social-row a{font-weight:700;text-decoration:none;color:var(--ink);}
+
+  /* ---------- Footer ---------- */
+  .site-footer{background:var(--ink);color:var(--paper);padding:44px 0 30px;margin-top:0;}
+  .footer__brand{font-family:'Fraunces',serif;font-weight:900;font-size:1.5rem;color:var(--cream);margin:0 0 10px;}
+  .footer__ack{margin:0 0 20px;font-size:.95rem;line-height:1.6;color:#D9D2BC;max-width:var(--prose);}
+  .footer__nav{display:flex;flex-wrap:wrap;gap:4px 18px;padding:0;margin:0 0 20px;list-style:none;}
+  .footer__nav a{color:var(--paper);font-weight:600;text-decoration:none;font-size:.92rem;}
+  .footer__nav a:hover{color:var(--gold);}
+  .footer__meta{font-size:.82rem;color:#B9B08E;border-top:1px solid rgba(251,243,228,.18);padding-top:16px;margin:0;}
+
+  /* ---------- Responsive: tablet ---------- */
+  @media (min-width:700px){
+    .cover__facts-grid{grid-template-columns:repeat(4,1fr);gap:20px;}
+    .cover__cta-row{flex-direction:row;justify-content:flex-start;}
+    .cover__cta{width:auto;padding:0 30px;}
+    .card-row{grid-template-columns:1.6fr 1fr;}
+    .visit__grid{grid-template-columns:1fr 1fr;align-items:stretch;}
+    .visit__photo{aspect-ratio:auto;}
+    .story__top{grid-template-columns:1.1fr .9fr;gap:44px;}
+    .story-copy{column-count:2;column-gap:36px;}
+    .gallery__grid{grid-template-columns:repeat(4,1fr);}
+    .gallery__item--wide{grid-column:span 2;aspect-ratio:4/3;}
+    .details__grid{grid-template-columns:1.1fr .9fr .9fr;}
+  }
+
+  /* ---------- Responsive: desktop nav ---------- */
+  @media (min-width:960px){
+    .masthead__nav{display:flex;}
+    .masthead__details{display:none;}
+    section.block{padding:80px 0;}
+    .cover__content{padding:40px 0 36px;}
+  }
+
+  @media (max-width:420px){
+    body{font-size:17px;}
+    .wrap{padding:0 16px;}
+  }
+</style>
+<link rel="canonical" href="https://websites.croquetwade.com/example-croquet-club/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Example Croquet Club Inc., Sampleton | Croquet Queensland">
+<meta property="og:description" content="Friendly lawns on the quiet edge of Sampleton">
+<meta property="og:url" content="https://websites.croquetwade.com/example-croquet-club/">
+<meta property="og:image" content="images/logo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead__utility">
+    <span>New players and visitors always welcome</span>
+    <a href="tel:0400000000"><svg class="ring-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><b data-edit-id="phone">0400 000 000</b></a>
+  </div>
+  <div class="wrap masthead__main">
+    <a class="masthead__brand" href="#top">
+      <img class="club-logo" id="logo" data-photo-edit-id="logo" src="images/logo.jpg" alt="Club badge">
+      <span class="masthead__name" data-edit-id="club-name">Example Croquet Club</span>
+    </a>
+    <nav class="masthead__nav" aria-label="Primary">
+      <a href="#schedule">This week</a>
+      <a href="#visit">First visit</a>
+      <a href="#story">Our story</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#details">Visit us</a>
+      <a class="masthead__cta" href="#visit">Come and have a go</a>
+    </nav>
+    <details class="masthead__details">
+      <summary>Menu</summary>
+      <div class="masthead__menu">
+        <a href="#schedule">This week</a>
+        <a href="#visit">First visit</a>
+        <a href="#story">Our story</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#details">Visit us</a>
+        <a class="masthead__cta" href="#visit">Come and have a go</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ COVER ============ -->
+  <section class="cover">
+    <img class="cover__photo" id="cover-photo" data-photo-edit-id="photo_lawns"
+         src="images/photo_lawns.jpg"
+         alt="The lawns at Example Croquet Club Inc. Croquet Club" width="1600" height="1200">
+    <div class="cover__tone" aria-hidden="true"></div>
+    <div class="cover__scrim" aria-hidden="true"></div>
+    <div class="cover__content wrap">
+      <p class="cover__tag">
+        <img class="cover__badge club-logo" id="cover-badge" data-photo-edit-id="logo" src="images/logo.jpg" alt="">
+        <span class="dot">•</span> <span data-edit-id="masthead-dateline">Sampleton, Queensland</span> <span class="dot">•</span>
+      </p>
+      <h1 class="cover__headline"><span data-edit-id="hero-headline">Example Croquet Club Inc.</span>, Sampleton</h1>
+      <p class="cover__dek" data-edit-id="hero-dek">Friendly lawns on the quiet edge of Sampleton</p>
+    </div>
+    <div class="cover__facts">
+      <div class="wrap">
+        <div class="cover__facts-grid">
+          <div class="fact">
+            <span class="fact__label">Where</span>
+            <span class="fact__value" data-edit-id="cover-where">1 Example Street</span>
+          </div>
+          <div class="fact">
+            <span class="fact__label">When</span>
+            <span class="fact__value" data-edit-id="cover-when">Wednesday 8:00am–11:00am — Golf Croquet</span>
+          </div>
+          <div class="fact section-fees">
+            <span class="fact__label">Cost</span>
+            <span class="fact__value" data-edit-id="cover-cost">Annual membership: $220 (or four quarterly instalments of $55)
+Green fees: $5 a visit (covers lawn upkeep and equipment)
+Junior membership (under 18): $60 (half price, mallets provided)</span>
+            <p class="fee-first-visit-row" data-edit-id="fee-first-visit">First two visits free, mallets provided</p>
+          </div>
+          <div class="fact">
+            <span class="fact__label">Ring us</span>
+            <span class="fact__value"><a href="tel:0400000000" data-edit-id="phone">0400 000 000</a></span>
+          </div>
+        </div>
+        <div class="cover__cta-row">
+          <a class="cover__cta" href="#visit">Come and have a go <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="cover__cta cover__cta--ghost" href="#schedule">See what's on</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCHEDULE ============ -->
+  <section class="block" id="schedule">
+    <div class="wrap">
+      <div class="block__head">
+        <p class="eyebrow">This week at the club</p>
+        <h2>What's on, <em class="accent">most weeks</em></h2>
+        <p>The lawns are busy most days of the week — come down whenever suits, no booking needed.</p>
+      </div>
+      <div class="card-row">
+        <div class="card card--schedule">
+          <h3>The lawn diary</h3>
+          <p data-edit-id="play-schedule">Wednesday 8:00am–11:00am — Golf Croquet
+Saturday 1:00pm–4:00pm — Golf Croquet
+Sunday 8:00am–11:00am — Association / Ricochet</p>
+        </div>
+        <div class="card card--fee section-fees">
+          <h3>Membership</h3>
+          <p data-edit-id="fees">Annual membership: $220 (or four quarterly instalments of $55)
+Green fees: $5 a visit (covers lawn upkeep and equipment)
+Junior membership (under 18): $60 (half price, mallets provided)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VISIT (recipe card) ============ -->
+  <section class="block block--tint" id="visit">
+    <div class="wrap">
+      <div class="block__head">
+        <p class="eyebrow">New to croquet? Start here</p>
+        <h2>Your first visit</h2>
+      </div>
+      <div class="visit__grid">
+        <figure class="visit__photo" style="margin:0;">
+          <img id="visit-photo" data-photo-edit-id="photo_players"
+               src="images/photo_players.jpg"
+               alt="Members playing on the lawn at Example Croquet Club Inc. Croquet Club" width="900" height="700">
+        </figure>
+        <div class="recipe">
+          <p class="recipe__kicker">What you'll need</p>
+          <h3 class="recipe__title">Just turn up</h3>
+          <p class="recipe__body" data-edit-id="come-and-try">Wear flat, enclosed shoes, sunscreen and a broad-brimmed hat. We provide mallets and a friendly member to show you the ropes for your first visit.</p>
+          <a class="recipe__ring" href="tel:0400000000">Ring us to say you're coming <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STORY ============ -->
+  <section class="block" id="story">
+    <div class="wrap">
+      <div class="block__head">
+        <p class="eyebrow">Our story</p>
+        <h2>A club with <em class="accent">some history</em></h2>
+      </div>
+      <p class="welcome-lede" data-edit-id="welcome-paragraph">Example Croquet Club is a relaxed, welcoming club on the edge of Sampleton, open to players of every age and ability. Whether you fancy a competitive game of Golf Croquet or just want to try something new with a cuppa afterwards, you'll find a friendly group happy to show you the ropes. No experience or equipment needed, just flat shoes and a hat. Everyone starts as a beginner here.</p>
+      <details class="story-more">
+        <summary>Read</summary>
+        <div class="story-copy">
+          <p data-edit-id="about-paragraph">Example Croquet Club began in the early 1960s, when a handful of neighbours in Sampleton cleared a corner of council land and levelled it by hand to lay down a single lawn. For the first decade the club had no clubhouse at all; players changed in their cars and kept mallets in a garden shed loaned by a nearby resident. A modest timber pavilion finally went up in 1974, largely from materials donated by local businesses, and it still forms the heart of today's clubhouse after several rounds of extensions.
+
+Through the 1980s and 1990s the club grew steadily alongside Sampleton itself, adding a second lawn in 1988 and a third in 2003 as membership passed fifty. Association Croquet was the only code played for many years, until Golf Croquet was introduced in the early 2000s and quickly became the most popular way to spend a Wednesday morning. A small but dedicated group still plays Association and Ricochet most weekends.
+
+The clubhouse was rebuilt after storm damage in 2011, with members and neighbours pitching in for working bees over several weekends to get the lawns back into shape. That spirit of shared effort has stayed part of the club's character ever since, along with a standing rule that nobody leaves a Saturday afternoon without a cup of tea.
+
+Today the club sits on the same corner of land it started on, shaded by established trees and bordered by a small community garden that members tend between games. It remains entirely run by volunteers, funded by membership fees and the occasional sausage sizzle, and open to anyone in Sampleton curious about the game.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="block block--tint" id="gallery">
+    <div class="wrap">
+      <div class="block__head">
+        <p class="eyebrow">Around the club</p>
+        <h2>A look <em class="accent">around</em></h2>
+      </div>
+      <div class="gallery__grid">
+        <figure class="gallery__item gallery__item--wide" style="margin:0;">
+          <img id="gallery-photo-1" data-photo-edit-id="photo_clubhouse"
+               src="images/photo_clubhouse.jpg"
+               alt="The Example Croquet Club Inc. Croquet Club clubhouse and members">
+          <figcaption class="gallery__cap">The clubhouse</figcaption>
+        </figure>
+        <figure class="gallery__item gallery__item--sq" style="margin:0;">
+          <img id="gallery-photo-2" data-photo-edit-id="photo_social"
+               src="images/photo_social.jpg"
+               alt="A social afternoon at Example Croquet Club Inc. Croquet Club">
+          <figcaption class="gallery__cap">Everyone's welcome</figcaption>
+        </figure>
+        <figure class="gallery__item gallery__item--sq" style="margin:0;">
+          <img id="gallery-photo-3" data-photo-edit-id="photo_closeup"
+               src="images/photo_closeup.jpg"
+               alt="Mallet, ball and hoop on the lawn at Example Croquet Club Inc. Croquet Club">
+          <figcaption class="gallery__cap">Mallet, ball, hoop</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DETAILS ============ -->
+  <section class="block" id="details">
+    <div class="wrap">
+      <div class="block__head">
+        <p class="eyebrow">Plan your visit</p>
+        <h2>Everything you need to <em class="accent">drop by</em></h2>
+      </div>
+      <div class="details__grid">
+        <div class="spec">
+          <h3>Find us</h3>
+          <p class="address-line" data-edit-id="address">1 Example Street</p>
+          <div class="parking-row">
+            <strong>Parking:</strong> <span data-edit-id="parking">Free parking on Example Street beside the clubhouse, with overflow parking at the adjoining oval on tournament days.</span>
+          </div>
+          <div class="map-frame">
+            <iframe id="map-iframe" title="Map to Example Croquet Club Inc. Croquet Club"
+              src="https://www.google.com/maps?q=1%20Example%20Street%2C%20Sampleton%2C%20Queensland&output=embed"
+              referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <a class="map-fallback" data-edit-id="map-fallback"
+               href="https://www.google.com/maps/search/?api=1&query=1+Example+Street%2C+Sampleton%2C+Queensland"
+               target="_blank" rel="noopener">1 Example Street</a>
+          </div>
+        </div>
+        <div class="spec">
+          <h3>Get in touch</h3>
+          <ul class="contact-list">
+            <li><span class="clabel">Phone</span><a href="tel:0400000000" data-edit-id="phone">0400 000 000</a></li>
+            <li><span class="clabel">Email</span><a href="mailto:hello@example.org.au" data-edit-id="public-email">hello@example.org.au</a></li>
+          </ul>
+          <p class="contact-name-row" data-edit-id="contact-name">Sam Sample, secretary</p>
+          <p class="social-row" style="display:none"><a data-edit-id="facebook-link" href="#" target="_blank" rel="noopener">Find us on Facebook</a></p>
+        </div>
+        <div class="spec">
+          <h3>Membership</h3>
+          <p style="margin:0 0 10px;color:var(--ink-soft);font-size:.95rem;">New players and visitors are always welcome — just come along on a club day.</p>
+          <div class="members-link-row" style="display:none">
+            <p>Already a member?</p>
+            <a data-edit-id="members-link" href="#">Log in to revSPORT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer__brand" data-edit-id="club-name">Example Croquet Club</p>
+    <p class="footer__ack footer-ack" data-edit-id="footer-acknowledgment">We acknowledge the Traditional Owners of the land on which we play and gather, and pay our respects to Elders past, present and emerging.</p>
+    <ul class="footer__nav">
+      <li><a href="#schedule">This week</a></li>
+      <li><a href="#visit">First visit</a></li>
+      <li><a href="#story">Our story</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#details">Visit us</a></li>
+    </ul>
+    <p class="footer__meta">A proud member of Croquet Queensland. &copy; <span id="year">2026</span>.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://edit.croquetwade.com/edit.js"
+        data-stack="git"
+        data-site="club-sites"
+        data-html-file="example-croquet-club/index.html"
+        data-comments="on"
+        defer></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "template_id": "example28",
+  "template_name": "Big Sky",
+  "source_summary": {
+    "slug": "example-croquet-club",
+    "club_name": "Example Croquet Club",
+    "color_primary": "#1C2E4A",
+    "color_secondary": "#F5F0DC",
+    "color_accent": "#4B7F4E"
+  },
+  "asset_count": 6,
+  "directory_owned_snapshot": {
+    "club_name": "Example Croquet Club",
+    "tagline": "Friendly lawns on the quiet edge of Sampleton",
+    "play_schedule": "Wednesday 8:00am\u201311:00am \u2014 Golf Croquet\nSaturday 1:00pm\u20134:00pm \u2014 Golf Croquet\nSunday 8:00am\u201311:00am \u2014 Association / Ricochet",
+    "come_and_try": "Wear flat, enclosed shoes, sunscreen and a broad-brimmed hat. We provide mallets and a friendly member to show you the ropes for your first visit.",
+    "fees": "Annual membership: $220 (or four quarterly instalments of $55)\nGreen fees: $5 a visit (covers lawn upkeep and equipment)\nJunior membership (under 18): $60 (half price, mallets provided)",
+    "address": "1 Example Street",
+    "phone": "0400 000 000",
+    "public_email": "hello@example.org.au",
+    "members_link": ""
+  }
+}

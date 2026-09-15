@@ -1,0 +1,47 @@
+{
+  "id": "example30",
+  "name": "Poster Type",
+  "colour_map": {
+    "--signal": "color_primary"
+  },
+  "text_map": {
+    "page-title": "club_name",
+    "eyebrow-suburb": "suburb_line",
+    "club-name": "club_name_full",
+    "tagline": "tagline",
+    "address": "address",
+    "play-schedule-first": "play_schedule_first",
+    "fees": "fees",
+    "phone": "phone",
+    "come-and-try": "come_and_try",
+    "about-paragraph": "about",
+    "play-schedule": "play_schedule",
+    "parking": "parking",
+    "contact-name": "contact_name",
+    "public-email": "public_email",
+    "members-link": "members_link",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "brand-name": "club_name",
+    "welcome-paragraph": "welcome",
+    "fee-first-visit": "fee_first_visit"
+  },
+  "image_map": {
+    "hero-photo": "photo_clubhouse",
+    "strip-lawns": "photo_lawns",
+    "strip-players": "photo_players",
+    "strip-closeup": "photo_closeup",
+    "strip-social": "photo_social",
+    "logo-mark": "logo"
+  },
+  "optional_sections": {
+    "fees": ".fee-slot",
+    "parking": ".parking-line",
+    "contact_name": ".contact-name-row",
+    "members_link": ".members-link-row",
+    "footer_acknowledgment": ".footer__ack",
+    "logo": ".club-logo",
+    "welcome": ".welcome-lede",
+    "fee_first_visit": ".fee-first-visit-row"
+  },
+  "has_map": true
+}
