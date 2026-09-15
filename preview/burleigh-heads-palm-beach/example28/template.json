@@ -14,7 +14,9 @@
     "address": "address",
     "suburb-line": "suburb_line",
     "cost-value": "fees",
+    "fee-first-visit": "fee_first_visit",
     "visit-note": "come_and_try",
+    "welcome-paragraph": "welcome",
     "phone": "phone",
     "public-email": "public_email",
     "play-schedule": "play_schedule",
@@ -43,7 +45,9 @@
     "facebook_url": ".social-row",
     "contact_name": ".contact-name-row",
     "footer_acknowledgment": ".footer-ack",
-    "logo": ".club-logo"
+    "logo": ".club-logo",
+    "welcome": ".story__lede",
+    "fee_first_visit": ".fee-first-visit-row"
   },
   "colour_map": {
     "--navy": "color_primary",

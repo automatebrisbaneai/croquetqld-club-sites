@@ -21,7 +21,9 @@
     "members-link": "members_link",
     "facebook-link": "facebook_url",
     "contact-name": "contact_name",
-    "footer-acknowledgment": "footer_acknowledgment"
+    "footer-acknowledgment": "footer_acknowledgment",
+    "welcome-paragraph": "welcome",
+    "fee-first-visit": "fee_first_visit"
   },
   "image_map": {
     "lawns-photo": "photo_lawns",
@@ -38,7 +40,9 @@
     "facebook_url": ".social-row",
     "contact_name": ".contact-name-row",
     "footer_acknowledgment": ".footer-ack-row",
-    "logo": ".logo-badge-wrap"
+    "logo": ".logo-badge-wrap",
+    "welcome": ".welcome-lede",
+    "fee_first_visit": ".fee-first-visit-row"
   },
   "colour_map": {
     "--brand": "color_primary",

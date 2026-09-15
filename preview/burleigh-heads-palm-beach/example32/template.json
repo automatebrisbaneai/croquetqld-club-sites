@@ -24,7 +24,9 @@
     "members-link": "members_link",
     "contact-name": "contact_name",
     "footer-acknowledgment": "footer_acknowledgment",
-    "map-fallback": "address"
+    "map-fallback": "address",
+    "welcome-paragraph": "welcome",
+    "fee-first-visit": "fee_first_visit"
   },
   "image_map": {
     "cover-photo": "photo_lawns",
@@ -42,7 +44,9 @@
     "facebook_url": ".social-row",
     "contact_name": ".contact-name-row",
     "footer_acknowledgment": ".footer-ack",
-    "logo": ".club-logo"
+    "logo": ".club-logo",
+    "welcome": ".welcome-lede",
+    "fee_first_visit": ".fee-first-visit-row"
   },
   "colour_map": {
     "--ink": "color_primary",

@@ -21,7 +21,9 @@
     "public-email": "public_email",
     "members-link": "members_link",
     "footer-acknowledgment": "footer_acknowledgment",
-    "brand-name": "club_name"
+    "brand-name": "club_name",
+    "welcome-paragraph": "welcome",
+    "fee-first-visit": "fee_first_visit"
   },
   "image_map": {
     "hero-photo": "photo_clubhouse",
@@ -37,7 +39,9 @@
     "contact_name": ".contact-name-row",
     "members_link": ".members-link-row",
     "footer_acknowledgment": ".footer__ack",
-    "logo": ".club-logo"
+    "logo": ".club-logo",
+    "welcome": ".welcome-lede",
+    "fee_first_visit": ".fee-first-visit-row"
   },
   "has_map": true
 }

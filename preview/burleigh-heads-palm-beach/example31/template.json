@@ -20,7 +20,9 @@
     "fees": "fees",
     "about-paragraph": "about",
     "members-link": "members_link",
-    "footer-acknowledgment": "footer_acknowledgment"
+    "footer-acknowledgment": "footer_acknowledgment",
+    "welcome-paragraph": "welcome",
+    "fee-first-visit": "fee_first_visit"
   },
   "image_map": {
     "hero-photo": "photo_lawns",
@@ -35,7 +37,9 @@
     "parking": ".parking-line",
     "members_link": ".members-link-row",
     "contact_name": ".contact-name-row",
-    "logo": ".club-logo"
+    "logo": ".club-logo",
+    "welcome": ".welcome-lede",
+    "fee_first_visit": ".fee-first-visit-row"
   },
   "colour_map": {
     "--navy": "color_primary",

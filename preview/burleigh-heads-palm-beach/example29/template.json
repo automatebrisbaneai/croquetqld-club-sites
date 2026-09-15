@@ -20,7 +20,9 @@
     "contact-name": "contact_name",
     "members-link": "members_link",
     "about-paragraph": "about",
-    "footer-acknowledgment": "footer_acknowledgment"
+    "footer-acknowledgment": "footer_acknowledgment",
+    "welcome-paragraph": "welcome",
+    "fee-first-visit": "fee_first_visit"
   },
   "image_map": {
     "site-logo": "logo",
@@ -34,7 +36,9 @@
     "members_link": ".t-members",
     "contact_name": ".contact-name-row",
     "footer_acknowledgment": ".footer-ack",
-    "logo": ".header__crest"
+    "logo": ".header__crest",
+    "welcome": ".welcome-lede",
+    "fee_first_visit": ".fee-first-visit-row"
   },
   "colour_map": {
     "--tile-ink": "color_primary",
