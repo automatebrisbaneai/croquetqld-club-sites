@@ -1,0 +1,55 @@
+{
+  "id": "example29",
+  "name": "Noticeboard",
+  "type": "template",
+  "version": "1.0.0",
+  "has_map": true,
+  "text_map": {
+    "page-title": "club_name",
+    "club-name": "club_name",
+    "club-name-full": "club_name_full",
+    "tagline": "tagline",
+    "header-when": "play_schedule_first",
+    "address": "address",
+    "parking": "parking",
+    "play-schedule": "play_schedule",
+    "fees": "fees",
+    "come-and-try": "come_and_try",
+    "phone": "phone",
+    "public-email": "public_email",
+    "contact-name": "contact_name",
+    "members-link": "members_link",
+    "about-paragraph": "about",
+    "footer-acknowledgment": "footer_acknowledgment"
+  },
+  "image_map": {
+    "site-logo": "logo",
+    "tile-photo-main": "photo_clubhouse",
+    "tile-photo-lawn": "photo_players",
+    "tile-photo-closeup": "photo_closeup"
+  },
+  "optional_sections": {
+    "fees": ".t-fees",
+    "parking": ".t-map__parking",
+    "members_link": ".t-members",
+    "contact_name": ".contact-name-row",
+    "footer_acknowledgment": ".footer-ack",
+    "logo": ".header__crest"
+  },
+  "colour_map": {
+    "--tile-ink": "color_primary",
+    "--tile-loud": "color_secondary",
+    "--tile-soft": "color_accent"
+  },
+  "map": {
+    "enabled": true,
+    "iframe_id": "map-iframe",
+    "source": "address",
+    "fallback": "google_maps_search"
+  },
+  "seo": {
+    "h1": "{club_name_full} Croquet Club, {suburb}",
+    "meta_title": "{club_name} Croquet Club, {suburb} | Croquet Queensland",
+    "meta_description": "tagline"
+  }
+}
