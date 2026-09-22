@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Stephens Croquet Club: three website directions</title>
+<meta name="description" content="Three demonstration redesigns of the Stephens Croquet Club website for the committee to compare.">
+<style>
+  :root { --green: #00A651; --ink: #1c1c1c; --paper: #f7f6f2; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 18px; line-height: 1.5; color: var(--ink); background: var(--paper); }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 16px 80px; }
+  h1 { font-size: 34px; line-height: 1.15; margin: 0 0 12px; }
+  .lead { margin: 0 0 40px; max-width: 640px; }
+  .grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  .card { display: block; background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 24px; color: inherit; text-decoration: none; }
+  .card:hover { border-color: var(--green); }
+  .tag { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+  .card h2 { font-size: 22px; margin: 0 0 8px; }
+  .card p { margin: 0 0 16px; }
+  .btn { display: inline-block; background: var(--green); color: #fff; font-weight: 700; padding: 10px 16px; border-radius: 6px; }
+  .note { margin-top: 40px; font-size: 16px; color: #555; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Stephens Croquet Club: three website directions</h1>
+  <p class="lead">Same club, same facts, three ways of showing them. Open each one on your phone and on a computer. Every page of the current site is here in each version, plus the changes Kevin asked for.</p>
+  <div class="grid">
+    <a class="card" href="a-classic/index.html">
+      <span class="tag">Direction A</span>
+      <h2>Classic, as now</h2>
+      <p>The current site's shape, tidied up: green band, lawn photo, three boxes, play times and a Coming up list added.</p>
+      <span class="btn">Open A</span>
+    </a>
+    <a class="card" href="b-best-of-type/index.html">
+      <span class="tag">Direction B</span>
+      <h2>Best of type</h2>
+      <p>A fresh modern club site: bold headline on the lawn photo, facts strip, event rows, sticky Come and try bar on phones.</p>
+      <span class="btn">Open B</span>
+    </a>
+    <a class="card" href="c-fancy/index.html">
+      <span class="tag">Direction C</span>
+      <h2>110% fancy</h2>
+      <p>Tiles for everything: weather, next session, camera, events with pictures, sponsor space, gallery lightbox.</p>
+      <span class="btn">Open C</span>
+    </a>
+  </div>
+  <p class="note">Demonstration only. Events are copied from the CAQ calendar at build time. Weather and camera links are waiting on the club. Photos are stand-ins from the current site.</p>
+</main>
+</body>
+</html>
