@@ -1,0 +1,259 @@
+:root{
+  --green:#00A651; --green-dark:#007a3d; --red:#ED1C24; --ink:#231F20;
+  --surface:#F4F6F3; --card:#FFFFFF; --line:#E4E8E2; --muted:#5B645C;
+  --frame-w:460px; --radius:20px; --radius-sm:14px;
+  --font-head:'Manrope',system-ui,sans-serif; --font-body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:var(--font-body);
+  background:#DCE3DA;
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:var(--green-dark);text-decoration:none;}
+h1,h2,h3{font-family:var(--font-head);margin:0 0 6px;line-height:1.15;color:var(--ink);}
+h1{font-size:26px;font-weight:800;}
+h2{font-size:19px;font-weight:800;}
+h3{font-size:17px;font-weight:800;}
+p{margin:0 0 10px;min-width:0;}
+
+.app{
+  position:relative;
+  max-width:var(--frame-w);
+  margin:0 auto;
+  min-height:100vh;
+  background:var(--surface);
+  display:flex;
+  flex-direction:column;
+}
+/* Tablet: a taller centred phone-shaped card. Dropped again at >=1024px,
+   where older members on a PC get a real dashboard, not a tiny phone. */
+@media (min-width:760px) and (max-width:1023.98px){
+  body{padding:32px 0 60px;}
+  .app{
+    min-height:844px;
+    border-radius:36px;
+    box-shadow:0 30px 70px rgba(20,30,20,.28), 0 0 0 10px #14161233;
+    overflow:hidden;
+    border:1px solid rgba(0,0,0,.06);
+    transform:translateZ(0);
+  }
+}
+
+
+.appbar{
+  position:sticky; top:0; z-index:5;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:10px; padding:14px 16px;
+  background:var(--ink); color:#fff;
+}
+.appbar-id{display:flex;align-items:center;gap:8px;min-width:0;}
+.appbar-crest{border-radius:6px;flex:none;}
+.appbar-name{font-family:var(--font-head);font-weight:800;font-size:17px;letter-spacing:.2px;}
+.appbar-call{
+  background:var(--green); color:#fff; font-weight:700; font-size:14px;
+  padding:8px 12px; border-radius:999px; white-space:nowrap;
+}
+
+.screen{
+  flex:1;
+  padding:14px 14px 96px;
+  display:flex; flex-direction:column; gap:14px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:0 1px 2px rgba(20,30,20,.06);
+  min-width:0;
+}
+.card-header{padding-bottom:14px;}
+.page-sub{color:var(--muted);margin:0;font-size:17px;}
+
+/* Today card */
+.card-today{
+  background:linear-gradient(160deg,#0f2c1c,#123a24 60%,var(--ink));
+  color:#fff;
+}
+.card-today h1{color:#fff;}
+.card-today .eyebrow{
+  display:block; text-transform:uppercase; letter-spacing:.08em; font-size:13px; font-weight:700;
+  color:#8fd9ab; margin:0 0 6px;
+}
+.today-sub{color:#d7e6da;margin:0 0 14px;font-size:17px;}
+.today-session{
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  background:rgba(255,255,255,.08); border-radius:var(--radius-sm);
+  padding:12px 14px; margin-bottom:14px; min-width:0;
+}
+.today-session .dot{width:10px;height:10px;border-radius:50%;flex:none;}
+.chip-live .dot{background:#3ee08a;box-shadow:0 0 0 4px rgba(62,224,138,.25);}
+.chip-soon .dot{background:#ffd166;}
+.today-session-label{font-size:14px;color:#cfe3d5;font-weight:600;}
+.today-session-value{font-weight:800;font-family:var(--font-head);font-size:17px;}
+.today-countdown{display:block;font-size:14px;color:#9fd6b6;margin:0 0 14px;}
+.today-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:999px; padding:12px 18px; font-weight:700; font-size:15px;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--green);color:#fff;}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;}
+
+/* chip / pill rows */
+.card-chips h3{margin-bottom:12px;}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;min-width:0;}
+.pill{
+  background:var(--surface); border:1px solid var(--line); border-radius:999px;
+  padding:8px 12px; font-size:14px; font-weight:600; color:var(--ink);
+}
+.chip{
+  background:var(--surface); border:1px solid var(--line); border-radius:999px;
+  padding:8px 12px; font-size:14px; font-weight:600; color:var(--ink);
+}
+a.chip-link{color:var(--green-dark);}
+
+.chiprow{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;}
+.chiprow .chip{flex:none;}
+.chip-on{background:var(--green);border-color:var(--green);color:#fff;}
+
+/* link cards (image + text) */
+.card-link{padding:0;overflow:hidden;}
+.card-link img{width:100%;height:150px;object-fit:cover;}
+.card-link-body{padding:16px 18px;}
+.card-link-body p{color:var(--muted);}
+.card-link-cta{font-weight:700;color:var(--green-dark);}
+.card-link-reverse .card-link-body{order:1;}
+
+/* events */
+.card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.card-head h3{margin:0;}
+.see-all{font-size:14px;font-weight:700;}
+.event-row{display:flex;gap:12px;padding:10px 0;border-top:1px solid var(--line);min-width:0;}
+.event-row:first-of-type{border-top:none;}
+.event-date{
+  flex:none;width:64px;font-weight:800;font-family:var(--font-head);color:var(--green-dark);font-size:14px;
+}
+.event-name{margin:0;font-weight:700;}
+.event-venue{margin:0;color:var(--muted);font-size:14px;}
+.event-empty{color:var(--muted);}
+.sponsor-slot{margin-top:12px;padding:12px;border:1px dashed var(--line);border-radius:var(--radius-sm);}
+.sponsor-slot p{margin:0;font-size:14px;color:var(--muted);}
+
+/* info / club card */
+.card-info h3{margin-bottom:10px;}
+.info-line{color:var(--muted);}
+.info-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+.info-row a{font-weight:700;}
+.info-fine{font-size:14px;color:var(--muted);margin:0;}
+
+/* facts */
+.fact-row{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid var(--line);min-width:0;}
+.fact-row:first-of-type{border-top:none;}
+.fact-row span:first-child{color:var(--muted);font-size:14px;flex:none;}
+.fact-row span:last-child{font-weight:700;text-align:right;}
+
+/* timeline */
+.decade-row{display:flex;gap:12px;padding:10px 0;border-top:1px solid var(--line);min-width:0;}
+.decade-row:first-of-type{border-top:none;}
+.decade-year{flex:none;width:56px;font-weight:800;font-family:var(--font-head);color:var(--green-dark);}
+.decade-row p{margin:0;color:var(--muted);}
+
+/* prose */
+.card-prose p{color:var(--ink);}
+.card-prose h2{margin-top:4px;}
+.card-prose ul,.card-prose ol{padding-left:20px;margin:0 0 10px;}
+.card-prose li{margin-bottom:6px;color:var(--ink);}
+
+/* committee */
+.card-committee h3{margin-bottom:10px;}
+.committee-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:9px 0;border-top:1px solid var(--line);min-width:0;}
+.committee-row:first-of-type{border-top:none;}
+.committee-role{flex:1 1 130px;font-size:14px;color:var(--muted);min-width:0;}
+.committee-name{flex:1 1 110px;font-weight:700;min-width:0;}
+
+/* map */
+.card-map{padding:0;overflow:hidden;background:#e3e8e1;}
+.card-map iframe{width:100%;height:220px;border:0;display:block;}
+
+/* gallery */
+.card-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.card-gallery figure{margin:0;min-width:0;}
+.card-gallery img{width:100%;height:120px;object-fit:cover;border-radius:var(--radius-sm);}
+.card-gallery figcaption{font-size:14px;color:var(--muted);margin-top:6px;}
+
+/* links page */
+.card-links h3{margin:16px 0 10px;}
+.card-links h3:first-child{margin-top:0;}
+
+/* tab bar */
+.tabbar{
+  position:fixed; left:50%; bottom:0; transform:translateX(-50%);
+  width:100%; max-width:var(--frame-w); z-index:6;
+  display:flex; background:var(--ink);
+  padding:8px 6px calc(8px + env(safe-area-inset-bottom));
+  border-top:1px solid rgba(255,255,255,.08);
+}
+.tab{
+  flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;
+  padding:6px 2px; color:#9aa39c; font-size:12px; font-weight:600;
+}
+.tab svg{width:22px;height:22px;}
+.tab.active{color:#fff;}
+.tab.active svg{color:var(--green);}
+
+/* Desktop dashboard: sidebar nav + multi-column cards, no phone chrome.
+   Placed last so it wins over the base/tablet rules above at this width
+   (equal specificity, source order decides). */
+@media (min-width:1024px){
+  body{padding:0;}
+  .app{
+    max-width:1180px;
+    min-height:100vh;
+    background:transparent;
+    display:block;
+  }
+  .appbar{
+    position:sticky; top:0;
+    padding:16px 28px;
+  }
+  .appbar-name{font-size:19px;}
+  .tabbar{
+    position:fixed; left:auto; right:auto; transform:none;
+    top:0; bottom:0;
+    width:220px; max-width:220px;
+    margin-top:64px;
+    flex-direction:column; align-items:stretch; justify-content:flex-start;
+    gap:4px; padding:20px 14px;
+    border-top:none; border-right:1px solid rgba(255,255,255,.08);
+  }
+  .tab{
+    flex:none; flex-direction:row; justify-content:flex-start; gap:12px;
+    padding:11px 14px; border-radius:12px; font-size:15px;
+  }
+  .tab.active{background:rgba(255,255,255,.1);}
+  .tab svg{width:20px;height:20px;}
+  .screen{
+    margin-left:220px;
+    padding:26px 32px 56px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    align-items:start;
+  }
+  .chiprow{grid-column:1 / -1;}
+  .card-header, .card-today, .card-prose, .card-map, .card-gallery,
+  .card-committee, .card-timeline{
+    grid-column:1 / -1;
+  }
+}
+@media (min-width:1400px){
+  .screen{grid-template-columns:repeat(3,1fr);}
+}

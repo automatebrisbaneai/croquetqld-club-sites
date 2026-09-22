@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stephens Croquet Club, Yeronga | Today at Stephens</title>
+<meta name="description" content="Stephens Croquet Club at Yeronga Park, Brisbane, welcomes new players and casual visitors all year round.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="images/logo.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SportsActivityLocation", "name": "Stephens Croquet Club", "address": {"@type": "PostalAddress", "streetAddress": "Yeronga Park Mallet Sports Centre, 104 Frederick St, Yeronga (access via Frederick St off Villa St)", "addressLocality": "Yeronga", "addressRegion": "QLD", "addressCountry": "AU"}, "telephone": "0413 732 986", "geo": {"@type": "GeoCoordinates", "latitude": -27.51896, "longitude": 153.02661}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Wednesday", "opens": "09:45", "description": "AC"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Saturday", "opens": "12:45", "description": "AC"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Friday", "opens": "15:00", "description": "GC (September to April)"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Friday", "opens": "14:00", "description": "GC (May to August)"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Sunday", "opens": "15:00", "description": "GC (September to April)"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Sunday", "opens": "14:00", "description": "GC (May to August)"}]}</script>
+</head>
+<body>
+<div class="app">
+  <header class="appbar">
+  <div class="appbar-id">
+    <img class="appbar-crest" src="images/logo.png" alt="" width="28" height="28">
+    <span class="appbar-name">Stephens</span>
+  </div>
+  <a class="appbar-call" href="tel:0413732986" data-edit-id="appbar-phone" aria-label="Call the club">0413 732 986</a>
+</header>
+  <main class="screen">
+    <section class="card card-today">
+  <span class="eyebrow">Wednesday 23 September</span>
+  <h1 data-edit-id="home-h1">Today at Stephens</h1>
+  <p class="today-sub">Stephens Croquet Club, <span data-edit-id="home-suburb">Yeronga</span> &middot; Est. 1923</p>
+  <div class="today-session chip-soon" id="today-session">
+    <span class="dot" aria-hidden="true"></span>
+    <span class="today-session-label" id="today-session-label">Next up</span>
+    <span class="today-session-value" id="today-session-value" data-edit-id="home-next-session">Today 9.45am AC</span>
+  </div>
+  <span class="today-countdown" id="today-countdown" data-edit-id="home-countdown">Starts later today</span>
+  <div class="today-actions">
+    <a class="btn btn-primary" href="https://my.croquetqld.org/come-and-try?club=stephens">Come and try, free</a>
+    <a class="btn btn-ghost" href="tel:0413732986" data-edit-id="home-phone-btn">Call 0413 732 986</a>
+  </div>
+</section>
+<script type="application/json" id="schedule-data">[{"code": "AC", "day": "Wednesday", "time": "9.45am", "note": ""}, {"code": "AC", "day": "Saturday", "time": "12.45pm", "note": ""}, {"code": "GC", "day": "Friday", "time": "3.00pm", "note": "September to April"}, {"code": "GC", "day": "Friday", "time": "2.00pm", "note": "May to August"}, {"code": "GC", "day": "Sunday", "time": "3.00pm", "note": "September to April"}, {"code": "GC", "day": "Sunday", "time": "2.00pm", "note": "May to August"}]</script>
+<script>
+(function(){
+  try{
+    var raw = document.getElementById('schedule-data');
+    var schedule = JSON.parse(raw.textContent);
+    var DAY_ORDER=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+    var DAY_ABBR={"Monday":"Mon","Tuesday":"Tue","Wednesday":"Wed","Thursday":"Thu","Friday":"Fri","Saturday":"Sat","Sunday":"Sun"};
+    function seasonApplies(note, month){
+      if(!note) return true;
+      var n = note.toLowerCase();
+      if(n.indexOf("september to april")>-1) return [9,10,11,12,1,2,3,4].indexOf(month)>-1;
+      if(n.indexOf("may to august")>-1) return [5,6,7,8].indexOf(month)>-1;
+      return true;
+    }
+    function parseTime(t){
+      var m=/(\d{1,2})\.(\d{2})\s*([ap]m)/i.exec(t.trim());
+      if(!m) return null;
+      var h=parseInt(m[1],10), mn=parseInt(m[2],10), ap=m[3].toLowerCase();
+      if(ap==="pm" && h!==12) h+=12;
+      if(ap==="am" && h===12) h=0;
+      return [h,mn];
+    }
+    function fmtTime(d){
+      var h=d.getHours(), m=d.getMinutes();
+      var ap = h>=12 ? "pm" : "am";
+      var h12 = h % 12; if(h12===0) h12=12;
+      return h12 + (m ? "." + (m<10 ? "0"+m : m) : "") + ap;
+    }
+    var now = new Date();
+    var todayName = DAY_ORDER[(now.getDay()+6)%7];
+    var live = null;
+    for(var i=0;i<schedule.length;i++){
+      var entry = schedule[i];
+      if(entry.day!==todayName || !seasonApplies(entry.note, now.getMonth()+1)) continue;
+      var parsed = parseTime(entry.time);
+      if(!parsed) continue;
+      var start = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parsed[0], parsed[1]);
+      var end = new Date(start.getTime() + 3*60*60*1000);
+      if(now>=start && now<end){ live = {entry: entry, start: start, end: end}; break; }
+    }
+    var labelEl = document.getElementById("today-session-label");
+    var valueEl = document.getElementById("today-session-value");
+    var countdownEl = document.getElementById("today-countdown");
+    var pillEl = document.getElementById("today-session");
+    if(live){
+      labelEl.textContent = "Playing now";
+      valueEl.textContent = "Today " + live.entry.time + " " + live.entry.code;
+      countdownEl.textContent = "On now, ends around " + fmtTime(live.end);
+      pillEl.classList.remove("chip-soon"); pillEl.classList.add("chip-live");
+    } else {
+      var best = null;
+      for(var d=0; d<8; d++){
+        var dt = new Date(now.getFullYear(), now.getMonth(), now.getDate()+d);
+        var dayName = DAY_ORDER[(dt.getDay()+6)%7];
+        for(var j=0;j<schedule.length;j++){
+          var e2 = schedule[j];
+          if(e2.day!==dayName || !seasonApplies(e2.note, dt.getMonth()+1)) continue;
+          var p2 = parseTime(e2.time);
+          if(!p2) continue;
+          var start2 = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), p2[0], p2[1]);
+          if(d===0 && start2<=now) continue;
+          if(best===null || start2<best.start){ best = {entry: e2, start: start2, daysAhead: d}; }
+        }
+      }
+      if(best){
+        var lbl = best.daysAhead===0 ? "Today" : (best.daysAhead===1 ? "Tomorrow" : DAY_ABBR[best.entry.day]);
+        valueEl.textContent = lbl + " " + best.entry.time + " " + best.entry.code;
+        labelEl.textContent = "Next up";
+        var diffMin = Math.round((best.start.getTime()-now.getTime())/60000);
+        if(diffMin < 60){
+          countdownEl.textContent = "Starts in " + Math.max(diffMin,1) + " min";
+        } else if(best.daysAhead===0){
+          var hrs = Math.floor(diffMin/60), mins = diffMin%60;
+          countdownEl.textContent = "Starts in " + hrs + "h" + (mins ? " " + mins + "m" : "");
+        } else if(best.daysAhead===1){
+          countdownEl.textContent = "Next session tomorrow";
+        } else {
+          countdownEl.textContent = "Next session in " + best.daysAhead + " days";
+        }
+        pillEl.classList.remove("chip-live"); pillEl.classList.add("chip-soon");
+      }
+    }
+  }catch(e){}
+})();
+</script>
+<section class="card card-chips">
+  <h3>Play days</h3>
+  <div class="pillrow">
+    <span class="pill" data-edit-id="home-play-ac-wed">AC &middot; Wed 9.45am</span>
+    <span class="pill" data-edit-id="home-play-ac-sat">AC &middot; Sat 12.45pm</span>
+    <span class="pill" data-edit-id="home-play-gc-fri">GC &middot; Fri afternoon</span>
+    <span class="pill" data-edit-id="home-play-gc-sun">GC &middot; Sun afternoon</span>
+  </div>
+</section>
+<section class="card card-link">
+  <img src="images/home-hero-lawns.jpg" alt="Members and visitors on the lawn beside the Stephens clubhouse" loading="lazy">
+  <div class="card-link-body">
+    <h3>About croquet</h3>
+    <p>Association Croquet, Golf Croquet and Ricochet, all played on our four lawns.</p>
+    <a class="card-link-cta" href="about-croquet.html">Read more &rsaquo;</a>
+  </div>
+</section>
+<section class="card card-link card-link-reverse">
+  <img src="images/get-started-try-free.jpg" alt="A member lining up a shot, ball and hoop in the foreground" loading="lazy">
+  <div class="card-link-body">
+    <h3>Get started</h3>
+    <p>Come and try a session or two at no charge. All gear is provided.</p>
+    <a class="card-link-cta" href="get-started.html">How it works &rsaquo;</a>
+  </div>
+</section>
+<section class="card card-events">
+  <div class="card-head">
+    <h3>Coming up</h3>
+    <a class="see-all" href="sponsorship.html">See all &rsaquo;</a>
+  </div>
+  
+      <div class="event-row">
+        <span class="event-date" data-edit-id="home-event-date-0">7–8 Nov</span>
+        <div>
+          <p class="event-name" data-edit-id="home-event-name-0">AC CAQ Division 3 & 4 championships</p>
+          <p class="event-venue" data-edit-id="home-event-venue-0">Stephens Croquet Club</p>
+        </div>
+      </div>
+      <div class="event-row">
+        <span class="event-date" data-edit-id="home-event-date-1">26–30 Mar</span>
+        <div>
+          <p class="event-name" data-edit-id="home-event-name-1">Stephens Easter AC & GC</p>
+          <p class="event-venue" data-edit-id="home-event-venue-1">Stephens</p>
+        </div>
+      </div>
+  <div class="sponsor-slot">
+    <p data-edit-id="home-sponsor-line">Your logo here: sponsor an event at Stephens.</p>
+  </div>
+</section>
+<section class="card card-info">
+  <h3>Stephens Croquet Club</h3>
+  <p class="info-line"><span data-edit-id="card-address">Yeronga Park Mallet Sports Centre, Yeronga</span></p>
+  <div class="info-row">
+    <a href="tel:0413732986" data-edit-id="card-phone">0413 732 986</a>
+    <a href="mailto:stephens@croquetqld.org" data-edit-id="card-email">stephens@croquetqld.org</a>
+    <a href="https://facebook.com/croquetyerongapark" data-edit-id="card-facebook">Facebook</a>
+  </div>
+  <p class="info-fine" data-edit-id="card-patron">Patron: Nicole Johnston, Councillor for Tennyson</p>
+</section>
+  </main>
+  <nav class="tabbar" aria-label="Main"><a class="tab active" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l14 8-14 8V4z"/></svg><span>Play</span></a><a class="tab" href="sponsorship.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Events</span></a><a class="tab" href="history.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5M3 17l9 5 9-5"/></svg><span>Club</span></a><a class="tab" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2L8 10a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2z"/></svg><span>Contact</span></a></nav>
+</div>
+</body>
+</html>
