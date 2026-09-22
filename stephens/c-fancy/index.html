@@ -8,7 +8,7 @@
 <meta name="description" content="Stephens Croquet Club at Yeronga Park, Brisbane, welcomes new players and casual visitors all year round.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -54,13 +54,19 @@
 
 <section class="hero">
   <div class="hero__photo-grid">
-    <img src="images/home-hero-lawns.jpg" alt="Members playing croquet on the Stephens lawn, clubhouse behind" class="hero__photo hero__photo--wide" loading="lazy">
+    <img src="assets/hero-wide-competition.jpg" alt="Members playing croquet on a lawn, mallet in motion" class="hero__photo hero__photo--wide" loading="eager" data-stock="pixabay">
     <img src="images/home-when-we-play.jpg" alt="Two members playing on the lawn at Stephens Croquet Club" class="hero__photo" loading="lazy">
-    <img src="images/get-started-try-free.jpg" alt="A member taking a shot during a Come and Try session" class="hero__photo" loading="lazy">
+    <img src="assets/hero-small-mallets.jpg" alt="Wooden croquet mallets close up" class="hero__photo" loading="lazy" data-stock="pixabay">
   </div>
   <div class="hero__facts-card">
-    <p class="hero__eyebrow">Stephens Croquet Club, Yeronga</p>
+    <img class="motif motif--badge motif--corner" src="assets/motif-hoop.svg" alt="" aria-hidden="true">
+    <span class="hero__eyebrow">Yeronga Park, Brisbane</span>
     <h1>Stephens Croquet Club, Yeronga</h1>
+    <div class="hero__quickfacts">
+      <span class="hero__chip" data-edit-id="hero-quick-where">Yeronga, Yeronga Park</span>
+      <span class="hero__chip" data-edit-id="hero-quick-when">Wed, Sat, Fri &amp; Sun</span>
+      <a class="hero__chip hero__chip--phone" data-edit-id="hero-quick-phone" href="tel:0413732986">0413 732 986</a>
+    </div>
     <p class="hero__tagline">New players welcome, all year round. Come and try a session at no charge.</p>
     <dl class="hero__facts">
       <div><dt>When</dt><dd data-edit-id="hero-when">Wed &amp; Sat mornings/afternoons, Fri &amp; Sun afternoons</dd></div>
@@ -81,9 +87,22 @@
     </a>
 
     <div class="tile tile--weather" data-live="weather">
+      <svg class="tile__weather-icon" viewBox="0 0 52 52" aria-hidden="true">
+        <circle class="sun" cx="26" cy="26" r="11"/>
+        <g class="ray">
+          <line x1="26" y1="2" x2="26" y2="9"/>
+          <line x1="26" y1="43" x2="26" y2="50"/>
+          <line x1="2" y1="26" x2="9" y2="26"/>
+          <line x1="43" y1="26" x2="50" y2="26"/>
+          <line x1="9.5" y1="9.5" x2="14.5" y2="14.5"/>
+          <line x1="37.5" y1="37.5" x2="42.5" y2="42.5"/>
+          <line x1="9.5" y1="42.5" x2="14.5" y2="37.5"/>
+          <line x1="37.5" y1="14.5" x2="42.5" y2="9.5"/>
+        </g>
+      </svg>
       <p class="tile__label">Lawn today</p>
-      <p class="tile__weather-temp">&ndash;&ndash;&deg;</p>
-      <a class="tile__link" href="#">Weather station: link to come</a>
+      <p class="tile__weather-line">Live weather from the club&rsquo;s station</p>
+      <span class="tile__pill">Coming soon</span>
     </div>
 
     <div class="tile tile--countdown" data-schedule='[{"code": "AC", "day": "Wednesday", "time": "9.45am", "note": ""}, {"code": "AC", "day": "Saturday", "time": "12.45pm", "note": ""}, {"code": "GC", "day": "Friday", "time": "3.00pm", "note": "September to April"}, {"code": "GC", "day": "Friday", "time": "2.00pm", "note": "May to August"}, {"code": "GC", "day": "Sunday", "time": "3.00pm", "note": "September to April"}, {"code": "GC", "day": "Sunday", "time": "2.00pm", "note": "May to August"}]'>
@@ -93,6 +112,7 @@
     </div>
 
     <div class="tile tile--stat">
+      <span class="tile__stat-ghost" aria-hidden="true">1923</span>
       <p class="tile__label">Est.</p>
       <p class="tile__stat-number" data-edit-id="stat-founded" data-target="1923">1923</p>
       <p class="tile__stat-caption">Playing croquet at Yeronga Park</p>
@@ -105,8 +125,10 @@
     </div>
 
     <a class="tile tile--camera" href="#">
+      <img src="assets/camera-duotone.jpg" alt="" class="tile__camera-bg" loading="lazy" data-stock="pixabay">
+      <span class="tile__camera-live">Live</span>
       <p class="tile__label">Club camera</p>
-      <p class="tile__camera-text">Live view: link to come</p>
+      <p class="tile__camera-text">Live view of the lawns, coming soon</p>
     </a>
 
     <div class="tile tile--map">
@@ -120,7 +142,7 @@
       <div class="event-card-row">
         
         <a class="event-card" href="https://www.revolutionise.com.au/caq/events/319436">
-          <img src="images/home-hero-lawns.jpg" alt="AC CAQ Division 3 & 4 championships" class="event-card__img" loading="lazy">
+          <img src="assets/page-header-mallets.jpg" alt="AC CAQ Division 3 & 4 championships" class="event-card__img" loading="lazy" data-stock="pixabay">
           <span class="event-card__pill" data-edit-id="event-date-gs24g1x2dzxnurz">7–8 Nov</span>
           <div class="event-card__body">
             <h3 data-edit-id="event-title-gs24g1x2dzxnurz">AC CAQ Division 3 & 4 championships</h3>
@@ -129,7 +151,7 @@
           </div>
         </a>
         <a class="event-card" href="https://my.croquetqld.org/calendar">
-          <img src="images/home-hero-lawns.jpg" alt="Stephens Easter AC & GC" class="event-card__img" loading="lazy">
+          <img src="assets/event-balls.jpg" alt="Stephens Easter AC & GC" class="event-card__img" loading="lazy" data-stock="pixabay">
           <span class="event-card__pill" data-edit-id="event-date-4svvzamdc44emfb">26–30 Mar</span>
           <div class="event-card__body">
             <h3 data-edit-id="event-title-4svvzamdc44emfb">Stephens Easter AC & GC</h3>
@@ -157,7 +179,7 @@
     </a>
 
     <a class="tile tile--feature" style="--feature-colour: var(--red)" href="facilities.html">
-      <img src="images/facilities-clubhouse-hire.jpg" alt="The Stephens clubhouse function room" class="tile__feature-img" loading="lazy">
+      <img src="assets/facilities-tile.jpg" alt="A grand clubhouse overlooking a croquet lawn" class="tile__feature-img" loading="lazy" data-stock="pixabay">
       <div class="tile__feature-text">
         <h3>Facilities</h3>
         <p>4 courts and a clubhouse for hire.</p>
@@ -188,7 +210,7 @@
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div>
-      <strong>Stephens Croquet Club</strong>
+      <strong class="site-footer__brand"><img class="motif motif--badge" src="assets/motif-hoop.svg" alt="" aria-hidden="true">Stephens Croquet Club</strong>
       <p><span data-edit-id="footer-address">Yeronga Park Mallet Sports Centre, Yeronga</span></p>
       <p><a data-edit-id="footer-phone" href="tel:0413732986">0413 732 986</a></p>
       <p><a data-edit-id="footer-email" href="mailto:stephens@croquetqld.org">stephens@croquetqld.org</a></p>

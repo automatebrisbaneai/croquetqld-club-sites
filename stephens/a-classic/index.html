@@ -8,9 +8,9 @@
 <meta name="description" content="Stephens Croquet Club at Yeronga Park, Brisbane, welcomes new players and casual visitors all year round.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SportsActivityLocation", "name": "Stephens Croquet Club", "address": {"@type": "PostalAddress", "streetAddress": "104 Frederick St, Yeronga (access via Frederick St off Villa St)", "addressLocality": "Yeronga", "addressRegion": "QLD", "addressCountry": "AU"}, "telephone": "0413 732 986", "openingHours": ["Wednesday 9.45am", "Saturday 12.45pm", "Friday 3.00pm (September to April), 2.00pm (May to August)", "Sunday 3.00pm (September to April), 2.00pm (May to August)"], "geo": {"@type": "GeoCoordinates", "latitude": -27.51896, "longitude": 153.02661}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SportsActivityLocation", "name": "Stephens Croquet Club", "address": {"@type": "PostalAddress", "streetAddress": "104 Frederick St, Yeronga (access via Frederick St off Villa St)", "addressLocality": "Yeronga", "addressRegion": "QLD", "addressCountry": "AU"}, "telephone": "0413 732 986", "openingHours": ["Wednesday 9.45am", "Saturday 12.45pm", "Friday 3pm Sep to Apr, 2pm May to Aug", "Sunday 3pm Sep to Apr, 2pm May to Aug"], "geo": {"@type": "GeoCoordinates", "latitude": -27.51896, "longitude": 153.02661}}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -38,13 +38,41 @@
 
 <main id="main">
 
-<img class="hero-photo" src="images/home-hero-lawns.jpg" alt="Members playing croquet on the lawn in front of the Stephens clubhouse" width="1024" height="350">
+
+<section class="home-hero">
+  <img class="home-hero__photo" src="assets/home-hero.jpg" alt="Members playing croquet on an English-style lawn" data-stock="pixabay" width="1280" height="672" loading="eager">
+  <div class="home-hero__wash" aria-hidden="true"></div>
+  <span class="est-mark est-mark--hero" aria-hidden="true">Est. 1923</span>
+  <div class="container home-hero__inner">
+    <p class="eyebrow eyebrow--light" data-edit-id="home-eyebrow">Yeronga Park, Brisbane</p>
+    <h1 data-edit-id="home-h1">Stephens Croquet Club</h1>
+  </div>
+</section>
+<div class="container">
+  <div class="facts-card">
+    <div class="facts-card__item">
+      <span class="facts-card__num" data-edit-id="facts-courts-num">4</span>
+      <span class="facts-card__label" data-edit-id="facts-courts-label">Full-size courts</span>
+    </div>
+    <div class="facts-card__item">
+      <span class="facts-card__num" data-edit-id="facts-founded-num">1923</span>
+      <span class="facts-card__label" data-edit-id="facts-founded-label">Founded</span>
+    </div>
+    <div class="facts-card__item facts-card__item--next">
+      <span class="facts-card__label" data-edit-id="facts-next-label">Next on the lawn</span>
+      <span class="facts-card__next" data-edit-id="facts-next-value">AC Wednesday 9.45am</span>
+    </div>
+  </div>
+</div>
+
 <section class="container content">
-  <h1 data-edit-id="home-h1">Stephens Croquet Club, Yeronga</h1>
-  <p data-edit-id="home-intro-1">New players are always welcome at Stephens Croquet Club.</p>
+  <p class="lede" data-edit-id="home-intro-1">New players are always welcome at Stephens Croquet Club.</p>
   <p data-edit-id="home-intro-2">Come and enjoy croquet all year round. It is a great activity for all ages, parties, team building and work functions.</p>
-  <h2 data-edit-id="home-when-heading">When we play</h2>
-  <div class="play-times">
+  <div class="when-we-play">
+    <div class="when-we-play__rows">
+      <p class="eyebrow" data-edit-id="home-when-eyebrow">On the lawn</p>
+      <h2 data-edit-id="home-when-heading">When we play</h2>
+      <div class="play-times">
     <div class="play-times__row">
       <span class="play-times__code" data-edit-id="home-play-code-0">AC</span>
       <span class="play-times__day" data-edit-id="home-play-day-0">Wednesday</span>
@@ -58,25 +86,33 @@
     <div class="play-times__row">
       <span class="play-times__code" data-edit-id="home-play-code-2">GC</span>
       <span class="play-times__day" data-edit-id="home-play-day-2">Friday</span>
-      <span class="play-times__time" data-edit-id="home-play-time-2">3.00pm (September to April), 2.00pm (May to August)</span>
+      <span class="play-times__time" data-edit-id="home-play-time-2">3pm Sep to Apr, 2pm May to Aug</span>
     </div>
     <div class="play-times__row">
       <span class="play-times__code" data-edit-id="home-play-code-3">GC</span>
       <span class="play-times__day" data-edit-id="home-play-day-3">Sunday</span>
-      <span class="play-times__time" data-edit-id="home-play-time-3">3.00pm (September to April), 2.00pm (May to August)</span>
-    </div></div>
+      <span class="play-times__time" data-edit-id="home-play-time-3">3pm Sep to Apr, 2pm May to Aug</span>
+    </div></div><p class="play-times__footnote"><span class="play-times__footnote-line" data-edit-id="home-play-footnote-0">GC play is at 3.00pm from September to April, 2.00pm from May to August.</span></p>
+    </div>
+    <div class="when-we-play__photo">
+      <img src="images/home-when-we-play.jpg" alt="Members playing on the lawn in front of the clubhouse verandah" loading="lazy" width="900" height="400">
+    </div>
+  </div>
   <div class="features">
     <div class="feature-box">
+      <div class="feature-box__media"><img src="images/get-started-try-free.jpg" alt="" loading="lazy" width="400" height="220"></div>
       <h3 class="feature-box__title" data-edit-id="feature-title-0">Get started</h3>
       <p class="feature-box__body" data-edit-id="feature-body-0">Come and try a session or two at no charge. All gear is provided.</p>
       <a class="feature-box__link" data-edit-id="feature-link-0" href="get-started.html">Get started</a>
     </div>
     <div class="feature-box">
+      <div class="feature-box__media"><img src="assets/membership-hero.jpg" alt="" data-stock="pixabay" loading="lazy" width="400" height="220"></div>
       <h3 class="feature-box__title" data-edit-id="feature-title-1">Membership</h3>
       <p class="feature-box__body" data-edit-id="feature-body-1">Association Croquet on Wednesdays and Saturdays, Golf Croquet on Fridays and Sundays.</p>
       <a class="feature-box__link" data-edit-id="feature-link-1" href="membership.html">See membership</a>
     </div>
     <div class="feature-box">
+      <div class="feature-box__media"><img src="assets/about-croquet-hoop.jpg" alt="" data-stock="pixabay" loading="lazy" width="400" height="220"></div>
       <h3 class="feature-box__title" data-edit-id="feature-title-2">About croquet</h3>
       <p class="feature-box__body" data-edit-id="feature-body-2">Association Croquet, Golf Croquet and Ricochet are all played at Stephens.</p>
       <a class="feature-box__link" data-edit-id="feature-link-2" href="about-croquet.html">About croquet</a>
@@ -84,9 +120,14 @@
 </section>
 
 <section class="coming-up">
-  <div class="container">
-    <h2 data-edit-id="coming-up-heading">Coming up</h2>
-    <ul class="coming-up__list">
+  <div class="container coming-up__layout">
+    <div class="coming-up__main">
+      <div class="coming-up__heading-wrap">
+        <span class="coming-up__watermark" aria-hidden="true">Diary</span>
+        <p class="eyebrow eyebrow--light" data-edit-id="coming-up-eyebrow">On the diary</p>
+        <h2 data-edit-id="coming-up-heading">Coming up</h2>
+      </div>
+      <ul class="coming-up__list">
     <li class="coming-up__item">
       <span class="coming-up__date" data-edit-id="event-date-0">7–8 Nov</span>
       <span class="coming-up__name" data-edit-id="event-name-0">AC CAQ Division 3 & 4 championships</span>
@@ -97,7 +138,11 @@
       <span class="coming-up__name" data-edit-id="event-name-1">Stephens Easter AC & GC</span>
       
     </li></ul>
-    <p class="coming-up__sponsor-slot" data-edit-id="coming-up-sponsor-slot">Sponsor this diary. Contact the club to find out more.</p>
+    </div>
+    <aside class="coming-up__sponsor">
+      <span class="coming-up__sponsor-placeholder" data-edit-id="coming-up-sponsor-placeholder">Your logo here</span>
+      <a class="coming-up__sponsor-cta" data-edit-id="coming-up-sponsor-cta" href="sponsorship.html">Sponsor this diary</a>
+    </aside>
   </div>
 </section>
 
@@ -119,13 +164,47 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <p data-edit-id="footer-club-name">Stephens Croquet Club, Yeronga</p>
-    <p data-edit-id="footer-patron">Patron: Nicole Johnston, Councillor for Tennyson</p>
-    <p><a data-edit-id="footer-facebook" href="https://facebook.com/croquetyerongapark">Follow us on Facebook</a></p>
-    <p class="site-footer__grant" data-edit-id="footer-grant">This project is proudly funded by a Community Sport Clubs Grant from Brisbane City Council</p>
+  <div class="container site-footer__inner">
+    <div class="site-footer__col">
+      <p data-edit-id="footer-club-name">Stephens Croquet Club, Yeronga</p>
+      <p data-edit-id="footer-patron">Patron: Nicole Johnston, Councillor for Tennyson</p>
+      <p><a data-edit-id="footer-facebook" href="https://facebook.com/croquetyerongapark">Follow us on Facebook</a></p>
+      <p class="site-footer__grant" data-edit-id="footer-grant">This project is proudly funded by a Community Sport Clubs Grant from Brisbane City Council</p>
+    </div>
+    <div class="site-footer__col site-footer__col--contact">
+      <p data-edit-id="footer-address">Yeronga Park Mallet Sports Centre, 104 Frederick St, Yeronga (access via Frederick St off Villa St)</p>
+      <p><a data-edit-id="footer-phone" href="tel:0413732986">0413 732 986</a></p>
+      <p><a data-edit-id="footer-email" href="mailto:stephens@croquetqld.org">stephens@croquetqld.org</a></p>
+    </div>
+    <span class="est-mark est-mark--footer" aria-hidden="true">Est. 1923</span>
   </div>
 </footer>
 
+
+<div class="mobile-bar">
+  <a class="mobile-bar__cta" data-edit-id="mobile-bar-try" href="https://my.croquetqld.org/come-and-try?club=stephens">Come and try</a>
+  <a class="mobile-bar__cta mobile-bar__cta--ring" data-edit-id="mobile-bar-ring" href="tel:0413732986">Ring us</a>
+</div>
+
+<script>
+(function(){
+  try {
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  } catch (e) { return; }
+  document.querySelectorAll('.facts-card__num').forEach(function (el) {
+    var target = parseInt((el.textContent || '').trim(), 10);
+    if (isNaN(target)) return;
+    var start = null;
+    var dur = 900;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      el.textContent = Math.floor(p * target);
+      if (p < 1) requestAnimationFrame(step); else el.textContent = String(target);
+    }
+    requestAnimationFrame(step);
+  });
+})();
+</script>
 </body>
 </html>

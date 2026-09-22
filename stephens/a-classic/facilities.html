@@ -8,7 +8,7 @@
 <meta name="description" content="Stephens Croquet Club's courts and clubhouse are available for hire for parties, meetings and functions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -37,8 +37,17 @@
 
 <main id="main">
 
-<section class="page-hero"><div class="container"><h1 data-edit-id="facilities-h1">Club Facilities</h1></div></section>
-<img class="hero-photo" src="images/facilities-clubhouse-hire.jpg" alt="" width="900" height="400">
+
+<section class="page-hero page-hero--photo">
+  <img class="page-hero__photo" src="assets/facilities-hero.jpg" alt="The Stephens clubhouse set up for a function, honour boards on the wall" width="1280" height="700" loading="eager">
+  <div class="page-hero__wash" aria-hidden="true"></div>
+  <span class="est-mark est-mark--page" aria-hidden="true">Est. 1923</span>
+  <div class="container page-hero__inner">
+    <p class="eyebrow eyebrow--light" data-edit-id="facilities-eyebrow">Stephens Croquet Club</p>
+    <h1 data-edit-id="facilities-h1">Club Facilities</h1>
+  </div>
+</section>
+
 <section class="container content">
 <h2>The club is available for croquet party bookings</h2>
 <p>Try a new experience for your next function: a team building day, business meeting, community group event, hens' party, Friday afternoon drinks, family celebration, birthday, engagement, reunion or Christmas party.</p>
@@ -71,13 +80,27 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container">
-    <p data-edit-id="footer-club-name">Stephens Croquet Club, Yeronga</p>
-    <p data-edit-id="footer-patron">Patron: Nicole Johnston, Councillor for Tennyson</p>
-    <p><a data-edit-id="footer-facebook" href="https://facebook.com/croquetyerongapark">Follow us on Facebook</a></p>
-    <p class="site-footer__grant" data-edit-id="footer-grant">This project is proudly funded by a Community Sport Clubs Grant from Brisbane City Council</p>
+  <div class="container site-footer__inner">
+    <div class="site-footer__col">
+      <p data-edit-id="footer-club-name">Stephens Croquet Club, Yeronga</p>
+      <p data-edit-id="footer-patron">Patron: Nicole Johnston, Councillor for Tennyson</p>
+      <p><a data-edit-id="footer-facebook" href="https://facebook.com/croquetyerongapark">Follow us on Facebook</a></p>
+      <p class="site-footer__grant" data-edit-id="footer-grant">This project is proudly funded by a Community Sport Clubs Grant from Brisbane City Council</p>
+    </div>
+    <div class="site-footer__col site-footer__col--contact">
+      <p data-edit-id="footer-address">Yeronga Park Mallet Sports Centre, 104 Frederick St, Yeronga (access via Frederick St off Villa St)</p>
+      <p><a data-edit-id="footer-phone" href="tel:0413732986">0413 732 986</a></p>
+      <p><a data-edit-id="footer-email" href="mailto:stephens@croquetqld.org">stephens@croquetqld.org</a></p>
+    </div>
+    <span class="est-mark est-mark--footer" aria-hidden="true">Est. 1923</span>
   </div>
 </footer>
+
+
+<div class="mobile-bar">
+  <a class="mobile-bar__cta" data-edit-id="mobile-bar-try" href="https://my.croquetqld.org/come-and-try?club=stephens">Come and try</a>
+  <a class="mobile-bar__cta mobile-bar__cta--ring" data-edit-id="mobile-bar-ring" href="tel:0413732986">Ring us</a>
+</div>
 
 </body>
 </html>

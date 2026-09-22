@@ -8,7 +8,7 @@
 <meta name="description" content="Photos of the lawns, clubhouse and members of Stephens Croquet Club.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
 </head>
@@ -32,12 +32,18 @@
 </header>
 <main id="main">
 
-<section class="page-hero page-hero--sub">
+
+<section class="page-hero page-hero--sub page-hero--green">
+  <div class="page-hero__media" style="background-image:url('assets/page-header-lawn.jpg')" data-stock="pixabay"></div>
+  <img class="motif motif--watermark" src="assets/motif-hoop.svg" alt="" aria-hidden="true">
   <div class="page-hero__inner">
-    <h1>Gallery</h1>
-    <p class="page-hero__summary">Photos of the lawns, clubhouse and members of Stephens Croquet Club.</p>
+    <div class="page-hero__card">
+      <h1>Gallery</h1>
+      <p class="page-hero__summary">Photos of the lawns, clubhouse and members of Stephens Croquet Club.</p>
+    </div>
   </div>
 </section>
+
 <section class="wide-card-wrap">
   <article class="wide-card">
     <div class="gallery-grid"><a class="gallery-grid__item" href="#lightbox-0"><img src="images/home-hero-lawns.jpg" alt="The Stephens clubhouse and lawn at Yeronga Park with members playing." class="gallery-grid__img" loading="lazy"></a><a class="gallery-grid__item" href="#lightbox-1"><img src="images/home-when-we-play.jpg" alt="Two members playing on the lawn in front of the clubhouse." class="gallery-grid__img" loading="lazy"></a><a class="gallery-grid__item" href="#lightbox-2"><img src="images/get-started-try-free.jpg" alt="A member lining up a shot during a Come and Try session." class="gallery-grid__img" loading="lazy"></a><a class="gallery-grid__item" href="#lightbox-3"><img src="images/facilities-clubhouse-party.jpg" alt="Inside the clubhouse set up for a function." class="gallery-grid__img" loading="lazy"></a><a class="gallery-grid__item" href="#lightbox-4"><img src="images/facilities-clubhouse-hire.jpg" alt="The clubhouse function room, set up for hire." class="gallery-grid__img" loading="lazy"></a></div>
@@ -49,7 +55,7 @@
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div>
-      <strong>Stephens Croquet Club</strong>
+      <strong class="site-footer__brand"><img class="motif motif--badge" src="assets/motif-hoop.svg" alt="" aria-hidden="true">Stephens Croquet Club</strong>
       <p><span data-edit-id="footer-address">Yeronga Park Mallet Sports Centre, Yeronga</span></p>
       <p><a data-edit-id="footer-phone" href="tel:0413732986">0413 732 986</a></p>
       <p><a data-edit-id="footer-email" href="mailto:stephens@croquetqld.org">stephens@croquetqld.org</a></p>

@@ -46,6 +46,8 @@
     return best;
   }
 
+  function pad(n) { return n < 10 ? "0" + n : String(n); }
+
   function renderCountdown() {
     var tile = document.querySelector(".tile--countdown");
     if (!tile) return;
@@ -53,16 +55,33 @@
     if (!data) return;
     var schedule;
     try { schedule = JSON.parse(data); } catch (e) { return; }
-    var now = new Date();
-    var best = nextPlay(schedule, now);
-    if (!best) return;
-    var diffMs = best.when - now;
-    var diffHrs = Math.round(diffMs / 3600000);
-    var when = diffHrs < 24 ? "in " + diffHrs + " hours" : "in " + Math.round(diffHrs / 24) + " days";
     var valueEl = document.getElementById("next-play-value");
     var subEl = document.getElementById("next-play-sub");
-    if (valueEl) valueEl.textContent = best.code + " " + best.day + ", " + best.time;
-    if (subEl) subEl.textContent = "Next session " + when;
+    if (!valueEl || !subEl) return;
+
+    function tick() {
+      var now = new Date();
+      var best = nextPlay(schedule, now);
+      if (!best) return;
+      valueEl.textContent = best.code + " " + best.day + ", " + best.time;
+      var diffMs = best.when - now;
+      if (diffMs <= 0) { subEl.textContent = "Under way now"; return; }
+      var totalSec = Math.floor(diffMs / 1000);
+      var days = Math.floor(totalSec / 86400);
+      if (days >= 1) {
+        subEl.textContent = "Next session in " + days + (days === 1 ? " day" : " days");
+        return;
+      }
+      var hrs = Math.floor(totalSec / 3600);
+      var mins = Math.floor((totalSec % 3600) / 60);
+      var secs = totalSec % 60;
+      subEl.textContent = "Next session in " + pad(hrs) + ":" + pad(mins) + ":" + pad(secs);
+    }
+
+    tick();
+    // Only reached once per second at most; refines already-visible text,
+    // never creates content that wasn't there with JS off.
+    setInterval(tick, 1000);
   }
 
   function animateStats() {

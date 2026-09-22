@@ -8,7 +8,7 @@
 <meta name="description" content="Stephens Croquet Club at Yeronga Park, Brisbane, welcomes new players and casual visitors all year round.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="images/logo.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SportsActivityLocation", "name": "Stephens Croquet Club", "address": {"@type": "PostalAddress", "streetAddress": "Yeronga Park Mallet Sports Centre, 104 Frederick St, Yeronga (access via Frederick St off Villa St)", "addressLocality": "Yeronga", "addressRegion": "QLD", "addressCountry": "AU"}, "telephone": "0413 732 986", "geo": {"@type": "GeoCoordinates", "latitude": -27.51896, "longitude": 153.02661}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Wednesday", "opens": "09:45", "description": "AC"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Saturday", "opens": "12:45", "description": "AC"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Friday", "opens": "15:00", "description": "GC (September to April)"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Friday", "opens": "14:00", "description": "GC (May to August)"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Sunday", "opens": "15:00", "description": "GC (September to April)"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Sunday", "opens": "14:00", "description": "GC (May to August)"}]}</script>
@@ -38,16 +38,16 @@
   </details>
 </header>
 <section class="hero">
-  <div class="hero-photo" style="background-image:url('images/home-hero-lawns.jpg');">
+  <div class="hero-photo" data-stock="pixabay" style="background-image:url('images/hero-lawn-action.jpg');">
+    <div class="hero-top-bar">
+      <div class="hero-top-bar-inner">
+        <span id="next-lawn" data-edit-id="home-next-lawn">Next on the lawn: Tomorrow 9.45am AC</span>
+        <span class="lawn-count-wrap"><span class="lawn-count" data-target="4">4</span> lawns &middot; <strong>Come and try, first session free</strong></span>
+      </div>
+    </div>
     <div class="hero-inner">
       <span class="eyebrow">Yeronga Park, Brisbane &middot; Est. 1923</span>
       <h1 data-edit-id="home-h1">Stephens Croquet Club, Yeronga</h1>
-    </div>
-  </div>
-  <div class="hero-edge">
-    <div class="hero-edge-inner">
-      <span id="next-lawn" data-edit-id="home-next-lawn">Next on the lawn: Tomorrow 9.45am AC</span>
-      <span>Four lawns &middot; <strong>Come and try, first session free</strong></span>
     </div>
   </div>
 </section>
@@ -96,6 +96,23 @@
       if(el) el.textContent="Next on the lawn: " + label + " " + best.entry.time + " " + best.entry.code;
     }
   }catch(e){}
+  try{
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var counter = document.querySelector(".lawn-count");
+    if(counter && !reduce){
+      var target = parseInt(counter.getAttribute("data-target"), 10) || 0;
+      var start = null;
+      var dur = 800;
+      function step(ts){
+        if(start===null) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        counter.textContent = Math.round(p * target);
+        if(p < 1) requestAnimationFrame(step);
+        else counter.textContent = target;
+      }
+      requestAnimationFrame(step);
+    }
+  }catch(e){}
 })();
 </script>
 <section class="facts-wrap">
@@ -103,7 +120,8 @@
     <div class="facts-card">
       <div class="fact">
         <span class="fact-label">When</span>
-        <span class="fact-value" data-edit-id="home-fact-when">AC Wed 9.45am &amp; Sat 12.45pm &middot; GC Fri &amp; Sun</span>
+        <span class="fact-value fact-value-lines" data-edit-id="home-fact-when">AC Wed 9.45am, Sat 12.45pm
+GC Fri and Sun afternoons</span>
       </div>
       <div class="fact">
         <span class="fact-label">Where</span>
@@ -120,9 +138,9 @@
     </div>
   </div>
 </section>
-<section class="play-strip">
+<section class="play-strip play-strip-dark">
   <div class="container">
-    <span class="eyebrow">Play times</span>
+    <span class="eyebrow eyebrow-on-dark">Play times</span>
     <h2>When we're on the lawns</h2>
     <div class="play-grid">
       <div class="play-item">
@@ -135,8 +153,8 @@
       <div class="play-item gc">
         <span class="code">Golf Croquet</span>
         <ul>
-          <li data-edit-id="play-gc-fri">Fridays, 3.00pm (September to April) or 2.00pm (May to August)</li>
-          <li data-edit-id="play-gc-sun">Sundays, 3.00pm (September to April) or 2.00pm (May to August)</li>
+          <li data-edit-id="play-gc-fri">Fridays, 3pm Sep to Apr, 2pm May to Aug</li>
+          <li data-edit-id="play-gc-sun">Sundays, 3pm Sep to Apr, 2pm May to Aug</li>
         </ul>
       </div>
     </div>
@@ -155,7 +173,7 @@
       <div class="event-row">
         <div class="event-when">
           <span class="event-tag">AC</span>
-          <span class="event-date">7–8 Nov</span>
+          <span class="event-date"><span class="event-date-num">7–8</span><span class="event-date-month">Nov</span></span>
         </div>
         <div class="event-main">
           <h3>AC CAQ Division 3 & 4 championships</h3>
@@ -166,7 +184,7 @@
       <div class="event-row">
         <div class="event-when">
           <span class="event-tag">ALL</span>
-          <span class="event-date">26–30 Mar</span>
+          <span class="event-date"><span class="event-date-num">26–30</span><span class="event-date-month">Mar</span></span>
         </div>
         <div class="event-main">
           <h3>Stephens Easter AC & GC</h3>
@@ -182,6 +200,7 @@
 </section>
 <section class="story">
   <div class="container">
+    <span class="year-watermark" aria-hidden="true">1923</span>
     <span class="eyebrow">Since 1923</span>
     <h2>A century on the Yeronga lawns</h2>
     <div class="story-cols">
@@ -193,9 +212,9 @@
   </div>
 </section>
 <section class="photo-band">
-  <img src="images/home-when-we-play.jpg" alt="Members playing on a sunny lawn in front of the red-roofed clubhouse, others watching from the verandah" loading="lazy">
-  <img src="images/get-started-try-free.jpg" alt="A member in a green hat lining up a croquet shot" loading="lazy">
+  <img class="photo-band-wide" src="images/home-when-we-play.jpg" alt="Members playing on a sunny lawn, others watching from the verandah" loading="lazy">
   <img src="images/facilities-clubhouse-party.jpg" alt="The clubhouse set up for a function, with honour boards on the walls" loading="lazy">
+  <img src="images/mallets-band.jpg" data-stock="pixabay" alt="A rack of striped croquet mallets" loading="lazy">
 </section>
 <section class="tile-section">
   <div class="container">
@@ -206,7 +225,7 @@
       <a class="btn btn-green" href="facilities.html">See facilities</a>
     </div>
     <div class="tile-photo">
-      <img src="images/facilities-clubhouse-hire.jpg" alt="The Stephens clubhouse set up for a hired function" loading="lazy">
+      <img src="images/garden-party-tile.jpg" data-stock="pixabay" alt="Croquet mallets and balls set up for a social afternoon" loading="lazy">
     </div>
   </div>
 </section>
@@ -219,11 +238,11 @@
       <a class="btn btn-green" href="membership.html">Membership details</a>
     </div>
     <div class="tile-photo">
-      <img src="images/home-when-we-play.jpg" alt="Two members playing croquet on the lawn" loading="lazy">
+      <img src="images/home-hero-lawns.jpg" alt="Members and visitors on the lawn beside the Stephens clubhouse" loading="lazy">
     </div>
   </div>
 </section>
-<section class="tile-section">
+<section class="tile-section tile-section-layered">
   <div class="container">
     <div class="tile-text">
       <span class="eyebrow">New to croquet</span>
@@ -231,8 +250,9 @@
       <p>All gear is provided and beginner coaching is included. Golf Croquet is the easiest way in, and most new players start there.</p>
       <a class="btn btn-green" href="get-started.html">Get started</a>
     </div>
-    <div class="tile-photo">
-      <img src="images/get-started-try-free.jpg" alt="A member taking a croquet shot with a hoop and ball in the foreground" loading="lazy">
+    <div class="tile-photo tile-photo-layered">
+      <img src="images/get-started-try-free.jpg" alt="A member taking a croquet shot with a hoop and ball in the foreground">
+      <img class="tile-photo-accent" src="images/mallets-accent.jpg" data-stock="pixabay" alt="" aria-hidden="true">
     </div>
   </div>
 </section>
