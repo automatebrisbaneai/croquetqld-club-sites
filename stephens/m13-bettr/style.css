@@ -465,9 +465,34 @@ a.yc:hover .go::after { transform: translateX(6px); }
 .foot-fine { margin-top: 40px; padding-top: 18px; border-top: 1px dashed rgba(235, 219, 185, .35); font-size: 15px; color: rgba(235, 219, 185, .9); }
 .foot-fine p { margin: 0 0 6px; }
 
+/* ---------- stories from HOOPLA (home band on sand, stories page on cream) ---------- */
+.stories-band { background: var(--sand); }
+.stories-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 680px) { .stories-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .stories-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.stc { background: var(--sand); border-radius: 2px; display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+  transition: transform .55s var(--curve); }
+.stories-band .stc { background: var(--cream); }
+.stc:hover { transform: translateY(-4px); }
+.stc-pic { display: block; background: var(--ink); }
+.stc-pic img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.stc-body { display: flex; flex-direction: column; flex: 1; padding: 18px clamp(18px, 1.7vw, 24px) 22px; }
+.stc.no-pic .stc-body { border-top: 10px solid var(--ball); }
+.stc time { display: block; margin-bottom: 10px; }
+.stc h3 { font-size: clamp(28px, 2.3vw, 34px); line-height: 1.05; overflow-wrap: anywhere; }
+.stc h3 a { text-decoration: none; }
+.stc h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.stc p { margin: 12px 0 0; }
+.stc .go { margin-top: auto; padding-top: 18px; align-self: flex-start; font-family: var(--sans); font-stretch: 75%; font-weight: 700;
+  font-size: 16px; text-transform: uppercase; letter-spacing: .06em; text-decoration: none; display: inline-flex; gap: 8px; align-items: center; }
+.stc .go::after { content: "\2192"; transition: transform .5s var(--curve); }
+.stc .go:hover::after { transform: translateX(6px); }
+.stories-more { margin: clamp(32px, 3.4vw, 48px) 0 0; font-weight: 700; font-size: clamp(20px, 1.6vw, 24px); }
+.stories-more a { text-underline-offset: 4px; }
+
 /* ---------- motion preferences ---------- */
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
-  .btn, .yc, .tc, .nav-desk a::after { transition: none; }
-  a.yc:hover, .tc:hover, .btn:hover { transform: none; }
+  .btn, .yc, .tc, .stc, .nav-desk a::after { transition: none; }
+  a.yc:hover, .tc:hover, .btn:hover, .stc:hover { transform: none; }
 }
