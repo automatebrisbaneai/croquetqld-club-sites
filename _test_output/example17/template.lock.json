@@ -1,0 +1,23 @@
+{
+  "template_id": "example17",
+  "template_name": "Quiet Editorial",
+  "source_summary": {
+    "slug": "_test_club",
+    "club_name": "Test Croquet & Mallet Sports Club",
+    "color_primary": "#2D5A27",
+    "color_secondary": "#C5A55A",
+    "color_accent": "#FAF6F0"
+  },
+  "asset_count": 5,
+  "directory_owned_snapshot": {
+    "club_name": "Test Croquet & Mallet Sports Club",
+    "tagline": "Three lawns by the river, eighty members, open six days a week",
+    "play_schedule": "Monday 1pm \u2014 Association Croquet\nWednesday 9am \u2014 Golf Croquet\nFriday 1pm \u2014 Ricochet\nSaturday 2pm \u2014 Social play (all codes)\n\nSummer hours apply Oct\u2013Apr (start 30 minutes earlier).",
+    "come_and_try": "First Tuesday of every month, 10am. Free. Equipment provided.\n\nWear flat shoes and bring a hat. We'll teach you the basics in about 90 minutes.",
+    "fees": "Visitor green fee: $5\nFirst Come & Try: free\nFull membership: $140 / year (concession $90)\nCoaching: free for members, $20 / session for non-members",
+    "address": "12 Riverside Drive, Riverbank QLD 4560\n(Parking available on Park Road, behind the bowls club)",
+    "phone": "0412 345 678",
+    "public_email": "secretary@testcroquet.org.au",
+    "members_link": null
+  }
+}

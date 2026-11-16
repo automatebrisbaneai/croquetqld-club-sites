@@ -1,0 +1,58 @@
+{
+  "_comment": "Fictional club, written by Claude 2026-09-15. Used only as a worked example for the MyCroquet club-profile form ('See an example') and the club-sites template catalogue. No PB row, no real club, no real people. `fees` trimmed to two rows (annual membership, green fees) 2026-09-15; the junior-membership row moved to `fees_full`, folded behind 'Full fee details'.",
+  "slug": "example-croquet-club",
+  "club_name": "Example Croquet Club",
+  "club_name_full": "Example Croquet Club Inc.",
+  "suburb": "Sampleton",
+  "postcode": "4270",
+  "suburb_line": "Sampleton, Queensland",
+  "tagline": "Friendly lawns on the quiet edge of Sampleton",
+  "welcome": "Example Croquet Club is a relaxed, welcoming club on the edge of Sampleton, open to players of every age and ability. Whether you fancy a competitive game of Golf Croquet or just want to try something new with a cuppa afterwards, you'll find a friendly group happy to show you the ropes. No experience or equipment needed, just flat shoes and a hat. Everyone starts as a beginner here.",
+  "color_primary": "#1C2E4A",
+  "color_secondary": "#F5F0DC",
+  "color_accent": "#4B7F4E",
+  "about": "Example Croquet Club began in the early 1960s, when a handful of neighbours in Sampleton cleared a corner of council land and levelled it by hand to lay down a single lawn. For the first decade the club had no clubhouse at all; players changed in their cars and kept mallets in a garden shed loaned by a nearby resident. A modest timber pavilion finally went up in 1974, largely from materials donated by local businesses, and it still forms the heart of today's clubhouse after several rounds of extensions.\n\nThrough the 1980s and 1990s the club grew steadily alongside Sampleton itself, adding a second lawn in 1988 and a third in 2003 as membership passed fifty. Association Croquet was the only code played for many years, until Golf Croquet was introduced in the early 2000s and quickly became the most popular way to spend a Wednesday morning. A small but dedicated group still plays Association and Ricochet most weekends.\n\nThe clubhouse was rebuilt after storm damage in 2011, with members and neighbours pitching in for working bees over several weekends to get the lawns back into shape. That spirit of shared effort has stayed part of the club's character ever since, along with a standing rule that nobody leaves a Saturday afternoon without a cup of tea.\n\nToday the club sits on the same corner of land it started on, shaded by established trees and bordered by a small community garden that members tend between games. It remains entirely run by volunteers, funded by membership fees and the occasional sausage sizzle, and open to anyone in Sampleton curious about the game.",
+  "play_schedule": "Wednesday 8:00am–11:00am — Golf Croquet\nSaturday 1:00pm–4:00pm — Golf Croquet\nSunday 8:00am–11:00am — Association / Ricochet",
+  "play_schedule_first": "Wednesday 8:00am–11:00am — Golf Croquet",
+  "come_and_try": "Wear flat, enclosed shoes, sunscreen and a broad-brimmed hat. We provide mallets and a friendly member to show you the ropes for your first visit.",
+  "fee_first_visit": "First two visits free, mallets provided",
+  "fees": "Annual membership: $220 (or four quarterly instalments of $55)\nGreen fees: $5 a visit (covers lawn upkeep and equipment)",
+  "fees_full": "Junior membership (under 18): $60 (half price, mallets provided)",
+  "address": "1 Example Street",
+  "phone": "0400 000 000",
+  "phone_secondary": "",
+  "public_email": "hello@example.org.au",
+  "footer_acknowledgment": "We acknowledge the Traditional Owners of the land on which we play and gather, and pay our respects to Elders past, present and emerging.",
+  "parking": "Free parking on Example Street beside the clubhouse, with overflow parking at the adjoining oval on tournament days.",
+  "members_link": "",
+  "facebook_url": "",
+  "contact_name": "Sam Sample, secretary",
+  "assets": [
+    {
+      "category": "logo",
+      "file_path": "apps\\club-sites\\work\\example-croquet-club\\photos\\logo.jpg"
+    },
+    {
+      "category": "photo_players",
+      "file_path": "apps\\club-sites\\work\\example-croquet-club\\photos\\photo_players.jpg"
+    },
+    {
+      "category": "photo_clubhouse",
+      "file_path": "apps\\club-sites\\work\\example-croquet-club\\photos\\photo_clubhouse.jpg"
+    },
+    {
+      "category": "photo_lawns",
+      "file_path": "apps\\club-sites\\work\\example-croquet-club\\photos\\photo_lawns.jpg"
+    },
+    {
+      "category": "photo_social",
+      "file_path": "apps\\club-sites\\work\\example-croquet-club\\photos\\photo_social.jpg"
+    },
+    {
+      "category": "photo_closeup",
+      "file_path": "apps\\club-sites\\work\\example-croquet-club\\photos\\photo_closeup.jpg"
+    }
+  ],
+  "lat": "-27.5200",
+  "lng": "153.0100"
+}

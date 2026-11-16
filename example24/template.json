@@ -1,0 +1,41 @@
+{
+  "id": "pNN-local-newspaper",
+  "name": "Local Newspaper",
+  "type": "template",
+  "version": "1.0.0",
+  "has_map": true,
+  "text_map": {
+    "page-title": "club_name",
+    "club-name": "club_name",
+    "tagline": "tagline",
+    "about-paragraph": "about",
+    "hero-caption": "address",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "address": "address",
+    "map-fallback": "address",
+    "phone": "phone",
+    "public-email": "public_email",
+    "members-link": "club_name",
+    "footer-acknowledgment": "footer_acknowledgment"
+  },
+  "image_map": {
+    "logo": "logo",
+    "hero-photo": "photo_clubhouse"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "members-link": ".members-link-row",
+    "address": ".section-where-map"
+  },
+  "color_map": {
+    "--accent": "color_primary",
+    "--accent-soft": "color_secondary"
+  },
+  "map": {
+    "has_map": true,
+    "iframe_id": "map-iframe",
+    "fallback_edit_id": "map-fallback"
+  }
+}

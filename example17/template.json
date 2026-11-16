@@ -1,0 +1,36 @@
+{
+  "id": "pNN-quiet-editorial",
+  "name": "Quiet Editorial",
+  "version": "1.0.0",
+  "type": "club-site",
+  "description": "A calm, literary, single-column register for a club that wants to be read, not sold to. Identity carried by a repeated serif wordmark and one column of prose; no photo in the hero.",
+  "has_map": true,
+  "text_map": {
+    "hero-eyebrow": "suburb_line",
+    "club-name": "club_name_full",
+    "tagline": "tagline",
+    "about-paragraph": "about",
+    "address": "address",
+    "map-fallback": "address",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "phone": "phone",
+    "public-email": "public_email",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "nav-name": "club_name_full",
+    "about-eyebrow": "club_name_full",
+    "footer-name": "club_name_full"
+  },
+  "image_map": {
+    "about-photo": "photo_clubhouse"
+  },
+  "colour_map": {
+    "--accent": "color_primary"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "members-link": ".members-link-row",
+    "address": ".section-where-map"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "_comment": "Wade's 2026-07-10 decision (projects/club-websites-directory.md): these blocks come from the MyCroquet Club Profile and are always refreshed on rebuild. Everything else on a club site is a story block, editable by the club via the comment/edit layer, and must never be silently overwritten by a rebuild.",
+  "fixture_keys": [
+    "club_name",
+    "tagline",
+    "play_schedule",
+    "come_and_try",
+    "fees",
+    "address",
+    "postal_address",
+    "hire_info",
+    "phone",
+    "public_email",
+    "members_link"
+  ],
+  "asset_categories": ["logo"],
+  "css_vars": ["color_primary", "color_secondary", "color_accent"]
+}

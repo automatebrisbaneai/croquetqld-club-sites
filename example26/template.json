@@ -1,0 +1,36 @@
+{
+  "id": "p09-clear-easy-read",
+  "name": "Clear & Easy to Read",
+  "type": "template",
+  "version": "1.0.0",
+  "has_map": true,
+  "text_map": {
+    "page-title": "club_name",
+    "club-name": "club_name",
+    "hero-summary": "tagline",
+    "about-heading": "about_heading",
+    "about-paragraph": "about",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "address": "address",
+    "phone": "phone",
+    "public-email": "public_email",
+    "members-link": "members_link",
+    "map-fallback": "address",
+    "footer-acknowledgment": "footer_acknowledgment"
+  },
+  "image_map": {
+    "hero-photo": "photo_lawns",
+    "about-photo": "photo_players"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "photo_lawns": ".hero-photo-block",
+    "members-link": ".members-link-row",
+    "address": ".section-where-map"
+  },
+  "colour_map": {
+    "--accent-deep": "color_primary"
+  }
+}

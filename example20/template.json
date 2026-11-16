@@ -1,0 +1,64 @@
+{
+  "id": "pNN-coastal",
+  "name": "Coastal",
+  "version": "1.0.0",
+  "type": "template",
+  "status": "ready",
+  "description": "Documentary coastal photography over a synthetic ocean palette. Side-by-side 60/40 hero split so bright sky and water never fight legibility. For clubs within sight or smell of the water.",
+  "html_file": "index.html",
+  "has_map": true,
+  "text_map": {
+    "page-title": "club_name",
+    "club-name": "club_name",
+    "tagline": "tagline",
+    "footer-tagline": "tagline",
+    "about-heading": "about_heading",
+    "about-paragraph": "about",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "address": "address",
+    "phone": "phone",
+    "public-email": "public_email",
+    "members-note": "members_note",
+    "members-link": "members_link",
+    "map-fallback": "map_fallback",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "hero-caption": "suburb_line",
+    "stat-suburb": "suburb"
+  },
+  "image_map": {
+    "hero-photo": "photo_lawns",
+    "try-photo": "photo_lawns",
+    "members-photo": "photo_players"
+  },
+  "color_map": {
+    "--ocean": "color_primary",
+    "--seafoam": "color_secondary",
+    "--sand": "color_accent"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "come-and-try": ".section-come-and-try",
+    "members-link": ".members-link-row",
+    "address": ".section-where-map"
+  },
+  "meta": {
+    "created": "2026-09-14",
+    "audience": "deepseek",
+    "aims": ["4-support-clubs", "2-promote-externally"],
+    "signature_move": "Desktop 60/40 hero split plus a single low-amplitude wave divider.",
+    "fonts": {
+      "headline": "Karla",
+      "body": "Open Sans",
+      "serif": "Newsreader"
+    },
+    "palette": {
+      "--ocean": "#1B6FA8",
+      "--seafoam": "#A8D5DC",
+      "--sand": "#F2E1C4",
+      "--paper": "#FBFAF6",
+      "--text": "#1C2226"
+    }
+  }
+}

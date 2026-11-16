@@ -1,0 +1,23 @@
+{
+  "template_id": "example33",
+  "template_name": "Playful",
+  "source_summary": {
+    "slug": "burleigh-heads-palm-beach",
+    "club_name": "Burleigh Heads Palm Beach",
+    "color_primary": "#007C37",
+    "color_secondary": "#E0F8F8",
+    "color_accent": "#583030"
+  },
+  "asset_count": 6,
+  "directory_owned_snapshot": {
+    "club_name": "Burleigh Heads Palm Beach",
+    "tagline": "Located at Palm Beach on the Gold Coast",
+    "play_schedule": "Sunday 12:30\u20134:30pm \u2014 Golf Croquet\nTuesday 12:30\u20134:30pm \u2014 Golf Croquet\nThursday 12:30\u20134:30pm \u2014 Golf Croquet\nWednesday 8:00am \u2014 Association / Ricochet\nSaturday 8:00am \u2014 Ricochet / Association",
+    "come_and_try": "Wear sunscreen, enclosed shoes and bring a broad brimmed hat. All equipment and coaching provided.",
+    "fees": "Annual membership: $280 (or four quarterly instalments of $70)\nGreen fees: $6 a day, capped at $18 a week",
+    "address": "1 Abelia St",
+    "phone": "0423 029 224",
+    "public_email": "Croquet.BHPB@gmail.com",
+    "members_link": "https://www.revolutionise.com.au/burleighheads"
+  }
+}

@@ -33,7 +33,7 @@
     "fees": ".section-fees",
     "come_and_try": ".section-come-and-try",
     "address": ".section-visit-map",
-    "players-photo": ".photo-band-members"
+    "photo_players": ".photo-band-members"
   },
   "has_map": true
 }

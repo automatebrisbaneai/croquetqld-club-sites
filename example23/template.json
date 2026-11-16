@@ -1,0 +1,47 @@
+{
+  "id": "pNN-bold-modern-sport",
+  "name": "Bold Modern Sport",
+  "type": "template",
+  "version": "1.0.0",
+  "has_map": true,
+  "text_map": {
+    "page-title": "club_name",
+    "club-name": "club_name",
+    "nav-brand-name": "club_name",
+    "tagline": "tagline",
+    "about-heading": "club_name_full",
+    "about-paragraph": "about",
+    "address": "address",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "phone": "phone",
+    "public-email": "public_email",
+    "members-link": "members_link",
+    "members-note": "members_note",
+    "footer-club-name": "club_name",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "map-fallback": "address",
+    "stat-1-value": "stat_1_value",
+    "stat-1-label": "stat_1_label",
+    "stat-2-value": "stat_2_value",
+    "stat-2-label": "stat_2_label",
+    "stat-3-value": "stat_3_value",
+    "stat-3-label": "stat_3_label"
+  },
+  "image_map": {
+    "hero-photo": "photo_players",
+    "about-photo": "photo_lawns"
+  },
+  "optional_sections": {
+    "stats-band": ".section-stats",
+    "fees": ".section-fees",
+    "members-link": ".members-link-row",
+    "address": ".section-where-map"
+  },
+  "colour_map": {
+    "--signal": "color_primary",
+    "--ink": "color_secondary",
+    "--accent": "color_accent"
+  }
+}

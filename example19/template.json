@@ -1,0 +1,84 @@
+{
+  "id": "garden-green",
+  "name": "Garden Green",
+  "version": "1.0.0",
+  "status": "brief",
+  "type": "template",
+  "description": "Conservation-register green-led template for clubs in parks, gardens, or leafy settings. Green is structural (60%+ of the page); a single leaf-silhouette divider is colour-sampled from the hero photo.",
+  "has_map": true,
+  "text_map": {
+    "page-title": "page_title",
+    "club-name": "club_name",
+    "hero-location": "hero_location",
+    "hero-address": "address",
+    "hero-when": "play_schedule_first",
+    "hero-phone": "phone",
+    "hero-phone-secondary": "phone_secondary",
+    "hero-tagline": "tagline",
+    "about-heading": "about_heading",
+    "about-paragraph": "about",
+    "address": "address",
+    "play-schedule": "play_schedule",
+    "come-and-try": "come_and_try",
+    "fees": "fees",
+    "phone": "phone",
+    "phone-secondary": "phone_secondary",
+    "public-email": "public_email",
+    "members-note": "members_note",
+    "footer-acknowledgment": "footer_acknowledgment",
+    "map-fallback": "map_fallback",
+    "parking": "parking"
+  },
+  "image_map": {
+    "logo": "logo",
+    "hero-photo": "photo_lawns",
+    "about-photo": "photo_players"
+  },
+  "color_map": {
+    "--green-heritage": "color_primary",
+    "--stone-warm": "color_secondary",
+    "--accent": "color_accent"
+  },
+  "optional_sections": {
+    "fees": ".section-fees",
+    "come-and-try": ".section-come-and-try",
+    "members_link": ".members-link-row",
+    "address": ".section-where-map",
+    "footer_acknowledgment": ".footer-ack",
+    "parking": ".fact-row-parking",
+    "phone_secondary": ".phone-secondary"
+  },
+  "adaptive": {
+    "fees": { "hide_when_empty": true, "reflow": "contact-moves-up" },
+    "come-and-try": { "hide_when_empty": true, "reflow": "about-where-contact" },
+    "map": { "hide_when_empty": "address", "reflow": "where-collapses-to-text" },
+    "footer-acknowledgment": { "hide_when_empty": true, "reflow": "footer-compresses" }
+  },
+  "locality_hooks": {
+    "name_contains": { "Park": "deepen-green", "Gardens": "deepen-green", "Botanical": "deepen-green" },
+    "address_contains": { "Beach": "flag-coastal", "Coast": "flag-coastal", "Bay": "flag-coastal" },
+    "established_before": { "1950": "eyebrow-est-year" }
+  },
+  "seo": {
+    "h1": "{club_name} Croquet Club, {suburb}",
+    "meta_title": "{club_name} Croquet Club, {suburb} | Croquet Queensland",
+    "meta_description": "first_155_chars_of_about"
+  },
+  "schema": {
+    "@context": "https://schema.org",
+    "@type": ["SportsActivityLocation", "LocalBusiness"],
+    "name": "{club_name} Croquet Club",
+    "sport": "Croquet",
+    "address": { "@type": "PostalAddress", "streetAddress": "{address}", "addressRegion": "QLD", "addressCountry": "AU" },
+    "telephone": "{phone}",
+    "email": "{public_email}",
+    "openingHours": "{play_schedule_schema}",
+    "geo": { "@type": "GeoCoordinates", "latitude": "{lat}", "longitude": "{lng}" }
+  },
+  "editor": {
+    "src": "https://edit.croquetwade.com/edit.js",
+    "data_stack": "git",
+    "data_site": "club-sites",
+    "data_html_file": "garden-green/index.html"
+  }
+}

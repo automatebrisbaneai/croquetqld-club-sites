@@ -1,0 +1,58 @@
+{
+  "_comment": "Synced from PocketBase (website_projects/u5fogjfgae5w4ck, club qe0s2k54gjb9wtl) by pb-fixture-sync.py. welcome/fee_first_visit are placeholder values written by Claude on 2026-09-15 pending the club's own words (Phase 1b test values, apps/club-sites/CLAUDE.md).",
+  "slug": "point-lookout",
+  "club_name": "Point Lookout",
+  "club_name_full": "Point Lookout Croquet Club",
+  "suburb": "Maryborough",
+  "postcode": "4650",
+  "suburb_line": "Maryborough, Queensland",
+  "tagline": "Four lawns, 33 Members, Cards played on Monday 1PM, mahjong played on Thursday 1PM",
+  "welcome": "Point Lookout is a friendly, welcoming club on the North Street lawns in Maryborough. We're mostly retired and semi-retired members, but players of any age are made welcome. Come and try a game, no experience needed.",
+  "fee_first_visit": "Your first visit and a mallet are free, just come along.",
+  "color_primary": "#203068",
+  "color_secondary": "#D8A018",
+  "color_accent": "#EEF0F7",
+  "about": "POINT LOOKOUT HISTORY\n\nOn 21st September 1898 the Point Lookout Croquet Club was formally opened and named in the grounds of Stirling House in North Street, Maryborough, witnessed by a large gathering of over a hundred ladies and gentlemen.\n\nAt that time Maryborough was the only major port north of Brisbane.  To notify the workers at the Maryborough wharfs that a ship was approaching, a lookout was stationed, where Churchill Street meets the river, to signal its approach, hence the name Point Lookout.\n\nThe Club operated from Stirling House for three years,\n\nIn 1900 the first intercity tournament was conducted in Maryborough between Point Lookout and a Brisbane team.\n\nThe following year Point Lookout made a return visit to Brisbane.  They were successful on both occasions.\n\nSoon after the information of Point Lookout, two other croquet clubs were started in Maryborough.\n\nThese operated for several years, finally closing in the 1960’s.  Clubs also opened in Gympie, Childers, Bundaberg, and Hervey Bay.\n\nIntercity games were played with members travelling first by train and then by bus to participate.\n\nThese trips were very popular and a great social occasion.  Intercity competitions are still being held today.\n\nUnfortunately, the Gympie Club no longer exists.\n\nIn 1902 Point Lookout was offered, and accepted, rental of its present site at 23 North Street, for ten pounds annually.\n\nIn 1956, following the death of Miss Bonarius, the last remaining member of the family that owned the land, a decision was made to purchase.\n\nMrs Alf Wynne, Patroness, and wife of the founder of Station 4MB, loaned the club the money to buy the land.\n\nWhen the loan was repaid, she donated the interest charged back to the club.\n\nPoint Lookout is the only Croquet Club in Queensland that owns its own courts.\n\nFrom that time until present the club has progressed under the leadership of many dedicated members whose efforts ensured that Point Lookout increased the number of courts to four, added a club house and several sheds for storage and operated successfully and continually for the 125years it has existed.\n\nPoint Lookout produced several players who played State, National and Interstate levels.\n\nOne, Lorraine Bray, is listed on the Queensland Croquet Hall of Fame and the Australian Croquet Hall of Legends.\n\nThe history of the club was celebrated at the Clubhouse on the 21st of September 2023 with a luncheon at which over 50 past and present members and guests attended.\n\n \n\nFund Raising\n\nPoint Lookout fund raises via- PLAYING Cards on a Monday, and, Mahjong on a Thursday.  We hold events such as High Teas etc.  We have club Tournaments, Regional Tournaments, Open Tournaments, and have started and new monthly Shield Tournament to encourage people to our town and our club.\n\nOur Mission                                                                                                               \n\nWe wish to grow our club membership through advertising, social media and come & try days.  We have a strong history and our members are mainly the retired and aged.  In saying that people of all ages are discovering Croquet is a stimulating way to get healthy exercise, and, have a good time together. Our members volunteer their time to help with the maintenance of the courts and grounds, which of course is forever ongoing and costly.  We have a great camaraderie and friendship within our club.  We are always brainstorming ways to encourage people to try our wonderful game.",
+  "play_schedule": "Tue 8:30am — Golf Croquet\nSat 8:30am — Golf Croquet\nTuesday 1:00pm — Association Croquet\nWednesday 8:30am — Ricochet Croquet\nFriday 1:00pm — Golf,Ricochet,Association\nSaturday 1:00pm — Social all codes",
+  "play_schedule_first": "Tue 8:30am — Golf Croquet",
+  "come_and_try": "Wear flat shoes,\nMallets available ",
+  "fees": "$480.00 Annually",
+  "fees_full": "",
+  "address": "23 North Street",
+  "phone": "0407739120",
+  "phone_secondary": "0421709449",
+  "public_email": "pointlookout@croquetqld.org",
+  "footer_acknowledgment": "Fraser Coast City Council",
+  "parking": "Street Parking, clear Signage",
+  "members_link": "https://www.revolutionise.com.au/pl",
+  "facebook_url": "",
+  "contact_name": "Wayne Lusk, president",
+  "assets": [
+    {
+      "category": "photo_closeup",
+      "file_path": "C:\\croquet-os\\apps\\club-sites\\work\\point-lookout\\photos\\photo_closeup.jpeg"
+    },
+    {
+      "category": "photo_players",
+      "file_path": "C:\\croquet-os\\apps\\club-sites\\work\\point-lookout\\photos\\photo_players.jpeg"
+    },
+    {
+      "category": "photo_social",
+      "file_path": "C:\\croquet-os\\apps\\club-sites\\work\\point-lookout\\photos\\photo_social.png"
+    },
+    {
+      "category": "photo_clubhouse",
+      "file_path": "C:\\croquet-os\\apps\\club-sites\\work\\point-lookout\\photos\\photo_clubhouse.jpg"
+    },
+    {
+      "category": "photo_lawns",
+      "file_path": "C:\\croquet-os\\apps\\club-sites\\work\\point-lookout\\photos\\photo_lawns.jpg"
+    },
+    {
+      "category": "logo",
+      "file_path": "C:\\croquet-os\\apps\\club-sites\\work\\point-lookout\\photos\\logo.jpg"
+    }
+  ],
+  "lat": "-25.5274166",
+  "lng": "152.6988814"
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-edit-id="page-title">Point Lookout Croquet Club, Sandgate | Croquet Queensland</title>
+  <meta name="description" content="Point Lookout Croquet Club has played on the foreshore lawns since 1948. The site looks across the mouth of the Brisbane River — old fig trees, well-kept turf, a clubhouse that's seen most of our members through three generations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#FAFAF7;
+      --ink:#232320;
+      --ink-soft:#5A564C;
+      --tile-border:#E4E0D6;
+      --accent:#1B6FA8;
+      --accent-tint:#A8D5DC;
+      --accent-soft:#F2E1C4;
+      --accent-contrast:#FFFFFF;
+      --radius:18px;
+      --gap:18px;
+      --maxw:1100px;
+      --font-head:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+      --font-body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+      --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+    }
+    *{box-sizing:border-box;}
+    html{-webkit-text-size-adjust:100%;}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--font-body);
+      font-size:17px;
+      line-height:1.55;
+      font-weight:400;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img{max-width:100%;display:block;}
+    a{color:var(--accent);}
+    a:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px;}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+    /* ---------- Header ---------- */
+    .site-header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--tile-border);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;padding-top:12px;padding-bottom:12px;}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);}
+    .brand__logo{width:40px;height:40px;flex:0 0 auto;border-radius:11px;object-fit:cover;border:1px solid var(--tile-border);}
+    .brand__name{font-family:var(--font-head);font-weight:800;font-size:1.05rem;line-height:1.1;letter-spacing:-.01em;}
+    .nav{display:flex;align-items:center;gap:22px;}
+    .nav__links{display:flex;align-items:center;gap:22px;}
+    .nav__links a{font-family:var(--font-head);font-weight:700;font-size:1rem;color:var(--ink);text-decoration:none;padding:6px 2px;}
+    .nav__links a:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px;}
+    .nav__links a:focus-visible{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px;}
+    .nav__cta{display:inline-block;font-family:var(--font-head);font-weight:800;font-size:1rem;color:var(--accent-contrast);background:var(--accent);text-decoration:none;padding:0 20px;min-height:56px;display:inline-flex;align-items:center;border-radius:14px;transition:transform .18s ease,filter .18s ease;}
+    .nav__cta:hover{transform:translateY(-2px);filter:brightness(1.06);text-decoration:none;}
+    .nav__cta:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
+    .nav__menu{display:none;}
+    .nav__menu summary{list-style:none;cursor:pointer;font-family:var(--font-head);font-weight:800;font-size:1rem;color:var(--ink);background:var(--accent-soft);border:1px solid var(--tile-border);border-radius:12px;padding:12px 16px;min-height:56px;display:inline-flex;align-items:center;gap:8px;}
+    .nav__menu summary::-webkit-details-marker{display:none;}
+    .nav__menu summary::after{content:"\25BE";font-size:.8rem;transition:transform .2s ease;}
+    .nav__menu[open] summary::after{transform:rotate(180deg);}
+    .nav__menu .menu-panel{margin-top:12px;display:flex;flex-direction:column;gap:6px;padding:12px;background:var(--paper);border:1px solid var(--tile-border);border-radius:14px;}
+    .nav__menu .menu-panel a{font-family:var(--font-head);font-weight:700;font-size:1rem;color:var(--ink);text-decoration:none;padding:12px 14px;border-radius:10px;}
+    .nav__menu .menu-panel a:hover{text-decoration:underline;background:var(--accent-soft);}
+    .nav__menu .menu-panel .nav__cta{justify-content:center;margin-top:4px;}
+
+    /* ---------- Page ---------- */
+    .page{padding:24px 0 40px;}
+    .bento{display:grid;grid-template-columns:1fr;gap:var(--gap);grid-auto-flow:dense;}
+
+    .tile{background:var(--paper);border:1px solid var(--tile-border);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:transform .22s ease,border-color .22s ease;}
+    .tile:hover{transform:translateY(-3px);border-color:var(--accent-tint);}
+    .tile__label{font-family:var(--font-head);font-weight:800;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0;display:flex;align-items:center;gap:9px;}
+    .tile__label::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent);flex:0 0 auto;}
+    .tile__body{font-size:1.0625rem;line-height:1.55;color:var(--ink);margin:0;white-space:pre-line;}
+    .tile__body a{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px;}
+    .tile__body a:hover{text-decoration-thickness:2px;}
+
+    /* Hero */
+    .tile-hero{position:relative;overflow:hidden;padding:0;min-height:300px;}
+    .tile-hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+    .tile-hero__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,34,.12) 0%,rgba(20,28,34,.55) 62%,rgba(20,28,34,.82) 100%);}
+    .tile-hero__content{position:relative;z-index:2;margin-top:auto;padding:30px;color:#fff;}
+    .tile-hero__eyebrow{font-family:var(--font-head);font-weight:800;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-soft);margin:0 0 10px;}
+    .tile-hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2.1rem,5.4vw,3.4rem);line-height:1.02;letter-spacing:-.015em;margin:0 0 12px;}
+    .tile-hero__tagline{font-size:1.15rem;line-height:1.4;color:rgba(255,255,255,.94);margin:0;max-width:34ch;}
+
+    /* Come and try */
+    .tile-try{background:var(--accent-tint);border-color:transparent;}
+    .tile-try .tile__label{color:var(--ink);}
+    .tile-try .tile__label::before{background:var(--paper);border-color:var(--accent);}
+    .tile-try__cta{margin-top:auto;font-family:var(--font-head);font-weight:800;font-size:1rem;color:var(--accent-contrast);background:var(--accent);text-decoration:none;padding:0 20px;min-height:56px;display:inline-flex;align-items:center;justify-content:center;border-radius:14px;transition:transform .18s ease,filter .18s ease;}
+    .tile-try__cta:hover{transform:translateY(-2px);filter:brightness(1.06);text-decoration:none;}
+    .tile-try__cta:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
+
+    /* Where + map */
+    .tile-where__map{margin-top:auto;border-radius:12px;overflow:hidden;border:1px solid var(--tile-border);background:var(--accent-soft);}
+    .tile-where__map iframe{display:block;width:100%;height:150px;border:0;}
+    .tile-where__map a{display:block;padding:12px 14px;font-family:var(--font-head);font-weight:700;font-size:.95rem;color:var(--accent);text-decoration:underline;text-underline-offset:3px;}
+    .tile-where__map a:hover{text-decoration-thickness:2px;}
+
+    /* Contact */
+    .tile-contact__body{display:flex;flex-direction:column;gap:10px;}
+    .tile-contact__body a{font-family:var(--font-head);font-weight:700;font-size:1.0625rem;color:var(--accent);text-decoration:underline;text-underline-offset:3px;word-break:break-word;}
+    .tile-contact__body a:hover{text-decoration-thickness:2px;}
+
+    /* Members (accent fill) */
+    .tile-members{background:var(--accent);border-color:transparent;color:var(--accent-contrast);}
+    .tile-members .tile__label{color:rgba(255,255,255,.82);}
+    .tile-members .tile__label::before{background:var(--accent-soft);border-color:var(--accent-soft);}
+    .tile-members__note{font-size:1.0625rem;line-height:1.5;margin:0;color:rgba(255,255,255,.96);}
+    .tile-members__link{margin-top:auto;font-family:var(--font-head);font-weight:800;font-size:1.0625rem;color:var(--accent-contrast);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px;}
+    .tile-members__link:hover{text-decoration-thickness:3px;}
+    .tile-members__link:focus-visible{outline:3px solid var(--accent-soft);outline-offset:3px;}
+
+    /* About */
+    .tile-about{background:var(--accent-soft);border-color:transparent;}
+    .tile-about h2{font-family:var(--font-display);font-weight:600;font-size:1.7rem;line-height:1.1;letter-spacing:-.01em;margin:0 0 10px;color:var(--ink);}
+    .tile-about .tile__body{font-size:1.0625rem;}
+
+    /* Photo strip */
+    .strip{margin-top:var(--gap);}
+    .strip__label{font-family:var(--font-head);font-weight:800;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 14px;display:flex;align-items:center;gap:9px;}
+    .strip__label::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent);}
+    .strip__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap);}
+    .strip__tile{border:1px solid var(--tile-border);border-radius:var(--radius);overflow:hidden;aspect-ratio:1/1;background:var(--accent-soft);}
+    .strip__tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+    .strip__tile:hover img{transform:scale(1.05);}
+
+    /* Footer */
+    .site-footer{margin-top:44px;border-top:1px solid var(--tile-border);background:var(--paper);}
+    .footer-inner{padding:34px 20px;display:flex;flex-direction:column;gap:14px;}
+    .footer__name{font-family:var(--font-display);font-weight:600;font-size:1.5rem;margin:0;}
+    .footer__ack{font-size:1rem;line-height:1.55;color:var(--ink-soft);margin:0;max-width:60ch;}
+    .footer__copy{font-size:.9rem;color:var(--ink-soft);margin:0;}
+
+    /* ---------- Breakpoints ---------- */
+    @media (min-width:480px){
+      .strip__grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media (min-width:768px){
+      .bento{grid-template-columns:repeat(2,1fr);}
+      .tile-hero{grid-column:span 2;}
+      .tile-try{grid-row:span 2;}
+      .tile-about{grid-column:span 2;}
+      .strip__grid{grid-template-columns:repeat(4,1fr);}
+      .footer-inner{flex-direction:row;align-items:flex-start;justify-content:space-between;gap:24px;}
+      .footer__copy{margin-top:auto;}
+    }
+    @media (max-width:767px){
+      .nav__links{display:none;}
+      .nav__menu{display:block;}
+    }
+    @media (min-width:1024px){
+      .bento{grid-template-columns:repeat(4,1fr);}
+      .tile-hero{grid-column:span 3;}
+      .tile-try{grid-column:span 1;grid-row:span 2;}
+      .tile-where{grid-column:span 2;}
+      .tile-when{grid-column:span 2;}
+      .tile-fees{grid-column:span 2;}
+      .tile-contact{grid-column:span 1;}
+      .tile-members{grid-column:span 1;}
+      .tile-about{grid-column:span 4;}
+      .tile-hero{min-height:420px;}
+      .tile-where__map iframe{height:180px;}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *{transition:none !important;animation:none !important;}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <img class="brand__logo" id="logo" data-photo-edit-id="logo" src="https://picsum.photos/seed/club-photo-club-logo/80/80" alt="Point Lookout Croquet Club logo" width="40" height="40">
+        <span class="brand__name" data-edit-id="club-name">Point Lookout Croquet Club</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <div class="nav__links">
+          <a href="#where">Where</a>
+          <a href="#when">When we play</a>
+          <a href="#fees">Fees</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="nav__cta" href="#try">Come and try</a>
+        <details class="nav__menu">
+          <summary>Menu</summary>
+          <div class="menu-panel">
+            <a href="#where">Where</a>
+            <a href="#when">When we play</a>
+            <a href="#fees">Fees</a>
+            <a href="#contact">Contact</a>
+            <a class="nav__cta" href="#try">Come and try</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="top">
+    <div class="wrap">
+      <div class="bento">
+
+        <!-- Hero -->
+        <section class="tile tile-hero" aria-labelledby="hero-title">
+          <img class="tile-hero__img" id="hero-photo" data-photo-edit-id="photo_clubhouse" src="https://picsum.photos/seed/club-photo-clubhouse-lawn/1600/800" alt="The Point Lookout Croquet Club clubhouse and lawns" width="1600" height="800">
+          <div class="tile-hero__scrim" aria-hidden="true"></div>
+          <div class="tile-hero__content">
+            <p class="tile-hero__eyebrow">Croquet on the bay</p>
+            <h1 id="hero-title" data-edit-id="club-name">Point Lookout Croquet Club</h1>
+            <p class="tile-hero__tagline" data-edit-id="tagline">Three lawns on the bay, since 1948</p>
+          </div>
+        </section>
+
+        <!-- Come and try -->
+        <section class="tile tile-try" id="try" aria-labelledby="try-label">
+          <h2 class="tile__label" id="try-label">Come and try</h2>
+          <p class="tile__body" data-edit-id="come-and-try">Second Saturday of every month, 2pm. Free.
+
+We provide mallets, balls, and the rules-in-plain-English version. Wear flat shoes and bring a hat — the lawn's exposed and the sun's honest.</p>
+          <a class="tile-try__cta" href="#contact">Get in touch</a>
+        </section>
+
+        <!-- Where -->
+        <section class="tile tile-where" id="where" aria-labelledby="where-label">
+          <h2 class="tile__label" id="where-label">Where</h2>
+          <p class="tile__body" data-edit-id="address">47 Flinders Parade, Sandgate QLD 4017
+(Parking on Flinders Parade and Sixth Avenue)</p>
+          <div class="tile-where__map">
+            <iframe id="map-iframe" title="Map to Point Lookout Croquet Club" src="https://www.google.com/maps?q=47+Flinders+Parade,+Sandgate+QLD+4017&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <a data-edit-id="map-fallback" href="https://www.google.com/maps?q=47+Flinders+Parade,+Sandgate+QLD+4017" target="_blank" rel="noopener">Open in Google Maps</a>
+          </div>
+        </section>
+
+        <!-- When we play -->
+        <section class="tile tile-when" id="when" aria-labelledby="when-label">
+          <h2 class="tile__label" id="when-label">When we play</h2>
+          <p class="tile__body" data-edit-id="play-schedule">Tuesday 8.30am — Association Croquet (cool early start)
+Thursday 8.30am — Golf Croquet
+Saturday 2pm — Social play, all codes welcome
+
+Visitors and beginners always welcome. Bring a hat.</p>
+        </section>
+
+        <!-- Fees -->
+        <section class="tile tile-fees" id="fees" aria-labelledby="fees-label">
+          <h2 class="tile__label" id="fees-label">Fees</h2>
+          <p class="tile__body" data-edit-id="fees">Visitor green fee: $5
+First Come &amp; Try: free
+Annual membership: $135 (concession $85)
+Family membership: $220</p>
+        </section>
+
+        <!-- Contact -->
+        <section class="tile tile-contact" id="contact" aria-labelledby="contact-label">
+          <h2 class="tile__label" id="contact-label">Contact</h2>
+          <div class="tile-contact__body">
+            <a data-edit-id="phone" href="tel:0438271504">0438 271 504</a>
+            <a data-edit-id="public-email" href="mailto:secretary@sandgatecroquet.org.au">secretary@sandgatecroquet.org.au</a>
+          </div>
+        </section>
+
+        <!-- Members -->
+        <section class="tile tile-members" id="members" aria-labelledby="members-label">
+          <h2 class="tile__label" id="members-label">Members</h2>
+          <p class="tile-members__note" data-edit-id="members-note">Already a member? Log in to revSPORT to book a court and view the club calendar.</p>
+          <a class="tile-members__link" data-edit-id="members-link" href="https://revsport.com.au">Log in to revSPORT</a>
+        </section>
+
+        <!-- About -->
+        <section class="tile tile-about" id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading" data-edit-id="about-heading">About the club</h2>
+          <p class="tile__body" data-edit-id="about-paragraph">Point Lookout Croquet Club has played on the foreshore lawns since 1948. The site looks across the mouth of the Brisbane River — old fig trees, well-kept turf, a clubhouse that's seen most of our members through three generations.
+
+About 65 of us meet through the week. We're a friendly bunch — competitive when we want to be, social the rest of the time. Beginners and visitors are always welcome.</p>
+        </section>
+
+      </div>
+
+      <!-- Photo strip -->
+      <section class="strip" id="photos" aria-labelledby="strip-label">
+        <h2 class="strip__label" id="strip-label">Around the club</h2>
+        <div class="strip__grid">
+          <div class="strip__tile"><img id="strip-photo-1" data-photo-edit-id="photo_players" src="https://picsum.photos/seed/club-photo-players/600/600" alt="Players on the lawn" width="600" height="600"></div>
+          <div class="strip__tile"><img id="strip-photo-2" data-photo-edit-id="photo_social" src="https://picsum.photos/seed/club-photo-social/600/600" alt="Members socialising at the clubhouse" width="600" height="600"></div>
+          <div class="strip__tile"><img id="strip-photo-3" data-photo-edit-id="photo_closeup" src="https://picsum.photos/seed/club-photo-mallet-closeup/600/600" alt="A close-up of a croquet mallet and balls" width="600" height="600"></div>
+          <div class="strip__tile"><img id="strip-photo-4" data-photo-edit-id="photo_lawns" src="https://picsum.photos/seed/club-photo-lawn-detail/600/600" alt="Detail of the croquet lawn" width="600" height="600"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer__name" data-edit-id="club-name">Point Lookout Croquet Club</p>
+        <p class="footer__ack" data-edit-id="footer-acknowledgment">We play on the lands of the Quandamooka people, and pay respect to Elders past and present.</p>
+      </div>
+      <p class="footer__copy">© 2026 Point Lookout Croquet Club. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["SportsActivityLocation", "LocalBusiness"],
+    "name": "Point Lookout Croquet Club Croquet Club",
+    "sport": "Croquet",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "47 Flinders Parade, Sandgate QLD 4017",
+      "addressRegion": "QLD",
+      "addressCountry": "AU"
+    },
+    "telephone": "0438 271 504",
+    "email": "secretary@sandgatecroquet.org.au",
+    "openingHours": ["Tu 08:30-12:00", "Th 08:30-12:00", "Sa 14:00-18:00"],
+    "geo": { "@type": "GeoCoordinates", "latitude": "-27.2489", "longitude": "153.1094" }
+  }
+  </script>
+
+  <script src="https://edit.croquetwade.com/edit.js" data-stack="git" data-site="club-sites" data-html-file="bento-facts/index.html" defer></script>
+</body>
+</html>

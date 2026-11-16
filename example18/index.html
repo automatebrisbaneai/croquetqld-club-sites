@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-edit-id="page-title">Sandgate Croquet Club, Sandgate | Croquet Queensland</title>
+  <meta name="description" content="Sandgate Croquet Club has played on the foreshore lawns since 1948. The site looks across the mouth of the Brisbane River — old fig trees, well-kept turf, a clubhouse that's seen most of our members through three generations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["SportsActivityLocation", "LocalBusiness"],
+    "name": "Sandgate Croquet Club",
+    "sport": "Croquet",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "47 Flinders Parade, Sandgate QLD 4017",
+      "addressRegion": "QLD",
+      "addressCountry": "AU"
+    },
+    "telephone": "0438 271 504",
+    "email": "secretary@sandgatecroquet.org.au",
+    "openingHours": ["Tu 08:30-12:00", "Th 08:30-12:00", "Sa 14:00-18:00"],
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-27.3892",
+      "longitude": "153.1010"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --ink: #2A2420;
+      --paper: #FAF6EE;
+      --rule: #DCD3C2;
+      --accent: #1B6FA8;
+      --accent-tint: color-mix(in srgb, var(--accent) 12%, var(--paper));
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --measure: 680px;
+      --pad: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.75;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+      transition: text-decoration-color .18s ease, color .18s ease;
+    }
+    a:hover { text-decoration-color: var(--accent); }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      text-decoration-color: var(--accent);
+    }
+
+    .wrap {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    /* ---- Nav ---- */
+    .nav {
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper);
+      position: relative;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      padding: 18px var(--pad);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .nav-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: .01em;
+      text-decoration: none;
+    }
+    .nav-name:hover { text-decoration-color: var(--accent); }
+    .nav-links {
+      display: none;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      font-size: .95rem;
+      text-decoration: none;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible { text-decoration: underline; }
+
+    /* ---- Mobile nav (below 768px) ---- */
+    .nav-mobile-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .nav-phone {
+      font-size: .95rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .nav-phone:hover,
+    .nav-phone:focus-visible { text-decoration: underline; }
+    .nav-toggle { position: static; }
+    .nav-toggle > summary {
+      cursor: pointer;
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 44px;
+      padding: 0 16px;
+      font-size: .9rem;
+      font-weight: 600;
+      border: 1px solid var(--ink);
+    }
+    .nav-toggle > summary::-webkit-details-marker { display: none; }
+    .nav-toggle > summary::marker { content: ""; }
+    .nav-toggle[open] > summary { background: var(--accent-tint); }
+    .nav-toggle-panel {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      padding: 16px var(--pad) 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 20;
+    }
+    .nav-toggle-panel a {
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .nav-toggle-panel a:hover,
+    .nav-toggle-panel a:focus-visible { text-decoration: underline; }
+
+    /* ---- Hero ---- */
+    .hero { padding: 64px 0 40px; }
+    .eyebrow {
+      display: block;
+      font-size: .8125rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 22px;
+    }
+    .hero h1 {
+      font-size: clamp(2.25rem, 7vw, 3.6rem);
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: -.015em;
+      margin: 0 0 22px;
+    }
+    .tagline {
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      margin: 0;
+      max-width: 34ch;
+    }
+
+    /* ---- Facts strip ---- */
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-top: 40px;
+      padding-top: 26px;
+      border-top: 1px solid var(--rule);
+    }
+    .fact-label {
+      display: block;
+      font-size: .8125rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .fact-value {
+      display: block;
+      font-size: 1.0625rem;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+    .fact-value a { text-decoration: none; }
+    .fact-value a:hover,
+    .fact-value a:focus-visible { text-decoration: underline; }
+
+    /* ---- Sections ---- */
+    .section { padding: 64px 0; border-top: 1px solid var(--rule); }
+    .section h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin: 0 0 20px;
+    }
+    .section p {
+      margin: 0 0 18px;
+      white-space: pre-line;
+    }
+    .section p:last-child { margin-bottom: 0; }
+
+    .section-fees { background: var(--accent-tint); }
+
+    /* ---- About photo (full-bleed break) ---- */
+    .photo-break {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-top: 40px;
+    }
+    .photo-break img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 0;
+    }
+    .photo-cap {
+      font-size: .875rem;
+      font-style: italic;
+      color: var(--ink);
+      opacity: .72;
+      padding: 12px var(--pad) 0;
+      max-width: var(--measure);
+      margin: 0 auto;
+    }
+
+    /* ---- Map ---- */
+    .map-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-top: 24px;
+      border: 1px solid var(--rule);
+      background: var(--accent-tint);
+    }
+    .map-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .map-fallback {
+      display: block;
+      margin-top: 14px;
+      font-size: .95rem;
+    }
+
+    /* ---- Contact ---- */
+    .contact-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 6px 12px;
+      margin: 0 0 14px;
+    }
+    .contact-line .fact-label { margin-bottom: 0; }
+
+    /* ---- Members ---- */
+    .members-link-row { margin-top: 20px; }
+    .members-link-row a {
+      display: inline-block;
+      min-height: 56px;
+      line-height: 54px;
+      padding: 0 24px;
+      border: 1px solid var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: .01em;
+    }
+    .members-link-row a:hover,
+    .members-link-row a:focus-visible {
+      background: var(--ink);
+      color: var(--paper);
+      text-decoration: none;
+    }
+
+    /* ---- Footer ---- */
+    .footer {
+      border-top: 1px solid var(--rule);
+      padding: 56px 0 48px;
+    }
+    .footer-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin: 0 0 20px;
+    }
+    .footer-ack {
+      font-size: .95rem;
+      font-style: italic;
+      line-height: 1.6;
+      max-width: 46ch;
+      margin: 0 0 24px;
+    }
+    .footer-copy {
+      font-size: .875rem;
+      opacity: .68;
+      margin: 0;
+    }
+
+    /* ---- Responsive ---- */
+    @media (min-width: 480px) {
+      .facts { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    }
+    @media (min-width: 768px) {
+      :root { --pad: 32px; }
+      .hero { padding: 96px 0 56px; }
+      .section { padding: 96px 0; }
+      .footer { padding: 80px 0 64px; }
+      .tagline { font-size: 1.3rem; }
+      .nav-links { display: flex; }
+      .nav-mobile-group { display: none; }
+    }
+    @media (min-width: 1024px) {
+      .hero { padding: 128px 0 64px; }
+      .section { padding: 128px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-name" href="#top">Sandgate Croquet Club</a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#where">Where</a></li>
+          <li><a href="#when">When we play</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-mobile-group">
+        <a class="nav-phone" data-edit-id="hero-phone" href="tel:0438271504">0438 271 504</a>
+        <details class="nav-toggle">
+          <summary>Menu</summary>
+          <div class="nav-toggle-panel">
+            <a href="#where">Where</a>
+            <a href="#when">When we play</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow" data-edit-id="hero-eyebrow">Sandgate, Queensland</span>
+        <h1 data-edit-id="club-name">Sandgate Croquet Club</h1>
+        <p class="tagline" data-edit-id="tagline">Three lawns on the bay, since 1948</p>
+
+        <div class="facts">
+          <div class="fact">
+            <span class="fact-label">Where</span>
+            <span class="fact-value"><a href="#where" data-edit-id="hero-address">47 Flinders Parade, Sandgate QLD 4017</a></span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">When</span>
+            <span class="fact-value"><a href="#when"><span data-edit-id="hero-when">Tuesday 8.30am — Association Croquet</span></a></span>
+          </div>
+          <div class="fact">
+            <span class="fact-label">Contact</span>
+            <span class="fact-value"><a data-edit-id="hero-phone" href="tel:0438271504">0438 271 504</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section-about">
+      <div class="wrap">
+        <span class="eyebrow" data-edit-id="about-heading">Sandgate Croquet Club</span>
+        <p data-edit-id="about-paragraph">Sandgate Croquet Club has played on the foreshore lawns since 1948. The site looks across the mouth of the Brisbane River — old fig trees, well-kept turf, a clubhouse that's seen most of our members through three generations.
+
+About 65 of us meet through the week. We're a friendly bunch — competitive when we want to be, social the rest of the time. Beginners and visitors are always welcome.</p>
+      </div>
+      <figure class="photo-break">
+        <img id="about-photo" data-photo-edit-id="photo_clubhouse" src="https://picsum.photos/seed/sandgate-croquet-clubhouse-lawn/1600/900" alt="The Sandgate Croquet Club clubhouse and lawns on the Sandgate foreshore" width="1600" height="900">
+        <figcaption class="photo-cap" data-edit-id="about-photo-caption">Sandgate, Queensland</figcaption>
+      </figure>
+    </section>
+
+    <!-- Where -->
+    <section class="section section-where" id="where">
+      <div class="wrap">
+        <h2>Where</h2>
+        <p data-edit-id="address">47 Flinders Parade, Sandgate QLD 4017
+(Parking on Flinders Parade and Sixth Avenue)</p>
+        <div class="section-where-map">
+          <div class="map-frame">
+            <iframe id="map-iframe" title="Map to Sandgate Croquet Club, 47 Flinders Parade, Sandgate QLD 4017" src="https://www.openstreetmap.org/export/embed.html?bbox=153.0940%2C-27.3940%2C153.1080%2C-27.3845&layer=mapnik&marker=-27.3892%2C153.1010" loading="lazy"></iframe>
+          </div>
+          <a class="map-fallback" data-edit-id="map-fallback" href="https://www.openstreetmap.org/?mlat=-27.3892&amp;mlon=153.1010#map=16/-27.3892/153.1010" target="_blank" rel="noopener">Open the map in a new tab</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- When we play -->
+    <section class="section section-when" id="when">
+      <div class="wrap">
+        <h2>When we play</h2>
+        <p data-edit-id="play-schedule">Tuesday 8.30am — Association Croquet (cool early start)
+Thursday 8.30am — Golf Croquet
+Saturday 2pm — Social play, all codes welcome
+
+Visitors and beginners always welcome. Bring a hat.</p>
+      </div>
+    </section>
+
+    <!-- Come and try -->
+    <section class="section section-come">
+      <div class="wrap">
+        <h2>Come and try</h2>
+        <p data-edit-id="come-and-try">Second Saturday of every month, 2pm. Free.
+
+We provide mallets, balls, and the rules-in-plain-English version. Wear flat shoes and bring a hat — the lawn's exposed and the sun's honest.</p>
+      </div>
+    </section>
+
+    <!-- Fees -->
+    <section class="section section-fees">
+      <div class="wrap">
+        <h2>Fees</h2>
+        <p data-edit-id="fees">Visitor green fee: $5
+First Come &amp; Try: free
+Annual membership: $135 (concession $85)
+Family membership: $220</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-contact" id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p class="contact-line"><span class="fact-label">Phone</span><a data-edit-id="phone" href="tel:0438271504">0438 271 504</a></p>
+        <p class="contact-line"><span class="fact-label">Email</span><a data-edit-id="public-email" href="mailto:secretary@sandgatecroquet.org.au">secretary@sandgatecroquet.org.au</a></p>
+      </div>
+    </section>
+
+    <!-- Members -->
+    <section class="section section-members">
+      <div class="wrap">
+        <h2>Members</h2>
+        <p data-edit-id="members-note">Members log competition results and club news through revSPORT.</p>
+        <div class="members-link-row">
+          <a data-edit-id="members-link" href="https://revsport.com.au/sandgatecroquet">Log in to revSPORT</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer-name">Sandgate Croquet Club</p>
+      <p class="footer-ack" data-edit-id="footer-acknowledgment">We play on the lands of the Quandamooka people, and pay respect to Elders past and present.</p>
+      <p class="footer-copy">© 2026 Sandgate Croquet Club</p>
+    </div>
+  </footer>
+
+  <script src="https://edit.croquetwade.com/edit.js" data-stack="git" data-site="club-sites" data-html-file="pNN-quiet-editorial/index.html" defer></script>
+</body>
+</html>
